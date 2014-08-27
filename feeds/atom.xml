@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.com/" rel="alternate"></link><link href="http://liung.github.com/feeds/atom.xml" rel="self"></link><id>http://liung.github.com/</id><updated>2014-08-27T16:39:00+08:00</updated><entry><title>Pelican官方文档阅读笔记</title><link href="http://liung.github.com/blog/python/pelican-notebook.html" rel="alternate"></link><updated>2014-08-27T16:39:00+08:00</updated><author><name>liung</name></author><id>tag:liung.github.com,2014-08-27:blog/python/pelican-notebook.html</id><summary type="html">&lt;h2&gt;Articles and pages&lt;/h2&gt;
-&lt;p&gt;article：一种有时间顺序的文件，诸如博客中的推送，一般都带有明确的日期。
-page：一般来讲不是一些暂时性的东西，经常用来充当博客中长时间不会改变的内容（比如about、contact页面等）。通过设置DISPLAY_PAGES_ON_MENU设置是否要在主导航菜单显示page中的内容（默认为True），在标签中设置statu：hidden来隐藏page中特定的文件。&lt;/p&gt;
-&lt;h2&gt;File metadata（文章的元数据）&lt;/h2&gt;
-&lt;p&gt;一般写的博客中包含一些metadata数据。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.com/" rel="alternate"></link><link href="http://liung.github.com/feeds/atom.xml" rel="self"></link><id>http://liung.github.com/</id><updated>2014-08-27T20:13:00+08:00</updated><entry><title>Pelican官方文档阅读笔记</title><link href="http://liung.github.com/blog/python/2014-08-27-Pelican%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html" rel="alternate"></link><updated>2014-08-27T20:13:00+08:00</updated><author><name>liung</name></author><id>tag:liung.github.com,2014-08-27:blog/python/2014-08-27-Pelican官方文档阅读笔记.html</id><summary type="html">&lt;hr /&gt;
+&lt;h3&gt;Articles and pages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;article：一种有时间顺序的文件，诸如博客中的推送，一般都带有明确的日期。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;page：一般来讲不是一些暂时性的东西，经常用来充当博客中长时间不会改变的内容（比如abot、contact页面等）。通过设置&lt;code&gt;DISPLAY_PAGES_ON_MENU&lt;/code&gt;设置是否要在主导航菜单显示page中的内容（默认为True），在标签中设置&lt;code&gt;status：hidden&lt;/code&gt;来隐藏page中特定的文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;File metadata（文章的元数据）&lt;/h3&gt;
+&lt;p&gt;一般写的博客中包含一些&lt;code&gt;metadata&lt;/code&gt;数据。&lt;code&gt;makedown&lt;/code&gt;格式的书写方式：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="kd"&gt;super&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;
 &lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2010&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;
 &lt;span class="n"&gt;Modified&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2010&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;05&lt;/span&gt; &lt;span class="mi"&gt;19&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;
@@ -17,46 +24,51 @@ page：一般来讲不是一些暂时性的东西，经常用来充当博客中�
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;日期：如果文章中没有指定日期或者配置文件中没有设置DEFAULT_DATE = 'fs'，那么pelican将采用文件系统的mtim时间，并根据文件所在位置的文件名进行分类（category）。
-分类：如果您你想用其他方式组织你的文章，可以在配置文件中设置USE_FOLDER_AS_CATEGORY = False
-authors:采用逗号分隔的作者列表，如果单作者，可以采用author标签。
-summary:配置文件中可以通过SUMMARY_MAX_LENGTH设置summary长度。
-文件名：通过FILENAME_METADATA设置，采用正则表达式。诸如&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="s1"&gt;&amp;#39;(?P&amp;lt;date&amp;gt;\d{4}-\d{2}-\d{2})_(?P&amp;lt;slug&amp;gt;.*)&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Linking to internal content（文件中的链接）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;日期(Date)：如果文章中没有指定日期或者配置文件中没有设置DEFAULT_DATE = 'fs'，那么pelican将采用文件系统的     mtim时间，并根据文件所在位置的文件名进行分类（category）。&lt;/li&gt;
+&lt;li&gt;分类：如果您你想用其他方式组织你的文章，可以在配置文件中设置&lt;code&gt;USE_FOLDER_AS_CATEGORY = False&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;authors:采用逗号分隔的作者列表，如果单作者，可以采用author标签。&lt;/li&gt;
+&lt;li&gt;summary:配置文件中可以通过&lt;code&gt;SUMMARY_MAX_LENGTH&lt;/code&gt;设置summary长度。&lt;/li&gt;
+&lt;li&gt;文件名：通过&lt;code&gt;FILENAME_METADATA&lt;/code&gt;设置，采用正则表达式。诸如&lt;code&gt;'(?P&amp;lt;date&amp;gt;\d{4}-\d{2}-\d{2})_(?P&amp;lt;slug&amp;gt;.*)'&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Linking to internal content（文件中的链接）&lt;/h3&gt;
 &lt;p&gt;格式：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;
-
-&lt;span class="err"&gt;为向后兼容，也支持&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="err"&gt;，（&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;替换为&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="err"&gt;）但可能与&lt;/span&gt;&lt;span class="n"&gt;reSt&lt;/span&gt;&lt;span class="err"&gt;、&lt;/span&gt;&lt;span class="n"&gt;markdown&lt;/span&gt;&lt;span class="err"&gt;等格式冲突，建议不用。&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;blockquote&gt;
+&lt;p&gt;为向后兼容，也支持&lt;code&gt;|filename|path/to/file&lt;/code&gt;，（&lt;code&gt;{ }&lt;/code&gt;替换为&lt;code&gt;| |&lt;/code&gt;）但可能与reST、markdown等格式冲突，建议不用。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;设置静态文件（自动生成时将copy此文件到bolog目录）：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;images&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Syntax highlighting（语法高亮）&lt;/h2&gt;
+&lt;h3&gt;Syntax highlighting（语法高亮）&lt;/h3&gt;
 &lt;p&gt;Markdown格式：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;block&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-
-&lt;span class="o"&gt;:::&lt;/span&gt;&lt;span class="n"&gt;identifier&lt;/span&gt;
-&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="n"&gt;goes&lt;/span&gt; &lt;span class="n"&gt;here&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class="o"&gt;:::&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;
-&lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="n"&gt;DemoClass&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;pass&lt;/span&gt;
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;myFunction&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt;
+&lt;p&gt;A block of text.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="n"&gt;goes&lt;/span&gt; &lt;span class="n"&gt;here&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;identifier指定为python、ruby等语言即可。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;待补充......&lt;/em&gt;&lt;/p&gt;</summary></entry><entry><title>测试，这是我的第一个博客网站</title><link href="http://liung.github.com/blog/qi-ta/home.html" rel="alternate"></link><updated>2014-08-26T14:24:06+08:00</updated><author><name>liung</name></author><id>tag:liung.github.com,2014-08-26:blog/qi-ta/home.html</id><summary type="html">&lt;p&gt;Category：Python
+&lt;p&gt;以python为例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;DemoClass&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;pass&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;myFunction&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;identifier&lt;/code&gt;指定为&lt;code&gt;python&lt;/code&gt;、&lt;code&gt;ruby&lt;/code&gt;等语言即可。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;待补充......&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;参考阅读&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Pelican&lt;/strong&gt;&lt;a href="http://docs.getpelican.com/en/latest/"&gt;官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pelican&lt;/strong&gt;&lt;a href="http://pelican-docs-zh-cn.readthedocs.org/en/latest/"&gt;中文文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;</summary></entry><entry><title>测试，这是我的第一个博客网站</title><link href="http://liung.github.com/blog/qi-ta/home.html" rel="alternate"></link><updated>2014-08-26T14:24:06+08:00</updated><author><name>liung</name></author><id>tag:liung.github.com,2014-08-26:blog/qi-ta/home.html</id><summary type="html">&lt;p&gt;Category：Python
 Tag: other&lt;/p&gt;
 &lt;p&gt;这是用来测试的blog。第一次blog搭建过程。&lt;/p&gt;</summary></entry><entry><title>文件内的链接测试</title><link href="http://liung.github.com/blog/fei-xing-qi/article1.html" rel="alternate"></link><updated>2012-12-01T10:02:00+08:00</updated><author><name>liung</name></author><id>tag:liung.github.com,2012-12-01:blog/fei-xing-qi/article1.html</id><summary type="html">&lt;p&gt;See below intra-site link examples in Markdown format.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://liung.github.com/blog/qi-ta/home.html"&gt;a link relative to content root&lt;/a&gt;
