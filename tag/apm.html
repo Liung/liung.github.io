@@ -63,6 +63,36 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-30T15:53:36+08:00" pubdate>8月 30, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>这些<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>也同样被ArduPlane和ArduRover所使用。下面将列出一系列高层次的库的说明和它们的函数说明。</p>
+<h3>核心库</h3>
+<ul>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_AHRS">AP_AHRS</a>：采用DCM（方向余弦矩阵方法）或EKF（扩展卡尔曼滤波方法）预估飞行器姿态</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialNav">AP_Common</a>：所有执行文件（sketch格式，arduino IDE的文件）和其他库都需要的基础核心库。</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Math">AP_Math</a>：包含了许多数学函数，特别对于矢量运算</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AC_PID">AP_PID</a>：PID控制器库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialNav">AP_InertialNav</a>：扩展带有gps和气压计数据的惯性导航库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AC_AttitudeControl">AP_AttitudeControl</a>：姿态控制相关库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialNav">AP_WPNav</a>：航点相关的导航库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Motors">AP_Motors</a>：多旋翼和传统直升机混合的电机库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/RC_Channel">RC_channel</a>：更多的关于从APM_RC的PWM输入/输出数据转换到内部通用单位的库，比如角度</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL">AP_HAL</a>，<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_AVR">AP_HAL_AVR</a>，<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_PX4">AP_HAL_PX4</a>:硬件抽象层库，提供给其他高级控制代码一致的借口，而不必担心底层不同的硬件</li>
+</ul>
+<h3>传感器相关库</h3>
+<ul>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialSensor">AP_InertialSensor</a>：读取陀螺仪和加速度计数据，并向主程序执行标准程序和提供标准单位数据（deg/s，m/s）。</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_RangeFinder">AP_RangerFinder</a>：声呐和红外测距传感器的交互库 ...</li></ul></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">APM:Copter 代码预览</a>
       </h1>
       <p class="meta"><time datetime="2014-08-30T15:29:29+08:00" pubdate>8月 30, 2014</time></p>
@@ -73,15 +103,70 @@
 <p><img alt="file-mode" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/AC_CodeOverview_AutoFlightModes.png" /></p>
 <h3>主要组成部分</h3>
 <ol>
-<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-programming-libraries/">库说明</a></li>
-<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-programming-attitude-control-2/">高度控制</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">库说明</a></li>
+<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-programming-attitude-control-2/">姿态控制</a></li>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-adding-a-new-parameter/">如何添加参数</a></li>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-adding-a-new-flight-mode/">如何创建新的飞行模式</a></li>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/">如何让你的新代码按需执行</a></li>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-adding-a-new-mavlink-message/">如何增加新的MAVLink协议信息</a></li>
-</ol></div>
+</ol>
+<h4>链接</h4>
+<ol>
+<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/">APM官网原文链接</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">APM-如何获取源码</a></li>
+</ol>
+<p><em>(over)</em></p></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">如何获取源码</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-29T15:05:30+08:00" pubdate>8月 29, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>整个APM工程的源码都采用<a href="http://git-scm.com/">git</a>（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在<a href="https://github.com/">github</a>网站上。</p>
+<p>目前APM的源码以开源的形式托管在<a href="https://github.com/diydrones/ardupilot">https://github.com/diydrones/ardupilot</a>上。由于历史原因，另一个老版本的Google code仓库仍然保持在线可访问状态，但是除非你对老版本（APM 1.x）有特殊的需求，一般建议您不要使用该仓库中的代码。</p>
+<p>固定翼飞机（Plane），旋翼飞行器（Copter），无人车（Rover）模块全部包含在<a href="https://github.com/diydrones/ardupilot"> diydrones/ardupilot </a>代码库中，天线跟踪模块虽然也包含在该代码库中，但在文件目录<code>Tools/</code>下。</p>
+<p>地面站MissionPlanner包含在<a href="https://github.com/diydrones/MissionPlanner">diydrones/MissionPlanner</a>代码库中。</p>
+<h3>预备知识</h3>
+<p>Git在绝大多数操作平台上都是可以使用的，并且还存在各种工具使得开始使用Git更加简单。首先，你需要<a href="http://git-scm.com/downloads">下载和安装对应你使用的操作平台的客户端程序</a>，如果你刚开始接触到这种源代码控制系统，那么 ...</p></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-29T13:08:10+08:00" pubdate>8月 29, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&gt;</p>
+<p>下文中的条目如果我已经翻译完成，那么我将链接到对应的博客目录中去，如果还没有翻译，那么将默认连接到原官网的链接。</p>
+<ul>
+<li><strong><a href="http://dev.ardupilot.com/wiki/table-of-contents/">英文目录</a></strong></li>
+<li><strong><a href="http://dev.ardupilot.com/">介  绍</a></strong></li>
+</ul>
+<p>------&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">获取代码</a></strong></p>
+<p>------&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">ArduCopter源码预览</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">代码库介绍</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/apmcopter-programming-attitude-control-2/">姿态控制</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-parameter/">添加新的参数</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/apmcopter-adding-a-new-flight-mode/">添加新的飞行模式</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/">规划新代码使之按一定频率运行</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/">增加新的MAVLink通讯协议消息</a></strong></p>
+<p>------&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-the-code/">编译代码</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-ardupilot-with-arduino-windows/">Windows平台上用Arduino编译ArduPilot</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-px4-with-make/">Windows平台上用Make方法编译Pixhawk/PX4</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-the-code-on-mac/">MacOS平台上用Arduino编译APM2.x ...</a></strong></p></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
@@ -93,7 +178,16 @@
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">APM:Copter 代码预览</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">如何获取源码</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
       </li>
     </ul>
   </section>
