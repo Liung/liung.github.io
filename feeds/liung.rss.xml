@@ -1,5 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 30 Aug 2014 15:53:36 +0800</lastBuildDate><item><title>APM:Copter相关库</title><link>http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter%E7%9B%B8%E5%85%B3%E5%BA%93%E4%BB%8B%E7%BB%8D.html</link><description>&lt;p&gt;这些&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries"&gt;库文件&lt;/a&gt;也同样被ArduPlane和ArduRover所使用。下面将列出一系列高层次的库的说明和它们的函数说明。&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 02 Sep 2014 14:21:41 +0800</lastBuildDate><item><title>APM-添加新的参数</title><link>http://liung.github.io/blog/apm/2014-09-02-APM-%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E5%8F%82%E6%95%B0.html</link><description>&lt;p&gt;我们既可以在主执行代码中添加新的参数，也可以在库中添加。&lt;/p&gt;
+&lt;h3&gt;在主执行代码中添加参数&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;：在文件&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h"&gt;Parameters.h&lt;/a&gt;参数类中的枚举变量（enum）的合适位置，像下面代码块最后一行一样添加你自己的新的参数。你需要注意下面这些事情：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;尽量在执行类似功能的参数区域添加新的参数，或者最坏的情形下就是在“Misc（混合）”区域的末尾添加。&lt;/li&gt;
+&lt;li&gt;确保你添加的参数区域中还可以有编号添加新的参数。检查是否能继续添加参数的方法是：检查参数的计数，确保你所要添加的参数的上一个元素编号要小于你的下一部分代码的编号。比如，Misc部分的第一个参数起始于#20,。&lt;code&gt;my_new_parameter&lt;/code&gt;是#36。如果下一部分参数开始于#36，那么我们就不能在这里添加新的参数。&lt;/li&gt;
+&lt;li&gt;不要再一个代码块的中间参加新的参数，那样容易造成现存参数对应的信息的改变。&lt;/li&gt;
+&lt;li&gt;不要在参数旁边用“弃用（deprecated）”或“移除（remove）”做注解，这是因为一些使用者将此注释用作在eeprom上的旧的参数的默认注解，如果你添加的新参数也是这样注解，那么就让人就会看起来很奇怪和疑惑。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;enum&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// Misc&lt;/span&gt;
+    &lt;span class="c1"&gt;//&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_log_bitmask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_log_last_filenumber&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="c1"&gt;// *** Deprecated - remove&lt;/span&gt;
+                                            &lt;span class="c1"&gt;// with next eeprom number&lt;/span&gt;
+                                            &lt;span class="c1"&gt;// change&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_toy_yaw_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                           &lt;span class="c1"&gt;// THOR The memory&lt;/span&gt;
+                                                    &lt;span class="c1"&gt;// location for the&lt;/span&gt;
+                                                    &lt;span class="c1"&gt;// Yaw Rate 1 = fast,&lt;/span&gt;
+                                                    &lt;span class="c1"&gt;// 2 = med, 3 = slow&lt;/span&gt;
+
+    &lt;span class="n"&gt;k_param_crosstrack_min_distance&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="c1"&gt;// deprecated - remove with next eeprom number change&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_rssi_pin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_throttle_accel_enabled&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="c1"&gt;// deprecated - remove&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_wp_yaw_behavior&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_acro_trainer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_pilot_velocity_z_max&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_circle_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_sonar_gain&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_ch8_option&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_arming_check_enabled&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_sprayer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_angle_max&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;k_param_gps_hdop_good&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;          &lt;span class="c1"&gt;// 35&lt;/span&gt;
+
+    &lt;span class="n"&gt;k_param_my_new_parameter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="c1"&gt;// 36（这里添加你的新的参数）&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Step #2&lt;/strong&gt;：在枚举变量后面的参数类中声明这些变量。可使用的类型包括&lt;code&gt;AP_Int8&lt;/code&gt;,&lt;code&gt;AP_Int16&lt;/code&gt;,&lt;code&gt;AP_Float&lt;/code&gt;,&lt;code&gt;AP_Int32&lt;/code&gt;,&lt;code&gt;AP_Vector3&lt;/code&gt;(目前还不支持&lt;code&gt;unsigned integer&lt;/code&gt;无符号整型)。新的枚举变量的名称应该保持一致，只是去掉了前缀&lt;code&gt;k_param_&lt;/code&gt;。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// 254,255: reserved&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="n"&gt;AP_Int16&lt;/span&gt;        &lt;span class="n"&gt;format_version&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int8&lt;/span&gt;         &lt;span class="n"&gt;software_type&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;// Telemetry control&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int16&lt;/span&gt;        &lt;span class="n"&gt;sysid_this_mav&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int16&lt;/span&gt;        &lt;span class="n"&gt;sysid_my_gcs&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int8&lt;/span&gt;         &lt;span class="n"&gt;serial3_baud&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int8&lt;/span&gt;         &lt;span class="n"&gt;telem_delay&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;AP_Int16&lt;/span&gt;        &lt;span class="n"&gt;rtl_altitude&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int8&lt;/span&gt;         &lt;span class="n"&gt;sonar_enabled&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int8&lt;/span&gt;         &lt;span class="n"&gt;sonar_type&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;       &lt;span class="c1"&gt;// 0 = XL, 1 = LV,&lt;/span&gt;
+                                  &lt;span class="c1"&gt;// 2 = XLL (XL with 10m range)&lt;/span&gt;
+                                  &lt;span class="c1"&gt;// 3 = HRLV&lt;/span&gt;
+&lt;span class="n"&gt;AP_Float&lt;/span&gt;        &lt;span class="n"&gt;sonar_gain&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int8&lt;/span&gt;         &lt;span class="n"&gt;battery_monitoring&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;         &lt;span class="c1"&gt;// 0=disabled, 3=voltage only,&lt;/span&gt;
+                                            &lt;span class="c1"&gt;// 4=voltage and current&lt;/span&gt;
+&lt;span class="n"&gt;AP_Float&lt;/span&gt;        &lt;span class="n"&gt;volt_div_ratio&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;AP_Float&lt;/span&gt;        &lt;span class="n"&gt;curr_amp_per_volt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int16&lt;/span&gt;        &lt;span class="n"&gt;pack_capacity&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;              &lt;span class="c1"&gt;// Battery pack capacity less reserve&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int8&lt;/span&gt;         &lt;span class="n"&gt;failsafe_battery_enabled&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;   &lt;span class="c1"&gt;// battery failsafe enabled&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int8&lt;/span&gt;         &lt;span class="n"&gt;failsafe_gps_enabled&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;       &lt;span class="c1"&gt;// gps failsafe enabled&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int8&lt;/span&gt;         &lt;span class="n"&gt;failsafe_gcs&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;               &lt;span class="c1"&gt;// ground station failsafe behavior&lt;/span&gt;
+&lt;span class="n"&gt;AP_Int16&lt;/span&gt;        &lt;span class="n"&gt;gps_hdop_good&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;              &lt;span class="c1"&gt;// GPS Hdop value below which represent a good position&lt;/span&gt;
+
+&lt;span class="n"&gt;AP_Int16&lt;/span&gt;        &lt;span class="n"&gt;my_new_parameter&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;                  &lt;span class="c1"&gt;// my new parameter&amp;#39;s description goes here（新添加的参数的注解）&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Step #3&lt;/strong&gt;：在&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.pde"&gt;Parameters.pde&lt;/a&gt;文件中向var_info表中添加变量的声明信息。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// @Param: MY_NEW_PARAMETER&lt;/span&gt;
+&lt;span class="c1"&gt;// @DisplayName: My New Parameter&lt;/span&gt;
+&lt;span class="c1"&gt;// @Description: A description of my new parameter goes here&lt;/span&gt;
+&lt;span class="c1"&gt;// @Range: -32768 32767&lt;/span&gt;
+&lt;span class="c1"&gt;// @User: Advanced&lt;/span&gt;
+&lt;span class="no"&gt;GSCALAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_new_parameter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;MY_NEW_PARAMETER&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="no"&gt;MY_NEW_PARAMETER_DEFAULT&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;地面站（如Mission Planner）中将使用&lt;code&gt;@Param ~ @User&lt;/code&gt;的注释信息向使用者说明用户所设置的变量的范围等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step #4&lt;/strong&gt;:在&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/config.h"&gt;config.h&lt;/a&gt;中添加你的新参数。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#ifndef MY_NEW_PARAMETER_DEFAULT&lt;/span&gt;
+ &lt;span class="c"&gt;# define MY_NEW_PARAMETER_DEFAULT      100     // default value for my new parameter&lt;/span&gt;
+&lt;span class="c"&gt;#endif&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;向主执行代码添加参数的工作就完成了！添加到主代码中(并非库中)的参数就可以通过诸如&lt;code&gt;g.my_new_parameter&lt;/code&gt;这样来使用。&lt;/p&gt;
+&lt;h3&gt;向库中添加参数&lt;/h3&gt;
+&lt;p&gt;同样可以使用下列步骤向库中添加新的参数。以&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass"&gt;AP_Compass&lt;/a&gt;库为例：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;：首先在库代码的.h头文件添加新的变量(如&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass"&gt;Compass.h&lt;/a&gt;)。可使用的类型包括&lt;code&gt;AP_Int8&lt;/code&gt;,&lt;code&gt;AP_Int16&lt;/code&gt;,&lt;code&gt;AP_Float&lt;/code&gt;,&lt;code&gt;AP_Int32&lt;/code&gt;,&lt;code&gt;AP_Vector3f&lt;/code&gt;。然后添加你的参数的默认值（我们将在Step #2中使用）。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#define MY_NEW_PARAM_DEFAULT         100    &lt;/span&gt;&lt;span class="c1"&gt;///在此处声明变量和默认值&lt;/span&gt;
+
+&lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Compass&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="nl"&gt;public:&lt;/span&gt;
+    &lt;span class="kt"&gt;int16_t&lt;/span&gt; &lt;span class="n"&gt;product_id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;                         &lt;span class="c1"&gt;/// product id&lt;/span&gt;
+    &lt;span class="kt"&gt;int16_t&lt;/span&gt; &lt;span class="n"&gt;mag_x&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;                      &lt;span class="c1"&gt;///&amp;lt; magnetic field strength along the X axis&lt;/span&gt;
+    &lt;span class="kt"&gt;int16_t&lt;/span&gt; &lt;span class="n"&gt;mag_y&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;                      &lt;span class="c1"&gt;///&amp;lt; magnetic field strength along the Y axis&lt;/span&gt;
+    &lt;span class="kt"&gt;int16_t&lt;/span&gt; &lt;span class="n"&gt;mag_z&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;                      &lt;span class="c1"&gt;///&amp;lt; magnetic field strength along the Z axis&lt;/span&gt;
+    &lt;span class="kt"&gt;uint32_t&lt;/span&gt; &lt;span class="n"&gt;last_update&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;               &lt;span class="c1"&gt;///&amp;lt; micros() time of last update&lt;/span&gt;
+    &lt;span class="kt"&gt;bool&lt;/span&gt; &lt;span class="n"&gt;healthy&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;                               &lt;span class="c1"&gt;///&amp;lt; true if last read OK&lt;/span&gt;
+
+    &lt;span class="c1"&gt;/// Constructor&lt;/span&gt;
+    &lt;span class="c1"&gt;///&lt;/span&gt;
+    &lt;span class="n"&gt;Compass&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+&lt;span class="nl"&gt;protected:&lt;/span&gt;
+    &lt;span class="n"&gt;AP_Int8&lt;/span&gt; &lt;span class="n"&gt;_orientation&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;AP_Vector3f&lt;/span&gt; &lt;span class="n"&gt;_offset&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;AP_Float&lt;/span&gt; &lt;span class="n"&gt;_declination&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;AP_Int8&lt;/span&gt; &lt;span class="n"&gt;_use_for_yaw&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;                       &lt;span class="c1"&gt;///&amp;lt;enable use for yaw calculation&lt;/span&gt;
+    &lt;span class="n"&gt;AP_Int8&lt;/span&gt; &lt;span class="n"&gt;_auto_declination&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;                  &lt;span class="c1"&gt;///&amp;lt;enable automatic declination code&lt;/span&gt;
+
+    &lt;span class="n"&gt;AP_Int16&lt;/span&gt; &lt;span class="n"&gt;_my_new_lib_parameter&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;              &lt;span class="c1"&gt;/// description of my new parameter（你的变量的注解）&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Step #2&lt;/strong&gt;：然后在.cpp文件（如&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AP_Compass/Compass.cpp"&gt;Compass.cpp&lt;/a&gt;）中添加变量包含有&lt;code&gt;@Param ~ @Increment&lt;/code&gt;的var_info表信息，以便允许GCS向用户显示来自地面站的关于该参数值的范围设定。当添加新参数时应注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自己添加的代码编号（下面的编号9）一定要比之前变量的大。&lt;/li&gt;
+&lt;li&gt;参数的名称（如&lt;code&gt;MY_NEW_P&lt;/code&gt;）包括对象自动添加的前缀要少于16个字符。比如罗盘对象的前缀为“&lt;code&gt;COMPASS_&lt;/code&gt;”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;AP_Param&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="nl"&gt;GroupInfo&lt;/span&gt; &lt;span class="nx"&gt;Compass&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="nl"&gt;var_info&lt;/span&gt;&lt;span class="err"&gt;[&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt; PROGMEM = {
+    // index 0 was used for the old orientation matrix
+
+    // @Param: OFS_X
+    // @DisplayName: Compass offsets on the X axis
+    // @Description: Offset to be added to the compass x-axis values to compensate for metal in the frame
+    // @Range: -400 400
+    // @Increment: 1
+
+&lt;span class="nt"&gt;&amp;lt;snip&amp;gt;&lt;/span&gt;
+
+    // @Param: ORIENT
+    // @DisplayName: Compass orientation
+    // @Description: The orientation of the compass relative to the autopilot board.
+    // @Values: 0:None,1:Yaw45,2:Yaw90,3:Yaw135,4:Yaw180,5:Yaw225,6:Yaw270,7:Yaw315,8:Roll180
+    AP_GROUPINFO(&amp;quot;ORIENT&amp;quot;, 8, Compass, _orientation, ROTATION_NONE),
+
+    //你添加的代码区域
+    // @Param: MY_NEW_P
+    // @DisplayName: My New Library Parameter
+    // @Description: The new library parameter description goes here
+    // @Range: -32768 32767
+    // @User: Advanced
+    AP_GROUPINFO(&amp;quot;MY_NEW_P&amp;quot;, 9, Compass, _my_new_lib_parameter, MY_NEW_PARAM_DEFAULT),
+    //以上为你添加的代码区域
+
+    AP_GROUPEND
+};
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;这样，新添加的参数将以&lt;code&gt;_my_new_lib_parameter&lt;/code&gt;包含在库中。需要指明的是：&lt;code&gt;protected&lt;/code&gt;保护类型的参数是不能够在类外被访问的。如果我们将其变为&lt;code&gt;public&lt;/code&gt;类型，那么我们就可以在主代码中使用&lt;code&gt;compass._my_new_lib_parameter&lt;/code&gt;参数了。&lt;/p&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-parameter/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Tue, 02 Sep 2014 14:21:41 +0800</pubDate><guid>tag:liung.github.io,2014-09-02:blog/apm/2014-09-02-APM-添加新的参数.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-ArduCopter姿态控制概览</title><link>http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter%E5%A7%BF%E6%80%81%E6%8E%A7%E5%88%B6%E6%A6%82%E8%A7%88.html</link><description>&lt;!-- PELICAN_BEGIN_SUMMARY --&gt;
+
+&lt;p&gt;在从版本AC3.1向AC3.2的过渡中，姿态控制逻辑运算作为“the onion”（洋葱头）工程的一部分进行了重构。下面来展示重构后的程序执行流程。&lt;/p&gt;
+&lt;h3&gt;手动飞行模式：自稳模式（Stabilize Mode）、特技模式（Acro Mode）、浮动模式（Drift Mode）&lt;/h3&gt;
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+&lt;p&gt;&lt;img alt="flight-mode" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/AC_CodeOverview_ManualFlightMode.png" /&gt;&lt;/p&gt;
+&lt;p&gt;在主循环执行过程中（比如Pixhawk的运行频率为400Hz，APM2.x为100Hz），系统依次执行如下操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;调用最高层次级别文件flight-mode.pde中的&lt;code&gt;update_flight_mode()&lt;/code&gt;函数。该函数监测当前飞行器的飞行模式（使用变量&lt;code&gt;control_mode&lt;/code&gt;），然后执行相应飞行模式下的&lt;code&gt;&amp;lt;flight mode&amp;gt;_run()&lt;/code&gt;函数（如自稳模式的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.pde#L20"&gt;&lt;code&gt;stabilize_run&lt;/code&gt;&lt;/a&gt;，返航模式（RTL）的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_rtl.pde#L23"&gt;&lt;code&gt;rtl_run&lt;/code&gt;&lt;/a&gt;等）。执行&lt;code&gt;&amp;lt;flight mode&amp;gt;_run&lt;/code&gt;的结果是，系统将会找到与飞行模式相对应的命名为&lt;code&gt;control_&amp;lt;flight mode&amp;gt;.pde&lt;/code&gt;飞行控制文件（比如：&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.pde"&gt;&lt;code&gt;control_stabilize.pde&lt;/code&gt;&lt;/a&gt;，&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_rtl.pde"&gt;&lt;code&gt;control_rtl.pde&lt;/code&gt;&lt;/a&gt;等）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;flight mode&amp;gt;_run&lt;/code&gt;函数负责将用户的输入（从&lt;code&gt;g.rc_1.control_in&lt;/code&gt;，&lt;code&gt;g.rc_2.control_in&lt;/code&gt;等读入）转换为此时飞行模式下的倾斜角（lean angle）、滚转速率（rotation rate）、爬升率（climb rate）等。举个例子：&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_althold.pde#L22"&gt;AltHold&lt;/a&gt;(定高，altitude hold)模式中将用户的滚转和俯仰输入转换为倾斜角（单位：角度/°），将偏航输入转换为滚转速率（单位：°/s），将油门输入转换为爬升率（单位：cm/s）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;flight mode&amp;gt;_run&lt;/code&gt;函数最后还必须要完成的就是将&lt;strong&gt;预期角度、速率等参数&lt;/strong&gt;传送给姿态控制和/或方位控制库（它们都放在&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AC_AttitudeControl"&gt;AC_AttitiudeControl&lt;/a&gt;文件夹内）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AC_AttitudeControl"&gt;AC_AttitiudeControl&lt;/a&gt;库提供了5中可能的方法来调整飞行器的姿态，下面来说明最通用的三种方法：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;------&amp;gt;1) &lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_AttitudeControl.h#L98"&gt;&lt;code&gt;angle_ef_roll_pitch_rate_ef_yaw()&lt;/code&gt;&lt;/a&gt;:该函数需要一个地轴系坐标下滚转和偏航角度，一个地轴系坐标下的偏航速率。例如：传递给该函数三个参数分别为，&lt;code&gt;roll = -1000， pitch = -1500， yaw = 500&lt;/code&gt;代表飞行器此时向左倾斜10°，低头15°，向右偏航速率为5°/s。&lt;/p&gt;
+&lt;p&gt;------&amp;gt;2) &lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_AttitudeControl.h#L102"&gt;&lt;code&gt;angle_ef_roll_pitch_yaw()&lt;/code&gt;&lt;/a&gt;:该函数接受地轴系下的滚转、俯仰和偏航角。和上面的函数类似，不过参数&lt;code&gt;yaw = 500&lt;/code&gt;代表飞行器北偏东5°&lt;/p&gt;
+&lt;p&gt;------&amp;gt;3) &lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_AttitudeControl.h#L108"&gt;&lt;code&gt;rate_bf_roll_pitch_yaw()&lt;/code&gt;&lt;/a&gt;:该函数接受一个&lt;strong&gt;体轴系&lt;/strong&gt;下的滚转、俯仰和偏航角速率（°/s）。例如：传递给该函数三个参数：&lt;code&gt;roll = -1000， pitch = -1500， yaw = 500&lt;/code&gt;代表飞行器此时左倾速率10°/s，低头速率15°/s，绕Z轴速率为5°/s。&lt;/p&gt;
+&lt;p&gt;当上述这些函数调用之后，就会接着调用&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_AttitudeControl.h#L114"&gt;&lt;code&gt;AC_AttitudeControl::rate_controller_run()&lt;/code&gt;&lt;/a&gt;函数，将上面所列举的函数的输出转化为滚转、偏航和俯仰输入，并使用&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AP_Motors/AP_Motors_Class.h#L99"&gt;&lt;code&gt;set_roll,set_pitch,set_yaw&lt;/code&gt; 和 &lt;code&gt;set_throttle&lt;/code&gt;&lt;/a&gt;方法将这些输入发送给&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Motors"&gt;&lt;strong&gt;AP_Motors&lt;/strong&gt;&lt;/a&gt;库。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_PosControl.h"&gt;AC_PosControl&lt;/a&gt;库用来控制飞行器的3D方位。不过通常只用来调整比较简单的Z轴方向（如姿态控制），这是因为许多需要复杂3D方位调整的飞行模式(例如&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_loiter.pde#L30"&gt;悬停Loiter&lt;/a&gt;)使用的是&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AC_WPNav/AC_WPNav.h"&gt;AC_WPNav&lt;/a&gt;库。总之，AC_PosControl库中常用的方法有：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;------&amp;gt;1) &lt;code&gt;set_alt_target_from_climb_rate()&lt;/code&gt;:将爬升率（cm/s）作为参数，用来更新一个需要调整的相对高度目标。&lt;/p&gt;
+&lt;p&gt;------&amp;gt;2)  &lt;code&gt;set_pos_target()&lt;/code&gt;:接受一个以系统中的&lt;code&gt;home&lt;/code&gt;位置作为参考点的3D位置矢量（单位：cm）。&lt;/p&gt;
+&lt;p&gt;如果调用了AC_PosControl中的任何一个方法，那么在该飞行模式下就必须调用函数&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_PosControl.h#L134"&gt;&lt;code&gt;AC_PosControl::update_z_controller()&lt;/code&gt;&lt;/a&gt;。这样的话，就可以启用Z轴的方位控制PID循环，并向&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Motors"&gt;&lt;strong&gt;AP_Motors&lt;/strong&gt;&lt;/a&gt;库发送低级别的油门信息。同样，如果调用了xy轴的函数，那就就必须调用&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_PosControl.h#L202"&gt;&lt;code&gt;AC_PosControl::update_xy_controller()&lt;/code&gt;&lt;/a&gt;函数。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AP_Motors&lt;/strong&gt;库含有“电机混合模式”代码。这些代码负责将从&lt;strong&gt;AC_AttitudeControl&lt;/strong&gt;和&lt;strong&gt;AC_PosControl&lt;/strong&gt;库发送过来的滚转、俯仰、偏航角度和油门值信息转换为电机的相对输出值（例如：PWM值）。因此，这样高级别的库就必须要使用如下函数：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;------&amp;gt;1) &lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AP_Motors/AP_Motors_Class.h#L99"&gt;&lt;code&gt;set_roll(),set_pitch(),set_yaw()&lt;/code&gt;&lt;/a&gt;：接受在[-4500,4500]角度范围内的滚转、俯仰和偏航角。这些参数不是期望角度或者速率，更准确的讲，它仅仅是一个数值。例如，set_roll(-4500)将代表飞行器尽可能快的向左滚转。&lt;/p&gt;
+&lt;p&gt;------&amp;gt;2) &lt;code&gt;set_throttle()&lt;/code&gt;:接受一个范围在[0,1000]的相对油门值。0代表电机关闭，1000代表满油门状态。&lt;/p&gt;
+&lt;p&gt;虽然对于不同飞行器构型（如四旋翼，Y6，传统直升机等）的控制代码中有许多不同的类，但这些类中都有一个相同的函数&lt;code&gt;output_armed&lt;/code&gt;，负责将这些滚转、俯仰、偏航和油门值转换为PWM类型输入值。这转换的过程中，会应用到&lt;strong&gt;stability patch&lt;/strong&gt;（译者注：翻译成中文感觉不妥，类似于控制飞行器稳定性分析程序代码块），用来控制由于飞行器构型限制所引起的轴系的优先级问题（例如四旋翼的四个电机不可能在做最大速度滚转时四个电机的油门同时达到最大，因为必须一部分电机输出小于另一部分才能引起滚转）。在执行函数&lt;code&gt;output_armed&lt;/code&gt;的最后，还将调用&lt;code&gt;hal.rcout-&amp;gt;write()&lt;/code&gt;，把期望PWM值传递给&lt;strong&gt;AP_HAL&lt;/strong&gt;层。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AP_HAL库（硬件抽象层）提供了针对所有飞控板统一的借口。实际控制中，&lt;code&gt;hal.rc_out_write()&lt;/code&gt;函数将接受到的来自于AP_Motors类中指定的PWM值，输出至飞控板对应的PWM端口（pin端）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-programming-attitude-control-2/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sun, 31 Aug 2014 21:53:09 +0800</pubDate><guid>tag:liung.github.io,2014-08-31:blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM:Copter相关库</title><link>http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter%E7%9B%B8%E5%85%B3%E5%BA%93%E4%BB%8B%E7%BB%8D.html</link><description>&lt;p&gt;这些&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries"&gt;库文件&lt;/a&gt;也同样被ArduPlane和ArduRover所使用。下面将列出一系列高层次的库的说明和它们的函数说明。&lt;/p&gt;
 &lt;h3&gt;核心库&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_AHRS"&gt;AP_AHRS&lt;/a&gt;：采用DCM（方向余弦矩阵方法）或EKF（扩展卡尔曼滤波方法）预估飞行器姿态&lt;/li&gt;
@@ -11,7 +222,7 @@
 &lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialNav"&gt;AP_WPNav&lt;/a&gt;：航点相关的导航库&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Motors"&gt;AP_Motors&lt;/a&gt;：多旋翼和传统直升机混合的电机库&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/RC_Channel"&gt;RC_channel&lt;/a&gt;：更多的关于从APM_RC的PWM输入/输出数据转换到内部通用单位的库，比如角度&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL"&gt;AP_HAL&lt;/a&gt;，&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_AVR"&gt;AP_HAL_AVR&lt;/a&gt;，&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_PX4"&gt;AP_HAL_PX4&lt;/a&gt;:硬件抽象层库，提供给其他高级控制代码一致的借口，而不必担心底层不同的硬件&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL"&gt;AP_HAL&lt;/a&gt;，&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_AVR"&gt;AP_HAL_AVR&lt;/a&gt;，&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_PX4"&gt;AP_HAL_PX4&lt;/a&gt;:硬件抽象层库，提供给其他高级控制代码一致的接口，而不必担心底层不同的硬件&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;传感器相关库&lt;/h3&gt;
 &lt;ul&gt;
@@ -33,9 +244,7 @@
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-programming-libraries/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html"&gt;APM-如何获取源码&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html"&gt;APM:Copter代码预览&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 30 Aug 2014 15:53:36 +0800</pubDate><guid>tag:liung.github.io,2014-08-30:blog/apm/2014-08-30-APM-Arducopter相关库介绍.html</guid><category>APM:Copter</category><category>APM</category><category>硬件</category><category>C++</category></item><item><title>APM:Copter 代码预览</title><link>http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter%E4%BB%A3%E7%A0%81%E9%A2%84%E8%A7%88.html</link><description>&lt;p&gt;&lt;a href="https://github.com/diydrones/ardupilot"&gt;&lt;strong&gt;APM::Copter&lt;/strong&gt;&lt;/a&gt;代码主要放在ArduCopter文件夹中，并且和&lt;strong&gt;ArduPlane&lt;/strong&gt;和&lt;strong&gt;ArduRover&lt;/strong&gt;使用同样的&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries"&gt;库文件&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;下面这张图展示了从飞行模式到电机输出的高级别代码概要：&lt;/p&gt;
@@ -43,8 +252,8 @@
 &lt;h3&gt;主要组成部分&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html"&gt;库说明&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-programming-attitude-control-2/"&gt;姿态控制&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-adding-a-new-parameter/"&gt;如何添加参数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html"&gt;如何添加参数&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-adding-a-new-flight-mode/"&gt;如何创建新的飞行模式&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/"&gt;如何让你的新代码按需执行&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-adding-a-new-mavlink-message/"&gt;如何增加新的MAVLink协议信息&lt;/a&gt;&lt;/li&gt;
@@ -52,10 +261,9 @@
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html"&gt;APM-如何获取源码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 30 Aug 2014 15:29:29 +0800</pubDate><guid>tag:liung.github.io,2014-08-30:blog/apm/2014-08-30-APM-Arducopter代码预览.html</guid><category>APM:Copter</category><category>APM</category><category>硬件</category><category>C++</category></item><item><title>如何获取源码</title><link>http://liung.github.io/blog/apm/2014-08-29-APM-%E8%8E%B7%E5%8F%96%E6%BA%90%E7%A0%81.html</link><description>&lt;p&gt;整个APM工程的源码都采用&lt;a href="http://git-scm.com/"&gt;git&lt;/a&gt;（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在&lt;a href="https://github.com/"&gt;github&lt;/a&gt;网站上。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 30 Aug 2014 15:29:29 +0800</pubDate><guid>tag:liung.github.io,2014-08-30:blog/apm/2014-08-30-APM-Arducopter代码预览.html</guid><category>APM:Copter</category><category>APM</category><category>硬件</category><category>C++</category></item><item><title>APM-如何获取源码</title><link>http://liung.github.io/blog/apm/2014-08-29-APM-%E8%8E%B7%E5%8F%96%E6%BA%90%E7%A0%81.html</link><description>&lt;p&gt;整个APM工程的源码都采用&lt;a href="http://git-scm.com/"&gt;git&lt;/a&gt;（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在&lt;a href="https://github.com/"&gt;github&lt;/a&gt;网站上。&lt;/p&gt;
 &lt;p&gt;目前APM的源码以开源的形式托管在&lt;a href="https://github.com/diydrones/ardupilot"&gt;https://github.com/diydrones/ardupilot&lt;/a&gt;上。由于历史原因，另一个老版本的Google code仓库仍然保持在线可访问状态，但是除非你对老版本（APM 1.x）有特殊的需求，一般建议您不要使用该仓库中的代码。&lt;/p&gt;
 &lt;p&gt;固定翼飞机（Plane），旋翼飞行器（Copter），无人车（Rover）模块全部包含在&lt;a href="https://github.com/diydrones/ardupilot"&gt; diydrones/ardupilot &lt;/a&gt;代码库中，天线跟踪模块虽然也包含在该代码库中，但在文件目录&lt;code&gt;Tools/&lt;/code&gt;下。&lt;/p&gt;
 &lt;p&gt;地面站MissionPlanner包含在&lt;a href="https://github.com/diydrones/MissionPlanner"&gt;diydrones/MissionPlanner&lt;/a&gt;代码库中。&lt;/p&gt;
@@ -116,9 +324,13 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/where-to-get-the-code/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 22:11:41 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM-获取源码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category><category>Git</category></item><item><title>APM开发人员参考手册目录列表</title><link>http://liung.github.io/blog/apm/2014-08-29-APM%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%E7%9B%AE%E5%BD%95%E5%88%97%E8%A1%A8.html</link><description>&lt;p&gt;从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 22:11:41 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM-获取源码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category><category>Git</category></item><item><title>APM开发人员参考手册目录列表</title><link>http://liung.github.io/blog/apm/2014-08-29-APM-%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%E7%9B%AE%E5%BD%95%E5%88%97%E8%A1%A8.html</link><description>&lt;!-- PELICAN_BEGIN_SUMMARY --&gt;
+
+&lt;p&gt;从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&amp;gt;&lt;/p&gt;
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
 &lt;p&gt;下文中的条目如果我已经翻译完成，那么我将链接到对应的博客目录中去，如果还没有翻译，那么将默认连接到原官网的链接。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/table-of-contents/"&gt;英文目录&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
@@ -127,8 +339,8 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html"&gt;获取代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html"&gt;ArduCopter源码预览&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html"&gt;代码库介绍&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-programming-attitude-control-2/"&gt;姿态控制&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-parameter/"&gt;添加新的参数&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html"&gt;添加新的参数&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-adding-a-new-flight-mode/"&gt;添加新的飞行模式&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/"&gt;规划新代码使之按一定频率运行&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/"&gt;增加新的MAVLink通讯协议消息&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -187,7 +399,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-set-up-and-build-ardupilot-for-px4-in-windows/"&gt;EZ Set up and Build ArduPilot for PX4 in Windows&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/git_tortise/"&gt;Git_Tortise的使用&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 13:08:10 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM开发人员参考手册目录列表.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>测试，这是我的第一个博客网站</title><link>http://liung.github.io/blog/qi-ta/home.html</link><description>&lt;p&gt;Category：Python
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 13:08:10 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>测试，这是我的第一个博客网站</title><link>http://liung.github.io/blog/qi-ta/home.html</link><description>&lt;p&gt;Category：Python
 Tag: other&lt;/p&gt;
 &lt;p&gt;这是用来测试的blog。第一次blog搭建过程。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 00:00:00 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/qi-ta/home.html</guid></item><item><title>Pelican官方文档阅读笔记</title><link>http://liung.github.io/blog/python/2014-08-27-Pelican%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html</link><description>&lt;hr /&gt;
 &lt;h3&gt;Articles and pages&lt;/h3&gt;

@@ -30,19 +30,24 @@
 <body>
   <header role="banner"><hgroup>
   <h1><a href="http://liung.github.io/">折返的Liung</a></h1>
-	<!-- 将原来的h1标题改为h2 -->
     <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
 
 
+<form action="//google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:liung.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
 
 <ul class="main-navigation">
     <li><a href="/archives.html">博客目录</a></li>
     <li><a href="http://liung.github.io">主  页</a></li>
     <li><a href="http://github.com/Liung">Github主页</a></li>
-<!-- 这里将pages页面显示在category标签后面，，目的是让关于作者、网站的一些信息居于导航栏的后面-->
+      <li><a href="http://liung.github.io/pages/aboutme.html">Me</a></li>
     <li >
     <a href="http://liung.github.io/category/apm/index.html">Apm</a>
     </li>
@@ -55,11 +60,59 @@
     <li >
     <a href="http://liung.github.io/category/qi-ta/index.html">其它</a>
     </li>
-      <li><a href="http://liung.github.io/pages/aboutme.html">Me</a></li>
 </ul></nav>
   <div id="main">
     <div id="content">
 <div class="blog-index">
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-02T14:21:41+08:00" pubdate>9月 02, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。</p>
+<h3>在主执行代码中添加参数</h3>
+<p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum）的合适位置，像下面代码块最后一行一样添加你自己的新的参数。你需要注意下面这些事情：</p>
+<ul>
+<li>尽量在执行类似功能的参数区域添加新的参数，或者最坏的情形下就是在“Misc（混合）”区域的末尾添加。</li>
+<li>确保你添加的参数区域中还可以有编号添加新的参数。检查是否能继续添加参数的方法是：检查参数的计数，确保你所要添加的参数的上一个元素编号要小于你的下一部分代码的编号。比如，Misc部分的第一个参数起始于#20,。<code>my_new_parameter</code>是#36。如果下一部分参数开始于#36，那么我们就不能在这里添加新的参数。</li>
+<li>不要再一个代码块的中间参加新的参数，那样容易造成现存参数对应的信息的改变。</li>
+<li>不要在参数旁边用“弃用（deprecated）”或“移除（remove）”做注解，这是因为一些使用者将此注释用作在eeprom上的旧的参数的默认注解，如果你添加的新参数也是这样注解，那么就让人就会看起来很奇怪和疑惑。</li>
+</ul>
+<div class="highlight"><pre><span class="k">enum</span> <span class="p">{</span>
+    <span class="c1">// Misc</span>
+    <span class="c1">//</span>
+    <span class="n">k_param_log_bitmask</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">k_param_log_last_filenumber</span><span class="p">,</span>            <span class="c1">// *** Deprecated - remove ...</span></pre></div></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-31T21:53:09+08:00" pubdate>8月 31, 2014</time></p>
+</header>
+
+  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+
+<p>在从版本AC3.1向AC3.2的过渡中，姿态控制逻辑运算作为“the onion”（洋葱头）工程的一部分进行了重构。下面来展示重构后的程序执行流程。</p>
+<h3>手动飞行模式：自稳模式（Stabilize Mode）、特技模式（Acro Mode）、浮动模式（Drift Mode）</h3>
+<!-- PELICAN_END_SUMMARY -->
+
+<p><img alt="flight-mode" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/AC_CodeOverview_ManualFlightMode.png" /></p>
+<p>在主循环执行过程中（比如Pixhawk的运行频率为400Hz，APM2.x为100Hz），系统依次执行如下操作：</p>
+<ul>
+<li>
+<p>调用最高层次级别文件flight-mode.pde中的<code>update_flight_mode()</code>函数。该函数监测当前飞行器的飞行模式（使用变量<code>control_mode</code>），然后执行相应飞行模式下的<code>&lt;flight mode&gt;_run()</code>函数（如自稳模式的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.pde#L20"><code>stabilize_run</code></a>，返航模式（RTL）的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_rtl.pde#L23"><code>rtl_run</code></a>等）。执行<code>&lt;flight mode&gt;_run</code>的结果是，系统将会找到与飞行模式相对应的命名为<code>control_ ...</code></p></li></ul></!--></!--></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">Read On &crarr;</a>
+  </footer>
+  		</article>
   		<article>
 <header>
       <h1 class="entry-title">
@@ -80,7 +133,7 @@
 <li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialNav">AP_WPNav</a>：航点相关的导航库</li>
 <li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Motors">AP_Motors</a>：多旋翼和传统直升机混合的电机库</li>
 <li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/RC_Channel">RC_channel</a>：更多的关于从APM_RC的PWM输入/输出数据转换到内部通用单位的库，比如角度</li>
-<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL">AP_HAL</a>，<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_AVR">AP_HAL_AVR</a>，<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_PX4">AP_HAL_PX4</a>:硬件抽象层库，提供给其他高级控制代码一致的借口，而不必担心底层不同的硬件</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL">AP_HAL</a>，<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_AVR">AP_HAL_AVR</a>，<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_PX4">AP_HAL_PX4</a>:硬件抽象层库，提供给其他高级控制代码一致的接口，而不必担心底层不同的硬件</li>
 </ul>
 <h3>传感器相关库</h3>
 <ul>
@@ -104,8 +157,8 @@
 <h3>主要组成部分</h3>
 <ol>
 <li><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">库说明</a></li>
-<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-programming-attitude-control-2/">姿态控制</a></li>
-<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-adding-a-new-parameter/">如何添加参数</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">如何添加参数</a></li>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-adding-a-new-flight-mode/">如何创建新的飞行模式</a></li>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/">如何让你的新代码按需执行</a></li>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-adding-a-new-mavlink-message/">如何增加新的MAVLink协议信息</a></li>
@@ -113,18 +166,14 @@
 <h4>链接</h4>
 <ol>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/">APM官网原文链接</a></li>
-<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
-<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">APM-如何获取源码</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
 </ol>
 <p><em>(over)</em></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">Read On &crarr;</a>
-  </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">如何获取源码</a>
+        <a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">APM-如何获取源码</a>
       </h1>
       <p class="meta"><time datetime="2014-08-29T15:05:30+08:00" pubdate>8月 29, 2014</time></p>
 </header>
@@ -142,12 +191,16 @@
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
+        <a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
       </h1>
       <p class="meta"><time datetime="2014-08-29T13:08:10+08:00" pubdate>8月 29, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&gt;</p>
+  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+
+<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&gt;</p>
+<!-- PELICAN_END_SUMMARY -->
+
 <p>下文中的条目如果我已经翻译完成，那么我将链接到对应的博客目录中去，如果还没有翻译，那么将默认连接到原官网的链接。</p>
 <ul>
 <li><strong><a href="http://dev.ardupilot.com/wiki/table-of-contents/">英文目录</a></strong></li>
@@ -156,17 +209,17 @@
 <p>------&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">获取代码</a></strong></p>
 <p>------&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">ArduCopter源码预览</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">代码库介绍</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/apmcopter-programming-attitude-control-2/">姿态控制</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-parameter/">添加新的参数</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">添加新的参数</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/apmcopter-adding-a-new-flight-mode/">添加新的飞行模式</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/">规划新代码使之按一定频率运行</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/">增加新的MAVLink通讯协议消息</a></strong></p>
 <p>------&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-the-code/">编译代码</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-ardupilot-with-arduino-windows/">Windows平台上用Arduino编译ArduPilot</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-px4-with-make/">Windows平台上用Make方法编译Pixhawk/PX4</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-the-code-on-mac/">MacOS平台上用Arduino编译APM2.x ...</a></strong></p></div>
+<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-the-code-on-mac/">MacOS平台上用Arduino编译APM2.x ...</a></strong></p></!--></!--></div>
   <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html">Read On &crarr;</a>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
@@ -180,9 +233,6 @@
   <div class="entry-content"><p>Category：Python
 Tag: other</p>
 <p>这是用来测试的blog。第一次blog搭建过程。</p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/qi-ta/home.html">Read On &crarr;</a>
-  </footer>
   		</article>
   		<article>
 <header>
@@ -225,9 +275,6 @@ Tag: other</p>
   <div class="entry-content"><p>See below intra-site link examples in Markdown format.</p>
 <p><a href="http://liung.github.io/blog/qi-ta/home.html">a link relative to content root</a>
 <a href="http://liung.github.io/blog/qi-ta/home.html">a link relative to current file</a></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/fei-xing-qi/article1.html">Read On &crarr;</a>
-  </footer>
   		</article>
   		<article>
 <header>
@@ -242,33 +289,9 @@ Tag: other</p>
     <span class="k">pass</span>
 <span class="k">print</span> <span class="s">&#39;Hello, pelican&#39;</span>
 </pre></div></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/python/pythoDemo.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/python/memoryview-benchmarks.html">Memoryview Benchmarks</a>
-      </h1>
-      <p class="meta"><time datetime="2012-08-08T18:50:00+08:00" pubdate>8月 08, 2012</time></p>
-</header>
-
-  <div class="entry-content"><h2>摘录在别人的blog的md文档，用来测试blog.  :&gt;)</h2>
-<!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>There was recently a <a href="https://groups.google.com/forum/?fromgroups#!topic/cython-users/8uuxjB_wbBQ[1-25]" title="cython-users archive">thread</a>
-on cython-users which caught my eye.  It has to do with 
-<a href="http://docs.cython.org/src/userguide/memoryviews.html">memoryviews</a>, a new
-way of working with memory buffers in cython.</p>
-<p>I've been thinking recently about how to do fast
-and flexible memory buffer access in cython.  I contributed the
-<a href="http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.BallTree.html">BallTree ...</a></p></!--></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/python/memoryview-benchmarks.html">Read On &crarr;</a>
-  </footer>
   		</article>
 <div class="pagination">
+    <a class="prev" href="http://liung.github.io/index2.html">&larr; Older</a>
 
   <br />
 </div></div>
@@ -277,59 +300,45 @@ and flexible memory buffer access in cython.  I contributed the
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">APM:Copter 代码预览</a>
       </li>
       <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">如何获取源码</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-08-29-APM开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/qi-ta/home.html">测试，这是我的第一个博客网站</a>
+          <a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">APM-如何获取源码</a>
       </li>
     </ul>
   </section>
   <section>
-<!-- 注释 
--->
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="http://liung.github.io/category/apm/index.html">APM</a></li>
+        <li><a href="http://liung.github.io/category/fei-xing-qi/index.html">飞行器</a></li>
+        <li><a href="http://liung.github.io/category/python/index.html">Python</a></li>
+        <li><a href="http://liung.github.io/category/qi-ta/index.html">其它</a></li>
+    </ul>
+  </section>
  
 
   <section>
-<!-- 注释 
--->
-  </section>
+  <h1>Tags</h1>
+    <a href="http://liung.github.io/tag/c.html">C++</a>,    <a href="http://liung.github.io/tag/git.html">Git</a>,    <a href="http://liung.github.io/tag/python.html">python</a>,    <a href="http://liung.github.io/tag/bo-ke.html">博客</a>,    <a href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>,    <a href="http://liung.github.io/tag/apm.html">APM</a>,    <a href="http://liung.github.io/tag/ying-jian.html">硬件</a>,    <a href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>  </section>
 
 
-    <section>
-        <h1>Social</h1>
-        <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
-            <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
-        </ul>
-    </section>
-    <section>
-		<!-- 汉化 
-		<h1>Blogroll</h1> 
-		-->
-        <h1>友情链接</h1>
-        <ul>
-            <li><a href="http://google.com/" target="_blank">Google</a></li>
-            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
-        </ul>
-    </section>
 
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - liung - 一个傻傻的完美主义者
-  <!-- 把原来属于Pelican的东西注释掉
+    Copyright &copy;  2012-2014  - liung -
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
-  -->
 </p></footer>
 </body>
 </html>
