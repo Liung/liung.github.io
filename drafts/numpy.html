@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>折返的Liung</title>
+  <title>numpy</title>
   <meta name="author" content="liung">
 
 
@@ -50,29 +50,59 @@
 </ul></nav>
   <div id="main">
     <div id="content">
-<div class="blog-index">
-  		<article>
+<div>
+  <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/qi-ta/home.html">测试，这是我的第一个博客网站</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-29T00:00:00+08:00" pubdate>8月 29, 2014</time></p>
+      <h1 class="entry-title">numpy</h1>
+      <p class="meta"><time datetime="2014-09-04T12:49:44+08:00" pubdate>9月 04, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>Category：Python
-Tag: other</p>
-<p>这是用来测试的blog。第一次blog搭建过程。</p></div>
-  		</article>
-<div class="pagination">
+  <div class="entry-content"><h3>从文本中读取数组</h3>
+<p>laodtxt(filename, dtype, delimiter=' ', skiprows, usecols=(0,1,...), comments, converters={0:func0, 1:func1,...})</p>
+<p>genfromtxt</p>
+<p>fromfile</p>
+<h3>向文本中写入数组</h3>
+<p>savetxt(filename,data,fmt="%d",delimiter)</p>
+<p>tofile</p>
+<h3>Numppy原生的二进制文件格式</h3>
+<p>".npy"格式</p>
+<p>save(file,arr)</p>
+<p>savez(file, <em>args, </em>*kwds)
+.npz file</p>
+<p>savez_compressed(file, <em>args, </em>*kwds)</p>
+<p>load(file, mmap_mode=None)</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">liung</span>
+  </span>
+<time datetime="2014-09-04T12:49:44+08:00" pubdate>9月 04, 2014</time>  <span class="categories">
+    <a class="category" href="http://liung.github.io/tag/python.html">Python</a>
+    <a class="category" href="http://liung.github.io/tag/numpy.html">Numpy</a>
+  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
 
-  <br />
-</div></div>
+</div>
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="http://liung.github.io/blog/qi-ta/home.html">测试，这是我的第一个博客网站</a>
+          <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">APM:Copter 代码预览</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">APM-如何获取源码</a>
       </li>
     </ul>
   </section>
@@ -112,7 +142,7 @@ Tag: other</p>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2014  - liung -
+    Copyright &copy;  2012-2014  - liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
@@ -138,6 +168,9 @@ Tag: other</p>
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'liungoahc';
+          var disqus_identifier = '/drafts/numpy.html';
+          var disqus_url = 'http://liung.github.io/drafts/numpy.html';
+          var disqus_title = 'numpy';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
