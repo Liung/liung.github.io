@@ -59,6 +59,7 @@
 
   <div class="entry-content"><p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。</p>
 <h3>在主执行代码中添加参数</h3>
+<hr />
 <p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum）的合适位置，像下面代码块最后一行一样添加你自己的新的参数。你需要注意下面这些事情：</p>
 <ul>
 <li>尽量在执行类似功能的参数区域添加新的参数，或者最坏的情形下就是在“Misc（混合）”区域的末尾添加。</li>
@@ -96,6 +97,7 @@
 </pre></div>
 
 
+<hr />
 <p><strong>Step #2</strong>：在枚举变量后面的参数类中声明这些变量。可使用的类型包括<code>AP_Int8</code>,<code>AP_Int16</code>,<code>AP_Float</code>,<code>AP_Int32</code>,<code>AP_Vector3</code>(目前还不支持<code>unsigned integer</code>无符号整型)。新的枚举变量的名称应该保持一致，只是去掉了前缀<code>k_param_</code>。</p>
 <div class="highlight"><pre><span class="c1">// 254,255: reserved</span>
 <span class="p">};</span>
@@ -130,6 +132,7 @@
 </pre></div>
 
 
+<hr />
 <p><strong>Step #3</strong>：在<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.pde">Parameters.pde</a>文件中向var_info表中添加变量的声明信息。</p>
 <div class="highlight"><pre><span class="c1">// @Param: MY_NEW_PARAMETER</span>
 <span class="c1">// @DisplayName: My New Parameter</span>
@@ -140,7 +143,7 @@
 </pre></div>
 
 
-<p>地面站（如Mission Planner）中将使用<code>@Param ~ @User</code>的注释信息向使用者说明用户所设置的变量的范围等。</p>
+<h2>地面站（如Mission Planner）中将使用<code>@Param ~ @User</code>的注释信息向使用者说明用户所设置的变量的范围等。</h2>
 <p><strong>Step #4</strong>:在<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/config.h">config.h</a>中添加你的新参数。</p>
 <div class="highlight"><pre><span class="c">#ifndef MY_NEW_PARAMETER_DEFAULT</span>
  <span class="c"># define MY_NEW_PARAMETER_DEFAULT      100     // default value for my new parameter</span>
@@ -150,7 +153,7 @@
 
 <p>向主执行代码添加参数的工作就完成了！添加到主代码中(并非库中)的参数就可以通过诸如<code>g.my_new_parameter</code>这样来使用。</p>
 <h3>向库中添加参数</h3>
-<p>同样可以使用下列步骤向库中添加新的参数。以<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass">AP_Compass</a>库为例：</p>
+<h2>同样可以使用下列步骤向库中添加新的参数。以<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass">AP_Compass</a>库为例：</h2>
 <p><strong>Step #1</strong>：首先在库代码的.h头文件添加新的变量(如<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass">Compass.h</a>)。可使用的类型包括<code>AP_Int8</code>,<code>AP_Int16</code>,<code>AP_Float</code>,<code>AP_Int32</code>,<code>AP_Vector3f</code>。然后添加你的参数的默认值（我们将在Step #2中使用）。</p>
 <div class="highlight"><pre><span class="cp">#define MY_NEW_PARAM_DEFAULT         100    </span><span class="c1">///在此处声明变量和默认值</span>
 
@@ -180,6 +183,7 @@
 </pre></div>
 
 
+<hr />
 <p><strong>Step #2</strong>：然后在.cpp文件（如<a href="https://github.com/diydrones/ardupilot/blob/master/libraries/AP_Compass/Compass.cpp">Compass.cpp</a>）中添加变量包含有<code>@Param ~ @Increment</code>的var_info表信息，以便允许GCS向用户显示来自地面站的关于该参数值的范围设定。当添加新参数时应注意：</p>
 <ul>
 <li>自己添加的代码编号（下面的编号9）一定要比之前变量的大。</li>
@@ -217,6 +221,7 @@
 
 
 <p>这样，新添加的参数将以<code>_my_new_lib_parameter</code>包含在库中。需要指明的是：<code>protected</code>保护类型的参数是不能够在类外被访问的。如果我们将其变为<code>public</code>类型，那么我们就可以在主代码中使用<code>compass._my_new_lib_parameter</code>参数了。</p>
+<hr />
 <h4>链接</h4>
 <ol>
 <li><a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-parameter/">APM官网原文链接</a></li>
@@ -230,6 +235,7 @@
   </span>
 <time datetime="2014-09-02T14:21:41+08:00" pubdate>9月 02, 2014</time>  <span class="categories">
     <a class="category" href="http://liung.github.io/tag/apm.html">APM</a>
+    <a class="category" href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>
     <a class="category" href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>
     <a class="category" href="http://liung.github.io/tag/ying-jian.html">硬件</a>
   </span>
@@ -247,6 +253,9 @@
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
       </li>
       <li class="post">
@@ -257,9 +266,6 @@
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">APM:Copter 代码预览</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">APM-如何获取源码</a>
       </li>
     </ul>
   </section>

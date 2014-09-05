@@ -54,6 +54,54 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-05T11:01:10+08:00" pubdate>9月 05, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面</a>描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。</p>
+<hr />
+<p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L88">defines.h</a>中用<code>#define</code>定义你自己新的飞行模式,然后将飞行模式数量<code>NUM_MODES</code>加1。</p>
+<div class="highlight"><pre>    <span class="c1">// Auto Pilot modes</span>
+    <span class="err">#</span><span class="nx">define</span> <span class="nx">STABILIZE</span> <span class="mi">0</span> <span class="c1">// hold level position</span>
+    <span class="err">#</span><span class="nx">define</span> <span class="nx">ACRO</span> <span class="mi">1</span> <span class="c1">// rate control</span>
+    <span class="err">#</span><span class="nx">define</span> <span class="nx">ALT_HOLD</span> <span class="mi">2</span> <span class="c1">// AUTO control</span>
+    <span class="err">#</span><span class="nx">define</span> <span class="nx">AUTO</span> <span class="mi">3</span> <span class="c1">// AUTO control</span>
+    <span class="err">#</span><span class="nx">define</span> <span class="nx">GUIDED ...</span></pre></div></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-02T14:21:41+08:00" pubdate>9月 02, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。</p>
+<h3>在主执行代码中添加参数</h3>
+<hr />
+<p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum）的合适位置，像下面代码块最后一行一样添加你自己的新的参数。你需要注意下面这些事情：</p>
+<ul>
+<li>尽量在执行类似功能的参数区域添加新的参数，或者最坏的情形下就是在“Misc（混合）”区域的末尾添加。</li>
+<li>确保你添加的参数区域中还可以有编号添加新的参数。检查是否能继续添加参数的方法是：检查参数的计数，确保你所要添加的参数的上一个元素编号要小于你的下一部分代码的编号。比如，Misc部分的第一个参数起始于#20,。<code>my_new_parameter</code>是#36。如果下一部分参数开始于#36，那么我们就不能在这里添加新的参数。</li>
+<li>不要再一个代码块的中间参加新的参数，那样容易造成现存参数对应的信息的改变。</li>
+<li>不要在参数旁边用“弃用（deprecated）”或“移除（remove）”做注解，这是因为一些使用者将此注释用作在eeprom上的旧的参数的默认注解，如果你添加的新参数也是这样注解，那么就让人就会看起来很奇怪和疑惑。</li>
+</ul>
+<div class="highlight"><pre><span class="k">enum</span> <span class="p">{</span>
+    <span class="c1">// Misc</span>
+    <span class="c1">//</span>
+    <span class="n">k_param_log_bitmask</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">k_param_log_last_filenumber</span><span class="p">,</span>            <span class="c1">// *** Deprecated - remove ...</span></pre></div></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
       </h1>
       <p class="meta"><time datetime="2014-08-30T15:53:36+08:00" pubdate>8月 30, 2014</time></p>
@@ -91,7 +139,7 @@
 
   <div class="entry-content"><p><a href="https://github.com/diydrones/ardupilot"><strong>APM::Copter</strong></a>代码主要放在ArduCopter文件夹中，并且和<strong>ArduPlane</strong>和<strong>ArduRover</strong>使用同样的<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>。</p>
 <p>下面这张图展示了从飞行模式到电机输出的高级别代码概要：</p>
-<p><img alt="file-mode" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/AC_CodeOverview_AutoFlightModes.png" /></p>
+<h2><img alt="file-mode" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/AC_CodeOverview_AutoFlightModes.png" /></h2>
 <h3>主要组成部分</h3>
 <ol>
 <li><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">库说明</a></li>
@@ -101,6 +149,7 @@
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/">如何让你的新代码按需执行</a></li>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-adding-a-new-mavlink-message/">如何增加新的MAVLink协议信息</a></li>
 </ol>
+<hr />
 <h4>链接</h4>
 <ol>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/">APM官网原文链接</a></li>
@@ -116,6 +165,12 @@
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
+      </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
       </li>
