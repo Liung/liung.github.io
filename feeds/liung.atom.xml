@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2014-09-05T12:08:26+08:00</updated><entry><title>APM-规划新代码使之按一定频率运行</title><link href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter%E8%A7%84%E5%88%92%E6%96%B0%E4%BB%A3%E7%A0%81%E4%BD%BF%E4%B9%8B%E6%8C%89%E4%B8%80%E5%AE%9A%E9%A2%91%E7%8E%87%E8%BF%90%E8%A1%8C.html" rel="alternate"></link><updated>2014-09-05T12:08:26+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-05:blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html</id><summary type="html">&lt;p&gt;本页面将向你介绍如何规划你的新代码块使之可以按需运行。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2014-09-05T14:41:58+08:00</updated><entry><title>APM-增加新的MAVLink通讯协议消息</title><link href="http://liung.github.io/blog/apm/2014-09-05-APM-%E5%A2%9E%E5%8A%A0%E6%96%B0%E7%9A%84MAVLink%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE%E6%B6%88%E6%81%AF.html" rel="alternate"></link><updated>2014-09-05T14:41:58+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-05:blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html</id><summary type="html">&lt;h3&gt;综述&lt;/h3&gt;
+&lt;p&gt;地面站之间的数据和指令通信都是通过串行接口使用&lt;a href="http://en.wikipedia.org/wiki/MAVLink"&gt;MAVLink协议&lt;/a&gt;来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。&lt;/p&gt;
+&lt;p&gt;这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/"&gt;SITL(软件层面仿真)页面&lt;/a&gt;有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;：确保你已经安装了最新的ardupilot代码，同时也检查一下mavproxy是否是最新版本。mavproxy工具可以通过在终端窗口运行下面命令进行升级。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;mavproxy&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Step #2&lt;/strong&gt;：先确定你所要添加的信息的类型，以及如何和已有的&lt;a href="https://pixhawk.ethz.ch/mavlink/"&gt;MavLink消息&lt;/a&gt;兼容。&lt;/p&gt;
+&lt;p&gt;比如：你可能会想要向飞行器发送一个新的导航指令，让它可以在任务中期（自动模式中）模仿一个特技动作（比如翻筋斗）。在这个例子中，你需要一个类似于&lt;code&gt;MAV_CMD_NAV_WAYPOINT&lt;/code&gt;声明（可以在&lt;a href="https://pixhawk.ethz.ch/mavlink/"&gt;MAVLink消息页面&lt;/a&gt;搜索&lt;code&gt;MAV_CMD_NAV_WAYPOINT&lt;/code&gt;）一样的新的导航指令&lt;code&gt;MAV_CMD_NAV_TRICK&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;又或者你想要从飞行器发送一个新的传感器数据类型到地面站,可能类似于&lt;a href="https://pixhawk.ethz.ch/mavlink/#SCALED_PRESSURE"&gt;SCALED_PRESSURE&lt;/a&gt;消息。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Step #3&lt;/strong&gt;：在&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/common.xml"&gt;common.xml&lt;/a&gt;和&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/ardupilotmega.xml"&gt;ardupilotmega.xml&lt;/a&gt;文件中添加你的信息的定义声明。&lt;/p&gt;
+&lt;p&gt;如果你希望将该指令添加到MAVLink协议中，那么你应该添加该指令到../ardupilot/libraries/GCS_MAVLink/message_definitions/common.xml文件中。如果你仅仅个人使用或者仅仅和ArduCopter，ArduPlane，ArduRover搭配使用，那么它就应该被添加到ardupimega.xml文件中。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Step #4&lt;/strong&gt;：重新生成你的所有inlcude文件，确保添加的信息在主代码中可以被识别。&lt;/p&gt;
+&lt;p&gt;首先将目录切换到ardupilot文件夹下，然后执行下面命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;libraries&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;GCS_MAVLink&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;generate&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;成功执行后，你应该看到下面这些文件都应经被更新。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;../libraries/GCS_MAVLink/include/mavlink/v1.0/ardupilotmega/ardupilotmega.h&lt;/span&gt;
+&lt;span class="cp"&gt;../libraries/GCS_MAVLink/include/mavlink/v1.0/ardupilotmega/version.h&lt;/span&gt;
+&lt;span class="cp"&gt;../libraries/GCS_MAVLink/include/mavlink/v1.0/common/version.h&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;文件version.h仅简单的更新了文件的日期和时间，但是ardupilotmega.h文件已经应该有了你的新消息的定义声明。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Step #5&lt;/strong&gt;：在飞行器主代码中添加函数方法用来控制向/从地面站发送/接收指令。&lt;/p&gt;
+&lt;p&gt;这些顶层代码指令绝大部分包含在飞行器的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/GCS_Mavlink.pde"&gt;GCS_MAVLink.pde&lt;/a&gt;文件中或在&lt;a href="https://github.com/diydrones/ardupilot/blob/master/libraries/GCS_MAVLink/GCS.h"&gt;../libraries/GCS_MAVLink/GCS&lt;/a&gt;类中。&lt;/p&gt;
+&lt;p&gt;在我们想要添加一个新的导航指令的例子中（比如执行特技动作），应该需要下面信息：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;扩展&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Mission"&gt;AP_Mission库&lt;/a&gt;中的&lt;code&gt;mission_cmd_to_mavlink()&lt;/code&gt;和&lt;code&gt;mavlink_to_mission_cmd()&lt;/code&gt;方法，将mavproxy的指定转换到一个&lt;code&gt;AP_Mission::Mission_Command&lt;/code&gt;结构体中。&lt;/li&gt;
+&lt;li&gt;在飞行器的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/commands_logic.pde"&gt;commands_logic.pde&lt;/a&gt;文件中分别添加&lt;code&gt;start_command()&lt;/code&gt;函数和&lt;code&gt;verify_command()&lt;/code&gt;函数的一个&lt;code&gt;case&lt;/code&gt;分支，用来校验新的消息指令&lt;code&gt;MAV_CMD_NAV_TRICK&lt;/code&gt;是否接收到。这些需要你调用自己创建的两个新函数&lt;code&gt;do_trick()&lt;/code&gt;和&lt;code&gt;verify_trick()&lt;/code&gt;（具体参考下面）。&lt;/li&gt;
+&lt;li&gt;创建两个新函数&lt;code&gt;do_trick()&lt;/code&gt;和&lt;code&gt;verify_trick()&lt;/code&gt;，用来控制飞行器如何执行特技动作（这可能需要调用&lt;a href=""&gt;control_auto.pde&lt;/a&gt;中的另一个函数来设置&lt;code&gt;auto_mode&lt;/code&gt;变量，然后调用新方法&lt;code&gt;auto_trick_start()&lt;/code&gt;）。当指令第一次被唤醒时将使用&lt;code&gt;do_trick()&lt;/code&gt;函数。&lt;code&gt;verify_trick()&lt;/code&gt;函数将会以10hz频率（或者更高）被重复调用直到特技动作完成，当特技动作执行完毕之后&lt;code&gt;verify_trick()&lt;/code&gt;函数应该返回&lt;code&gt;True&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Step #6&lt;/strong&gt;：考虑是否发布你的代码到主代码仓库中。你可以发邮件到&lt;a href="https://groups.google.com/forum/#!forum/drones-discuss"&gt;drones-discuss email list&lt;/a&gt;并且/或者&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/submitting-patches-back-to-master/"&gt;发送一个pull请求&lt;/a&gt;。如果你发送一个pull提交请求，最好将改变的部分分成至少三个部分的提交确认（commits,与git指令相关，包括pull、push等）。一个是.xml文件的改变提交确认（Setp #3），另一个是重新生成文件的（Step #4），剩下的还有一个或者更多是关于飞行器主代码变化的提交确认。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-规划新代码使之按一定频率运行</title><link href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter%E8%A7%84%E5%88%92%E6%96%B0%E4%BB%A3%E7%A0%81%E4%BD%BF%E4%B9%8B%E6%8C%89%E4%B8%80%E5%AE%9A%E9%A2%91%E7%8E%87%E8%BF%90%E8%A1%8C.html" rel="alternate"></link><updated>2014-09-05T12:08:26+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-05:blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html</id><summary type="html">&lt;p&gt;本页面将向你介绍如何规划你的新代码块使之可以按需运行。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;用代码调度器运行你的代码&lt;/h3&gt;
 &lt;p&gt;在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde"&gt;ArduCopter.pde&lt;/a&gt;中的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"&gt;&lt;code&gt;scheduler_tasks&lt;/code&gt;&lt;/a&gt;数组来完成。需要表明的是：实际上该文件中有两个任务列表，&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"&gt;上面的任务列表&lt;/a&gt;是针对高频CPUs（如Pixhawk），&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L856"&gt;下面的&lt;/a&gt;是针对低频CPUs（如APM2）。&lt;/p&gt;
-&lt;p&gt;添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所有，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。&lt;/p&gt;
+&lt;p&gt;添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cm"&gt;/*&lt;/span&gt;
 &lt;span class="cm"&gt;  scheduler table - all regular tasks apart from the fast_loop()&lt;/span&gt;
 &lt;span class="cm"&gt;  should be listed here, along with how often they should be called&lt;/span&gt;
@@ -33,13 +81,13 @@
 
 &lt;hr /&gt;
 &lt;h3&gt;作为循环的一部分运行你的代码&lt;/h3&gt;
-&lt;p&gt;为了代替在代码调度器中加入一个新的函数入口，你还可以在现有的任何时间循环事件中添加你的函数。除了在fast-loop循环中添加外，这种方法对比起上面的代码调度器方法并没有什么实质性好处。当你的代码添加到fast-loop循环中时，就意味着它将以最高的优先级别来执行（它几乎能100%达到所确保的400hz运行速度）。&lt;/p&gt;
+&lt;p&gt;为了代替在代码调度器中加入一个新的函数入口，你还可以在现有的任何时间循环事件中添加你的函数。除了在fast-loop循环中添加外，这种方法对比起上面的代码调度器方法并没有什么实质性好处。但当你的代码添加到fast-loop循环中时，就意味着它将以最高的优先级别来执行（它几乎能100%达到所确保的400hz运行速度）。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;fast_loop:APM2上运行频率100hz，Pixhawk上400Hz&lt;/li&gt;
-&lt;li&gt;fifty_hz_loop:运行频率50hz&lt;/li&gt;
-&lt;li&gt;ten_hz_logging_loop:运行频率10hz&lt;/li&gt;
-&lt;li&gt;three_hz_loop:运行频率3.3hz&lt;/li&gt;
-&lt;li&gt;on_hz_loop:运行频率1hz&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L990"&gt;&lt;strong&gt;fast_loop&lt;/strong&gt;&lt;/a&gt;:APM2上运行频率100hz，Pixhawk上400Hz&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1119"&gt;&lt;strong&gt;fifty_hz_loop&lt;/strong&gt;&lt;/a&gt;:运行频率50hz&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1101"&gt;&lt;strong&gt;ten_hz_logging_loop&lt;/strong&gt;&lt;/a&gt;:运行频率10hz&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1138"&gt;&lt;strong&gt;three_hz_loop&lt;/strong&gt;&lt;/a&gt;:运行频率3.3hz&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1159"&gt;&lt;strong&gt;on_hz_loop&lt;/strong&gt;&lt;/a&gt;:运行频率1hz&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;所以举个例子，如果你想让你的代码运行频率为10hz，那么你就要将它添加到&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde"&gt;ArduCopter.pde&lt;/a&gt;文件的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1101"&gt;&lt;code&gt;ten_hz_logging_loop()&lt;/code&gt;&lt;/a&gt;函数声明中。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// ten_hz_logging_loop&lt;/span&gt;
@@ -595,7 +643,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html"&gt;添加新的参数&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html"&gt;添加新的飞行模式&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html"&gt;规划新代码使之按一定频率运行&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/"&gt;增加新的MAVLink通讯协议消息&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html"&gt;增加新的MAVLink通讯协议消息&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code/"&gt;编译代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-ardupilot-with-arduino-windows/"&gt;Windows平台上用Arduino编译ArduPilot&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-px4-with-make/"&gt;Windows平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;

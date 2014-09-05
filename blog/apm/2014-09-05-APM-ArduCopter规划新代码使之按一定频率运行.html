@@ -61,7 +61,7 @@
 <hr />
 <h3>用代码调度器运行你的代码</h3>
 <p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是：实际上该文件中有两个任务列表，<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788">上面的任务列表</a>是针对高频CPUs（如Pixhawk），<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L856">下面的</a>是针对低频CPUs（如APM2）。</p>
-<p>添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所有，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。</p>
+<p>添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。</p>
 <div class="highlight"><pre><span class="cm">/*</span>
 <span class="cm">  scheduler table - all regular tasks apart from the fast_loop()</span>
 <span class="cm">  should be listed here, along with how often they should be called</span>
@@ -91,13 +91,13 @@
 
 <hr />
 <h3>作为循环的一部分运行你的代码</h3>
-<p>为了代替在代码调度器中加入一个新的函数入口，你还可以在现有的任何时间循环事件中添加你的函数。除了在fast-loop循环中添加外，这种方法对比起上面的代码调度器方法并没有什么实质性好处。当你的代码添加到fast-loop循环中时，就意味着它将以最高的优先级别来执行（它几乎能100%达到所确保的400hz运行速度）。</p>
+<p>为了代替在代码调度器中加入一个新的函数入口，你还可以在现有的任何时间循环事件中添加你的函数。除了在fast-loop循环中添加外，这种方法对比起上面的代码调度器方法并没有什么实质性好处。但当你的代码添加到fast-loop循环中时，就意味着它将以最高的优先级别来执行（它几乎能100%达到所确保的400hz运行速度）。</p>
 <ul>
-<li>fast_loop:APM2上运行频率100hz，Pixhawk上400Hz</li>
-<li>fifty_hz_loop:运行频率50hz</li>
-<li>ten_hz_logging_loop:运行频率10hz</li>
-<li>three_hz_loop:运行频率3.3hz</li>
-<li>on_hz_loop:运行频率1hz</li>
+<li><a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L990"><strong>fast_loop</strong></a>:APM2上运行频率100hz，Pixhawk上400Hz</li>
+<li><a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1119"><strong>fifty_hz_loop</strong></a>:运行频率50hz</li>
+<li><a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1101"><strong>ten_hz_logging_loop</strong></a>:运行频率10hz</li>
+<li><a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1138"><strong>three_hz_loop</strong></a>:运行频率3.3hz</li>
+<li><a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1159"><strong>on_hz_loop</strong></a>:运行频率1hz</li>
 </ul>
 <p>所以举个例子，如果你想让你的代码运行频率为10hz，那么你就要将它添加到<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>文件的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1101"><code>ten_hz_logging_loop()</code></a>函数声明中。</p>
 <div class="highlight"><pre><span class="c1">// ten_hz_logging_loop</span>
@@ -155,6 +155,9 @@
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
       </li>
       <li class="post">
@@ -165,9 +168,6 @@
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
       </li>
     </ul>
   </section>

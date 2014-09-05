@@ -54,6 +54,36 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-30T15:53:36+08:00" pubdate>8月 30, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>这些<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>也同样被ArduPlane和ArduRover所使用。下面将列出一系列高层次的库的说明和它们的函数说明。</p>
+<h3>核心库</h3>
+<ul>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_AHRS">AP_AHRS</a>：采用DCM（方向余弦矩阵方法）或EKF（扩展卡尔曼滤波方法）预估飞行器姿态</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialNav">AP_Common</a>：所有执行文件（sketch格式，arduino IDE的文件）和其他库都需要的基础核心库。</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Math">AP_Math</a>：包含了许多数学函数，特别对于矢量运算</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AC_PID">AP_PID</a>：PID控制器库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialNav">AP_InertialNav</a>：扩展带有gps和气压计数据的惯性导航库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AC_AttitudeControl">AP_AttitudeControl</a>：姿态控制相关库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialNav">AP_WPNav</a>：航点相关的导航库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Motors">AP_Motors</a>：多旋翼和传统直升机混合的电机库</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/RC_Channel">RC_channel</a>：更多的关于从APM_RC的PWM输入/输出数据转换到内部通用单位的库，比如角度</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL">AP_HAL</a>，<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_AVR">AP_HAL_AVR</a>，<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_PX4">AP_HAL_PX4</a>:硬件抽象层库，提供给其他高级控制代码一致的接口，而不必担心底层不同的硬件</li>
+</ul>
+<h3>传感器相关库</h3>
+<ul>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_InertialSensor">AP_InertialSensor</a>：读取陀螺仪和加速度计数据，并向主程序执行标准程序和提供标准单位数据（deg/s，m/s）。</li>
+<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_RangeFinder">AP_RangerFinder</a>：声呐和红外测距传感器的交互库 ...</li></ul></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">APM:Copter 代码预览</a>
       </h1>
       <p class="meta"><time datetime="2014-08-30T15:29:29+08:00" pubdate>8月 30, 2014</time></p>
@@ -122,7 +152,7 @@
 <p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">添加新的参数</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">添加新的飞行模式</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">规划新代码使之按一定频率运行</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/">增加新的MAVLink通讯协议消息</a></strong></p>
+<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">增加新的MAVLink通讯协议消息</a></strong></p>
 <p>------&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-the-code/">编译代码</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-ardupilot-with-arduino-windows/">Windows平台上用Arduino编译ArduPilot</a></strong></p>
 <p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-px4-with-make/">Windows平台上用Make方法编译Pixhawk/PX4</a></strong></p>
@@ -143,36 +173,6 @@
 Tag: other</p>
 <p>这是用来测试的blog。第一次blog搭建过程。</p></div>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/python/2014-08-27-Pelican官方文档阅读笔记.html">Pelican官方文档阅读笔记</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-27T20:13:00+08:00" pubdate>8月 27, 2014</time></p>
-</header>
-
-  <div class="entry-content"><hr />
-<h3>Articles and pages</h3>
-<ul>
-<li>
-<p>article：一种有时间顺序的文件，诸如博客中的推送，一般都带有明确的日期。</p>
-</li>
-<li>
-<p>page：一般来讲不是一些暂时性的东西，经常用来充当博客中长时间不会改变的内容（比如abot、contact页面等）。通过设置<code>DISPLAY_PAGES_ON_MENU</code>设置是否要在主导航菜单显示page中的内容（默认为True），在标签中设置<code>status：hidden</code>来隐藏page中特定的文件。</p>
-</li>
-</ul>
-<h3>File metadata（文章的元数据）</h3>
-<p>一般写的博客中包含一些<code>metadata</code>数据。<code>makedown</code>格式的书写方式：</p>
-<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">My</span> <span class="kd">super</span> <span class="n">title</span>
-<span class="n">Date</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">03</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span>
-<span class="n">Modified</span><span class="o">:</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">19</span><span class="o">:</span><span class="mi">30</span>
-<span class="n">Category</span><span class="o">:</span> <span class="n">Python</span>
-<span class="n">Tags</span><span class="o">:</span> <span class="n">pelican</span><span class="o">,</span> <span class="n">publishing</span>
-<span class="n">Slug ...</span></pre></div></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/python/2014-08-27-Pelican官方文档阅读笔记.html">Read On &crarr;</a>
-  </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="http://liung.github.io/author/liung3.html">&larr; Older</a>
 
@@ -184,6 +184,9 @@ Tag: other</p>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
       </li>
       <li class="post">
@@ -194,9 +197,6 @@ Tag: other</p>
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
       </li>
     </ul>
   </section>
