@@ -61,17 +61,7 @@
 
   <div class="entry-content"><h3>综述</h3>
 <p>地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
-<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真)页面</a>有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行。</p>
-<hr />
-<p><strong>Step #1</strong>：确保你已经安装了最新的ardupilot代码，同时也检查一下mavproxy是否是最新版本。mavproxy工具可以通过在终端窗口运行下面命令进行升级。</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">mavproxy</span>
-</pre></div>
-
-
-<hr />
-<p><strong>Step #2</strong>：先确定你所要添加的信息的类型，以及如何和已有的<a href="https://pixhawk.ethz.ch/mavlink/">MavLink消息</a>兼容。</p>
-<p>比如：你可能会想要向飞行器发送一个新的导航指令，让它可以在任务中期（自动模式中）模仿一个特技动作（比如翻筋斗）。在这个例子中，你需要一个类似于<code>MAV_CMD_NAV_WAYPOINT</code>声明（可以在<a href="https://pixhawk.ethz.ch/mavlink/">MAVLink消息页面</a>搜索<code>MAV_CMD_NAV_WAYPOINT</code>）一样的新的导航指令<code>MAV_CMD_NAV_TRICK</code>。</p>
-<p>又或者你想要从飞行器发送一个新的传感器数据类型到地面站,可能类似于<a href="https://pixhawk.ethz.ch/mavlink/#SCALED_PRESSURE">SCALED_PRESSURE ...</a></p></div>
+<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真)页面</a>有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行 ...</p></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">Read On &crarr;</a>
   </footer>
@@ -87,11 +77,7 @@
   <div class="entry-content"><p>本页面将向你介绍如何规划你的新代码块使之可以按需运行。</p>
 <hr />
 <h3>用代码调度器运行你的代码</h3>
-<p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是：实际上该文件中有两个任务列表，<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788">上面的任务列表</a>是针对高频CPUs（如Pixhawk），<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L856">下面的</a>是针对低频CPUs（如APM2）。</p>
-<p>添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。</p>
-<div class="highlight"><pre><span class="cm">/*</span>
-<span class="cm">  scheduler table - all regular tasks apart from the fast_loop()</span>
-<span class="cm">  should be listed here, along with ...</span></pre></div></div>
+<p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是：实际上该文件中有两个任务列表，<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788">上面的任务列表</a>是针对高频CPUs（如Pixhawk），<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L856">下面的 ...</a></p></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
   </footer>
@@ -106,13 +92,7 @@
 
   <div class="entry-content"><p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面</a>描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。</p>
 <hr />
-<p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L88">defines.h</a>中用<code>#define</code>定义你自己新的飞行模式,然后将飞行模式数量<code>NUM_MODES</code>加1。</p>
-<div class="highlight"><pre>    <span class="c1">// Auto Pilot modes</span>
-    <span class="err">#</span><span class="n">define</span> <span class="n">STABILIZE</span> <span class="mi">0</span> <span class="c1">// hold level position</span>
-    <span class="err">#</span><span class="n">define</span> <span class="n">ACRO</span> <span class="mi">1</span> <span class="c1">// rate control</span>
-    <span class="err">#</span><span class="n">define</span> <span class="n">ALT_HOLD</span> <span class="mi">2</span> <span class="c1">// AUTO control</span>
-    <span class="err">#</span><span class="n">define</span> <span class="n">AUTO</span> <span class="mi">3</span> <span class="c1">// AUTO control</span>
-    <span class="err">#</span><span class="n">define</span> <span class="n">GUIDED ...</span></pre></div></div>
+<p><strong>Step #1 ...</strong></p></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
   </footer>
@@ -130,16 +110,7 @@
 <hr />
 <p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum）的合适位置，像下面代码块最后一行一样添加你自己的新的参数。你需要注意下面这些事情：</p>
 <ul>
-<li>尽量在执行类似功能的参数区域添加新的参数，或者最坏的情形下就是在“Misc（混合）”区域的末尾添加。</li>
-<li>确保你添加的参数区域中还可以有编号添加新的参数。检查是否能继续添加参数的方法是：检查参数的计数，确保你所要添加的参数的上一个元素编号要小于你的下一部分代码的编号。比如，Misc部分的第一个参数起始于#20,。<code>my_new_parameter</code>是#36。如果下一部分参数开始于#36，那么我们就不能在这里添加新的参数。</li>
-<li>不要再一个代码块的中间参加新的参数，那样容易造成现存参数对应的信息的改变。</li>
-<li>不要在参数旁边用“弃用（deprecated）”或“移除（remove）”做注解，这是因为一些使用者将此注释用作在eeprom上的旧的参数的默认注解，如果你添加的新参数也是这样注解，那么就让人就会看起来很奇怪和疑惑。</li>
-</ul>
-<div class="highlight"><pre><span class="k">enum</span> <span class="p">{</span>
-    <span class="c1">// Misc</span>
-    <span class="c1">//</span>
-    <span class="n">k_param_log_bitmask</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
-    <span class="n">k_param_log_last_filenumber</span><span class="p">,</span>            <span class="c1">// *** Deprecated - remove ...</span></pre></div></div>
+<li>尽量在执行类似功能的参数区域添加新的参数，或者最坏的情形下就是在 ...</li></ul></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
   </footer>
@@ -155,14 +126,7 @@
   <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
 
 <p>在从版本AC3.1向AC3.2的过渡中，姿态控制逻辑运算作为“the onion”（洋葱头）工程的一部分进行了重构。下面来展示重构后的程序执行流程。</p>
-<h3>手动飞行模式：自稳模式（Stabilize Mode）、特技模式（Acro Mode）、浮动模式（Drift Mode）</h3>
-<!-- PELICAN_END_SUMMARY -->
-
-<p><img alt="flight-mode" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/AC_CodeOverview_ManualFlightMode.png" /></p>
-<p>在主循环执行过程中（比如Pixhawk的运行频率为400Hz，APM2.x为100Hz），系统依次执行如下操作：</p>
-<ul>
-<li>
-<p>调用最高层次级别文件flight-mode.pde中的<code>update_flight_mode()</code>函数。该函数监测当前飞行器的飞行模式（使用变量<code>control_mode</code>），然后执行相应飞行模式下的<code>&lt;flight mode&gt;_run()</code>函数（如自稳模式的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.pde#L20"><code>stabilize_run</code></a>，返航模式（RTL）的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_rtl.pde#L23"><code>rtl_run</code></a>等）。执行<code>&lt;flight mode&gt;_run</code>的结果是，系统将会找到与飞行模式相对应的命名为<code>control_ ...</code></p></li></ul></!--></!--></div>
+<h3>手动飞行模式：自稳模式（Stabilize Mode）、特技模式（Acro ...</h3></!--></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">Read On &crarr;</a>
   </footer>

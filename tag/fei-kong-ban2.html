@@ -67,17 +67,10 @@
 <li><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">库说明</a></li>
 <li><a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制</a></li>
 <li><a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">如何添加参数</a></li>
-<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-adding-a-new-flight-mode/">如何创建新的飞行模式</a></li>
-<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/">如何让你的新代码按需执行</a></li>
-<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/code-overview-adding-a-new-mavlink-message/">如何增加新的MAVLink协议信息</a></li>
-</ol>
-<hr />
-<h4>链接</h4>
-<ol>
-<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/">APM官网原文链接</a></li>
-<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
-</ol>
-<p><em>(over)</em></p></div>
+<li><a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/wiki/apmcopter-adding-a-new-flight-mode/">如何创建新的飞行模式 ...</a></li></ol></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">Read On &crarr;</a>
+  </footer>
   		</article>
   		<article>
 <header>
@@ -88,11 +81,7 @@
 </header>
 
   <div class="entry-content"><p>整个APM工程的源码都采用<a href="http://git-scm.com/">git</a>（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在<a href="https://github.com/">github</a>网站上。</p>
-<p>目前APM的源码以开源的形式托管在<a href="https://github.com/diydrones/ardupilot">https://github.com/diydrones/ardupilot</a>上。由于历史原因，另一个老版本的Google code仓库仍然保持在线可访问状态，但是除非你对老版本（APM 1.x）有特殊的需求，一般建议您不要使用该仓库中的代码。</p>
-<p>固定翼飞机（Plane），旋翼飞行器（Copter），无人车（Rover）模块全部包含在<a href="https://github.com/diydrones/ardupilot"> diydrones/ardupilot </a>代码库中，天线跟踪模块虽然也包含在该代码库中，但在文件目录<code>Tools/</code>下。</p>
-<p>地面站MissionPlanner包含在<a href="https://github.com/diydrones/MissionPlanner">diydrones/MissionPlanner</a>代码库中。</p>
-<h3>预备知识</h3>
-<p>Git在绝大多数操作平台上都是可以使用的，并且还存在各种工具使得开始使用Git更加简单。首先，你需要<a href="http://git-scm.com/downloads">下载和安装对应你使用的操作平台的客户端程序</a>，如果你刚开始接触到这种源代码控制系统，那么 ...</p></div>
+<p>目前APM的源码以开源的形式托管在<a href="https://github.com/diydrones/ardupilot">https://github.com/diydrones/ardupilot</a>上 ...</p></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">Read On &crarr;</a>
   </footer>
@@ -107,26 +96,7 @@
 
   <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
 
-<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&gt;</p>
-<!-- PELICAN_END_SUMMARY -->
-
-<p>下文中的条目如果我已经翻译完成，那么我将链接到对应的博客目录中去，如果还没有翻译，那么将默认连接到原官网的链接。</p>
-<ul>
-<li><strong><a href="http://dev.ardupilot.com/wiki/table-of-contents/">英文目录</a></strong></li>
-<li><strong><a href="http://dev.ardupilot.cn/">介  绍</a></strong></li>
-</ul>
-<p>------&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">获取代码</a></strong></p>
-<p>------&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">ArduCopter源码预览</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">代码库介绍</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">添加新的参数</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">添加新的飞行模式</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">规划新代码使之按一定频率运行</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">增加新的MAVLink通讯协议消息</a></strong></p>
-<p>------&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-the-code/">编译代码</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-ardupilot-with-arduino-windows/">Windows平台上用Arduino编译ArduPilot</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-px4-with-make/">Windows平台上用Make方法编译Pixhawk/PX4</a></strong></p>
-<p>------------&gt;&gt; <strong><a href="http://dev.ardupilot.com/wiki/building-the-code-on-mac/">MacOS平台上用Arduino编译APM2.x ...</a></strong></p></!--></!--></div>
+<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思 ...</p></!--></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">Read On &crarr;</a>
   </footer>
