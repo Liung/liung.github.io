@@ -143,7 +143,8 @@
 </pre></div>
 
 
-<h2>地面站（如Mission Planner）中将使用<code>@Param ~ @User</code>的注释信息向使用者说明用户所设置的变量的范围等。</h2>
+<p>地面站（如Mission Planner）中将使用<code>@Param ~ @User</code>的注释信息向使用者说明用户所设置的变量的范围等。</p>
+<hr />
 <p><strong>Step #4</strong>:在<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/config.h">config.h</a>中添加你的新参数。</p>
 <div class="highlight"><pre><span class="c">#ifndef MY_NEW_PARAMETER_DEFAULT</span>
  <span class="c"># define MY_NEW_PARAMETER_DEFAULT      100     // default value for my new parameter</span>
@@ -153,7 +154,8 @@
 
 <p>向主执行代码添加参数的工作就完成了！添加到主代码中(并非库中)的参数就可以通过诸如<code>g.my_new_parameter</code>这样来使用。</p>
 <h3>向库中添加参数</h3>
-<h2>同样可以使用下列步骤向库中添加新的参数。以<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass">AP_Compass</a>库为例：</h2>
+<p>同样可以使用下列步骤向库中添加新的参数。以<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass">AP_Compass</a>库为例：</p>
+<hr />
 <p><strong>Step #1</strong>：首先在库代码的.h头文件添加新的变量(如<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass">Compass.h</a>)。可使用的类型包括<code>AP_Int8</code>,<code>AP_Int16</code>,<code>AP_Float</code>,<code>AP_Int32</code>,<code>AP_Vector3f</code>。然后添加你的参数的默认值（我们将在Step #2中使用）。</p>
 <div class="highlight"><pre><span class="cp">#define MY_NEW_PARAM_DEFAULT         100    </span><span class="c1">///在此处声明变量和默认值</span>
 

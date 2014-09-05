@@ -3,54 +3,55 @@
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;：在文件&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L88"&gt;defines.h&lt;/a&gt;中用&lt;code&gt;#define&lt;/code&gt;定义你自己新的飞行模式,然后将飞行模式数量&lt;code&gt;NUM_MODES&lt;/code&gt;加1。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="c1"&gt;// Auto Pilot modes&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;STABILIZE&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="c1"&gt;// hold level position&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;ACRO&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;// rate control&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;ALT_HOLD&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;AUTO&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;GUIDED&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;LOITER&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;// Hold a single location&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;RTL&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;CIRCLE&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;LAND&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;OF_LOITER&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="c1"&gt;// Hold a single location using optical flow sensor&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;DRIFT&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt; &lt;span class="c1"&gt;// DRIFT mode (Note: 12 is no longer used)&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;SPORT&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="c1"&gt;// earth frame rate control&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;FLIP&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt; &lt;span class="c1"&gt;// flip the vehicle on the roll axis&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;AUTOTUNE&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt; &lt;span class="c1"&gt;// autotune the vehicle&amp;#39;s roll and pitch gains&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;POSHOLD&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt; &lt;span class="c1"&gt;// position hold with manual override&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;STABILIZE&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="c1"&gt;// hold level position&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;ACRO&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;// rate control&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;ALT_HOLD&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;AUTO&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;GUIDED&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;LOITER&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;// Hold a single location&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;RTL&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;CIRCLE&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;LAND&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="c1"&gt;// AUTO control&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;OF_LOITER&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt; &lt;span class="c1"&gt;// Hold a single location using optical flow sensor&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;DRIFT&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt; &lt;span class="c1"&gt;// DRIFT mode (Note: 12 is no longer used)&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;SPORT&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="c1"&gt;// earth frame rate control&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;FLIP&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt; &lt;span class="c1"&gt;// flip the vehicle on the roll axis&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;AUTOTUNE&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt; &lt;span class="c1"&gt;// autotune the vehicle&amp;#39;s roll and pitch gains&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;POSHOLD&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt; &lt;span class="c1"&gt;// position hold with manual override&lt;/span&gt;
 
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;NEWFLIGHTMODE&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;    &lt;span class="c1"&gt;// 描述你所定义的模式内容&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;define&lt;/span&gt; &lt;span class="nx"&gt;NUM_MODES&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;        &lt;span class="c1"&gt;//模式数+1&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;NEWFLIGHTMODE&lt;/span&gt; &lt;span class="mi"&gt;17&lt;/span&gt;    &lt;span class="c1"&gt;// 描述你所定义的模式内容&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="n"&gt;NUM_MODES&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;        &lt;span class="c1"&gt;//模式数+1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;span class="o"&gt;---&lt;/span&gt;
-&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="nx"&gt;Step&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="err"&gt;：类似于相似的飞行模式的&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;control_stabilize.pde&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.pde)或者&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;control_loiter.pde&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;(https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_loiter.pde)文件，创建新的飞行模式的`&amp;lt;new flight mode&amp;gt;.pde`控制sketch文件。该文件中必须包含一个`_init()`初始化函数和`_run()`运行函数。&lt;/span&gt;
 
-&lt;span class="c1"&gt;/// -*- tab-width: 4; Mode: C++; c-basic-offset: 4; indent-tabs-mode: nil -*-&lt;/span&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Step #2&lt;/strong&gt;：类似于相似的飞行模式的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.pde"&gt;control_stabilize.pde&lt;/a&gt;或者&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_loiter.pde"&gt;control_loiter.pde&lt;/a&gt;文件，创建新的飞行模式的&lt;code&gt;&amp;lt;new flight mode&amp;gt;.pde&lt;/code&gt;控制sketch文件。该文件中必须包含一个&lt;code&gt;_init()&lt;/code&gt;初始化函数和&lt;code&gt;_run()&lt;/code&gt;运行函数。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;/// -*- tab-width: 4; Mode: C++; c-basic-offset: 4; indent-tabs-mode: nil -*-&lt;/span&gt;
 
 &lt;span class="cm"&gt;/*&lt;/span&gt;
 &lt;span class="cm"&gt; * control_newflightmode.pde - init and run calls for new flight mode&lt;/span&gt;
 &lt;span class="cm"&gt; */&lt;/span&gt;
 
 &lt;span class="c1"&gt;// newflightmode_init - initialise flight mode&lt;/span&gt;
-&lt;span class="kr"&gt;static&lt;/span&gt; &lt;span class="nx"&gt;bool&lt;/span&gt; &lt;span class="nx"&gt;newflightmode_init&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;bool&lt;/span&gt; &lt;span class="nx"&gt;ignore_checks&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="n"&gt;bool&lt;/span&gt; &lt;span class="n"&gt;newflightmode_init&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bool&lt;/span&gt; &lt;span class="n"&gt;ignore_checks&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="c1"&gt;// do any required initialisation of the flight mode here&lt;/span&gt;
     &lt;span class="c1"&gt;// this code will be called whenever the operator switches into this mode&lt;/span&gt;
 
     &lt;span class="c1"&gt;// return true initialisation is successful, false if it fails&lt;/span&gt;
     &lt;span class="c1"&gt;// if false is returned here the vehicle will remain in the previous flight mode&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="c1"&gt;// newflightmode_run - runs the main controller&lt;/span&gt;
 &lt;span class="c1"&gt;// will be called at 100hz or more&lt;/span&gt;
-&lt;span class="kr"&gt;static&lt;/span&gt; &lt;span class="k"&gt;void&lt;/span&gt; &lt;span class="nx"&gt;newflightmode_run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;void&lt;/span&gt; &lt;span class="n"&gt;newflightmode_run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="c1"&gt;// if not armed or throttle at zero, set throttle to zero and exit immediately&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="nx"&gt;motors&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;armed&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;rc_3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;control_in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="nx"&gt;attitude_control&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;relax_bf_rate_controller&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-        &lt;span class="nx"&gt;attitude_control&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;set_yaw_target_to_current_heading&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-        &lt;span class="nx"&gt;attitude_control&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;set_throttle_out&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;motors&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;armed&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rc_3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;control_in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;attitude_control&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;relax_bf_rate_controller&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="n"&gt;attitude_control&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_yaw_target_to_current_heading&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="n"&gt;attitude_control&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_throttle_out&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;false&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
         &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -254,7 +255,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;地面站（如Mission Planner）中将使用&lt;code&gt;@Param ~ @User&lt;/code&gt;的注释信息向使用者说明用户所设置的变量的范围等。&lt;/h2&gt;
+&lt;p&gt;地面站（如Mission Planner）中将使用&lt;code&gt;@Param ~ @User&lt;/code&gt;的注释信息向使用者说明用户所设置的变量的范围等。&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Step #4&lt;/strong&gt;:在&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/config.h"&gt;config.h&lt;/a&gt;中添加你的新参数。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#ifndef MY_NEW_PARAMETER_DEFAULT&lt;/span&gt;
  &lt;span class="c"&gt;# define MY_NEW_PARAMETER_DEFAULT      100     // default value for my new parameter&lt;/span&gt;
@@ -264,7 +266,8 @@
 
 &lt;p&gt;向主执行代码添加参数的工作就完成了！添加到主代码中(并非库中)的参数就可以通过诸如&lt;code&gt;g.my_new_parameter&lt;/code&gt;这样来使用。&lt;/p&gt;
 &lt;h3&gt;向库中添加参数&lt;/h3&gt;
-&lt;h2&gt;同样可以使用下列步骤向库中添加新的参数。以&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass"&gt;AP_Compass&lt;/a&gt;库为例：&lt;/h2&gt;
+&lt;p&gt;同样可以使用下列步骤向库中添加新的参数。以&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass"&gt;AP_Compass&lt;/a&gt;库为例：&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;：首先在库代码的.h头文件添加新的变量(如&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass"&gt;Compass.h&lt;/a&gt;)。可使用的类型包括&lt;code&gt;AP_Int8&lt;/code&gt;,&lt;code&gt;AP_Int16&lt;/code&gt;,&lt;code&gt;AP_Float&lt;/code&gt;,&lt;code&gt;AP_Int32&lt;/code&gt;,&lt;code&gt;AP_Vector3f&lt;/code&gt;。然后添加你的参数的默认值（我们将在Step #2中使用）。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#define MY_NEW_PARAM_DEFAULT         100    &lt;/span&gt;&lt;span class="c1"&gt;///在此处声明变量和默认值&lt;/span&gt;
 
@@ -496,6 +499,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;&lt;img alt="open-in-explorer" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/CloningTheRepository_Windows_OpenGithub.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;现在，你可以用你最喜爱的编辑器,如NotePad++，subline Text或者acme中打开文件。&lt;/p&gt;
+&lt;hr /&gt;
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/where-to-get-the-code/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;

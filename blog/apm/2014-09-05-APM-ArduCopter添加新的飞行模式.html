@@ -61,54 +61,55 @@
 <hr />
 <p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L88">defines.h</a>中用<code>#define</code>定义你自己新的飞行模式,然后将飞行模式数量<code>NUM_MODES</code>加1。</p>
 <div class="highlight"><pre>    <span class="c1">// Auto Pilot modes</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">STABILIZE</span> <span class="mi">0</span> <span class="c1">// hold level position</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">ACRO</span> <span class="mi">1</span> <span class="c1">// rate control</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">ALT_HOLD</span> <span class="mi">2</span> <span class="c1">// AUTO control</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">AUTO</span> <span class="mi">3</span> <span class="c1">// AUTO control</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">GUIDED</span> <span class="mi">4</span> <span class="c1">// AUTO control</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">LOITER</span> <span class="mi">5</span> <span class="c1">// Hold a single location</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">RTL</span> <span class="mi">6</span> <span class="c1">// AUTO control</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">CIRCLE</span> <span class="mi">7</span> <span class="c1">// AUTO control</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">LAND</span> <span class="mi">9</span> <span class="c1">// AUTO control</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">OF_LOITER</span> <span class="mi">10</span> <span class="c1">// Hold a single location using optical flow sensor</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">DRIFT</span> <span class="mi">11</span> <span class="c1">// DRIFT mode (Note: 12 is no longer used)</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">SPORT</span> <span class="mi">13</span> <span class="c1">// earth frame rate control</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">FLIP</span> <span class="mi">14</span> <span class="c1">// flip the vehicle on the roll axis</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">AUTOTUNE</span> <span class="mi">15</span> <span class="c1">// autotune the vehicle&#39;s roll and pitch gains</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">POSHOLD</span> <span class="mi">16</span> <span class="c1">// position hold with manual override</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">STABILIZE</span> <span class="mi">0</span> <span class="c1">// hold level position</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">ACRO</span> <span class="mi">1</span> <span class="c1">// rate control</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">ALT_HOLD</span> <span class="mi">2</span> <span class="c1">// AUTO control</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">AUTO</span> <span class="mi">3</span> <span class="c1">// AUTO control</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">GUIDED</span> <span class="mi">4</span> <span class="c1">// AUTO control</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">LOITER</span> <span class="mi">5</span> <span class="c1">// Hold a single location</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">RTL</span> <span class="mi">6</span> <span class="c1">// AUTO control</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">CIRCLE</span> <span class="mi">7</span> <span class="c1">// AUTO control</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">LAND</span> <span class="mi">9</span> <span class="c1">// AUTO control</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">OF_LOITER</span> <span class="mi">10</span> <span class="c1">// Hold a single location using optical flow sensor</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">DRIFT</span> <span class="mi">11</span> <span class="c1">// DRIFT mode (Note: 12 is no longer used)</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">SPORT</span> <span class="mi">13</span> <span class="c1">// earth frame rate control</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">FLIP</span> <span class="mi">14</span> <span class="c1">// flip the vehicle on the roll axis</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">AUTOTUNE</span> <span class="mi">15</span> <span class="c1">// autotune the vehicle&#39;s roll and pitch gains</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">POSHOLD</span> <span class="mi">16</span> <span class="c1">// position hold with manual override</span>
 
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">NEWFLIGHTMODE</span> <span class="mi">17</span>    <span class="c1">// 描述你所定义的模式内容</span>
-    <span class="err">#</span><span class="nx">define</span> <span class="nx">NUM_MODES</span> <span class="mi">18</span>        <span class="c1">//模式数+1</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">NEWFLIGHTMODE</span> <span class="mi">17</span>    <span class="c1">// 描述你所定义的模式内容</span>
+    <span class="err">#</span><span class="n">define</span> <span class="n">NUM_MODES</span> <span class="mi">18</span>        <span class="c1">//模式数+1</span>
+</pre></div>
 
-<span class="o">---</span>
-<span class="o">**</span><span class="nx">Step</span> <span class="err">#</span><span class="mi">2</span><span class="o">**</span><span class="err">：类似于相似的飞行模式的</span><span class="cp">[</span><span class="nx">control_stabilize.pde</span><span class="cp">]</span><span class="p">(</span><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.pde)或者</span><span class="cp">[</span><span class="nx">control_loiter.pde</span><span class="cp">]</span><span class="c1">(https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_loiter.pde)文件，创建新的飞行模式的`&lt;new flight mode&gt;.pde`控制sketch文件。该文件中必须包含一个`_init()`初始化函数和`_run()`运行函数。</span>
 
-<span class="c1">/// -*- tab-width: 4; Mode: C++; c-basic-offset: 4; indent-tabs-mode: nil -*-</span>
+<hr />
+<p><strong>Step #2</strong>：类似于相似的飞行模式的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.pde">control_stabilize.pde</a>或者<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_loiter.pde">control_loiter.pde</a>文件，创建新的飞行模式的<code>&lt;new flight mode&gt;.pde</code>控制sketch文件。该文件中必须包含一个<code>_init()</code>初始化函数和<code>_run()</code>运行函数。</p>
+<div class="highlight"><pre><span class="c1">/// -*- tab-width: 4; Mode: C++; c-basic-offset: 4; indent-tabs-mode: nil -*-</span>
 
 <span class="cm">/*</span>
 <span class="cm"> * control_newflightmode.pde - init and run calls for new flight mode</span>
 <span class="cm"> */</span>
 
 <span class="c1">// newflightmode_init - initialise flight mode</span>
-<span class="kr">static</span> <span class="nx">bool</span> <span class="nx">newflightmode_init</span><span class="p">(</span><span class="nx">bool</span> <span class="nx">ignore_checks</span><span class="p">)</span>
+<span class="k">static</span> <span class="n">bool</span> <span class="n">newflightmode_init</span><span class="p">(</span><span class="n">bool</span> <span class="n">ignore_checks</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// do any required initialisation of the flight mode here</span>
     <span class="c1">// this code will be called whenever the operator switches into this mode</span>
 
     <span class="c1">// return true initialisation is successful, false if it fails</span>
     <span class="c1">// if false is returned here the vehicle will remain in the previous flight mode</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// newflightmode_run - runs the main controller</span>
 <span class="c1">// will be called at 100hz or more</span>
-<span class="kr">static</span> <span class="k">void</span> <span class="nx">newflightmode_run</span><span class="p">()</span>
+<span class="k">static</span> <span class="k">void</span> <span class="n">newflightmode_run</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">// if not armed or throttle at zero, set throttle to zero and exit immediately</span>
-    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">motors</span><span class="p">.</span><span class="nx">armed</span><span class="p">()</span> <span class="o">||</span> <span class="nx">g</span><span class="p">.</span><span class="nx">rc_3</span><span class="p">.</span><span class="nx">control_in</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">attitude_control</span><span class="p">.</span><span class="nx">relax_bf_rate_controller</span><span class="p">();</span>
-        <span class="nx">attitude_control</span><span class="p">.</span><span class="nx">set_yaw_target_to_current_heading</span><span class="p">();</span>
-        <span class="nx">attitude_control</span><span class="p">.</span><span class="nx">set_throttle_out</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">motors</span><span class="p">.</span><span class="n">armed</span><span class="p">()</span> <span class="o">||</span> <span class="n">g</span><span class="p">.</span><span class="n">rc_3</span><span class="p">.</span><span class="n">control_in</span> <span class="o">&lt;=</span> <span class="mh">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">attitude_control</span><span class="p">.</span><span class="n">relax_bf_rate_controller</span><span class="p">();</span>
+        <span class="n">attitude_control</span><span class="p">.</span><span class="n">set_yaw_target_to_current_heading</span><span class="p">();</span>
+        <span class="n">attitude_control</span><span class="p">.</span><span class="n">set_throttle_out</span><span class="p">(</span><span class="mh">0</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
         <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
 
