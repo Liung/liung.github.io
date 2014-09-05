@@ -1,5 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 05 Sep 2014 11:01:10 +0800</lastBuildDate><item><title>APM-添加新的飞行模式</title><link>http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F.html</link><description>&lt;p&gt;这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制页面&lt;/a&gt;描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 05 Sep 2014 12:08:26 +0800</lastBuildDate><item><title>APM-规划新代码使之按一定频率运行</title><link>http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter%E8%A7%84%E5%88%92%E6%96%B0%E4%BB%A3%E7%A0%81%E4%BD%BF%E4%B9%8B%E6%8C%89%E4%B8%80%E5%AE%9A%E9%A2%91%E7%8E%87%E8%BF%90%E8%A1%8C.html</link><description>&lt;p&gt;本页面将向你介绍如何规划你的新代码块使之可以按需运行。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;用代码调度器运行你的代码&lt;/h3&gt;
+&lt;p&gt;在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde"&gt;ArduCopter.pde&lt;/a&gt;中的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"&gt;&lt;code&gt;scheduler_tasks&lt;/code&gt;&lt;/a&gt;数组来完成。需要表明的是：实际上该文件中有两个任务列表，&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"&gt;上面的任务列表&lt;/a&gt;是针对高频CPUs（如Pixhawk），&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L856"&gt;下面的&lt;/a&gt;是针对低频CPUs（如APM2）。&lt;/p&gt;
+&lt;p&gt;添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所有，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cm"&gt;/*&lt;/span&gt;
+&lt;span class="cm"&gt;  scheduler table - all regular tasks apart from the fast_loop()&lt;/span&gt;
+&lt;span class="cm"&gt;  should be listed here, along with how often they should be called&lt;/span&gt;
+&lt;span class="cm"&gt;  (in 10ms units) and the maximum time they are expected to take (in&lt;/span&gt;
+&lt;span class="cm"&gt;  microseconds)&lt;/span&gt;
+&lt;span class="cm"&gt; */&lt;/span&gt;
+&lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="n"&gt;AP_Scheduler&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Task&lt;/span&gt; &lt;span class="n"&gt;scheduler_tasks&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="no"&gt;PROGMEM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;update_GPS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="mh"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;900&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;update_nav_mode&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="mh"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;400&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;medium_loop&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;           &lt;span class="mh"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;700&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;update_altitude&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="mh"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="mh"&gt;1000&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;fifty_hz_loop&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="mh"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;950&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;run_nav_updates&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="mh"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;800&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;slow_loop&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="mh"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;500&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;gcs_check_input&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="mh"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;700&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;gcs_send_heartbeat&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mh"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;700&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;gcs_data_stream_send&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mh"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="mh"&gt;1500&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;gcs_send_deferred&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="mh"&gt;1200&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;compass_accumulate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="mh"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;700&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;barometer_accumulate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="mh"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;900&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;super_slow_loop&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="mh"&gt;1100&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+      &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;my_new_function&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;      &lt;span class="mh"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;200&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;  &lt;span class="c1"&gt;//here,添加你的任务项&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;perf_update&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="mh"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="mh"&gt;500&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h3&gt;作为循环的一部分运行你的代码&lt;/h3&gt;
+&lt;p&gt;为了代替在代码调度器中加入一个新的函数入口，你还可以在现有的任何时间循环事件中添加你的函数。除了在fast-loop循环中添加外，这种方法对比起上面的代码调度器方法并没有什么实质性好处。当你的代码添加到fast-loop循环中时，就意味着它将以最高的优先级别来执行（它几乎能100%达到所确保的400hz运行速度）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fast_loop:APM2上运行频率100hz，Pixhawk上400Hz&lt;/li&gt;
+&lt;li&gt;fifty_hz_loop:运行频率50hz&lt;/li&gt;
+&lt;li&gt;ten_hz_logging_loop:运行频率10hz&lt;/li&gt;
+&lt;li&gt;three_hz_loop:运行频率3.3hz&lt;/li&gt;
+&lt;li&gt;on_hz_loop:运行频率1hz&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以举个例子，如果你想让你的代码运行频率为10hz，那么你就要将它添加到&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde"&gt;ArduCopter.pde&lt;/a&gt;文件的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1101"&gt;&lt;code&gt;ten_hz_logging_loop()&lt;/code&gt;&lt;/a&gt;函数声明中。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// ten_hz_logging_loop&lt;/span&gt;
+&lt;span class="c1"&gt;// should be run at 10hz&lt;/span&gt;
+&lt;span class="k"&gt;static&lt;/span&gt; &lt;span class="k"&gt;void&lt;/span&gt; &lt;span class="n"&gt;ten_hz_logging_loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log_bitmask&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="no"&gt;MASK_LOG_ATTITUDE_MED&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;Log_Write_Attitude&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log_bitmask&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="no"&gt;MASK_LOG_RCIN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;DataFlash&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Log_Write_RCIN&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log_bitmask&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="no"&gt;MASK_LOG_RCOUT&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;DataFlash&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Log_Write_RCOUT&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log_bitmask&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="no"&gt;MASK_LOG_NTUN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;mode_requires_GPS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;control_mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;Log_Write_Nav_Tuning&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+        &lt;span class="c1"&gt;// 在这里添加你的新代码&lt;/span&gt;
+        &lt;span class="n"&gt;my_new_function&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 05 Sep 2014 12:08:26 +0800</pubDate><guid>tag:liung.github.io,2014-09-05:blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html</guid><category>APM</category><category>APM:Copter</category><category>飞控板</category><category>硬件</category></item><item><title>APM-添加新的飞行模式</title><link>http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F.html</link><description>&lt;p&gt;这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制页面&lt;/a&gt;描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;：在文件&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L88"&gt;defines.h&lt;/a&gt;中用&lt;code&gt;#define&lt;/code&gt;定义你自己新的飞行模式,然后将飞行模式数量&lt;code&gt;NUM_MODES&lt;/code&gt;加1。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="c1"&gt;// Auto Pilot modes&lt;/span&gt;
@@ -163,6 +235,7 @@
 
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Step #7&lt;/strong&gt;：如果你想让你的新飞行模式出现的Mission Planner的平视显示器HUD和飞行模式组件中，你可以在&lt;a href="https://github.com/diydrones/MissionPlanner/issues"&gt;Mission Planner的问题列表&lt;/a&gt;中提出你的请求。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="MP_HUD" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/FlightMode.png" /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
@@ -521,7 +594,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html"&gt;添加新的参数&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html"&gt;添加新的飞行模式&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/"&gt;规划新代码使之按一定频率运行&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html"&gt;规划新代码使之按一定频率运行&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/"&gt;增加新的MAVLink通讯协议消息&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code/"&gt;编译代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-ardupilot-with-arduino-windows/"&gt;Windows平台上用Arduino编译ArduPilot&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
