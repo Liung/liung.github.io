@@ -59,10 +59,11 @@
 
   <div class="entry-content">
 
-<p>在从版本AC3.1向AC3.2的过渡中，姿态控制逻辑运算作为“the onion”（洋葱头）工程的一部分进行了重构。下面来展示重构后的程序执行流程。</p>
-<h3>手动飞行模式：自稳模式（Stabilize Mode）、特技模式（Acro Mode）、浮动模式（Drift Mode）</h3>
-
-
+<p>在从版本AC3.1向AC3.2的过渡中，姿态控制逻辑运算作为“the onion”（洋葱头）工程的一部分进行了重构。下面来展示重构后的程序执行流程。
+</p>
+<hr />
+<h3>手动飞行模式</h3>
+<p><strong>自稳模式（Stabilize Mode）、特技模式（Acro Mode）、浮动模式（Drift Mode）</strong></p>
 <p><img alt="flight-mode" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/AC_CodeOverview_ManualFlightMode.png" /></p>
 <p>在主循环执行过程中（比如Pixhawk的运行频率为400Hz，APM2.x为100Hz），系统依次执行如下操作：</p>
 <ul>
@@ -98,6 +99,7 @@
 <ul>
 <li>AP_HAL库（硬件抽象层）提供了针对所有飞控板统一的借口。实际控制中，<code>hal.rc_out_write()</code>函数将接受到的来自于AP_Motors类中指定的PWM值，输出至飞控板对应的PWM端口（pin端）。</li>
 </ul>
+<hr />
 <h4>链接</h4>
 <ol>
 <li><a href="http://dev.ardupilot.com/wiki/apmcopter-programming-attitude-control-2/">APM官网原文链接</a></li>
@@ -131,6 +133,9 @@
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">APM-编译代码</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
       </li>
       <li class="post">
@@ -141,9 +146,6 @@
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
       </li>
     </ul>
   </section>

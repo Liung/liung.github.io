@@ -68,7 +68,7 @@
 
 <hr />
 <p><strong>Step #2</strong>：先确定你所要添加的信息的类型，以及如何和已有的<a href="https://pixhawk.ethz.ch/mavlink/">MavLink消息</a>兼容。</p>
-<p>比如：你可能会想要向飞行器发送一个新的导航指令，让它可以在任务中期（自动模式中）模仿一个特技动作（比如翻筋斗）。在这个例子中，你需要一个类似于<code>MAV_CMD_NAV_WAYPOINT</code>声明（可以在<a href="https://pixhawk.ethz.ch/mavlink/">MAVLink消息页面</a>搜索<code>MAV_CMD_NAV_WAYPOINT</code>）一样的新的导航指令<code>MAV_CMD_NAV_TRICK</code>。</p>
+<p>比如：你可能会想要向飞行器发送一个新的导航指令，让它可以在任务中期（自动模式中）模仿一个特技动作（比如翻筋斗）。在这个例子中，你需要一个类似于<code>MAV_CMD_NAV_WAYPOINT</code>（可以在<a href="https://pixhawk.ethz.ch/mavlink/">MAVLink消息页面</a>搜索<code>MAV_CMD_NAV_WAYPOINT</code>）一样的新的导航指令<code>MAV_CMD_NAV_TRICK</code>。</p>
 <p>又或者你想要从飞行器发送一个新的传感器数据类型到地面站,可能类似于<a href="https://pixhawk.ethz.ch/mavlink/#SCALED_PRESSURE">SCALED_PRESSURE</a>消息。</p>
 <hr />
 <p><strong>Step #3</strong>：在<a href="https://github.com/diydrones/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/common.xml">common.xml</a>和<a href="https://github.com/diydrones/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/ardupilotmega.xml">ardupilotmega.xml</a>文件中添加你的信息的定义声明。</p>
@@ -98,7 +98,8 @@
 <li>创建两个新函数<code>do_trick()</code>和<code>verify_trick()</code>，用来控制飞行器如何执行特技动作（这可能需要调用<a href="">control_auto.pde</a>中的另一个函数来设置<code>auto_mode</code>变量，然后调用新方法<code>auto_trick_start()</code>）。当指令第一次被唤醒时将使用<code>do_trick()</code>函数。<code>verify_trick()</code>函数将会以10hz频率（或者更高）被重复调用直到特技动作完成，当特技动作执行完毕之后<code>verify_trick()</code>函数应该返回<code>True</code>。</li>
 </ul>
 <hr />
-<p><strong>Step #6</strong>：考虑是否发布你的代码到主代码仓库中。你可以发邮件到<a href="https://groups.google.com/forum/#!forum/drones-discuss">drones-discuss email list</a>并且/或者<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/submitting-patches-back-to-master/">发送一个pull请求</a>。如果你发送一个pull提交请求，最好将改变的部分分成至少三个部分的提交确认（commits,与git指令相关，包括pull、push等）。一个是.xml文件的改变提交确认（Setp #3），另一个是重新生成文件的（Step #4），剩下的还有一个或者更多是关于飞行器主代码变化的提交确认。</p>
+<p><strong>Step #6</strong>：考虑是否发布你的代码到主代码仓库中。</p>
+<p>你可以发邮件到<a href="https://groups.google.com/forum/#!forum/drones-discuss">drones-discuss email list</a>并且/或者<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/submitting-patches-back-to-master/">发送一个pull请求</a>。如果你发送一个pull提交请求，最好将改变的部分分成至少三个部分的提交确认（commits,与git指令相关，包括pull、push等）。一个是.xml文件的改变提交确认（Setp #3），另一个是重新生成文件的（Step #4），剩下的还有一个或者更多是关于飞行器主代码变化的提交确认。</p>
 <hr />
 <h4>链接</h4>
 <ol>
@@ -133,6 +134,9 @@
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">APM-编译代码</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
       </li>
       <li class="post">
@@ -143,9 +147,6 @@
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
       </li>
     </ul>
   </section>
