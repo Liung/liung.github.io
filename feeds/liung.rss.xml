@@ -632,6 +632,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 
 
 &lt;p&gt;下文中的条目如果我已经翻译完成，那么我将链接到对应的博客目录中去，如果还没有翻译，那么将默认连接到原官网的链接。&lt;/p&gt;
+&lt;p&gt;begin{equation} \label{eq} X^2 \end{equation}&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/table-of-contents/"&gt;英文目录&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.cn/"&gt;介  绍&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
