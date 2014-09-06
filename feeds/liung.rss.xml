@@ -632,7 +632,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 
 
 &lt;p&gt;下文中的条目如果我已经翻译完成，那么我将链接到对应的博客目录中去，如果还没有翻译，那么将默认连接到原官网的链接。&lt;/p&gt;
-&lt;p&gt;begin{equation} \label{eq} X^2 \end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation} \label{eq} X^2 \end{equation}&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/table-of-contents/"&gt;英文目录&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.cn/"&gt;介  绍&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
@@ -700,7 +700,37 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-set-up-and-build-ardupilot-for-px4-in-windows/"&gt;EZ Set up and Build ArduPilot for PX4 in Windows&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/git_tortise/"&gt;Git_Tortise的使用&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 13:08:10 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>测试，这是我的第一个博客网站</title><link>http://liung.github.io/blog/qi-ta/home.html</link><description>&lt;p&gt;Category：Python
+&lt;/ul&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 13:08:10 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>测试，这是我的第一个博客网站</title><link>http://liung.github.io/blog/qi-ta/home.html</link><description>&lt;p&gt;Category：Python
 Tag: other&lt;/p&gt;
 &lt;p&gt;这是用来测试的blog。第一次blog搭建过程。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 00:00:00 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/qi-ta/home.html</guid></item><item><title>Pelican官方文档阅读笔记</title><link>http://liung.github.io/blog/python/2014-08-27-Pelican%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html</link><description>&lt;hr /&gt;
 &lt;h3&gt;Articles and pages&lt;/h3&gt;
