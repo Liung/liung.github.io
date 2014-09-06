@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds/fei-xing-qi.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2012-12-01T10:02:00+08:00</updated><entry><title>文件内的链接测试</title><link href="http://liung.github.io/blog/fei-xing-qi/article1.html" rel="alternate"></link><updated>2012-12-01T10:02:00+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2012-12-01:blog/fei-xing-qi/article1.html</id><summary type="html">&lt;p&gt;See below intra-site link examples in Markdown format.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://liung.github.io/blog/qi-ta/home.html"&gt;a link relative to content root&lt;/a&gt;
+&lt;a href="http://liung.github.io/blog/qi-ta/home.html"&gt;a link relative to current file&lt;/a&gt;&lt;/p&gt;</summary></entry></feed>

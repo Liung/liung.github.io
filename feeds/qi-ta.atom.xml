@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds/qi-ta.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2014-08-29T00:00:00+08:00</updated><entry><title>测试，这是我的第一个博客网站</title><link href="http://liung.github.io/blog/qi-ta/home.html" rel="alternate"></link><updated>2014-08-29T00:00:00+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-08-29:blog/qi-ta/home.html</id><summary type="html">&lt;p&gt;Category：Python
+Tag: other&lt;/p&gt;
+&lt;p&gt;这是用来测试的blog。第一次blog搭建过程。&lt;/p&gt;</summary></entry></feed>
