@@ -1,5 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 06 Sep 2014 14:03:34 +0800</lastBuildDate><item><title>APM-编译代码</title><link>http://liung.github.io/blog/apm/2014-09-06-APM-%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81.html</link><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 06 Sep 2014 15:34:19 +0800</lastBuildDate><item><title>APM-Windows平台上用Arduino编译ArduPilot</title><link>http://liung.github.io/blog/apm/2014-09-06-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Arduino%E7%BC%96%E8%AF%91ArduPilot.html</link><description>
+
+&lt;p&gt;&lt;strong&gt;版本要求： Copter 3.1， Plane 2.76&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;硬件要求： APM 2.0,2.5,2.6&lt;/strong&gt;&lt;/p&gt;
+
+
+&lt;p&gt;&lt;img alt="apm" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image001.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Step 1 安装Git-SCM&lt;/h3&gt;
+&lt;p&gt;软件链接： &lt;a href="http://git-scm.com/download/win"&gt;http://git-scm.com/download/win&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在安装过程中请按照下面的截图勾选相应的选项。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image004.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img2" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image006.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;在欢迎界面和许可证界面点击Next按钮&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="img3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image008.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img4" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image018.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;在选择组件点击Next按钮，然后点击Finish按钮。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="img5" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image014.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img6" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image016.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;在替换用户文件界面点击Next按钮，然后等待Git完成安装。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="img7" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image012.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img8" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image010.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;如上图，选择切换到window风格（checkout windows-style），然后点击Next按钮，选择从windows命令界面运行Git，点击Next按钮。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Step 2 下载源码&lt;/h3&gt;
+&lt;p&gt;首先在你电脑的C盘，建立一个名为GIT的文件夹。&lt;/p&gt;
+&lt;p&gt;用windows资源管理器到该文件夹下。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img9" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image020.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;然后在文件夹空白地方右击选择git Bash选项。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img10" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image022.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;此时，屏幕上会弹出下面的窗口。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img11" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image024.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;在该命令窗口中，键入：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/diydrones/ardupilot.git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="img26" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image026.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;当命令执行完毕之后，应该像下面这样...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img12" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image028.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Step 3 安装MHV_AVR_Tools到软件默认位置&lt;/h3&gt;
+&lt;p&gt;软件链接：&lt;a href="http://firmware.diydrones.com/Tools/Arduino/MHV_AVR_Tools_20121007.exe"&gt;http://firmware.diydrones.com/Tools/Arduino/MHV_AVR_Tools_20121007.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img13" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image030.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img14" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image038.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;安装引导界面点击Next按钮然后选择Install按钮开始安装&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="img15" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image036.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img16" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image034.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;在选择组件界面两项都勾选，然后点击Next按钮，选择安装到默认位置。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="img17" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image032.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;在许可证界面点击同意（I Agree）完成安装。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Step 4 安装Ardupilot-Arduino&lt;/h3&gt;
+&lt;p&gt;接下来下载特定版本的 ArduPilot Arduino 压缩包。&lt;/p&gt;
+&lt;p&gt;这里有一个新版本的，采用GCC 4.7.2编译。&lt;/p&gt;
+&lt;p&gt;地址：&lt;a href="http://firmware.diydrones.com/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip"&gt;http://firmware.diydrones.com/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我将该文件解压到我电脑上的C盘。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Step 5 配置Arduino&lt;/h3&gt;
+&lt;p&gt;打开放置Arduino的文件夹&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img18" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image0401.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;双击Arduino图标&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img19" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image040.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;当Arduino打开之后，到文件（file）菜单栏&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img20" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image042.png" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;点击属性&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img21" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image044.png" /&gt;&lt;/p&gt;
+&lt;p&gt;设置Sketchbook到你电脑上GIT文件夹下的Ardupilot目录&lt;/p&gt;
+&lt;p&gt;同样选择编译和加载选项，这样在执行相应功能时就可以查看到详细信息。&lt;/p&gt;
+&lt;p&gt;不要选择启动时自动升级功能（该版本是针对Ardupilot的特殊版本）&lt;/p&gt;
+&lt;p&gt;点击OK，然后关闭Arduino&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Step 6 通过USB连接你的APM&lt;/h3&gt;
+&lt;p&gt;重新打开Arduino，然后在file菜单栏中点击Sketchbook，选择你想要加载到你的APM2.x上的程序代码（比如这里选择ArduCopter,其它采用同样的方法设置）。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img22" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image047.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;一旦文件加载完成，点击Ardupilot菜单，选择HAL板下的Ardupilot Mega 2.x&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img23" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image049.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;然后点击Tools菜单，选择Board 选项卡下的 Arduino Mega 2560 or Mega ADK&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img24" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image051.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;接下来重新选择Tools菜单，设置你的APM连接到电脑上的端口号Serial Port&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img25" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image053.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;在这个例子中为COM4，你可以在你的电脑的设备管理器中，在端口Ports中查看APM对应的端口。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img27" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image055.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Step 7 配置Arducopter&lt;/h3&gt;
+&lt;p&gt;点击文件APM_Config.h选项卡。&lt;/p&gt;
+&lt;p&gt;设置你的飞行器构型（例如&lt;code&gt;#define FRAME_CONFIG HEXA_FRAME&lt;/code&gt;）&lt;/p&gt;
+&lt;p&gt;在该文件中可以启用/不启用相应的功能。&lt;/p&gt;
+&lt;p&gt;例如：如果在编译过程中想让auto tune 功能失效，那么你可以简单的将该行取消注释&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;//# AUTOTUNE              DISABLED            // 不启用该功能可以节省7k的闪存空间&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;改为：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# AUTOTUNE              DISABLED            // 不启用该功能可以节省7k的闪存空间&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;默认是启用该功能。&lt;/p&gt;
+&lt;p&gt;源代码中所有注释掉的功能都不是默认的，你需要做的就是通过取消注释来改变系统的默认选项&lt;/p&gt;
+&lt;p&gt;保存该文件然后选择文件Arducopter&lt;/p&gt;
+&lt;p&gt;接下来就可以准备开始编译了。&lt;/p&gt;
+&lt;p&gt;但一般来讲我会先选择校验（verify）代码。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img28" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image057.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Step 8 将代码加载到你的Ardupilot板上&lt;/h3&gt;
+&lt;p&gt;点击编译按钮&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img29" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image058.png" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;这可能会花费一些时间...&lt;/p&gt;
+&lt;p&gt;当出现下面提示时表明编译完成...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img30" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image061.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;最后用地面站软件Mission Planner确认能否正常使用&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;注意&lt;/h3&gt;
+&lt;p&gt;你自己配置并编译过的代码是没有经过测试的，请仅仅将它用来做测试之用。如果你没有足够的把握，建议你使用Mission Planner来加载预先编译过的代码。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;升级你的代码&lt;/h3&gt;
+&lt;p&gt;请确认你电脑上的代码为最新版，否则就用git来升级你的代码到最新版本。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-ardupilot-with-arduino-windows/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 06 Sep 2014 15:34:19 +0800</pubDate><guid>tag:liung.github.io,2014-09-06:blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-编译代码</title><link>http://liung.github.io/blog/apm/2014-09-06-APM-%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81.html</link><description>
 
 &lt;p&gt;下面这些页面的链接，将提供给你更多关于如何编译APM2.x和PX4的飞行器控制和地面站源码的信息。&lt;/p&gt;
 
@@ -737,148 +878,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-set-up-and-build-ardupilot-for-px4-in-windows/"&gt;EZ Set up and Build ArduPilot for PX4 in Windows&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/git_tortise/"&gt;Git_Tortise的使用&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 13:08:10 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows平台上用Arduino编译ArduPilot</title><link>http://liung.github.io/blog/apm/2014-09-06-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Arduino%E7%BC%96%E8%AF%91ArduPilot.html</link><description>
-
-&lt;p&gt;&lt;strong&gt;版本要求： Copter 3.1， Plane 2.76&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;硬件要求： APM 2.0,2.5,2.6&lt;/strong&gt;&lt;/p&gt;
-
-
-&lt;p&gt;&lt;img alt="apm" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image001.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Step 1 安装Git-SCM&lt;/h3&gt;
-&lt;p&gt;软件链接： &lt;a href="http://git-scm.com/download/win"&gt;http://git-scm.com/download/win&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在安装过程中请按照下面的截图勾选相应的选项。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image004.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img2" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image006.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;在欢迎界面和许可证界面点击Next按钮&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img alt="img3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image008.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img4" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image018.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;在选择组件点击Next按钮，然后点击Finish按钮。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img alt="img5" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image014.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img6" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image016.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;在替换用户文件界面点击Next按钮，然后等待Git完成安装。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img alt="img7" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image012.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img8" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image010.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;如上图，选择切换到window风格（checkout windows-style），然后点击Next按钮，选择从windows命令界面运行Git，点击Next按钮。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Step 2 下载源码&lt;/h3&gt;
-&lt;p&gt;首先在你电脑的C盘，建立一个名为GIT的文件夹。&lt;/p&gt;
-&lt;p&gt;用windows资源管理器到该文件夹下。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img9" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image020.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;然后在文件夹空白地方右击选择git Bash选项。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img10" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image022.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;此时，屏幕上会弹出下面的窗口。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img11" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image024.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;当命令执行完毕之后，应该像下面这样...&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img12" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image028.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Step 3 安装MHV_AVR_Tools到该软件默认位置&lt;/h3&gt;
-&lt;p&gt;软件链接：&lt;a href="http://firmware.diydrones.com/Tools/Arduino/MHV_AVR_Tools_20121007.exe"&gt;http://firmware.diydrones.com/Tools/Arduino/MHV_AVR_Tools_20121007.exe&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img13" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image030.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img14" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image038.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;安装引导界面点击Next按钮然后选择Install按钮开始安装&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img alt="img15" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image036.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img16" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image034.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;在选择组件界面两项都勾选，然后点击Next按钮，选择安装到默认位置。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img alt="img17" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image032.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;在许可证界面点击同意（I Agree）完成安装。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Step 4 安装Ardupilot-Arduino&lt;/h3&gt;
-&lt;p&gt;接下来下载特定版本的 ArduPilot Arduino 压缩包。&lt;/p&gt;
-&lt;p&gt;这里有一个新版本的，采用GCC 4.7.2编译。&lt;/p&gt;
-&lt;p&gt;地址：&lt;a href="http://firmware.diydrones.com/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip"&gt;http://firmware.diydrones.com/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;我将该文件解压到我电脑上的C盘。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Step 5 配置Arduino&lt;/h3&gt;
-&lt;p&gt;打开放置Arduino的文件夹&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img18" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image0401.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;双击Arduino图标&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img19" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image040.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;当Arduino打开之后，到文件（file）菜单栏&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img20" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image042.png" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;点击属性&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img21" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image044.png" /&gt;&lt;/p&gt;
-&lt;p&gt;设置Sketchbook到你电脑上GIT文件夹下的Ardupilot目录&lt;/p&gt;
-&lt;p&gt;同样选择编译和加载选项，这样在响应执行环节就可以查看到详细信息。&lt;/p&gt;
-&lt;p&gt;不要选择启动时自动升级功能（该版本是针对Ardupilot的特殊版本）&lt;/p&gt;
-&lt;p&gt;点击OK，然后关闭Arduino&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Step 6 通过USB连接你的APM&lt;/h3&gt;
-&lt;p&gt;重新打开Arduino，然后在file菜单栏中点击Sketchbook，选择你想要加载到你的APM2.x上的程序代码（比如这里选择ArduCopter,其它采用同样的方法设置）。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img22" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image047.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;一旦文件加载完成，点击Ardupilot菜单，选择HAL板下的Ardupilot Mega 2.x&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img23" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image049.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;然后点击Tools菜单，选择Board 选项卡下的 Arduino Mega 2560 or Mega ADK&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img24" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image051.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;接下来重新选择Tools菜单，设置你的APM连接到电脑上的端口号Serial Port&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img25" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image053.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;在该命令窗口中，键入：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/diydrones/ardupilot.git&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img alt="img26" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image026.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;在这个例子中为COM4，你可以在你的电脑的设备管理器中，在端口Ports中查看APM对应的端口。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img27" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image055.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Step 7 配置Arducopter&lt;/h3&gt;
-&lt;p&gt;点击文件APM_Config.h选项卡。&lt;/p&gt;
-&lt;p&gt;设置你的飞行类型（例如&lt;code&gt;#define FRAME_CONFIG HEXA_FRAME&lt;/code&gt;）&lt;/p&gt;
-&lt;p&gt;在该文件中可以启用/不启用相应的功能。&lt;/p&gt;
-&lt;p&gt;例如：如果在编译过程中想让auto tune 功能失效，那么你可以简单的注释掉改行&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;//# AUTOTUNE              DISABLED            // 不启用该功能可以节省7k的闪存空间&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;改为：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# AUTOTUNE              DISABLED            // 不启用该功能可以节省7k的闪存空间&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;默认启用该功能。&lt;/p&gt;
-&lt;p&gt;所有注释掉的功能都是不是默认的，那需要做的就是通过取消注释来代码系统的默认选项&lt;/p&gt;
-&lt;p&gt;保存文件后然后选择文件Arducopter&lt;/p&gt;
-&lt;p&gt;接下来就可以准备开始编译了。&lt;/p&gt;
-&lt;p&gt;但一般来讲我会先选择校验（verify）代码。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img28" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image057.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Step 8 将代码加载到你的Ardupilot板上&lt;/h3&gt;
-&lt;p&gt;点击编译按钮&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img29" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image058.png" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;这可能会花费一些时间...&lt;/p&gt;
-&lt;p&gt;当出现下面提示时表明编译完成...&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img30" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image061.jpg" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;最后用地面站软件Mission Planner确认能否正常使用&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;注意&lt;/h3&gt;
-&lt;p&gt;你自己配置并编译过的代码是没有经过测试的，请仅仅将它用来测试。如果你没有足够的把握，建议你使用Mission Planner来加载预先编译过的代码。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;升级你的代码&lt;/h3&gt;
-&lt;p&gt;请确认你电脑上的代码为最新版，否则就用git来升级你的代码到最新版本。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h4&gt;链接&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-ardupilot-with-arduino-windows/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 13:08:10 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>测试，这是我的第一个博客网站</title><link>http://liung.github.io/blog/qi-ta/home.html</link><description>&lt;p&gt;Category：Python
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 13:08:10 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>测试，这是我的第一个博客网站</title><link>http://liung.github.io/blog/qi-ta/home.html</link><description>&lt;p&gt;Category：Python
 Tag: other&lt;/p&gt;
 &lt;p&gt;这是用来测试的blog。第一次blog搭建过程。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 00:00:00 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/qi-ta/home.html</guid></item><item><title>Pelican官方文档阅读笔记</title><link>http://liung.github.io/blog/python/2014-08-27-Pelican%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html</link><description>&lt;hr /&gt;
 &lt;h3&gt;Articles and pages&lt;/h3&gt;
