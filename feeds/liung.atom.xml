@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2014-09-06T15:34:19+08:00</updated><entry><title>APM-Windows平台上用Arduino编译ArduPilot</title><link href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Arduino%E7%BC%96%E8%AF%91ArduPilot.html" rel="alternate"></link><updated>2014-09-06T15:34:19+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-06:blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2014-09-07T13:59:57+08:00</updated><entry><title>APM-Windows平台上用Make方法编译Pixhawk和PX4</title><link href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html" rel="alternate"></link><updated>2014-09-07T13:59:57+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-07:blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html</id><summary type="html">
+
+&lt;h3&gt;Windows平台&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1、&lt;/strong&gt; 安装&lt;a href="http://windows.github.com/"&gt;Github for Windows&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、&lt;/strong&gt; 确保你的 github 上关于行尾结束符的设置没有发生变动。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;当你安装了Git 后，“Git shell（or Bash）”也会安装好。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：&lt;/p&gt;
+&lt;p&gt;git config --global core.autocrlf false&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3、&lt;/strong&gt;“克隆”（clone）Ardupilot，PX4Firmware和PX4NuttX代码库到你的本地电脑上：&lt;/p&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;到 &lt;a href="https://github.com/diydrones/ardupilot"&gt;GitHub/diydrones/ardupilot&lt;/a&gt; 的web页面点击“Clone in Desktop”按钮&lt;/li&gt;
+&lt;li&gt;到&lt;a href="https://github.com/diydrones/PX4Firmware"&gt; GitHub/diydrones/PX4Firmware &lt;/a&gt;的web页面点击“Clone in Desktop”按钮&lt;/li&gt;
+&lt;li&gt;到&lt;a href="https://github.com/diydrones/PX4NuttX"&gt; GitHub/diydrones/PX4NuttX &lt;/a&gt;的web页面点击“Clone in Desktop”按钮&lt;/li&gt;
+&lt;li&gt;&lt;img alt="img1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/BuildingTheCode_PX4OnWindows1.png" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;4、&lt;/strong&gt;运行&lt;a href="http://www.inf.ethz.ch/personal/lomeier/downloads/px4_toolchain_installer_v12_win.exe"&gt; px4_toolchain_installer_v12_win.exe &lt;/a&gt;下载并安装PX4工具链（在&lt;a href="http://pixhawk.org/firmware/downloads#px4_arm_toolchain"&gt;该页面&lt;/a&gt;的底部搜索“PX4 Toolchain Installer”）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5、&lt;/strong&gt;创建并定制config.mk文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;win7平台上可以在开始&amp;gt;&amp;gt;所有程序&amp;gt;&amp;gt;PX4 Toolchain找到PX4Console，并运行。或者直接去该目录C:\px4\toolchain\msys\1.0\px4_console.bat运行。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;“cd”到步骤三中Ardupilot固件的文件目录，然后进入ArduCopter目录（确保这里ArduCopter中的A和C都是大写形式）。在命令行中可以这样执行：&lt;/p&gt;
+&lt;p&gt;cd /c/Users/&lt;username&gt;/Documents/GitHub/ardupilot/ArduCopter&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过下命令行中键入下列命令创建config.mk。系统将会出现下面的警示信息：包含有文件准确链接位置的config.mk文件已经创建并写入。&lt;/p&gt;
+&lt;p&gt;make configure&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果步骤三中创建PX4Firmware和PX4NuttX仓库时使用了相同的名字和位置，那么就不需要更改config.mk文件。但是如果名字或者位置有一个不同，那你就需要用诸如&lt;a href="http://notepad-plus-plus.org/download/v6.4.5.html"&gt;NotePad++&lt;/a&gt;等文本编辑器打开config.mk，并将PX4_ROOT和/或NUTTX_SRC值设置正确。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img2" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/BuildingTheCode_PX4OnWindows2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6、&lt;/strong&gt;打开PX4控制台开始编译固件，首先切换到ArduCopter目录，然后输入下面命令执行编译&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make px4                &amp;lt;– 将会编译四旋翼形式的PX4和PixHawk固件&lt;/li&gt;
+&lt;li&gt;make px4-v2           &amp;lt;– 将会编译四旋翼形式的PixHawk固件&lt;/li&gt;
+&lt;li&gt;make px4-v2-hexa  &amp;lt;–将会编译六旋翼形式的PixHawk固件(其它可支持的后缀名包括“octa”和"heli")&lt;/li&gt;
+&lt;li&gt;make clean             &amp;lt;– 清理（“clean”） ardupilot 文件目录&lt;/li&gt;
+&lt;li&gt;make px4-clean      &amp;lt;– 清理（“clean”）PX4Firmware 和 PX4NuttX  文件目录以便于下次重新编译&lt;/li&gt;
+&lt;li&gt;make px4-v2-upload  &amp;lt;– 编译并加载 Pixhawk 的四旋翼固件(如果使用该命令，那么就不需要执行下面的步骤七了)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;编译好的固件以.px4文件扩展名结尾，位于在ArduCopter目录&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/PX4_ArduCopter_Build.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7、&lt;/strong&gt;使用Mission Planner 加载固件的方法：初始设置（Initial Setup）&amp;gt;&amp;gt;安装固件（Install Firmware）界面点击“Load custom firmware”链接&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-px4-with-make/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-Windows平台上用Arduino编译ArduPilot</title><link href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Arduino%E7%BC%96%E8%AF%91ArduPilot.html" rel="alternate"></link><updated>2014-09-06T15:34:19+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-06:blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html</id><summary type="html">
 
 &lt;p&gt;&lt;strong&gt;版本要求： Copter 3.1， Plane 2.76&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;硬件要求： APM 2.0,2.5,2.6&lt;/strong&gt;&lt;/p&gt;
@@ -150,7 +203,7 @@
 &lt;p&gt;&lt;strong&gt;Windows用户：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html"&gt;Windows平台上用Arduino编译ArduPilot&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code/wiki/building-px4-with-make/"&gt;Windows平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html"&gt;Windows平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code/wiki/building-ardupilot-apm-with-visual-studio-visual-micro/"&gt;使用Atmel Studio或者Visual Studio编译APM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;MacOS用户：&lt;/strong&gt;&lt;/p&gt;
@@ -825,7 +878,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html"&gt;增加新的MAVLink通讯协议消息&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html"&gt;编译代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html"&gt;Windows平台上用Arduino编译ArduPilot&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-px4-with-make/"&gt;Windows平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html"&gt;Windows平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code-on-mac/"&gt;MacOS平台上用Arduino编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-px4-with-make-on-mac/"&gt;MacOS平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code-onlinux/"&gt;Linux平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
