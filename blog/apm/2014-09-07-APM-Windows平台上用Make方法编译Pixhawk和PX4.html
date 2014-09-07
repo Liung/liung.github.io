@@ -63,11 +63,9 @@
 <p><strong>1、</strong> 安装<a href="http://windows.github.com/">Github for Windows</a></p>
 <p><strong>2、</strong> 确保你的 github 上关于行尾结束符的设置没有发生变动。</p>
 <ul>
-<li>
-<p>当你安装了Git 后，“Git shell（or Bash）”也会安装好。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：</p>
-<p>git config --global core.autocrlf false</p>
-</li>
+<li>当你安装了Git 后，“Git shell（or Bash）”也会安装好。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：</li>
 </ul>
+<p><code>git config --global core.autocrlf false</code></p>
 <p><strong>3、</strong>“克隆”（clone）Ardupilot，PX4Firmware和PX4NuttX代码库到你的本地电脑上：</p>
 
 
@@ -81,25 +79,23 @@
 <p><strong>5、</strong>创建并定制config.mk文件：</p>
 <ul>
 <li>win7平台上可以在开始&gt;&gt;所有程序&gt;&gt;PX4 Toolchain找到PX4Console，并运行。或者直接去该目录C:\px4\toolchain\msys\1.0\px4_console.bat运行。</li>
-<li>
-<p>“cd”到步骤三中Ardupilot固件的文件目录，然后进入ArduCopter目录（确保这里ArduCopter中的A和C都是大写形式）。在命令行中可以这样执行：</p>
-<p>cd /c/Users/<username>/Documents/GitHub/ardupilot/ArduCopter</p>
-</li>
-<li>
-<p>通过下命令行中键入下列命令创建config.mk。系统将会出现下面的警示信息：包含有文件准确链接位置的config.mk文件已经创建并写入。</p>
-<p>make configure</p>
-</li>
+<li>“cd”到步骤三中Ardupilot固件的文件目录，然后进入ArduCopter目录（确保这里ArduCopter中的A和C都是大写形式）。在命令行中可以这样执行：</li>
 </ul>
+<p><code>cd /c/Users/&lt;username&gt;/Documents/GitHub/ardupilot/ArduCopter</code></p>
+<ul>
+<li>通过下命令行中键入下列命令创建config.mk。系统将会出现下面的警示信息：包含有文件准确链接位置的config.mk文件已经创建并写入。</li>
+</ul>
+<p><code>make configure</code></p>
 <p>如果步骤三中创建PX4Firmware和PX4NuttX仓库时使用了相同的名字和位置，那么就不需要更改config.mk文件。但是如果名字或者位置有一个不同，那你就需要用诸如<a href="http://notepad-plus-plus.org/download/v6.4.5.html">NotePad++</a>等文本编辑器打开config.mk，并将PX4_ROOT和/或NUTTX_SRC值设置正确。</p>
 <p><img alt="img2" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/BuildingTheCode_PX4OnWindows2.png" /></p>
 <p><strong>6、</strong>打开PX4控制台开始编译固件，首先切换到ArduCopter目录，然后输入下面命令执行编译</p>
 <ul>
-<li>make px4                &lt;– 将会编译四旋翼形式的PX4和PixHawk固件</li>
-<li>make px4-v2           &lt;– 将会编译四旋翼形式的PixHawk固件</li>
-<li>make px4-v2-hexa  &lt;–将会编译六旋翼形式的PixHawk固件(其它可支持的后缀名包括“octa”和"heli")</li>
-<li>make clean             &lt;– 清理（“clean”） ardupilot 文件目录</li>
-<li>make px4-clean      &lt;– 清理（“clean”）PX4Firmware 和 PX4NuttX  文件目录以便于下次重新编译</li>
-<li>make px4-v2-upload  &lt;– 编译并加载 Pixhawk 的四旋翼固件(如果使用该命令，那么就不需要执行下面的步骤七了)</li>
+<li><code>make px4</code>                &lt;– 将会编译四旋翼形式的PX4和PixHawk固件</li>
+<li><code>make px4-v2</code>           &lt;– 将会编译四旋翼形式的PixHawk固件</li>
+<li><code>make px4-v2-hexa</code>  &lt;–将会编译六旋翼形式的PixHawk固件(其它可支持的后缀名包括“octa”和"heli")</li>
+<li><code>make clean</code>             &lt;– 清理（“clean”） ardupilot 文件目录</li>
+<li><code>make px4-clean</code>      &lt;– 清理（“clean”）PX4Firmware 和 PX4NuttX  文件目录以便于下次重新编译</li>
+<li><code>make px4-v2-upload</code>  &lt;– 编译并加载 Pixhawk 的四旋翼固件(如果使用该命令，那么就不需要执行下面的步骤七了)</li>
 </ul>
 <p>编译好的固件以.px4文件扩展名结尾，位于在ArduCopter目录</p>
 <p><img alt="img3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/PX4_ArduCopter_Build.png" /></p>
