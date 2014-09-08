@@ -100,6 +100,9 @@
 <p>编译好的固件以.px4文件扩展名结尾，位于在ArduCopter目录</p>
 <p><img alt="img3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/PX4_ArduCopter_Build.png" /></p>
 <p><strong>7、</strong>使用Mission Planner 加载固件的方法：初始设置（Initial Setup）&gt;&gt;安装固件（Install Firmware）界面点击“Load custom firmware”链接</p>
+<h3>加快编译时间的一些小建议</h3>
+<p>杀毒防护软件有可能会减慢编译时间，特别对PX4尤为明显，所以建议包含有Ardupilot、PX4Firmware和PX4NuttX源代码的文件夹不在你的杀毒软件实时扫描范围内。</p>
+<p>当执行完<code>make px4-clean</code>后第一次编译将会非常的慢，因为要重新编译每一个文件。</p>
 <hr />
 <h4>链接</h4>
 <ol>
@@ -134,6 +137,9 @@
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html">APM-MacOS平台上用Arduino编译APM2.x</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">APM-Windows平台上用Make方法编译Pixhawk和PX4</a>
       </li>
       <li class="post">
@@ -143,10 +149,7 @@
           <a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">APM-编译代码</a>
       </li>
       <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
+          <a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html">APM-MacOS平台上用Make方法编译Pixhawk/PX4</a>
       </li>
     </ul>
   </section>

@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 07 Sep 2014 13:59:57 +0800</lastBuildDate><item><title>APM-Windows平台上用Make方法编译Pixhawk和PX4</title><link>http://liung.github.io/blog/apm/2014-09-07-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html</link><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 08 Sep 2014 09:02:28 +0800</lastBuildDate><item><title>APM-MacOS平台上用Arduino编译APM2.x</title><link>http://liung.github.io/blog/apm/2014-09-08-APM-MacOS%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Arduino%E7%BC%96%E8%AF%91APM2.x.html</link><description>
+
+&lt;p&gt;在MacOS平台上针对AVR芯片的Ardupilot的源码编译可以有两种选择。第一种是使用特殊版的Arduino编译环境。你可以在&lt;a href="http://firmware.diydrones.com/"&gt;http://firmware.diydrones.com/&lt;/a&gt;的工具目录下获得。第二种选择是使用&lt;code&gt;make&lt;/code&gt;命令行工具进行编译。&lt;/p&gt;
+
+
+&lt;p&gt;如果你选择Arduino工具，当你安装完成之后，你还需要做下面这些事情：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在Ardupilot菜单下选择你的飞控板类型&lt;/li&gt;
+&lt;li&gt;在菜单File--&amp;gt;&amp;gt;属性Preferences下设置Sketchbook位置到你的Ardupilot源码目录&lt;/li&gt;
+&lt;li&gt;关闭并重启Arduino&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code-on-mac/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Mon, 08 Sep 2014 09:02:28 +0800</pubDate><guid>tag:liung.github.io,2014-09-08:blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows平台上用Make方法编译Pixhawk和PX4</title><link>http://liung.github.io/blog/apm/2014-09-07-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html</link><description>
 
 &lt;h3&gt;Windows平台&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;1、&lt;/strong&gt; 安装&lt;a href="http://windows.github.com/"&gt;Github for Windows&lt;/a&gt;&lt;/p&gt;
@@ -42,6 +59,9 @@
 &lt;p&gt;编译好的固件以.px4文件扩展名结尾，位于在ArduCopter目录&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/PX4_ArduCopter_Build.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;7、&lt;/strong&gt;使用Mission Planner 加载固件的方法：初始设置（Initial Setup）&amp;gt;&amp;gt;安装固件（Install Firmware）界面点击“Load custom firmware”链接&lt;/p&gt;
+&lt;h3&gt;加快编译时间的一些小建议&lt;/h3&gt;
+&lt;p&gt;杀毒防护软件有可能会减慢编译时间，特别对PX4尤为明显，所以建议包含有Ardupilot、PX4Firmware和PX4NuttX源代码的文件夹不在你的杀毒软件实时扫描范围内。&lt;/p&gt;
+&lt;p&gt;当执行完&lt;code&gt;make px4-clean&lt;/code&gt;后第一次编译将会非常的慢，因为要重新编译每一个文件。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
@@ -204,8 +224,8 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;MacOS用户：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code/wiki/building-the-code-on-mac/"&gt;MacOS平台上用Arduino编译APM2.x&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code/wiki/building-px4-with-make-on-mac/"&gt;MacOS平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html"&gt;MacOS平台上用Arduino编译APM2.x&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html"&gt;MacOS平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Linux用户：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -224,7 +244,61 @@
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 06 Sep 2014 14:03:34 +0800</pubDate><guid>tag:liung.github.io,2014-09-06:blog/apm/2014-09-06-APM-编译代码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-增加新的MAVLink通讯协议消息</title><link>http://liung.github.io/blog/apm/2014-09-05-APM-%E5%A2%9E%E5%8A%A0%E6%96%B0%E7%9A%84MAVLink%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE%E6%B6%88%E6%81%AF.html</link><description>&lt;h3&gt;综述&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 06 Sep 2014 14:03:34 +0800</pubDate><guid>tag:liung.github.io,2014-09-06:blog/apm/2014-09-06-APM-编译代码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-MacOS平台上用Make方法编译Pixhawk/PX4</title><link>http://liung.github.io/blog/apm/2014-09-08-APM-MacOS%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html</link><description>&lt;h3&gt;MAC (ver 10.6 onwards)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1、&lt;/strong&gt;Install Homebrew for Mac OS X&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、&lt;/strong&gt;Install the following packages using brew&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;brew tap PX4/homebrew-px4&lt;/li&gt;
+&lt;li&gt;brew update&lt;/li&gt;
+&lt;li&gt;brew install genromfs&lt;/li&gt;
+&lt;li&gt;brew install gcc-arm-none-eabi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3、&lt;/strong&gt;Install pip and pyserial using the following commands:
+- sudo easy_install pip
+- sudo pip install pyserial&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、&lt;/strong&gt;Now create your directory and install all the software:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mkdir -p px4&lt;/li&gt;
+&lt;li&gt;cd px4&lt;/li&gt;
+&lt;li&gt;git clone https://github.com/diydrones/ardupilot.git&lt;/li&gt;
+&lt;li&gt;git clone https://github.com/diydrones/PX4Firmware.git&lt;/li&gt;
+&lt;li&gt;git clone https://github.com/diydrones/PX4NuttX.git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;5、&lt;/strong&gt;Now set-up the configuration file for building ArduCopter using the following commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cd ardupilot/ArduCopter&lt;/li&gt;
+&lt;li&gt;make configure&lt;/li&gt;
+&lt;li&gt;open the ardupilot/config.mk file and make the following changes:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PX4_ROOT=../PX4Firmware (this should point to your PX4Firmware directory)&lt;/p&gt;
+&lt;p&gt;NUTTX_SRC=../PX4NuttX/nuttx (this should point to nuttx)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make   (the first time through it will build the PX4Firmware and NuttX)&lt;/li&gt;
+&lt;li&gt;make   (this time it will build the ArduCopter firmware)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;6、&lt;/strong&gt;Build the arducopter software for px4 using the following commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cd ardupilot/ArduCopter&lt;/li&gt;
+&lt;li&gt;make px4-quad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You should find two files in the ArduCopter directory. ArduCopter-v1.px4 is for the original PX4, ArduCopter-v2.px4 is for the pixhawk.&lt;/p&gt;
+&lt;p&gt;Occasionally you should pull PX4Firmware and PX4NuttX updates. To make sure it compiles correctly, run the clean option in make:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make px4-clean&lt;/li&gt;
+&lt;li&gt;make px4-[frame type]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The available frame types are quad, tri, hexa, y6, octa, octa-quad, hell&lt;/p&gt;
+&lt;p&gt;To make and upload to your vehicle:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make px4-quad-upload&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-px4-with-make-on-mac/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 06 Sep 2014 14:03:34 +0800</pubDate><guid>tag:liung.github.io,2014-09-06:blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-增加新的MAVLink通讯协议消息</title><link>http://liung.github.io/blog/apm/2014-09-05-APM-%E5%A2%9E%E5%8A%A0%E6%96%B0%E7%9A%84MAVLink%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE%E6%B6%88%E6%81%AF.html</link><description>&lt;h3&gt;综述&lt;/h3&gt;
 &lt;p&gt;地面站之间的数据和指令通信都是通过串行接口使用&lt;a href="http://en.wikipedia.org/wiki/MAVLink"&gt;MAVLink协议&lt;/a&gt;来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。&lt;/p&gt;
 &lt;p&gt;这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/"&gt;SITL(软件层面仿真)页面&lt;/a&gt;有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行。&lt;/p&gt;
 &lt;hr /&gt;
@@ -875,8 +949,8 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html"&gt;编译代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html"&gt;Windows平台上用Arduino编译ArduPilot&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html"&gt;Windows平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code-on-mac/"&gt;MacOS平台上用Arduino编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-px4-with-make-on-mac/"&gt;MacOS平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html"&gt;MacOS平台上用Arduino编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html"&gt;MacOS平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code-onlinux/"&gt;Linux平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building_with_make/"&gt;采用Make方法编译APM2.x（Win，Mac，Linux）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-with-eclipse/"&gt;使用Eclipse编译&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
