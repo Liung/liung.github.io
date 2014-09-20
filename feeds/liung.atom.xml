@@ -1,5 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2014-09-14T12:49:44+08:00</updated><entry><title>numpy学习笔记</title><link href="http://liung.github.io/blog/python/2014-09-14-numpy%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" rel="alternate"></link><updated>2014-09-14T12:49:44+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-14:blog/python/2014-09-14-numpy学习笔记.html</id><summary type="html">&lt;hr /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2014-09-17T10:55:29+08:00</updated><entry><title>常用气动软件</title><link href="http://liung.github.io/blog/qi-dong/2014-09-17-%E5%B8%B8%E7%94%A8%E6%B0%94%E5%8A%A8%E8%BD%AF%E4%BB%B6.html" rel="alternate"></link><updated>2014-09-17T10:55:29+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-17:blog/qi-dong/2014-09-17-常用气动软件.html</id><summary type="html">&lt;h3&gt;XFoil&lt;/h3&gt;
+&lt;p&gt;XFoil是一个为设计和分析亚音速飞机独立翼型编写的互动式的程序&lt;/p&gt;
+&lt;p&gt;主页：&lt;a href="http://web.mit.edu/drela/Public/web/xfoil/"&gt;&lt;strong&gt;http://web.mit.edu/drela/Public/web/xfoil/&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Profili&lt;/h3&gt;
+&lt;p&gt;Profili是一款用来帮助你进行飞机机翼设计和分析机翼的空气动力学的分析设计软件&lt;/p&gt;
+&lt;h3&gt;AVL&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://web.mit.edu/drela/Public/web/avl/"&gt;AVL&lt;/a&gt;是MIT（麻省理工）用fortran开发的一个气动和飞行动力学分析程序。&lt;/p&gt;
+&lt;p&gt;下面是它的一个官方说明：&lt;/p&gt;
+&lt;p&gt;AVL is a program for the aerodynamic and flight-dynamic analysis of rigid aircraft 
+of arbitrary configuration. It employs an extended &lt;strong&gt;vortex lattice model&lt;/strong&gt; for 
+the lifting surfaces, together with a slender-body model for fuselages and nacelles. 
+General nonlinear flight states can be specified. The flight dynamic analysis 
+combines a &lt;strong&gt;full linearization of the aerodynamic model&lt;/strong&gt; about any flight state, 
+together with specified mass properties.&lt;/p&gt;
+&lt;h4&gt;扩展涡格模型&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;气动组成&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;升力面&lt;/li&gt;
+&lt;li&gt;细长体&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;结构定义&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;以关键字描述几何外形的输入文件&lt;/li&gt;
+&lt;li&gt;线性差值定义截面&lt;/li&gt;
+&lt;li&gt;截面属性&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;翼型：NACA xxxx 或者来自翼型文件&lt;/li&gt;
+&lt;li&gt;操纵面偏转&lt;/li&gt;
+&lt;li&gt;抛物线形剖面极线，尺度放缩&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;整个表面或机身的缩放，平移，旋转操作&lt;/li&gt;
+&lt;li&gt;整个表面或机身的重叠设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;离散化&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Uniform（归一化）&lt;/li&gt;
+&lt;li&gt;Sine&lt;/li&gt;
+&lt;li&gt;Cosine&lt;/li&gt;
+&lt;li&gt;Blend（组合）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;控制舵面的偏转&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Via normal-vector tilting（通过倾斜法向量）&lt;/li&gt;
+&lt;li&gt;前缘或后缘副翼&lt;/li&gt;
+&lt;li&gt;Flaps independent of discretization（副翼的离散化）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通常的自由来流描述&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;$\alpha, \beta$， 来流角度&lt;/li&gt;
+&lt;li&gt;p, q, r 飞行器旋转角速度分量&lt;/li&gt;
+&lt;li&gt;亚音速的普朗特-葛劳涡（Prandtl-Glauert）压缩性修正&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;气动力和力矩输出&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;体轴和稳定轴系下的气动力或力矩&lt;/li&gt;
+&lt;li&gt;包含有阻力特性分析的Trefftz-plane &lt;/li&gt;
+&lt;li&gt;力和力矩导数，关于角度，旋转角速度，控制面等...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;配平计算&lt;/h4&gt;
+&lt;h4&gt;质量特性&lt;/h4&gt;
+&lt;h4&gt;模态分析&lt;/h4&gt;
+&lt;h4&gt;非定常流动&lt;/h4&gt;
+&lt;p&gt;AVL对于非定常流动都假定为准定常流动，这意味着计算时忽略了非定常脱落涡流。而且，AVL还将飞机状态限定在一定的缩减频率范围内，如，无量纲的旋转角速度一般做如下限制：&lt;/p&gt;
+&lt;p&gt;-0.10 &amp;lt; pb/2V &amp;lt; 0.10&lt;/p&gt;
+&lt;p&gt;-0.03 &amp;lt; qc/2V &amp;lt; 0.03&lt;/p&gt;
+&lt;p&gt;-0.25 &amp;lt; rb/2V &amp;lt; 0.25&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://web.mit.edu/drela/Public/web/avl/avl_doc.txt"&gt;帮助文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;AirFoil&lt;/h3&gt;
+&lt;h3&gt;XFLR5&lt;/h3&gt;
+&lt;p&gt;项目地址：&lt;a href="http://www.xflr5.cn/"&gt;&lt;strong&gt;http://www.xflr5.cn&lt;/strong&gt;/&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Tornado&lt;/h3&gt;
+&lt;p&gt;用Matlab编写的基于涡格法的分析程序&lt;/p&gt;
+&lt;h3&gt;QBlade&lt;/h3&gt;
+&lt;p&gt;QBlade is a Blade Element Momentum Method (BEM) and Double Multiple Streamtube (DMS) Design and Simulation Software for Vertical- and Horizontal Axis Wind Turbines. It also includes tools to setup and simulate the internal blade structure and perform an aeroelastic analysis of a wind turbine rotor in turbulent inflow conditions through a coupling with FAST from NREL&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a href="http://www.q-blade.org/"&gt;&lt;strong&gt;http://www.q-blade.org/&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Manticore Aerofoil Design&lt;/h3&gt;
+&lt;p&gt;Aerofoil design software based on Panel2D from Aerospace, Mechanical &amp;amp; Mechatronic Engineering, University of Sydney with considerable enhancements.&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a href="http://mdesign.sourceforge.net/"&gt;&lt;strong&gt;http://mdesign.sourceforge.net/&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Foils - model airfoil plotter&lt;/h3&gt;
+&lt;p&gt;Draws accurately scaled model airfoil rib or foam cutting templates on any
+printer in Windows 3.1 or later, or via clipboard to some drawing and CAD programs.&lt;/p&gt;
+&lt;p&gt;主页地址：&lt;a href="http://foils.sourceforge.net/"&gt;&lt;strong&gt;http://foils.sourceforge.net/&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary><category term="气动"></category><category term="气动软件"></category></entry><entry><title>Numpy学习笔记</title><link href="http://liung.github.io/blog/python/2014-09-14-numpy%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" rel="alternate"></link><updated>2014-09-14T12:49:44+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-14:blog/python/2014-09-14-numpy学习笔记.html</id><summary type="html">&lt;hr /&gt;
 &lt;h3&gt;数组的方法&lt;/h3&gt;
 &lt;h4&gt;数组转置和轴对换&lt;/h4&gt;
 &lt;p&gt;转置（&lt;strong&gt;transpose&lt;/strong&gt;，或者通过&lt;strong&gt;T属性&lt;/strong&gt;）返回的是源数据视图（不会进行任何复制操作）。ndarray还有一个&lt;strong&gt;swapaxes&lt;/strong&gt;方法，它需要接受一对轴编号。&lt;/p&gt;
@@ -1114,11 +1255,11 @@
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-programming-attitude-control-2/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>Ipython学习笔记</title><link href="http://liung.github.io/blog/python/2014-08-31-IPython%E5%91%BD%E4%BB%A4%E9%9B%86.html" rel="alternate"></link><updated>2014-08-31T10:55:41+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-08-31:blog/python/2014-08-31-IPython命令集.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>IPython学习笔记</title><link href="http://liung.github.io/blog/python/2014-08-31-IPython%E5%91%BD%E4%BB%A4%E9%9B%86.html" rel="alternate"></link><updated>2014-08-31T10:55:41+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-08-31:blog/python/2014-08-31-IPython命令集.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;ipython --pylab=inline:&lt;/strong&gt;ipython启动后默认导入numpy和matplotlib.pylab模块&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;ipython qtconsole&lt;/strong&gt;:使用Qt Gui 后台&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;%lsmagic：&lt;/strong&gt;列出ipython中的所有魔法命令
--&lt;strong&gt; %whos:&lt;/strong&gt; 查看变量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;%lsmagic：&lt;/strong&gt;列出ipython中的所有魔法命令&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt; %whos:&lt;/strong&gt; 查看变量&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;%reset:&lt;/strong&gt; 清空变量，包括np和pylab模块&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;%pylab：&lt;/strong&gt;重新导入numpy和pylab模块&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;%bookmark alias：&lt;/strong&gt;将当前目录用alias作为标签，cd alias可以直接进入该目录&lt;/li&gt;
@@ -1127,13 +1268,13 @@
 &lt;li&gt;&lt;strong&gt;%hist：&lt;/strong&gt;输入之前的输入历史&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;_：&lt;/strong&gt;下划线表示暂存的上次返回变量（grab previous result）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;ipython采用tab自动补全功能&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;ipython继承Unix风格命令&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;%ls&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;%cd&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;%pwd&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Available line magics&lt;/h4&gt;
 &lt;p&gt;%alias  %alias_magic  %autocall  %automagic  %autosave  %bookmark  %cd  %clear  %cls  %colors  %config  %connect_info  %debug  %dhist  %dirs  %doctest_mode  %ed  %edit  %env  %gui  %guiref  %hist  %history  %install_default_config  %install_ext  %install_profiles  %killbgscripts  %less  %load  %load_ext  %loadpy  %logoff  %logon  %logstart  %logstate  %logstop  %lsmagic  %macro  %magic  %matplotlib  %more  %notebook  %page  %pastebin  %pdb  %pdef  %pdoc  %pfile  %pinfo  %pinfo2  %popd  %pprint  %precision  %profile  %prun  %psearch  %psource  %pushd  %pwd  %pycat  %pylab  %qtconsole  %quickref  %recall  %rehashx  %reload_ext  %rep  %rerun  %reset  %reset_selective  %run  %save  %sc  %store  %sx  %system  %tb  %time  %timeit  %unalias  %unload_ext  %who  %who_ls  %whos  %xdel  %xmode&lt;/p&gt;
