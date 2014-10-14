@@ -54,6 +54,59 @@
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html">APM-MacOS平台上用Make方法编译Pixhawk/PX4</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-08T09:27:32" pubdate>9月 08, 2014</time></p>
+</header>
+
+  <div class="entry-content"><h3>MAC (ver 10.6 onwards)</h3>
+<p><strong>1、</strong>Install Homebrew for Mac ...</p></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html">APM-MacOS平台上用Arduino编译APM2.x</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-08T09:02:28" pubdate>9月 08, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+
+<p>在MacOS平台上针对AVR芯片的Ardupilot的源码编译可以有两种选择。第一种是使用特殊版的Arduino编译环境。你可以在<a href="http://firmware.diydrones.com/">http://firmware.diydrones.com/</a>的工具目录下获得。第二种选择是使用<code>make</code>命令行工具进行编译。</p>
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">APM-Windows平台上用Make方法编译Pixhawk和PX4</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-07T13:59:57" pubdate>9月 07, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+
+<h3>Windows平台</h3>
+<p><strong>1、</strong> 安装<a href="http://windows.github.com/">Github for Windows</a></p>
+<p><strong>2、</strong> 确保你的 github 上关于行尾结束符的设置没有发生变动。</p>
+<ul>
+<li>当你安装了Git 后，“Git shell（or Bash）”也会安装好。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：</li>
+</ul>
+<p><code>git config --global core.autocrlf false</code></p>
+<p><strong>3、</strong>“克隆”（clone）Ardupilot，PX4Firmware和PX4NuttX代码库到你的本地电脑上：</p>
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html">APM-Windows平台上用Arduino编译ArduPilot</a>
       </h1>
       <p class="meta"><time datetime="2014-09-06T15:34:19" pubdate>9月 06, 2014</time></p>
@@ -84,50 +137,6 @@
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">Read On &crarr;</a>
   </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T14:41:58" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>综述</h3>
-<p>地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
-<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真 ...</a></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T12:08:26" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content"><p>本页面将向你介绍如何规划你的新代码块使之可以按需运行。</p>
-<hr />
-<h3>用代码调度器运行你的代码</h3>
-<p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是 ...</p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T11:01:10" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content"><p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面 ...</a></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
-  </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="http://liung.github.io/category/apm/index3.html">&larr; Older</a>
 
@@ -142,19 +151,19 @@
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">APM-Linux上SITL仿真设置</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">APM-Windows上SITL仿真设置</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html">APM-模拟仿真</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html">APM-Linux平台上用Make方法编译Pixhawk/PX4</a>
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html">APM-Linux平台上用Make方法编译APM2.x</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html">APM-MacOS平台上用Make方法编译Pixhawk/PX4</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html">APM-MacOS平台上用Arduino编译APM2.x</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">APM-Windows平台上用Make方法编译Pixhawk和PX4</a>
       </li>
     </ul>
   </section>
