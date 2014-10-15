@@ -54,22 +54,144 @@
   <article class="hentry" role="article">
 <header>
       <h1 class="entry-title">APM-Linux上SITL仿真设置</h1>
-      <p class="meta"><time datetime="2014-10-14T13:58:45" pubdate>10月 14, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-15T14:06:42" pubdate>10月 15, 2014</time></p>
 </header>
 
-  <div class="entry-content"><hr />
+  <div class="entry-content"><h3>简介</h3>
+<p>SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</p>
+<p>本页面详细说明了如何在Linux平台上设置SITL。文中使用的相关命令在 <strong>Ubuntu 12.10</strong> 和 <strong>Ubuntu 13.04</strong>  平台上测试通过。</p>
+<p><img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/04/SITL_Linux.png" /></p>
+<hr />
+<h3>相关细节</h3>
+<p>HITL（Hardware In The Loop）模拟对于APM代码测试工作相当有用，但是对于某些任务存在一些限制。这些限制包括：</p>
+<ul>
+<li>不能运行所有的autopilot代码，因为当硬件放置在桌面上时，底层驱动不能兼容所有的飞行测试输入量。</li>
+<li>不能使用一系列对正常C++调试非常有用的高级编程工具（例如调试器和内存监视器）</li>
+</ul>
+<p>内建有ArduPilot的SITL克服了上述限制，它仍然运行相同的代码，但是它是作为PC上的本地可执行程序，并且使用了一些C++技巧，在注册层来模拟APM飞控板的硬件。所以，这些底层的硬件驱动（例如ADC， 陀螺仪，加速度计和GPS）就像真实飞行环境一样正常运行。</p>
+<p>APM的SITL环境在如下系统中开发并测试：</p>
+<ul>
+<li>Windows： Windows 7</li>
+<li>Linux： Ubuntu 13.04 或 之后版本</li>
+</ul>
+<h3>关于虚拟机</h3>
+<p>如果你尝试在虚拟机上运行SITL，你可能会发现定时器非常糟糕以至于很难飞行。具体表现为飞行非常不稳定或者经常撞机。那么，你可以通过以下方法来改善这种情况：</p>
+<ul>
+<li>设置虚拟机使用尽可能多的CPU数量</li>
+<li>不使用ardupilot中EKF（旧的DCM代码对于差的传感器定时处理相对灵活）。设置方法：在mavproxy终端键入“<code>param set AHRS_EKF_USE 0</code>”</li>
+</ul>
+<hr />
+<h3>安装步骤</h3>
+<p>请遵循以下步骤</p>
+<h4>Step 1： 下载ardupilot</h4>
+<p>如果没有ardupilot的git库本地备份，请打开终端并运行：</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//github.com/diydrones/ardupilot.git</span>
+</pre></div>
+
+
+<h4>Step 2： JSBSim</h4>
+<p>如果你想要运行固定翼模拟器，那么你就需要JSBSim包。在同一目录下（home目录）运行下面命令：</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//github.com/tridge/jsbsim.git</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libtool</span> <span class="n">automake</span> <span class="n">autoconf</span> <span class="n">libexpat1</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+
+
+<h4>Step 3： 安装所需包</h4>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">matplotlib</span> <span class="n">python</span><span class="o">-</span><span class="n">serial</span> <span class="n">python</span><span class="o">-</span><span class="n">wxgtk2</span><span class="mf">.8</span> <span class="n">python</span><span class="o">-</span><span class="n">lxml</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">scipy</span> <span class="n">python</span><span class="o">-</span><span class="n">opencv</span> <span class="n">ccache</span> <span class="n">gawk</span> <span class="n">git</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pymavlink</span> <span class="n">MAVProxy</span>
+</pre></div>
+
+
+<h4>Step 4： 将目录添加到搜索路径</h4>
+<p>添加下面几行到home目录中“.bashrc”的文件尾部（注意文件名以<strong>.</strong>开始）</p>
+<div class="highlight"><pre><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="err">$</span><span class="n">PATH</span><span class="o">:</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="n">ardupilot</span><span class="o">/</span><span class="n">Tools</span><span class="o">/</span><span class="n">autotest</span>
+<span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="err">$</span><span class="n">PATH</span><span class="o">:</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="n">MAVProxy</span>
+<span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="err">$</span><span class="n">PATH</span><span class="o">:</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="n">mavlink</span><span class="o">/</span><span class="n">pymavlink</span><span class="o">/</span><span class="n">examples</span>
+<span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="err">$</span><span class="n">PATH</span><span class="o">:</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="n">jsbsim</span><span class="o">/</span><span class="n">src</span>
+<span class="n">export</span> <span class="n">PATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">ccache</span><span class="o">:</span><span class="err">$</span><span class="n">PATH</span>
+</pre></div>
+
+
+<p>然后使用“<strong>.</strong>”命令在终端重载路径文件</p>
+<div class="highlight"><pre><span class="p">.</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
+</pre></div>
+
+
+<h4>Step 5： 编译JSBSim，运行如下命令</h4>
+<p>如果要运行SITL中的固定翼版本，那么你需要安装JSBSim。（Copter 和 Rover 不需要）</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="n">jsbsim</span>
+<span class="p">.</span><span class="o">/</span><span class="n">autogen</span><span class="p">.</span><span class="n">sh</span>
+<span class="n">make</span>
+</pre></div>
+
+
+<h4>Step 6： 启动SITL模拟器</h4>
+<p>开始运行模拟器，首先需要将目录切换到对应飞行器目录。例如，对于固定翼需要将目录切换到ardupilot/ArduPlane。</p>
+<p>使用sim_vehicle.sh启动模拟器。第一次启动时需要加-w命令选项来清除之前的EEPROM数据，加载当前你的飞行器的正确默认参数，并使用“make configure”来生成配置文件。</p>
+<div class="highlight"><pre><span class="n">make</span> <span class="n">configure</span>
+<span class="n">sim_vehicle</span><span class="p">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">w</span>
+</pre></div>
+
+
+<p>当默认参数加载完成，就可以正常启动模拟器了。</p>
+<div class="highlight"><pre><span class="n">sim_vehicle</span><span class="p">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">console</span> <span class="o">--</span><span class="n">map</span> <span class="o">--</span><span class="n">aircraft</span> <span class="n">test</span>
+</pre></div>
+
+
+<p>sim_vehicle.sh有许多有用参数选项。请使用-h项查看可用的选项哦~</p>
+<h4>Step 7： 加载任务</h4>
+<p>让我们来开始加载测试任务吧~</p>
+<div class="highlight"><pre><span class="n">wp</span> <span class="n">load</span> <span class="p">..</span><span class="o">/</span><span class="n">Tools</span><span class="o">/</span><span class="n">autotest</span><span class="o">/</span><span class="n">ArduPlane</span><span class="o">-</span><span class="n">Missions</span><span class="o">/</span><span class="n">CMAC</span><span class="o">-</span><span class="n">toff</span><span class="o">-</span><span class="n">loop</span><span class="p">.</span><span class="n">txt</span>
+</pre></div>
+
+
+<p>这个任务写入了绕我本地领域的一个飞行循环。现在开始起飞~在MAVProxy中运行“<code>auto</code>”，你的虚拟飞行器现在开始起飞啦~啦~~哦~</p>
+<h4>Step 8： 学习MAVProxy</h4>
+<p>想要学习SITL之外的东西？那就开始学习使用MAVProxy吧。这个是<a href="http://tridge.github.io/MAVProxy/">MAVProxy文档</a>。飞行愉快哦~0-0.</p>
+<hr />
 <h4>链接</h4>
 <ol>
 <li><a href="http://dev.ardupilot.com/wiki/setting-up-sitl-on-linux/">APM官网原文链接</a></li>
 <li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
 </ol>
-<p><em>(over)</em></p></div>
+<p><em>(over)</em></p><script type= "text/javascript">
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+</script>
+</div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
     Posted by <span class="fn">liung</span>
   </span>
-<time datetime="2014-10-14T13:58:45" pubdate>10月 14, 2014</time>  <span class="categories">
+<time datetime="2014-10-15T14:06:42" pubdate>10月 15, 2014</time>  <span class="categories">
     <a class="category" href="http://liung.github.io/tag/apm.html">APM</a>
     <a class="category" href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>
     <a class="category" href="http://liung.github.io/tag/ying-jian.html">硬件</a>
