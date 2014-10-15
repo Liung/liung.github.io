@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 15 Oct 2014 14:06:42 +0800</lastBuildDate><item><title>APM-Linux上SITL仿真设置</title><link>http://liung.github.io/blog/apm/2014-10-14-APM-Linux%E4%B8%8ASITL%E4%BB%BF%E7%9C%9F%E8%AE%BE%E7%BD%AE.html</link><description>&lt;h3&gt;简介&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 15 Oct 2014 18:44:26 +0800</lastBuildDate><item><title>APM-回放功能测试</title><link>http://liung.github.io/blog/apm/2014-10-15-APM-%E5%9B%9E%E6%94%BE%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95.html</link><description>&lt;h3&gt;简介&lt;/h3&gt;
+&lt;p&gt;回放功能是用来处理dataflash日志文件的一套程序，并通过最近的主代码展示一系列基于真实数据的模拟结果。它可以用来重现产生bug的准确情形，或在同样的条件下测试改变EKF参数的影响。回放功能仅仅运行于Liunx/Ubuntu平台，且仅适用来自于高速CPU诸如PX4/Pixhawk运行2014年5月之后的ArduCopter/ArduPlane/ArduRover（例如AC3.2-dev或更高版本）所产生的dataflash日志文件。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/05/Replay_EKFVsINAV.png" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;回放功能所需要的Dataflash日志信息&lt;/h3&gt;
+&lt;p&gt;为了能够使用回放功能，下面的dataflash信息必须被启用：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AHRS2, BARO, EKF1, EKF2, EKF3, EKF4, GPS, IMU, IMU2, MAG, MAG2&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;编译回放模块&lt;/h3&gt;
+&lt;p&gt;在你的Liunx上或Ubuntu虚拟机上：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Tools&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Replay&lt;/span&gt;
+&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;linux&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;上述操作将会生成一个&lt;code&gt;/tmp/Replay.build/Replay.elf&lt;/code&gt;文件&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;使用回放功能&lt;/h3&gt;
+&lt;p&gt;首先，将你需要分析的dataflash日志文件放入&lt;code&gt;../ardupilot/Tools/Replay&lt;/code&gt;目录。&lt;/p&gt;
+&lt;p&gt;显示回放帮助：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tmp&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Replay&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Replay&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;elf&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;通过Replay运行日志，生成图片和EKF数据文件：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tmp&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Replay&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Replay&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;elf&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r400&lt;/span&gt; &lt;span class="n"&gt;MyLogFile&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BIN&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;注意：参数&lt;code&gt;-r400&lt;/code&gt;是针对ArduCopter的主循环运行频率，对于ArduPlane和Rover自动忽略或替换为&lt;code&gt;-r50&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;上述操作将会产生六个输入文件：plot.dat, plot2.dat, EKF1.dat, EKF2.dat, EKF3.dat, EKF4.dat&lt;/p&gt;
+&lt;p&gt;查看原始文件了解哪些有用的数值需要被绘制：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;less&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dat&lt;/span&gt;  &lt;span class="c1"&gt;//可以用其它六个文件的任何一个文件来代替 plot.dat&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="img1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/05/Replay_PlotDatColumns-300x150.png" /&gt;&lt;/p&gt;
+&lt;p&gt;可以使用相对简单的plotit.sh脚本来绘制数据。下面命令用来比较由EKF计算的高度与较早的使用惯性导航计算的高度和实际飞行高度。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/05/Replay_EKFInavFlightAlt.png" /&gt;&lt;/p&gt;
+&lt;p&gt;也可以使用更复杂的mavgraph.py来绘制数据：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mavgraph&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;MyLogFile&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BIN&lt;/span&gt; &lt;span class="n"&gt;EKF1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PN&lt;/span&gt; &lt;span class="n"&gt;NTUN&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PosX&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mf"&gt;0.01&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;这个例子用来将EKF估算的相对家的南北位置与较早的惯性导航估算的位置比较。结果请看本页的第一张图片。&lt;/h2&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/testing-with-replay/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Wed, 15 Oct 2014 18:44:26 +0800</pubDate><guid>tag:liung.github.io,2014-10-15:blog/apm/2014-10-15-APM-回放功能测试.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Linux上SITL仿真设置</title><link>http://liung.github.io/blog/apm/2014-10-14-APM-Linux%E4%B8%8ASITL%E4%BB%BF%E7%9C%9F%E8%AE%BE%E7%BD%AE.html</link><description>&lt;h3&gt;简介&lt;/h3&gt;
 &lt;p&gt;SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。&lt;/p&gt;
 &lt;p&gt;本页面详细说明了如何在Linux平台上设置SITL。文中使用的相关命令在 &lt;strong&gt;Ubuntu 12.10&lt;/strong&gt; 和 &lt;strong&gt;Ubuntu 13.04&lt;/strong&gt;  平台上测试通过。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/04/SITL_Linux.png" /&gt;&lt;/p&gt;
@@ -1694,7 +1744,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html"&gt;模拟仿真&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html"&gt;Windows上设置SITL（Sorftware In The Loop，软件循环仿真）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html"&gt;Linux上设置SITL（Sorftware In The Loop，软件循环仿真）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/testing-with-replay/"&gt;日志回放测试 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html"&gt;日志回放测试 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/debugging-with-gdb/"&gt;GDB调试 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/submitting-patches-back-to-master/"&gt;提交补丁（patches）到git仓库（master） *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/raspberry-pi-via-mavlink/"&gt;通过MAVLink协议和树莓派（Raspberry Pi）通信 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
