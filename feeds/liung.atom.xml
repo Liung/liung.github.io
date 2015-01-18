@@ -55,41 +55,6 @@
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/mavproxy-on-windows-7/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-使用Atmel Studio 或者微软的Visual Studio编辑代码</title><link href="http://liung.github.io/blog/apm/2014-10-16-APM-%E4%BD%BF%E7%94%A8Atmel_Studio%E6%88%96%E8%80%85%E5%BE%AE%E8%BD%AF%E7%9A%84Visual_Studio%E7%BC%96%E8%BE%91%E4%BB%A3%E7%A0%81.html" rel="alternate"></link><updated>2014-10-16T13:54:19+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-16:blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html</id><summary type="html">&lt;hr /&gt;
-&lt;h4&gt;链接&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-ardupilot-apm-with-visual-studio-visual-micro/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-使用Eclipse编辑Pixhawk代码</title><link href="http://liung.github.io/blog/apm/2014-10-16-APM-%E4%BD%BF%E7%94%A8Eclipse%E7%BC%96%E8%BE%91%E4%BB%A3%E7%A0%81.html" rel="alternate"></link><updated>2014-10-16T13:54:19+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-16:blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html</id><summary type="html">&lt;hr /&gt;
-&lt;h4&gt;链接&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/editing-the-code-with-eclipse/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-使用NotePad++编辑代码</title><link href="http://liung.github.io/blog/apm/2014-10-16-APM-%E4%BD%BF%E7%94%A8NotePad++%E7%BC%96%E8%BE%91%E4%BB%A3%E7%A0%81.html" rel="alternate"></link><updated>2014-10-16T13:54:19+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-16:blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html</id><summary type="html">&lt;h3&gt;NotePad++&lt;/h3&gt;
-&lt;p&gt;NOtePad++是开发团队最常用的一款编辑器，可以在&lt;a href="http://notepad-plus-plus.org/"&gt;这里&lt;/a&gt;下载。&lt;/p&gt;
-&lt;h3&gt;使用工程面板组织多文件&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/NotePad_ProjectPanel.png" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;设置PDE文件为C++格式&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="img1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/NotePad_SetupPDE-1024x603.png" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;使用空白符代替Tab&lt;/h3&gt;
-&lt;p&gt;在设置--》属性--》语言菜单栏，确保已经点选了“Replace [tab] by space”项。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="img2" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EditingTheCode_NotePad++.png" /&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;其他编辑器&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;一些开发团队成员强烈建议Windows用户使用&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html"&gt;MS Visual Studio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Windows平台上PX4/Pixhawk开发推荐使用Eclipse，相关设置说明请点击&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html"&gt;这里&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h4&gt;链接&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/editing-the-code/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-回放功能测试</title><link href="http://liung.github.io/blog/apm/2014-10-15-APM-%E5%9B%9E%E6%94%BE%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95.html" rel="alternate"></link><updated>2014-10-15T18:44:26+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-15:blog/apm/2014-10-15-APM-回放功能测试.html</id><summary type="html">&lt;h3&gt;简介&lt;/h3&gt;
 &lt;p&gt;回放功能是用来处理dataflash日志文件的一套程序，并通过最近的主代码展示一系列基于真实数据的模拟结果。它可以用来重现产生bug的准确情形，或在同样的条件下测试改变EKF参数的影响。回放功能仅仅运行于Liunx/Ubuntu平台，且仅适用来自于高速CPU诸如PX4/Pixhawk运行2014年5月之后的ArduCopter/ArduPlane/ArduRover（例如AC3.2-dev或更高版本）所产生的dataflash日志文件。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/05/Replay_EKFVsINAV.png" /&gt;&lt;/p&gt;
@@ -371,7 +336,7 @@ sudo pip install mavproxy&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-模拟仿真</title><link href="http://liung.github.io/blog/apm/2014-10-14-APM-%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F.html" rel="alternate"></link><updated>2014-10-14T13:52:49+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-14:blog/apm/2014-10-14-APM-模拟仿真.html</id><summary type="html">&lt;p&gt;本页面描述了如何使用APM进行模拟仿真，它可以让我们安全的测试试验代码和一些设置。毕竟，撞毁模拟飞机可要比真实的飞机划算的多哦！&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;硬件循环仿真（HITL）:&lt;/strong&gt;硬件仿真使用模拟器代替真实的飞行器和大气环境，该模拟器包含有高精度的飞行动力学模型和大气环境模型（模拟气流，突风等）。通过在飞行中采用APM飞控板，连接运行模拟器的电脑，来代替真实飞行器。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;软件循环仿真（SITL）:&lt;/strong&gt;软件仿真额外的将APM飞控板虚拟化，如同硬件仿真中的飞行器和大气环境一样，它有利于原型快速开发，或者物理硬件（autopilots板或地面站）不可用或缺失时。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;软件循环仿真（HITL）:&lt;/strong&gt;软件仿真额外的将APM飞控板虚拟化，如同硬件仿真中的飞行器和大气环境一样，它有利于原型快速开发，或者物理硬件（autopilots板或地面站）不可用或缺失时。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html"&gt;Linux上SITL仿真设置&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html"&gt;Windows上SITL仿真设置&lt;/a&gt;&lt;/li&gt;
@@ -524,47 +489,7 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</summary><category term="气动"></category><category term="气动软件"></category></entry><entry><title>Pandas学习笔记</title><link href="http://liung.github.io/blog/python/2014-09-14-Pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" rel="alternate"></link><updated>2014-09-14T14:26:24+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-14:blog/python/2014-09-14-Pandas学习笔记.html</id><summary type="html">&lt;p&gt;通过索引方式返回的列只是相应数据的视图，因此，对返回的Series所做的任何就地修改都会反映到DataFrame上。通过Series的&lt;code&gt;copy&lt;/code&gt;方法可显式地复制列。&lt;/p&gt;
-&lt;h4&gt;DataFrame构造器可以接受的数据：&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;二维ndarray：&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;由数组、列表或元祖组成的字典：&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Numpy的结构化、记录数组：&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;由Series组成的字典：&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;由字典组成的字典：&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;字典或Series的列表：&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;由列表或元祖组成的列表：&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;另一个DataFrame：&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Numpy的MaskedArray：&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;索引对象&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Index对象是不可修改的&lt;/strong&gt;&lt;/p&gt;
-&lt;h4&gt;pandas中主要的index对象&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Index&lt;/strong&gt;：最泛化的Index对象，将轴标签表示为一个有Python对象组成的Numpy数组&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Int64Index&lt;/strong&gt;：针对整数的特殊Index&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;MultiIndex&lt;/strong&gt;：“层次化”索引对象，表示单个轴上的多层索引。可以看做由元祖组成的数组&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;DatetimeIndex&lt;/strong&gt;：存储纳秒级时间戳（用Numpy的datetime64类型表示）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;PeriodIndex&lt;/strong&gt;：针对Period数据（时间间隔）的特殊Index&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Index的方法和属性&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;append&lt;/strong&gt;：连接另一个Index对象，产生一个新的Index&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;diff&lt;/strong&gt;：计算差集，并得到一个Index&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;intersection&lt;/strong&gt;：计算交集&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;union&lt;/strong&gt;：计算并集&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;isin&lt;/strong&gt;：计算一个指示各值是否都包含在参数集合中的布尔型数组&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;delete&lt;/strong&gt;：删除索引i处的元素，并得到新的Index&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;drop&lt;/strong&gt;：删除传入的值，并得到新的Index&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;insert&lt;/strong&gt;：将元素插入到索引i处，并得到新的Index&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;is_monotonic&lt;/strong&gt;：当元素均大于等于前一个元素时，返回True&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;is_unique&lt;/strong&gt;：当Index没有重复值时，返回True&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;unique&lt;/strong&gt;：计算Index中唯一值的数组&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3&gt;基本方法&lt;/h3&gt;
-&lt;p&gt;reindex：重新索引，当某个索引值当前不存在，就引入缺失值&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;(not over)&lt;/em&gt;&lt;/p&gt;</summary><category term="python"></category><category term="ipython"></category></entry><entry><title>Numpy学习笔记</title><link href="http://liung.github.io/blog/python/2014-09-14-numpy%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" rel="alternate"></link><updated>2014-09-14T12:49:44+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-14:blog/python/2014-09-14-numpy学习笔记.html</id><summary type="html">&lt;hr /&gt;
+</summary><category term="气动"></category><category term="气动软件"></category></entry><entry><title>Numpy学习笔记</title><link href="http://liung.github.io/blog/python/2014-09-14-numpy%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" rel="alternate"></link><updated>2014-09-14T12:49:44+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-14:blog/python/2014-09-14-numpy学习笔记.html</id><summary type="html">&lt;hr /&gt;
 &lt;h3&gt;数组的方法&lt;/h3&gt;
 &lt;h4&gt;数组转置和轴对换&lt;/h4&gt;
 &lt;p&gt;转置（&lt;strong&gt;transpose&lt;/strong&gt;，或者通过&lt;strong&gt;T属性&lt;/strong&gt;）返回的是源数据视图（不会进行任何复制操作）。ndarray还有一个&lt;strong&gt;swapaxes&lt;/strong&gt;方法，它需要接受一对轴编号。&lt;/p&gt;
@@ -648,17 +573,17 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;/ul&gt;</summary><category term="Python"></category><category term="Numpy"></category></entry><entry><title>APM-Linux平台上用Make方法编译Pixhawk/PX4</title><link href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html" rel="alternate"></link><updated>2014-09-10T17:24:31+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-10:blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html</id><summary type="html">&lt;h3&gt;快速开始&lt;/h3&gt;
 &lt;p&gt;对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明&lt;/p&gt;
 &lt;h4&gt;1、安装&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;安装git&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;安装git&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;qq&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;strong&gt;“克隆”源码&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;“克隆”源码&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/diydrones/ardupilot.git&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;strong&gt;运行 install-prereqs-ubuntu.sh 脚本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;运行 install-prereqs-ubuntu.sh 脚本&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Tools&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;scripts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;prereqs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -669,14 +594,14 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 
 
 &lt;h4&gt;2、编译&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;编译ArduCopter&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;编译ArduCopter&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduCopter&lt;/span&gt;
 &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;configure&lt;/span&gt;
 &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;px4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v2&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;strong&gt;编译ArduPlane&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;编译ArduPlane&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduPlane&lt;/span&gt;
 &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;configure&lt;/span&gt;
 &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;px4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v2&lt;/span&gt;
@@ -868,66 +793,54 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code-onlinux/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-MacOS平台上用Make方法编译Pixhawk/PX4</title><link href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html" rel="alternate"></link><updated>2014-09-08T09:27:32+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-08:blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html</id><summary type="html">&lt;h3&gt;MAC (10.6版本或更早)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;1、&lt;/strong&gt;在Mac OS X上安装Homebrew&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2、&lt;/strong&gt;使用brew命令安装下列包&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;tap&lt;/span&gt; &lt;span class="n"&gt;PX4&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;homebrew&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;px4&lt;/span&gt;
-&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
-&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;genromfs&lt;/span&gt;
-&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;gcc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;arm&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;none&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eabi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;strong&gt;3、&lt;/strong&gt;使用下面命令安装pip和pyserial:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;easy_install&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pyserial&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;strong&gt;4、&lt;/strong&gt;现在创建你的工作目录，然后安装下面所有软件:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;px4&lt;/span&gt;
-&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;px4&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/diydrones/ardupilot.git&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/diydrones/PX4Firmware.git&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/diydrones/PX4NuttX.git&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;strong&gt;5、&lt;/strong&gt;然后使用下面命令为编译ArduCopter设置配置文件:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduCopter&lt;/span&gt;
-&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;configure&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;打开ardupilot/config.mk文件，将下面的信息改为你对应的文件目录:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;PX4_ROOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;PX4Firmware&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;改成你本地的&lt;/span&gt;&lt;span class="n"&gt;PX4Firmware&lt;/span&gt;&lt;span class="err"&gt;目录&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="n"&gt;NUTTX_SRC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;PX4NuttX&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nuttx&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;nuttx&lt;/span&gt;&lt;span class="err"&gt;目录同上&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="n"&gt;make&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;第一次使用将会编译&lt;/span&gt;&lt;span class="n"&gt;PX4Firmware&lt;/span&gt;&lt;span class="err"&gt;和&lt;/span&gt;&lt;span class="n"&gt;NuttX&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;make&lt;/span&gt;   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;第二次将会编译&lt;/span&gt;&lt;span class="n"&gt;ArduCopter&lt;/span&gt;&lt;span class="err"&gt;固件&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;strong&gt;6、&lt;/strong&gt;用下面命令编译面向px4的ArduCopter:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduCopter&lt;/span&gt;
-&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;px4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quad&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;编译完成之后，在你的ArduCopter文件目录将会发现两个文件。ArduCopter-v1.px4是针对原始PX4平台，而ArduCopter-v2.px4是针对pixhawk平台。&lt;/p&gt;
-&lt;p&gt;有时你可能升级PX4Firmware和PX4NuttX。为了确保能有正确编译，在运行之前请先使用clean选项清理编译环境：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;px4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;clean&lt;/span&gt;
-&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;px4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;frame&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;可使用的框架类型有：&lt;strong&gt;quad, tri, hexa, y6, octa, octa-quad, hell&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;然后连接并加载固件到你的飞行器上:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;px4&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quad&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;upload&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-MacOS平台上用Make方法编译Pixhawk/PX4</title><link href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html" rel="alternate"></link><updated>2014-09-08T09:27:32+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-08:blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html</id><summary type="html">&lt;h3&gt;MAC (ver 10.6 onwards)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1、&lt;/strong&gt;Install Homebrew for Mac OS X&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、&lt;/strong&gt;Install the following packages using brew&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;brew tap PX4/homebrew-px4&lt;/li&gt;
+&lt;li&gt;brew update&lt;/li&gt;
+&lt;li&gt;brew install genromfs&lt;/li&gt;
+&lt;li&gt;brew install gcc-arm-none-eabi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3、&lt;/strong&gt;Install pip and pyserial using the following commands:
+- sudo easy_install pip
+- sudo pip install pyserial&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、&lt;/strong&gt;Now create your directory and install all the software:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mkdir -p px4&lt;/li&gt;
+&lt;li&gt;cd px4&lt;/li&gt;
+&lt;li&gt;git clone https://github.com/diydrones/ardupilot.git&lt;/li&gt;
+&lt;li&gt;git clone https://github.com/diydrones/PX4Firmware.git&lt;/li&gt;
+&lt;li&gt;git clone https://github.com/diydrones/PX4NuttX.git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;5、&lt;/strong&gt;Now set-up the configuration file for building ArduCopter using the following commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cd ardupilot/ArduCopter&lt;/li&gt;
+&lt;li&gt;make configure&lt;/li&gt;
+&lt;li&gt;open the ardupilot/config.mk file and make the following changes:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PX4_ROOT=../PX4Firmware (this should point to your PX4Firmware directory)&lt;/p&gt;
+&lt;p&gt;NUTTX_SRC=../PX4NuttX/nuttx (this should point to nuttx)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make   (the first time through it will build the PX4Firmware and NuttX)&lt;/li&gt;
+&lt;li&gt;make   (this time it will build the ArduCopter firmware)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;6、&lt;/strong&gt;Build the arducopter software for px4 using the following commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cd ardupilot/ArduCopter&lt;/li&gt;
+&lt;li&gt;make px4-quad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You should find two files in the ArduCopter directory. ArduCopter-v1.px4 is for the original PX4, ArduCopter-v2.px4 is for the pixhawk.&lt;/p&gt;
+&lt;p&gt;Occasionally you should pull PX4Firmware and PX4NuttX updates. To make sure it compiles correctly, run the clean option in make:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make px4-clean&lt;/li&gt;
+&lt;li&gt;make px4-[frame type]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The available frame types are quad, tri, hexa, y6, octa, octa-quad, hell&lt;/p&gt;
+&lt;p&gt;To make and upload to your vehicle:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make px4-quad-upload&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr /&gt;
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
@@ -1870,9 +1783,9 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html"&gt;编译代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html"&gt;Windows平台上用Arduino编译ArduPilot&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html"&gt;Windows平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html"&gt;MacOS平台上用Arduino编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html"&gt;MacOS平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html"&gt;Linux平台上用Make方法编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html"&gt;MacOS平台上用Arduino编译APM2.x *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html"&gt;MacOS平台上用Make方法编译Pixhawk/PX4 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="{{filename}2014-09-10-APM-Linux平台上用Make方法编译APM2.x"&gt;Linux平台上用Make方法编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html"&gt;Linux平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building_with_make/"&gt;采用Make方法编译APM2.x（Win，Mac，Linux） *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-with-eclipse/"&gt;使用Eclipse编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -1881,9 +1794,9 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-for-beaglebone-black-on-linux/"&gt;Linux上针对BeagleBone Black的编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-apm-for-flymaple/"&gt;Linux上针对Flymaple的APM编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/load-the-code-onto-apm2x/"&gt;加载代码到APM2.x *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html"&gt;编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html"&gt;使用Eclipse编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html"&gt;使用Atmel Studio 或者微软的Visual Studio编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/editing-the-code/"&gt;编辑代码 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/editing-the-code-with-eclipse/"&gt;使用Eclipse编辑代码 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-ardupilot-apm-with-visual-studio-visual-micro/"&gt;使用Atmel Studio 或者 微软的Visual Studio编辑代码 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/git_github_guide/"&gt;Git和Github操作指南 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html"&gt;模拟仿真&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html"&gt;Windows上设置SITL（Sorftware In The Loop，软件循环仿真）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;

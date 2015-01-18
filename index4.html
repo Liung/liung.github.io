@@ -54,77 +54,6 @@
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">APM-Windows平台上用Make方法编译Pixhawk和PX4</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-07T13:59:57" pubdate>9月 07, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<h3>Windows平台</h3>
-<p><strong>1、</strong> 安装<a href="http://windows.github.com/">Github for Windows</a></p>
-<p><strong>2、</strong> 确保你的 github 上关于行尾结束符的设置没有发生变动。</p>
-<ul>
-<li>当你安装了Git 后，“Git shell（or Bash）”也会安装好。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：</li>
-</ul>
-<p><code>git config --global core.autocrlf false</code></p>
-<p><strong>3、</strong>“克隆”（clone）Ardupilot，PX4Firmware和PX4NuttX代码库到你的本地电脑上：</p>
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html">APM-Windows平台上用Arduino编译ArduPilot</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-06T15:34:19" pubdate>9月 06, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p><strong>版本要求： Copter 3.1， Plane 2.76</strong></p>
-<p><strong>硬件要求： APM 2.0,2.5,2.6</strong></p>
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">APM-编译代码</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-06T14:03:34" pubdate>9月 06, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>下面这些页面的链接，将提供给你更多关于如何编译APM2.x和PX4的飞行器控制和地面站源码的信息。</p>
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T14:41:58" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>综述</h3>
-<p>地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
-<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真 ...</a></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
       </h1>
       <p class="meta"><time datetime="2014-09-05T12:08:26" pubdate>9月 05, 2014</time></p>
@@ -136,6 +65,66 @@
 <p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是 ...</p></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-05T11:01:10" pubdate>9月 05, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面 ...</a></p></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-02T14:21:41" pubdate>9月 02, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。</p>
+<h3>在主执行代码中添加参数</h3>
+<hr />
+<p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum ...</p></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-31T21:53:09" pubdate>8月 31, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+
+<p>在从版本AC3.1向AC3.2的过渡中，姿态控制逻辑运算作为“the onion”（洋葱头）工程的一部分进行了重构。下面来展示重构后的程序执行流程。
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/python/2014-08-31-IPython命令集.html">IPython学习笔记</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-31T10:55:41" pubdate>8月 31, 2014</time></p>
+</header>
+
+  <div class="entry-content"><ul>
+<li><strong>ipython --pylab=inline:</strong>ipython启动后默认导入numpy和matplotlib.pylab模块</li>
+<li><strong>ipython qtconsole</strong>:使用Qt Gui 后台 ...</li></ul></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/python/2014-08-31-IPython命令集.html">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
@@ -155,16 +144,16 @@
           <a href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">APM-Windows7上的MAVProxy使用</a>
       </li>
       <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">APM-使用Atmel Studio 或者微软的Visual Studio编辑代码</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html">APM-使用Eclipse编辑Pixhawk代码</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">APM-使用NotePad++编辑代码</a>
-      </li>
-      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html">APM-回放功能测试</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">APM-Linux上SITL仿真设置</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">APM-Windows上SITL仿真设置</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html">APM-模拟仿真</a>
       </li>
     </ul>
   </section>

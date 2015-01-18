@@ -54,50 +54,6 @@
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T14:41:58" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>综述</h3>
-<p>地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
-<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真 ...</a></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T12:08:26" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content"><p>本页面将向你介绍如何规划你的新代码块使之可以按需运行。</p>
-<hr />
-<h3>用代码调度器运行你的代码</h3>
-<p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是 ...</p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T11:01:10" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content"><p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面 ...</a></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
       </h1>
       <p class="meta"><time datetime="2014-09-02T14:21:41" pubdate>9月 02, 2014</time></p>
@@ -127,8 +83,51 @@
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">Read On &crarr;</a>
   </footer>
   		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">APM:Copter 代码预览</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-30T15:29:29" pubdate>8月 30, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p><a href="https://github.com/diydrones/ardupilot"><strong>APM::Copter</strong></a>代码主要放在ArduCopter文件夹中，并且和<strong>ArduPlane</strong>和<strong>ArduRover</strong>使用同样的<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>。</p>
+<p>下面这张图展示了从飞行模式到电机输出的高级别代码概要 ...</p></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">APM-如何获取源码</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-29T15:05:30" pubdate>8月 29, 2014</time></p>
+</header>
+
+  <div class="entry-content"><p>整个APM工程的源码都采用<a href="http://git-scm.com/">git</a>（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在<a href="https://github.com/">github</a>网站上。</p>
+<p>目前APM的源码以开源的形式托管在<a href="https://github.com/diydrones/ardupilot">https ...</a></p></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
+      </h1>
+      <p class="meta"><time datetime="2014-08-29T13:08:10" pubdate>8月 29, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+
+<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&gt;</p>
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">Read On &crarr;</a>
+  </footer>
+  		</article>
 <div class="pagination">
-    <a class="prev" href="http://liung.github.io/tag/fei-kong-ban5.html">&larr; Older</a>
 
     <a class="next" href="http://liung.github.io/tag/fei-kong-ban3.html">Newer &rarr;</a>
   <br />
@@ -144,16 +143,16 @@
           <a href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">APM-Windows7上的MAVProxy使用</a>
       </li>
       <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">APM-使用Atmel Studio 或者微软的Visual Studio编辑代码</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html">APM-使用Eclipse编辑Pixhawk代码</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">APM-使用NotePad++编辑代码</a>
-      </li>
-      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html">APM-回放功能测试</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">APM-Linux上SITL仿真设置</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">APM-Windows上SITL仿真设置</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html">APM-模拟仿真</a>
       </li>
     </ul>
   </section>

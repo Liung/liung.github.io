@@ -57,66 +57,54 @@
       <p class="meta"><time datetime="2014-09-08T09:27:32" pubdate>9月 08, 2014</time></p>
 </header>
 
-  <div class="entry-content"><h3>MAC (10.6版本或更早)</h3>
-<p><strong>1、</strong>在Mac OS X上安装Homebrew</p>
-<p><strong>2、</strong>使用brew命令安装下列包</p>
-<div class="highlight"><pre><span class="n">brew</span> <span class="n">tap</span> <span class="n">PX4</span><span class="o">/</span><span class="n">homebrew</span><span class="o">-</span><span class="n">px4</span>
-<span class="n">brew</span> <span class="n">update</span>
-<span class="n">brew</span> <span class="n">install</span> <span class="n">genromfs</span>
-<span class="n">brew</span> <span class="n">install</span> <span class="n">gcc</span><span class="o">-</span><span class="n">arm</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="n">eabi</span>
-</pre></div>
-
-
-<p><strong>3、</strong>使用下面命令安装pip和pyserial:</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">pip</span>
-<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pyserial</span>
-</pre></div>
-
-
-<p><strong>4、</strong>现在创建你的工作目录，然后安装下面所有软件:</p>
-<div class="highlight"><pre><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">px4</span>
-<span class="n">cd</span> <span class="n">px4</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/diydrones/ardupilot.git</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/diydrones/PX4Firmware.git</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/diydrones/PX4NuttX.git</span>
-</pre></div>
-
-
-<p><strong>5、</strong>然后使用下面命令为编译ArduCopter设置配置文件:</p>
-<div class="highlight"><pre><span class="n">cd</span> <span class="n">ardupilot</span><span class="o">/</span><span class="n">ArduCopter</span>
-<span class="n">make</span> <span class="n">configure</span>
-</pre></div>
-
-
-<p>打开ardupilot/config.mk文件，将下面的信息改为你对应的文件目录:</p>
-<div class="highlight"><pre><span class="n">PX4_ROOT</span><span class="o">=</span><span class="p">..</span><span class="o">/</span><span class="n">PX4Firmware</span> <span class="p">(</span><span class="err">改成你本地的</span><span class="n">PX4Firmware</span><span class="err">目录</span><span class="p">)</span>
-
-<span class="n">NUTTX_SRC</span><span class="o">=</span><span class="p">..</span><span class="o">/</span><span class="n">PX4NuttX</span><span class="o">/</span><span class="n">nuttx</span> <span class="p">(</span><span class="n">nuttx</span><span class="err">目录同上</span><span class="p">)</span>
-
-<span class="n">make</span>   <span class="p">(</span><span class="err">第一次使用将会编译</span><span class="n">PX4Firmware</span><span class="err">和</span><span class="n">NuttX</span><span class="p">)</span>
-<span class="n">make</span>   <span class="p">(</span><span class="err">第二次将会编译</span><span class="n">ArduCopter</span><span class="err">固件</span><span class="p">)</span>
-</pre></div>
-
-
-<p><strong>6、</strong>用下面命令编译面向px4的ArduCopter:</p>
-<div class="highlight"><pre><span class="n">cd</span> <span class="n">ardupilot</span><span class="o">/</span><span class="n">ArduCopter</span>
-<span class="n">make</span> <span class="n">px4</span><span class="o">-</span><span class="n">quad</span>
-</pre></div>
-
-
-<p>编译完成之后，在你的ArduCopter文件目录将会发现两个文件。ArduCopter-v1.px4是针对原始PX4平台，而ArduCopter-v2.px4是针对pixhawk平台。</p>
-<p>有时你可能升级PX4Firmware和PX4NuttX。为了确保能有正确编译，在运行之前请先使用clean选项清理编译环境：</p>
-<div class="highlight"><pre><span class="n">make</span> <span class="n">px4</span><span class="o">-</span><span class="n">clean</span>
-<span class="n">make</span> <span class="n">px4</span><span class="o">-</span><span class="p">[</span><span class="n">frame</span> <span class="n">type</span><span class="p">]</span>
-</pre></div>
-
-
-<p>可使用的框架类型有：<strong>quad, tri, hexa, y6, octa, octa-quad, hell</strong></p>
-<p>然后连接并加载固件到你的飞行器上:</p>
-<div class="highlight"><pre><span class="n">make</span> <span class="n">px4</span><span class="o">-</span><span class="n">quad</span><span class="o">-</span><span class="n">upload</span>
-</pre></div>
-
-
+  <div class="entry-content"><h3>MAC (ver 10.6 onwards)</h3>
+<p><strong>1、</strong>Install Homebrew for Mac OS X</p>
+<p><strong>2、</strong>Install the following packages using brew</p>
+<ul>
+<li>brew tap PX4/homebrew-px4</li>
+<li>brew update</li>
+<li>brew install genromfs</li>
+<li>brew install gcc-arm-none-eabi</li>
+</ul>
+<p><strong>3、</strong>Install pip and pyserial using the following commands:
+- sudo easy_install pip
+- sudo pip install pyserial</p>
+<p><strong>4、</strong>Now create your directory and install all the software:</p>
+<ul>
+<li>mkdir -p px4</li>
+<li>cd px4</li>
+<li>git clone https://github.com/diydrones/ardupilot.git</li>
+<li>git clone https://github.com/diydrones/PX4Firmware.git</li>
+<li>git clone https://github.com/diydrones/PX4NuttX.git</li>
+</ul>
+<p><strong>5、</strong>Now set-up the configuration file for building ArduCopter using the following commands:</p>
+<ul>
+<li>cd ardupilot/ArduCopter</li>
+<li>make configure</li>
+<li>open the ardupilot/config.mk file and make the following changes:</li>
+</ul>
+<p>PX4_ROOT=../PX4Firmware (this should point to your PX4Firmware directory)</p>
+<p>NUTTX_SRC=../PX4NuttX/nuttx (this should point to nuttx)</p>
+<ul>
+<li>make   (the first time through it will build the PX4Firmware and NuttX)</li>
+<li>make   (this time it will build the ArduCopter firmware)</li>
+</ul>
+<p><strong>6、</strong>Build the arducopter software for px4 using the following commands:</p>
+<ul>
+<li>cd ardupilot/ArduCopter</li>
+<li>make px4-quad</li>
+</ul>
+<p>You should find two files in the ArduCopter directory. ArduCopter-v1.px4 is for the original PX4, ArduCopter-v2.px4 is for the pixhawk.</p>
+<p>Occasionally you should pull PX4Firmware and PX4NuttX updates. To make sure it compiles correctly, run the clean option in make:</p>
+<ul>
+<li>make px4-clean</li>
+<li>make px4-[frame type]</li>
+</ul>
+<p>The available frame types are quad, tri, hexa, y6, octa, octa-quad, hell</p>
+<p>To make and upload to your vehicle:</p>
+<ul>
+<li>make px4-quad-upload</li>
+</ul>
 <hr />
 <h4>链接</h4>
 <ol>
@@ -154,16 +142,16 @@
           <a href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">APM-Windows7上的MAVProxy使用</a>
       </li>
       <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">APM-使用Atmel Studio 或者微软的Visual Studio编辑代码</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html">APM-使用Eclipse编辑Pixhawk代码</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">APM-使用NotePad++编辑代码</a>
-      </li>
-      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html">APM-回放功能测试</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">APM-Linux上SITL仿真设置</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">APM-Windows上SITL仿真设置</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html">APM-模拟仿真</a>
       </li>
     </ul>
   </section>
