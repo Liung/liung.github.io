@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>APM-编译代码</title>
+  <title>Pandas学习笔记</title>
   <meta name="author" content="liung">
 
 
@@ -53,55 +53,60 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">APM-编译代码</h1>
-      <p class="meta"><time datetime="2014-09-06T14:03:34" pubdate>Sep 06, 2014</time></p>
+      <h1 class="entry-title">Pandas学习笔记</h1>
+      <p class="meta"><time datetime="2014-09-14T14:26:24" pubdate>Sep 14, 2014</time></p>
 </header>
 
-  <div class="entry-content">
-
-<p>下面这些页面的链接，将提供给你更多关于如何编译APM2.x和PX4的飞行器控制和地面站源码的信息。</p>
-
-
+  <div class="entry-content"><p>通过索引方式返回的列只是相应数据的视图，因此，对返回的Series所做的任何就地修改都会反映到DataFrame上。通过Series的<code>copy</code>方法可显式地复制列。</p>
+<h4>DataFrame构造器可以接受的数据：</h4>
+<ul>
+<li><strong>二维ndarray：</strong></li>
+<li><strong>由数组、列表或元祖组成的字典：</strong></li>
+<li><strong>Numpy的结构化、记录数组：</strong></li>
+<li><strong>由Series组成的字典：</strong></li>
+<li><strong>由字典组成的字典：</strong></li>
+<li><strong>字典或Series的列表：</strong></li>
+<li><strong>由列表或元祖组成的列表：</strong></li>
+<li><strong>另一个DataFrame：</strong></li>
+<li><strong>Numpy的MaskedArray：</strong></li>
+</ul>
+<h3>索引对象</h3>
+<p><strong>Index对象是不可修改的</strong></p>
+<h4>pandas中主要的index对象</h4>
+<ul>
+<li><strong>Index</strong>：最泛化的Index对象，将轴标签表示为一个有Python对象组成的Numpy数组</li>
+<li><strong>Int64Index</strong>：针对整数的特殊Index</li>
+<li><strong>MultiIndex</strong>：“层次化”索引对象，表示单个轴上的多层索引。可以看做由元祖组成的数组</li>
+<li><strong>DatetimeIndex</strong>：存储纳秒级时间戳（用Numpy的datetime64类型表示）</li>
+<li><strong>PeriodIndex</strong>：针对Period数据（时间间隔）的特殊Index</li>
+</ul>
+<h4>Index的方法和属性</h4>
+<ul>
+<li><strong>append</strong>：连接另一个Index对象，产生一个新的Index</li>
+<li><strong>diff</strong>：计算差集，并得到一个Index</li>
+<li><strong>intersection</strong>：计算交集</li>
+<li><strong>union</strong>：计算并集</li>
+<li><strong>isin</strong>：计算一个指示各值是否都包含在参数集合中的布尔型数组</li>
+<li><strong>delete</strong>：删除索引i处的元素，并得到新的Index</li>
+<li><strong>drop</strong>：删除传入的值，并得到新的Index</li>
+<li><strong>insert</strong>：将元素插入到索引i处，并得到新的Index</li>
+<li><strong>is_monotonic</strong>：当元素均大于等于前一个元素时，返回True</li>
+<li><strong>is_unique</strong>：当Index没有重复值时，返回True</li>
+<li><strong>unique</strong>：计算Index中唯一值的数组</li>
+</ul>
 <hr />
-<h3>APM:Plane,Copter,Rover:</h3>
-<p><strong>Windows用户：</strong></p>
-<ul>
-<li><a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html">Windows平台上用Arduino编译ArduPilot</a></li>
-<li><a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">Windows平台上用Make方法编译Pixhawk/PX4</a></li>
-<li><a href="http://dev.ardupilot.com/wiki/building-the-code/wiki/building-ardupilot-apm-with-visual-studio-visual-micro/">使用Atmel Studio或者Visual Studio编译APM</a></li>
-</ul>
-<p><strong>MacOS用户：</strong></p>
-<ul>
-<li><a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html">MacOS平台上用Arduino编译APM2.x</a></li>
-<li><a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html">MacOS平台上用Make方法编译Pixhawk/PX4</a></li>
-</ul>
-<p><strong>Linux用户：</strong></p>
-<ul>
-<li><a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html">Linux平台上用Make方法编译APM2.x</a></li>
-<li><a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html">Linux平台上用Make方法编译Pixhawk/PX4</a></li>
-<li><a href="http://dev.ardupilot.com/wiki/building-for-beaglebone-black-on-linux/">Linux平台上用Make方法编译BeagleBone Black</a></li>
-</ul>
-<hr />
-<h3>地面站Mission Planner：</h3>
-<ul>
-<li><a href="http://dev.ardupilot.com/wiki/building-the-code/wiki/compile-mission-planner/">Windows平台上使用Visual Studio编译Mission Planner</a></li>
-</ul>
-<hr />
-<h4>链接</h4>
-<ol>
-<li><a href="http://dev.ardupilot.com/wiki/building-the-code/">APM官网原文链接</a></li>
-<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
-</ol>
-<p><em>(over)</em></p></div>
+<h3>基本方法</h3>
+<p>reindex：重新索引，当某个索引值当前不存在，就引入缺失值</p>
+<p><em>(not over)</em></p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
     Posted by <span class="fn">liung</span>
   </span>
-<time datetime="2014-09-06T14:03:34" pubdate>Sep 06, 2014</time>  <span class="categories">
-    <a class="category" href="http://liung.github.io/tag/apm.html">APM</a>
-    <a class="category" href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>
-    <a class="category" href="http://liung.github.io/tag/ying-jian.html">硬件</a>
+<time datetime="2014-09-14T14:26:24" pubdate>Sep 14, 2014</time>  <span class="categories">
+    <a class="category" href="http://liung.github.io/tag/python.html">python</a>
+    <a class="category" href="http://liung.github.io/tag/ipython.html">ipython</a>
+    <a class="category" href="http://liung.github.io/tag/pandas.html">pandas</a>
   </span>
 </p><div class="sharing">
 </div>    </footer>
@@ -199,9 +204,9 @@
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'liunggithubio-aerodynamic';
-          var disqus_identifier = '/blog/apm/2014-09-06-APM-编译代码.html';
-          var disqus_url = 'http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html';
-          var disqus_title = 'APM-编译代码';
+          var disqus_identifier = '/blog/python/2014-09-14-Pandas学习笔记.html';
+          var disqus_url = 'http://liung.github.io/blog/python/2014-09-14-Pandas学习笔记.html';
+          var disqus_title = 'Pandas学习笔记';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
