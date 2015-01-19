@@ -1,11 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2015-01-19T13:36:33+08:00</updated><entry><title>非线性非定常空气动力学建模论文摘要</title><link href="http://liung.github.io/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html" rel="alternate"></link><updated>2015-01-19T13:36:33+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-19:blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2015-01-19T22:01:05+08:00</updated><entry><title>非线性非定常空气动力学建模论文摘要</title><link href="http://liung.github.io/blog/fei-xing-qi/UAV.html" rel="alternate"></link><updated>2015-01-19T22:01:05+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-19:blog/fei-xing-qi/UAV.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;hr /&gt;
+&lt;h2 id="&amp;#32654;&amp;#22269;"&gt;&amp;#32654;&amp;#22269;&lt;a class="anchor-link" href="#&amp;#32654;&amp;#22269;"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;美国军方在为无人系统编写军用编号时，采用的是导弹序列的编号模式，即以“M”打头，之前，再加上前缀“Q”，这一做法有其历史。美军为无人系统采用“Q”的前缀，是为标示一些由有人战机改装而成的无人机，例如，QF-4就是一种由F-4战机改装的无人系统。1997年，军方深感未来无人系统将越来越多，原有使用加“Q”前缀的方法已不能满足需要，故将此“Q”前缀独立出来，成为无人系统的专用序列编号字母。对于各种用途不同的无人机，则采用类似加前缀的方法来区分，比如“R”（reconnoitre）前缀意为“侦察”，“M”（multipurpose）前缀意为“多用途”，即既可进行作战也可用于侦察。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;下面列出了一些美国已知的无人机系列：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RQ/MQ-1 “掠食者” /天空勇士  /蚊蚋 750&lt;/li&gt;
+&lt;li&gt;RQ-2 先锋&lt;/li&gt;
+&lt;li&gt;RQ-3  暗星 /臭鼬 /RQ-170 哨兵&lt;/li&gt;
+&lt;li&gt;RQ-4 全球鹰  /  欧洲鹰&lt;/li&gt;
+&lt;li&gt;RQ-5 猎手&lt;/li&gt;
+&lt;li&gt;RQ-6A 警卫 &lt;/li&gt;
+&lt;li&gt;RQ-7 阴影&lt;/li&gt;
+&lt;li&gt;RQ-8/MQ-8  火力侦察兵&lt;/li&gt;
+&lt;li&gt;MQ-9 收割者&lt;/li&gt;
+&lt;li&gt;CQ-10 雪雁&lt;/li&gt;
+&lt;li&gt;RQ-11B 大鸦&lt;/li&gt;
+&lt;li&gt;RQ-14 龙眼 / 雨燕&lt;/li&gt;
+&lt;li&gt;RQ-15 海王星&lt;/li&gt;
+&lt;li&gt;RQ-16 狼蛛一鹰&lt;/li&gt;
+&lt;li&gt;XMQ-17A 间谍鹰&lt;/li&gt;
+&lt;li&gt;XMQ-18A/A-160T 蜂雀&lt;/li&gt;
+&lt;li&gt;X-47B&lt;/li&gt;
+&lt;li&gt;AD-150&lt;/li&gt;
+&lt;li&gt;航空探测 Mk4&lt;/li&gt;
+&lt;li&gt;MQM-171 阔剑&lt;/li&gt;
+&lt;li&gt;破坏者 /  黑光&lt;/li&gt;
+&lt;li&gt;鸬鹚  /  变形&lt;/li&gt;
+&lt;li&gt;DP-5X  黄蜂  /  DP-5XT 短鼻鳄&lt;/li&gt;
+&lt;li&gt;DP-7 蝙蝠 、DP-10X 飞镖  DP-11 刺刀&lt;/li&gt;
+&lt;li&gt;达科他（Dakota）&lt;/li&gt;
+&lt;li&gt;沙漠鹰&lt;/li&gt;
+&lt;li&gt;鹰眼（Eagle Eye）&lt;/li&gt;
+&lt;li&gt;亚瑟王神剑&lt;/li&gt;
+&lt;li&gt;BQM-147可消耗无人机&lt;/li&gt;
+&lt;li&gt;发现者&lt;/li&gt;
+&lt;li&gt;全球观察者&lt;/li&gt;
+&lt;li&gt;金眼&lt;/li&gt;
+&lt;li&gt;高升限飞艇&lt;/li&gt;
+&lt;li&gt;混合动力无人飞行器&lt;/li&gt;
+&lt;li&gt;猎人-杀手&lt;/li&gt;
+&lt;li&gt;杀手蜜蜂 / 蝙蝠&lt;/li&gt;
+&lt;li&gt;翠鸟2&lt;/li&gt;
+&lt;li&gt;合成者&lt;/li&gt;
+&lt;li&gt;ISIS高空飞艇&lt;/li&gt;
+&lt;li&gt;幼畜&lt;/li&gt;
+&lt;li&gt;幻影射线&lt;/li&gt;
+&lt;li&gt;指示器&lt;/li&gt;
+&lt;li&gt;寂寞眼&lt;/li&gt;
+&lt;li&gt;银狐&lt;/li&gt;
+&lt;li&gt;天空之眼&lt;/li&gt;
+&lt;li&gt;燕鸥&lt;/li&gt;
+&lt;li&gt;黄蜂&lt;/li&gt;
+&lt;li&gt;猫头鹰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>非线性非定常空气动力学建模论文摘要</title><link href="http://liung.github.io/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html" rel="alternate"></link><updated>2015-01-19T13:36:33+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-19:blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html</id><summary type="html">&lt;p&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;hr&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -45,7 +123,7 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="summary"&gt;Summary&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;介绍了目前非定常效应模型方程的一些方法和理论。主要提出了单位阶跃模型，并由此得到了飞行器积分微分运动方程；在第二部分提出了模型方程的状态空间形式。并在两个例子中运用非定常方程。一个例子是针对绕体轴的单自由度简谐运动；在另一个例子中提出了纵向短周期运动。上述两个例子仅关心模型方程的线性项。单位阶跃方法用指数方程和内在状态变量的形式假设，并且该方程是线性、时不变的一阶微分方程。同样，本文中还展示了两个不同的非定常空气动力模型会得到相同的仿真结果。在纵向短周期运动中，内在变量的辨识问题，如果涉及到从飞行数据的气动参数预估，将会做简要的介绍。&lt;/p&gt;
+&lt;p&gt;   介绍了目前非定常效应模型方程的一些方法和理论。主要提出了单位阶跃模型，并由此得到了飞行器积分微分运动方程；在第二部分提出了模型方程的状态空间形式。并在两个例子中运用非定常方程。一个例子是针对绕体轴的单自由度简谐运动；在另一个例子中提出了纵向短周期运动。上述两个例子仅关心模型方程的线性项。单位阶跃方法用指数方程和内在状态变量的形式假设，并且该方程是线性、时不变的一阶微分方程。同样，本文中还展示了两个不同的非定常空气动力模型会得到相同的仿真结果。在纵向短周期运动中，内在变量的辨识问题，如果涉及到从飞行数据的气动参数预估，将会做简要的介绍。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -57,13 +135,14 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="aerodynamic-charactertics-in-terms-of-indicial-functions"&gt;Aerodynamic Charactertics in Terms of Indicial Functions&lt;/h3&gt;
 &lt;blockquote&gt;
-
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
+&lt;p&gt;\begin{equation}
+C_\alpha (t) = C_\alpha (\infty;\xi(t)) - \int_0^t F_{\alpha_\xi} (t- \tau;\xi(t))^T \frac{d}{d\tau} \xi (\tau) d \tau  \tag{1}
+\end{equation}&lt;/p&gt;
 &lt;p&gt;or&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-
+&lt;p&gt;\begin{align}
+C_\alpha (t) &amp;amp;= C_\alpha (0) + \int_0^t C_{\alpha_\xi} (t- \tau))^T \frac{d}{d\tau} \xi (\tau) d \tau \\
+             &amp;amp;= C_\alpha (0) + C_{\alpha_\xi}(\infty)^T \xi (\tau) - \int_0^t F_{\alpha_\xi} (t- \tau))^T \frac{d}{d\tau} \xi (\tau) d \tau   \tag{2}
+\end{align}&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -75,20 +154,13 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="examples"&gt;Examples&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;h4&gt;Harmonic Oscillatory Motion:&lt;/h4&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
+&lt;h4 id="harmonic-oscillatory-motion-"&gt;Harmonic Oscillatory Motion:&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;升力和俯仰力矩的表达形式：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
+&lt;p&gt;\begin{align}
+C_L(t) &amp;amp;= C_L(\alpha (t),q(t)) \\
+C_m (t)&amp;amp;= C_m(\alpha (t),q(t))
+\end{align}&lt;/p&gt;
 &lt;p&gt;通过指数模型和状态空间模型的对比。发现，这两种模型可以相互变换。（&lt;strong&gt;这一部分是重点，包括一些表达式的提出，处理，时域和频域的转换及相关傅里叶变换等等&lt;/strong&gt;）&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
@@ -124,7 +196,7 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;From the measured aerodynamic forces and moments are obtained. It has been a long-standing practice to analyze the oscillatory data by formulating the aerodynamic model equations with constant parameters known as stability derivatives. In this formulation,&lt;strong&gt;the in-phase component is a combination of a static derivative(such as &lt;span class="math"&gt;\(C_{m_\alpha}\)&lt;/span&gt;) and a rotational acceleration derivative (such as $ C_{m_}$) whereas the out-of-phase component is a combination of a purely-rotary derivative (such as $ C_{m_q}$) and a translation acceleration derivative (such as &lt;span class="math"&gt;\(C_{m_\dot{\alpha}}\)&lt;/span&gt;). 同相导数分量是一个静导数和一个旋转角加速度导数的组合，同时，反相导数是一个纯粹动导数和一个延伸（转化）加速度导数的组合。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;From the measured aerodynamic forces and moments are obtained. It has been a long-standing practice to analyze the oscillatory data by formulating the aerodynamic model equations with constant parameters known as stability derivatives. In this formulation,&lt;strong&gt;the in-phase component is a combination of a static derivative(such as $C_{m_\alpha}$) and a rotational acceleration derivative (such as $ C_{m_\dot{q}}$) whereas the out-of-phase component is a combination of a purely-rotary derivative (such as $ C_{m_q}$) and a translation acceleration derivative (such as $C_{m_\dot{\alpha}}$). 同相导数分量是一个静导数和一个旋转角加速度导数的组合，同时，反相导数是一个纯粹动导数和一个延伸（转化）加速度导数的组合。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -134,7 +206,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="part-3-parameters-estimated-from-flight-data-1996"&gt;Part 3 Parameters Estimated From Flight Data （1996）&lt;/h3&gt;
+&lt;h3 id="part-3-parameters-estimated-from-flight-data-1996-"&gt;Part 3 Parameters Estimated From Flight Data （1996）&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -155,7 +227,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;hr /&gt;
+&lt;hr&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -195,7 +267,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;hr /&gt;
+&lt;hr&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -225,7 +297,7 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="experimental-investigations"&gt;Experimental investigations&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;通过将给定时间间隔下固定迎角采集得到数据集周期平均，就可以计算出带有最小平均二乘残差的静态试验数据。对于动态设备采集得到的气动数据需要采用特殊的数据处理技术。通常实验情况下，驱动动态机构来模拟16个周期的振荡运动，然后使用截止频率为4.0Hz（&lt;span class="math"&gt;\(f_0 = 4.0 Hz\)&lt;/span&gt;）的低通滤波器对采集数据进行光滑滤波。为了消除可能的低频信号干扰（&lt;span class="math"&gt;\(f\leqslant f_0\)&lt;/span&gt;），多周期数据平均成一个周期的数据值。&lt;/p&gt;
+&lt;p&gt;通过将给定时间间隔下固定迎角采集得到数据集周期平均，就可以计算出带有最小平均二乘残差的静态试验数据。对于动态设备采集得到的气动数据需要采用特殊的数据处理技术。通常实验情况下，驱动动态机构来模拟16个周期的振荡运动，然后使用截止频率为4.0Hz（$f_0 = 4.0 Hz$）的低通滤波器对采集数据进行光滑滤波。为了消除可能的低频信号干扰（$f\leqslant f_0$），多周期数据平均成一个周期的数据值。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -235,29 +307,17 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="mathematical-modeling"&gt;Mathematical modeling:&lt;/h3&gt;
+&lt;h3 id="mathematical-modeling-"&gt;Mathematical modeling:&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;70°三角翼在大攻角时的流场结构主要是涡流和占主导地位并对所有气动响应产生明显时间迟滞效应的的动态涡破碎过程。考虑迎角和侧滑角大范围变化过程，翼面会产生不同的流场结构：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;1）未破碎涡流；2）一边涡破碎流；3）两侧涡同时破碎流；4）完全失速流（FSF）。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
 &lt;p&gt;而这些不同流动结构的交叠区域就产生了所谓的临界状态或者分叉。数学模型中，这些状态的判断需要特殊考虑。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
 &lt;p&gt;非定常气动响应的特征时间量完全依赖于流场结构，并随着给定subarea的机翼的姿态角变化。&lt;strong&gt;涡破碎过程造成的特征时间量比由势流或未破碎涡流造成的特征时间量大一个量级。这就是这些流动结构气动贡献可以被分开考虑的原因。&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
 &lt;p&gt;所有的气动载荷归根结底都是反映了涡破碎或者流动分离的内部流场动态特性，所以可以由此假定：所有力和力矩的变化过程可以由一组相同的特征时间常数来表示。但是，气动力和力矩是模型总体气动载荷的不同表现形式，这就导致由于压心位置变化引起了力矩额外的特征时间量。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span class="math"&gt;\[C_m(t) = C_N(t)(x_0 - x_p(t))\]&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(C_N(t)\)&lt;/span&gt;和&lt;span class="math"&gt;\(x_p(t)\)&lt;/span&gt;都具有非定常效应（涡破碎引起），因此&lt;span class="math"&gt;\(C_N(t)\)&lt;/span&gt;和&lt;span class="math"&gt;\(x_p(t)\)&lt;/span&gt;的相乘会导致&lt;span class="math"&gt;\(C_m\)&lt;/span&gt;额外的时间分量。&lt;/p&gt;
+&lt;p&gt;$$C_m(t) = C_N(t)(x_0 - x_p(t))$$&lt;/p&gt;
+&lt;p&gt;$C_N(t)$和$x_p(t)$都具有非定常效应（涡破碎引起），因此$C_N(t)$和$x_p(t)$的相乘会导致$C_m$额外的时间分量。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -267,7 +327,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;hr /&gt;
+&lt;hr&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -297,44 +357,21 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="unsteady-aerodynamic-modeling"&gt;Unsteady aerodynamic modeling&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;h4&gt;Linear model&lt;/h4&gt;
-&lt;/blockquote&gt;
+&lt;h4 id="linear-model"&gt;Linear model&lt;/h4&gt;
 &lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span class="math"&gt;\[
+&lt;p&gt;$$
 C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{dyn}}    \\
 \tau \frac{dC_{N_{dyn}}}{dt} + C_{N_{dyn}} = \Delta C_{N_{vb}}(\alpha) \ref {1}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;where:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(t = \frac{tV_{oo}}{l}\)&lt;/span&gt;无量纲时间，&lt;span class="math"&gt;\(\tau\)&lt;/span&gt; 是特征时间常数，&lt;span class="math"&gt;\(\Delta C_{N_{vb}}(\alpha) = C_{N_{st}}(\alpha) - C_{N_{pt}}(\alpha)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
+$$&lt;/p&gt;
+&lt;p&gt;where: &lt;/p&gt;
+&lt;p&gt;$t = \frac{tV_{oo}}{l}$无量纲时间，$\tau$ 是特征时间常数，$\Delta C_{N_{vb}}(\alpha) = C_{N_{st}}(\alpha) - C_{N_{pt}}(\alpha)$.&lt;/p&gt;
 &lt;p&gt;小振幅振荡角度变化为：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
+&lt;p&gt;\begin{align}
+\alpha &amp;amp;= \alpha_0 + \alpha_s sin\omega t    \\
+\dot{\alpha} &amp;amp;= \omega \alpha_s cos \omega t
+\end{align}&lt;/p&gt;
 &lt;p&gt;where&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span class="math"&gt;\[\omega = \frac{\Omega l }{  V_{\infty}}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$$\omega = \frac{\Omega l }{  V_{\infty}}$$&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
@@ -345,7 +382,7 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;hr /&gt;
+&lt;hr&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -354,7 +391,7 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="comparative-evaluation-of-unsteady-aerodynamic-modelling-approaches-aiaa-2004-5272"&gt;Comparative Evaluation of Unsteady Aerodynamic Modelling Approaches (AIAA 2004-5272)&lt;/h2&gt;
+&lt;h2 id="comparative-evaluation-of-unsteady-aerodynamic-modelling-approaches-aiaa-2004-5272-"&gt;Comparative Evaluation of Unsteady Aerodynamic Modelling Approaches (AIAA 2004-5272)&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -384,7 +421,7 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;hr /&gt;
+&lt;hr&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -426,16 +463,15 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;现代解决大攻角非线性问题一般有两个方向： &amp;gt;1. &lt;strong&gt;采用高精度的CFD方法&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;现代解决大攻角非线性问题一般有两个方向：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;ol start="2" style="list-style-type: decimal"&gt;
-&lt;li&gt;&lt;strong&gt;通过高科技试验技术获取相应运动的气动响应，并后期进行系统辨识&lt;/strong&gt;&lt;/li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;采用高精度的CFD方法&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;通过高科技试验技术获取相应运动的气动响应，并后期进行系统辨识&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;作者在该部分讲解了为何进行非定常气动建模，以及气动建模目前的途径，讲的比较好。&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
@@ -449,8 +485,6 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 &lt;h3 id="mathematical-model-structures"&gt;Mathematical Model Structures&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;数学模型一般包括&lt;strong&gt;飞行器的运动方程组&lt;/strong&gt;和&lt;strong&gt;气动力和力矩方程组（也就是气动模型方程）&lt;/strong&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
 &lt;p&gt;常规飞行包线内，流场结构一般为附着流和准静态流，因此，气动模型方程用时不变线性项来表示（稳定性和控制导数）。而在常规飞行包线之外，这些气动项通常包含有时间作为自变量的气动项和非线性气动项。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
@@ -463,22 +497,12 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="estimation-methods"&gt;Estimation Methods&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;h4&gt;1. Harmonic Analysis&lt;/h4&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;h4&gt;2. Nonlinear Regression&lt;/h4&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;h4&gt;3. Two-Step Linear Regression&lt;/h4&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;h4&gt;4. Equation Error Method&lt;/h4&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;h4&gt;5. Output Error Method(Frequency Domain)&lt;/h4&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;h4&gt;6. Output Error Method(Time Domain)&lt;/h4&gt;
+&lt;h4 id="1-harmonic-analysis"&gt;1.    Harmonic Analysis&lt;/h4&gt;
+&lt;h4 id="2-nonlinear-regression"&gt;2.    Nonlinear Regression&lt;/h4&gt;
+&lt;h4 id="3-two-step-linear-regression"&gt;3.    Two-Step Linear Regression&lt;/h4&gt;
+&lt;h4 id="4-equation-error-method"&gt;4.    Equation Error Method&lt;/h4&gt;
+&lt;h4 id="5-output-error-method-frequency-domain-"&gt;5.    Output Error Method(Frequency Domain)&lt;/h4&gt;
+&lt;h4 id="6-output-error-method-time-domain-"&gt;6.    Output Error Method(Time Domain)&lt;/h4&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;

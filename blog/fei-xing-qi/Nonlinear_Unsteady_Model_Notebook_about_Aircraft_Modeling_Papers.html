@@ -1738,7 +1738,7 @@ init_mathjax();
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
+<hr>
 </div>
 </div>
 </div>
@@ -1778,7 +1778,7 @@ init_mathjax();
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="summary">Summary</h3>
 <blockquote>
-<p>介绍了目前非定常效应模型方程的一些方法和理论。主要提出了单位阶跃模型，并由此得到了飞行器积分微分运动方程；在第二部分提出了模型方程的状态空间形式。并在两个例子中运用非定常方程。一个例子是针对绕体轴的单自由度简谐运动；在另一个例子中提出了纵向短周期运动。上述两个例子仅关心模型方程的线性项。单位阶跃方法用指数方程和内在状态变量的形式假设，并且该方程是线性、时不变的一阶微分方程。同样，本文中还展示了两个不同的非定常空气动力模型会得到相同的仿真结果。在纵向短周期运动中，内在变量的辨识问题，如果涉及到从飞行数据的气动参数预估，将会做简要的介绍。</p>
+<p>   介绍了目前非定常效应模型方程的一些方法和理论。主要提出了单位阶跃模型，并由此得到了飞行器积分微分运动方程；在第二部分提出了模型方程的状态空间形式。并在两个例子中运用非定常方程。一个例子是针对绕体轴的单自由度简谐运动；在另一个例子中提出了纵向短周期运动。上述两个例子仅关心模型方程的线性项。单位阶跃方法用指数方程和内在状态变量的形式假设，并且该方程是线性、时不变的一阶微分方程。同样，本文中还展示了两个不同的非定常空气动力模型会得到相同的仿真结果。在纵向短周期运动中，内在变量的辨识问题，如果涉及到从飞行数据的气动参数预估，将会做简要的介绍。</p>
 </blockquote>
 </div>
 </div>
@@ -1790,13 +1790,14 @@ init_mathjax();
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="aerodynamic-charactertics-in-terms-of-indicial-functions">Aerodynamic Charactertics in Terms of Indicial Functions</h3>
 <blockquote>
-
-</blockquote>
-<blockquote>
+<p>\begin{equation}
+C_\alpha (t) = C_\alpha (\infty;\xi(t)) - \int_0^t F_{\alpha_\xi} (t- \tau;\xi(t))^T \frac{d}{d\tau} \xi (\tau) d \tau  \tag{1}
+\end{equation}</p>
 <p>or</p>
-</blockquote>
-<blockquote>
-
+<p>\begin{align}
+C_\alpha (t) &amp;= C_\alpha (0) + \int_0^t C_{\alpha_\xi} (t- \tau))^T \frac{d}{d\tau} \xi (\tau) d \tau \\
+             &amp;= C_\alpha (0) + C_{\alpha_\xi}(\infty)^T \xi (\tau) - \int_0^t F_{\alpha_\xi} (t- \tau))^T \frac{d}{d\tau} \xi (\tau) d \tau   \tag{2}
+\end{align}</p>
 </blockquote>
 </div>
 </div>
@@ -1808,20 +1809,13 @@ init_mathjax();
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="examples">Examples</h3>
 <blockquote>
-<h4>Harmonic Oscillatory Motion:</h4>
-</blockquote>
-<blockquote>
+<h4 id="harmonic-oscillatory-motion-">Harmonic Oscillatory Motion:</h4>
 <blockquote>
 <p>升力和俯仰力矩的表达形式：</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
+<p>\begin{align}
+C_L(t) &amp;= C_L(\alpha (t),q(t)) \\
+C_m (t)&amp;= C_m(\alpha (t),q(t))
+\end{align}</p>
 <p>通过指数模型和状态空间模型的对比。发现，这两种模型可以相互变换。（<strong>这一部分是重点，包括一些表达式的提出，处理，时域和频域的转换及相关傅里叶变换等等</strong>）</p>
 </blockquote>
 </blockquote>
@@ -1857,7 +1851,7 @@ init_mathjax();
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="introduction">Introduction</h3>
 <blockquote>
-<p>From the measured aerodynamic forces and moments are obtained. It has been a long-standing practice to analyze the oscillatory data by formulating the aerodynamic model equations with constant parameters known as stability derivatives. In this formulation,<strong>the in-phase component is a combination of a static derivative(such as <span class="math">\(C_{m_\alpha}\)</span>) and a rotational acceleration derivative (such as $ C_{m_}$) whereas the out-of-phase component is a combination of a purely-rotary derivative (such as $ C_{m_q}$) and a translation acceleration derivative (such as <span class="math">\(C_{m_\dot{\alpha}}\)</span>). 同相导数分量是一个静导数和一个旋转角加速度导数的组合，同时，反相导数是一个纯粹动导数和一个延伸（转化）加速度导数的组合。</strong></p>
+<p>From the measured aerodynamic forces and moments are obtained. It has been a long-standing practice to analyze the oscillatory data by formulating the aerodynamic model equations with constant parameters known as stability derivatives. In this formulation,<strong>the in-phase component is a combination of a static derivative(such as $C_{m_\alpha}$) and a rotational acceleration derivative (such as $ C_{m_\dot{q}}$) whereas the out-of-phase component is a combination of a purely-rotary derivative (such as $ C_{m_q}$) and a translation acceleration derivative (such as $C_{m_\dot{\alpha}}$). 同相导数分量是一个静导数和一个旋转角加速度导数的组合，同时，反相导数是一个纯粹动导数和一个延伸（转化）加速度导数的组合。</strong></p>
 </blockquote>
 </div>
 </div>
@@ -1867,7 +1861,7 @@ init_mathjax();
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="part-3-parameters-estimated-from-flight-data-1996">Part 3 Parameters Estimated From Flight Data （1996）</h3>
+<h3 id="part-3-parameters-estimated-from-flight-data-1996-">Part 3 Parameters Estimated From Flight Data （1996）</h3>
 </div>
 </div>
 </div>
@@ -1888,7 +1882,7 @@ init_mathjax();
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
+<hr>
 </div>
 </div>
 </div>
@@ -1928,7 +1922,7 @@ init_mathjax();
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
+<hr>
 </div>
 </div>
 </div>
@@ -1958,7 +1952,7 @@ init_mathjax();
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="experimental-investigations">Experimental investigations</h3>
 <blockquote>
-<p>通过将给定时间间隔下固定迎角采集得到数据集周期平均，就可以计算出带有最小平均二乘残差的静态试验数据。对于动态设备采集得到的气动数据需要采用特殊的数据处理技术。通常实验情况下，驱动动态机构来模拟16个周期的振荡运动，然后使用截止频率为4.0Hz（<span class="math">\(f_0 = 4.0 Hz\)</span>）的低通滤波器对采集数据进行光滑滤波。为了消除可能的低频信号干扰（<span class="math">\(f\leqslant f_0\)</span>），多周期数据平均成一个周期的数据值。</p>
+<p>通过将给定时间间隔下固定迎角采集得到数据集周期平均，就可以计算出带有最小平均二乘残差的静态试验数据。对于动态设备采集得到的气动数据需要采用特殊的数据处理技术。通常实验情况下，驱动动态机构来模拟16个周期的振荡运动，然后使用截止频率为4.0Hz（$f_0 = 4.0 Hz$）的低通滤波器对采集数据进行光滑滤波。为了消除可能的低频信号干扰（$f\leqslant f_0$），多周期数据平均成一个周期的数据值。</p>
 </blockquote>
 </div>
 </div>
@@ -1968,29 +1962,17 @@ init_mathjax();
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="mathematical-modeling">Mathematical modeling:</h3>
+<h3 id="mathematical-modeling-">Mathematical modeling:</h3>
 <blockquote>
 <p>70°三角翼在大攻角时的流场结构主要是涡流和占主导地位并对所有气动响应产生明显时间迟滞效应的的动态涡破碎过程。考虑迎角和侧滑角大范围变化过程，翼面会产生不同的流场结构：</p>
-</blockquote>
-<blockquote>
 <blockquote>
 <p><strong>1）未破碎涡流；2）一边涡破碎流；3）两侧涡同时破碎流；4）完全失速流（FSF）。</strong></p>
 </blockquote>
-</blockquote>
-<blockquote>
 <p>而这些不同流动结构的交叠区域就产生了所谓的临界状态或者分叉。数学模型中，这些状态的判断需要特殊考虑。</p>
-</blockquote>
-<blockquote>
 <p>非定常气动响应的特征时间量完全依赖于流场结构，并随着给定subarea的机翼的姿态角变化。<strong>涡破碎过程造成的特征时间量比由势流或未破碎涡流造成的特征时间量大一个量级。这就是这些流动结构气动贡献可以被分开考虑的原因。</strong></p>
-</blockquote>
-<blockquote>
 <p>所有的气动载荷归根结底都是反映了涡破碎或者流动分离的内部流场动态特性，所以可以由此假定：所有力和力矩的变化过程可以由一组相同的特征时间常数来表示。但是，气动力和力矩是模型总体气动载荷的不同表现形式，这就导致由于压心位置变化引起了力矩额外的特征时间量。</p>
-</blockquote>
-<blockquote>
-<p><span class="math">\[C_m(t) = C_N(t)(x_0 - x_p(t))\]</span></p>
-</blockquote>
-<blockquote>
-<p><span class="math">\(C_N(t)\)</span>和<span class="math">\(x_p(t)\)</span>都具有非定常效应（涡破碎引起），因此<span class="math">\(C_N(t)\)</span>和<span class="math">\(x_p(t)\)</span>的相乘会导致<span class="math">\(C_m\)</span>额外的时间分量。</p>
+<p>$$C_m(t) = C_N(t)(x_0 - x_p(t))$$</p>
+<p>$C_N(t)$和$x_p(t)$都具有非定常效应（涡破碎引起），因此$C_N(t)$和$x_p(t)$的相乘会导致$C_m$额外的时间分量。</p>
 </blockquote>
 </div>
 </div>
@@ -2000,7 +1982,7 @@ init_mathjax();
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
+<hr>
 </div>
 </div>
 </div>
@@ -2030,44 +2012,21 @@ init_mathjax();
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="unsteady-aerodynamic-modeling">Unsteady aerodynamic modeling</h3>
 <blockquote>
-<h4>Linear model</h4>
-</blockquote>
+<h4 id="linear-model">Linear model</h4>
 <blockquote>
-<blockquote>
-<p><span class="math">\[
+<p>$$
 C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{dyn}}    \\
 \tau \frac{dC_{N_{dyn}}}{dt} + C_{N_{dyn}} = \Delta C_{N_{vb}}(\alpha) \ref {1}
-\]</span></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>where:</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><span class="math">\(t = \frac{tV_{oo}}{l}\)</span>无量纲时间，<span class="math">\(\tau\)</span> 是特征时间常数，<span class="math">\(\Delta C_{N_{vb}}(\alpha) = C_{N_{st}}(\alpha) - C_{N_{pt}}(\alpha)\)</span>.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
+$$</p>
+<p>where: </p>
+<p>$t = \frac{tV_{oo}}{l}$无量纲时间，$\tau$ 是特征时间常数，$\Delta C_{N_{vb}}(\alpha) = C_{N_{st}}(\alpha) - C_{N_{pt}}(\alpha)$.</p>
 <p>小振幅振荡角度变化为：</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
+<p>\begin{align}
+\alpha &amp;= \alpha_0 + \alpha_s sin\omega t    \\
+\dot{\alpha} &amp;= \omega \alpha_s cos \omega t
+\end{align}</p>
 <p>where</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><span class="math">\[\omega = \frac{\Omega l }{  V_{\infty}}\]</span></p>
+<p>$$\omega = \frac{\Omega l }{  V_{\infty}}$$</p>
 </blockquote>
 </blockquote>
 </div>
@@ -2078,7 +2037,7 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
+<hr>
 </div>
 </div>
 </div>
@@ -2087,7 +2046,7 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="comparative-evaluation-of-unsteady-aerodynamic-modelling-approaches-aiaa-2004-5272">Comparative Evaluation of Unsteady Aerodynamic Modelling Approaches (AIAA 2004-5272)</h2>
+<h2 id="comparative-evaluation-of-unsteady-aerodynamic-modelling-approaches-aiaa-2004-5272-">Comparative Evaluation of Unsteady Aerodynamic Modelling Approaches (AIAA 2004-5272)</h2>
 </div>
 </div>
 </div>
@@ -2117,7 +2076,7 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr />
+<hr>
 </div>
 </div>
 </div>
@@ -2159,16 +2118,15 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="introduction">Introduction</h3>
 <blockquote>
-<p>现代解决大攻角非线性问题一般有两个方向： &gt;1. <strong>采用高精度的CFD方法</strong></p>
-</blockquote>
+<p>现代解决大攻角非线性问题一般有两个方向：</p>
 <blockquote>
-<blockquote>
-<ol start="2" style="list-style-type: decimal">
-<li><strong>通过高科技试验技术获取相应运动的气动响应，并后期进行系统辨识</strong></li>
+<ol>
+<li><p><strong>采用高精度的CFD方法</strong></p>
+</li>
+<li><p><strong>通过高科技试验技术获取相应运动的气动响应，并后期进行系统辨识</strong></p>
+</li>
 </ol>
 </blockquote>
-</blockquote>
-<blockquote>
 <p><em>作者在该部分讲解了为何进行非定常气动建模，以及气动建模目前的途径，讲的比较好。</em></p>
 </blockquote>
 </div>
@@ -2182,8 +2140,6 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 <h3 id="mathematical-model-structures">Mathematical Model Structures</h3>
 <blockquote>
 <p>数学模型一般包括<strong>飞行器的运动方程组</strong>和<strong>气动力和力矩方程组（也就是气动模型方程）</strong>。</p>
-</blockquote>
-<blockquote>
 <p>常规飞行包线内，流场结构一般为附着流和准静态流，因此，气动模型方程用时不变线性项来表示（稳定性和控制导数）。而在常规飞行包线之外，这些气动项通常包含有时间作为自变量的气动项和非线性气动项。</p>
 </blockquote>
 </div>
@@ -2196,22 +2152,12 @@ C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="estimation-methods">Estimation Methods</h3>
 <blockquote>
-<h4>1. Harmonic Analysis</h4>
-</blockquote>
-<blockquote>
-<h4>2. Nonlinear Regression</h4>
-</blockquote>
-<blockquote>
-<h4>3. Two-Step Linear Regression</h4>
-</blockquote>
-<blockquote>
-<h4>4. Equation Error Method</h4>
-</blockquote>
-<blockquote>
-<h4>5. Output Error Method(Frequency Domain)</h4>
-</blockquote>
-<blockquote>
-<h4>6. Output Error Method(Time Domain)</h4>
+<h4 id="1-harmonic-analysis">1.    Harmonic Analysis</h4>
+<h4 id="2-nonlinear-regression">2.    Nonlinear Regression</h4>
+<h4 id="3-two-step-linear-regression">3.    Two-Step Linear Regression</h4>
+<h4 id="4-equation-error-method">4.    Equation Error Method</h4>
+<h4 id="5-output-error-method-frequency-domain-">5.    Output Error Method(Frequency Domain)</h4>
+<h4 id="6-output-error-method-time-domain-">6.    Output Error Method(Time Domain)</h4>
 </blockquote>
 </div>
 </div>
@@ -2283,6 +2229,9 @@ In&nbsp;[]:
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/fei-xing-qi/UAV.html">非线性非定常空气动力学建模论文摘要</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html">非线性非定常空气动力学建模论文摘要</a>
       </li>
       <li class="post">
@@ -2293,9 +2242,6 @@ In&nbsp;[]:
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">APM-采用Make方法编译APM2.x（Win，Mac，Linux）</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">APM-Windows7上的MAVProxy使用</a>
       </li>
     </ul>
   </section>
