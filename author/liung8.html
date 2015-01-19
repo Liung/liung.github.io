@@ -4,8 +4,8 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Liung - Articles by Liung</title>
-  <meta name="author" content="Liung">
+  <title>折返的Liung - Articles by liung</title>
+  <meta name="author" content="liung">
 
 
     
@@ -1689,12 +1689,12 @@ init_mathjax();
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="../favicon.png" rel="icon">
-  <link href="../theme/css/main.css" media="screen, projection"
+  <link href="http://liung.github.io/favicon.png" rel="icon">
+  <link href="http://liung.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
-  <script src="../theme/js/modernizr-2.0.js"></script>
-  <script src="../theme/js/ender.js"></script>
-  <script src="../theme/js/octopress.js" type="text/javascript"></script>
+  <script src="http://liung.github.io/theme/js/modernizr-2.0.js"></script>
+  <script src="http://liung.github.io/theme/js/ender.js"></script>
+  <script src="http://liung.github.io/theme/js/octopress.js" type="text/javascript"></script>
 
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
@@ -1704,8 +1704,8 @@ init_mathjax();
 
 <body>
   <header role="banner"><hgroup>
-  <h1><a href="../">Liung</a></h1>
-    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
+  <h1><a href="http://liung.github.io/">折返的Liung</a></h1>
+    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1713,7 +1713,7 @@ init_mathjax();
 
 <form action="//google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:.." />
+    <input type="hidden" name="q" value="site:liung.github.io" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -1721,7 +1721,7 @@ init_mathjax();
 <ul class="main-navigation">
     <li><a href="/archives.html">目  录</a></li>
     <li><a href="http://liung.github.io">主  页</a></li>
-      <li><a href="../pages/aboutme.html">Me</a></li>
+      <li><a href="http://liung.github.io/pages/aboutme.html">Me</a></li>
 </ul></nav>
   <div id="main">
     <div id="content">
@@ -1729,110 +1729,45 @@ init_mathjax();
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-06-APM-编译代码.html">APM-编译代码</a>
+        <a href="http://liung.github.io/blog/python/simple-3d-visualization-in-matplotlib.html">Quaternions and Key Bindings: Simple 3D Visualization in Matplotlib</a>
       </h1>
-      <p class="meta"><time datetime="2014-09-06T14:03:34+08:00" pubdate>9月 06, 2014</time></p>
+      <p class="meta"><time datetime="2012-11-24T11:04:00" pubdate>Nov 24, 2012</time></p>
 </header>
 
   <div class="entry-content">
-
-<p>下面这些页面的链接，将提供给你更多关于如何编译APM2.x和PX4的飞行器控制和地面站源码的信息。</p>
-</div>
+<p>Matplotlib is a powerful framework, but its 3D capabilities still have a lot of room to grow. The <a href="http://matplotlib.org/mpl_toolkits/mplot3d/index.html">mplot3d</a> toolkit allows for several kinds of 3D plotting, but the ability to create and rotate solid 3D objects is hindered by the inflexibility of the <code>zorder</code> attribute: because it is not updated when the view is rotated, things in the &quot;back&quot; will cover things in the &quot;front&quot;, obscuring them and leading to very unnatural-looking results.</p>
+<p>I decided to see if I could create a simple script that addresses this. Though it would be possible to use the built-in <code>mplot3d</code> architecture to take care of rotating and projecting the points, I decided to do it from scratch for the sake of my own education.</p>
+<p>We'll step through it below: by the end of this post we will have created a 3D viewer in matplotlib which I think is quite nice. </div>
   <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-06-APM-编译代码.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T14:41:58+08:00" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
-<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真)页面</a>有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行。
-</div>
-  <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T12:08:26+08:00" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。
-</div>
-  <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T11:01:10+08:00" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="../blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面</a>描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。
-</div>
-  <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-02T14:21:41+08:00" pubdate>9月 02, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。
-</div>
-  <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
+    <a rel="full-article" href="http://liung.github.io/blog/python/simple-3d-visualization-in-matplotlib.html">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
-    <a class="prev" href="../author/liung9.html">&larr; Older</a>
 
-    <a class="next" href="../author/liung7.html">Newer &rarr;</a>
+    <a class="next" href="http://liung.github.io/author/liung7.html">Newer &rarr;</a>
   <br />
 </div></div>
 <aside class="sidebar">
   <section>
-	  <img src="../images/author_photo.jpg" alt="Liung" width="300"/> 
+	  <img src="http://liung.github.io/images/author_photo.jpg" alt="Liung" width="300"/> 
   </section>
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="../blog/apm/2015-04-01-APM-MissionPlanner的仿真界面.html">MissionPlanner-仿真界面分析</a>
+          <a href="http://liung.github.io/blog/fei-xing-qi/UAV.html">无人机（UAV）</a>
       </li>
       <li class="post">
-          <a href="../blog/qi-dong/2015-03-24-由压力系数计算升力系数.html">升力系数的计算</a>
+          <a href="http://liung.github.io/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html">非线性非定常空气动力学建模论文摘要</a>
       </li>
       <li class="post">
-          <a href="../blog/apm/2015-02-03-APM-使用Git和GitHub进行APM代码管理.html">APM-使用Git和GitHub进行APM代码管理</a>
+          <a href="http://liung.github.io/blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html">飞行器相关基础知识</a>
       </li>
       <li class="post">
-          <a href="../blog/apm/2015-02-01-APM-加载代码到APM2.x.html">APM-加载代码到APM2.x</a>
+          <a href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html">APM-I2C</a>
       </li>
       <li class="post">
-          <a href="../blog/apm/2015-01-29-APM-mavlink_commands.html">APM-MAVLink命令集</a>
+          <a href="http://liung.github.io/blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">APM-采用Make方法编译APM2.x（Win，Mac，Linux）</a>
       </li>
     </ul>
   </section>
@@ -1840,55 +1775,44 @@ init_mathjax();
       
     <h1>Categories</h1>
     <ul id="recent_posts">
-        <li><a href="../category/apm/index.html">APM</a></li>
-        <li><a href="../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../category/python/index.html">Python</a></li>
-        <li><a href="../category/qi-dong/index.html">气动</a></li>
-        <li><a href="../category/qi-ta/index.html">其它</a></li>
+        <li><a href="http://liung.github.io/category/apm/index.html">APM</a></li>
+        <li><a href="http://liung.github.io/category/fei-xing-qi/index.html">飞行器</a></li>
+        <li><a href="http://liung.github.io/category/python/index.html">Python</a></li>
+        <li><a href="http://liung.github.io/category/qi-dong/index.html">气动</a></li>
+        <li><a href="http://liung.github.io/category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../tag/ying-jian.html">硬件</a>,    <a href="../tag/fei-kong-ban.html">飞控板</a>,    <a href="../tag/github.html">GitHub</a>,    <a href="../tag/apmcopter.html">APM:Copter</a>,    <a href="../tag/bo-ke.html">博客</a>,    <a href="../tag/mp.html">MP</a>,    <a href="../tag/ipython.html">ipython</a>,    <a href="../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../tag/git.html">Git</a>,    <a href="../tag/mavlink.html">MAVLink</a>,    <a href="../tag/apm.html">APM</a>,    <a href="../tag/c.html">C++</a>,    <a href="../tag/mission-planner.html">Mission Planner</a>,    <a href="../tag/qi-dong.html">气动</a>,    <a href="../tag/pandas.html">pandas</a>,    <a href="../tag/numpy.html">Numpy</a>,    <a href="../tag/python.html">python</a>  </section>
+    <a href="http://liung.github.io/tag/c.html">C++</a>,    <a href="http://liung.github.io/tag/git.html">Git</a>,    <a href="http://liung.github.io/tag/python.html">python</a>,    <a href="http://liung.github.io/tag/qi-dong.html">气动</a>,    <a href="http://liung.github.io/tag/bo-ke.html">博客</a>,    <a href="http://liung.github.io/tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>,    <a href="http://liung.github.io/tag/apm.html">APM</a>,    <a href="http://liung.github.io/tag/ipython.html">ipython</a>,    <a href="http://liung.github.io/tag/ying-jian.html">硬件</a>,    <a href="http://liung.github.io/tag/numpy.html">Numpy</a>,    <a href="http://liung.github.io/tag/pandas.html">pandas</a>,    <a href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
     <section>
         <h1>Blogroll</h1>
         <ul>
-            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+            <li><a href="http://google.com/" target="_blank">Google</a></li>
             <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
         </ul>
     </section>
 
-<section>
-    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
-</section>
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/117788376468366009129?rel=author">
-      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liung -
+    Copyright &copy;  2012-2015  - liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个爱折腾的实用主义者</a></span>
+  <span class="credit">一个执拗的完美主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1916,21 +1840,5 @@ init_mathjax();
 	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	   })();
 	</script>
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 </body>
 </html>
