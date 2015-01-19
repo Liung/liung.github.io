@@ -4,8 +4,8 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>非线性非定常空气动力学建模论文摘要</title>
-  <meta name="author" content="Liung">
+  <title>飞行器相关基础知识</title>
+  <meta name="author" content="liung">
 
 
     
@@ -1689,12 +1689,12 @@ init_mathjax();
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="../../favicon.png" rel="icon">
-  <link href="../../theme/css/main.css" media="screen, projection"
+  <link href="http://liung.github.io/favicon.png" rel="icon">
+  <link href="http://liung.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
-  <script src="../../theme/js/modernizr-2.0.js"></script>
-  <script src="../../theme/js/ender.js"></script>
-  <script src="../../theme/js/octopress.js" type="text/javascript"></script>
+  <script src="http://liung.github.io/theme/js/modernizr-2.0.js"></script>
+  <script src="http://liung.github.io/theme/js/ender.js"></script>
+  <script src="http://liung.github.io/theme/js/octopress.js" type="text/javascript"></script>
 
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
@@ -1704,8 +1704,8 @@ init_mathjax();
 
 <body>
   <header role="banner"><hgroup>
-  <h1><a href="../../">Liung</a></h1>
-    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
+  <h1><a href="http://liung.github.io/">折返的Liung</a></h1>
+    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1713,7 +1713,7 @@ init_mathjax();
 
 <form action="//google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:../.." />
+    <input type="hidden" name="q" value="site:liung.github.io" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -1721,26 +1721,552 @@ init_mathjax();
 <ul class="main-navigation">
     <li><a href="/archives.html">目  录</a></li>
     <li><a href="http://liung.github.io">主  页</a></li>
-      <li><a href="../../pages/aboutme.html">Me</a></li>
+      <li><a href="http://liung.github.io/pages/aboutme.html">Me</a></li>
 </ul></nav>
   <div id="main">
     <div id="content">
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">非线性非定常空气动力学建模论文摘要</h1>
-      <p class="meta"><time datetime="2015-01-19T13:36:33+08:00" pubdate>1月 19, 2015</time></p>
+      <h1 class="entry-title">飞行器相关基础知识</h1>
+      <p class="meta"><time datetime="2015-01-19T11:17:54" pubdate>Jan 19, 2015</time></p>
 </header>
 
-  <div class="entry-content"><p>{% notebook Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.ipynb %}</p></div>
+  <div class="entry-content"><p>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Modeling-of-Aircraft-Unsteady-Aerodynamic-Characteristics.">Modeling of Aircraft Unsteady Aerodynamic Characteristics.<a class="anchor-link" href="#Modeling-of-Aircraft-Unsteady-Aerodynamic-Characteristics.">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>by Vladislav Klein and Keith D.Noderer</em></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Part-1-Postulated-Model(NASA-1994)">Part 1 Postulated Model(NASA 1994)<a class="anchor-link" href="#Part-1-Postulated-Model(NASA-1994)">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="summary">Summary</h3>
+<blockquote>
+<p>介绍了目前非定常效应模型方程的一些方法和理论。主要提出了单位阶跃模型，并由此得到了飞行器积分微分运动方程；在第二部分提出了模型方程的状态空间形式。并在两个例子中运用非定常方程。一个例子是针对绕体轴的单自由度简谐运动；在另一个例子中提出了纵向短周期运动。上述两个例子仅关心模型方程的线性项。单位阶跃方法用指数方程和内在状态变量的形式假设，并且该方程是线性、时不变的一阶微分方程。同样，本文中还展示了两个不同的非定常空气动力模型会得到相同的仿真结果。在纵向短周期运动中，内在变量的辨识问题，如果涉及到从飞行数据的气动参数预估，将会做简要的介绍。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="aerodynamic-charactertics-in-terms-of-indicial-functions">Aerodynamic Charactertics in Terms of Indicial Functions</h3>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p>or</p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="examples">Examples</h3>
+<blockquote>
+<h4>Harmonic Oscillatory Motion:</h4>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>升力和俯仰力矩的表达形式：</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>通过指数模型和状态空间模型的对比。发现，这两种模型可以相互变换。（<strong>这一部分是重点，包括一些表达式的提出，处理，时域和频域的转换及相关傅里叶变换等等</strong>）</p>
+</blockquote>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Part-2-Parmaeters-Estimated-From-Wind-Tunnel-Data&#65288;1995&#65289;">Part 2 Parmaeters Estimated From Wind Tunnel Data&#65288;1995&#65289;<a class="anchor-link" href="#Part-2-Parmaeters-Estimated-From-Wind-Tunnel-Data&#65288;1995&#65289;">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="summary">Summary</h3>
+<blockquote>
+<p>part 1 针对飞行器的单自由度、小振幅、简谐运动建立了一套非定常气动方程。该方程需要将模型的风洞试验数据进行参数预估。基于非线性最小二乘法的预估算法已经应用到70°三角翼和X-31模型的俯仰和滚转振荡试验和大攻角研究模型2（HIRM 2）的小策划试验中。上述试验的预估参数表明，该模型可以用简单的指数方程来解释测量得到的试验数据。预估得到的参数和模型验证的精准度强烈依赖于这些未知参数所对应的试验数据点的数量。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="introduction">Introduction</h3>
+<blockquote>
+<p>From the measured aerodynamic forces and moments are obtained. It has been a long-standing practice to analyze the oscillatory data by formulating the aerodynamic model equations with constant parameters known as stability derivatives. In this formulation,<strong>the in-phase component is a combination of a static derivative(such as <span class="math">\(C_{m_\alpha}\)</span>) and a rotational acceleration derivative (such as $ C_{m_}$) whereas the out-of-phase component is a combination of a purely-rotary derivative (such as $ C_{m_q}$) and a translation acceleration derivative (such as <span class="math">\(C_{m_\dot{\alpha}}\)</span>). 同相导数分量是一个静导数和一个旋转角加速度导数的组合，同时，反相导数是一个纯粹动导数和一个延伸（转化）加速度导数的组合。</strong></p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="part-3-parameters-estimated-from-flight-data-1996">Part 3 Parameters Estimated From Flight Data （1996）</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="summary">Summary</h3>
+<blockquote>
+<p>本文进一步完善了基于非线性最小二乘法的飞行数据的参数预估算法。通过分析假设的模型来展示纵向和短周期飞行器运动。相对应的气动力方程包含了单位阶跃方程（含非线性项）和传统的稳定和控制导数，其中，单位阶跃方程采用简单的指数形式描述。在五个不同的试验中采用参数预估的方法。其中四组试验用于仿真和模拟来自F-18 HARV和X-31A飞行器的小振幅机动飞行数据。另外一组X-31 模型的快速大振幅机动试验之后也将被分析。通过小振幅振荡机动的气动数据分析可以得出，通过假设提出的气动方程模型得到的传统稳定和控制导数是足够准确的。并且，通过最后一组试验的参数预估表明，在快速大振幅机动运动中，非定常气动力和力矩并没有表现的很明显。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Difficulties-in-the-Application-of-Stability-Derivatives-to-the-Manoeuvring-Aerodynamics-of-Combat-Aircraft(ICAS-1998-31466)">Difficulties in the Application of Stability Derivatives to the Manoeuvring Aerodynamics of Combat Aircraft(ICAS 1998-31466)<a class="anchor-link" href="#Difficulties-in-the-Application-of-Stability-Derivatives-to-the-Manoeuvring-Aerodynamics-of-Combat-Aircraft(ICAS-1998-31466)">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>by D.I.Greenwill from Defence Evaluation and Research Agency Bedford, UK</em></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>本文展示了常规稳定性导数概念在许多理论和实践应用中是失效的，这是由于其最初的线化假设和六自由度运动方程的解耦目的。实际应用中，动导数提供了其数学上的修正，并且需要在飞行器运动输入参数中设定一个频率上限。本文将展示和讨论一系列运用动导数模型来仿真模拟战斗机的机动气动性能的试验难点。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simple-Wings-Unsteady-Aerodynamics-at-High-Angles-of-Attack:-Experimental-and-Modeling-Results.(AIAA-99-4013)">Simple Wings Unsteady Aerodynamics at High Angles of Attack: Experimental and Modeling Results.(AIAA-99-4013)<a class="anchor-link" href="#Simple-Wings-Unsteady-Aerodynamics-at-High-Angles-of-Attack:-Experimental-and-Modeling-Results.(AIAA-99-4013)">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>by N.B.Abramov,M.G.Goman,A.N.Khrabrov,K.A.kolinko</em></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="experimental-investigations">Experimental investigations</h3>
+<blockquote>
+<p>通过将给定时间间隔下固定迎角采集得到数据集周期平均，就可以计算出带有最小平均二乘残差的静态试验数据。对于动态设备采集得到的气动数据需要采用特殊的数据处理技术。通常实验情况下，驱动动态机构来模拟16个周期的振荡运动，然后使用截止频率为4.0Hz（<span class="math">\(f_0 = 4.0 Hz\)</span>）的低通滤波器对采集数据进行光滑滤波。为了消除可能的低频信号干扰（<span class="math">\(f\leqslant f_0\)</span>），多周期数据平均成一个周期的数据值。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="mathematical-modeling">Mathematical modeling:</h3>
+<blockquote>
+<p>70°三角翼在大攻角时的流场结构主要是涡流和占主导地位并对所有气动响应产生明显时间迟滞效应的的动态涡破碎过程。考虑迎角和侧滑角大范围变化过程，翼面会产生不同的流场结构：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>1）未破碎涡流；2）一边涡破碎流；3）两侧涡同时破碎流；4）完全失速流（FSF）。</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>而这些不同流动结构的交叠区域就产生了所谓的临界状态或者分叉。数学模型中，这些状态的判断需要特殊考虑。</p>
+</blockquote>
+<blockquote>
+<p>非定常气动响应的特征时间量完全依赖于流场结构，并随着给定subarea的机翼的姿态角变化。<strong>涡破碎过程造成的特征时间量比由势流或未破碎涡流造成的特征时间量大一个量级。这就是这些流动结构气动贡献可以被分开考虑的原因。</strong></p>
+</blockquote>
+<blockquote>
+<p>所有的气动载荷归根结底都是反映了涡破碎或者流动分离的内部流场动态特性，所以可以由此假定：所有力和力矩的变化过程可以由一组相同的特征时间常数来表示。但是，气动力和力矩是模型总体气动载荷的不同表现形式，这就导致由于压心位置变化引起了力矩额外的特征时间量。</p>
+</blockquote>
+<blockquote>
+<p><span class="math">\[C_m(t) = C_N(t)(x_0 - x_p(t))\]</span></p>
+</blockquote>
+<blockquote>
+<p><span class="math">\(C_N(t)\)</span>和<span class="math">\(x_p(t)\)</span>都具有非定常效应（涡破碎引起），因此<span class="math">\(C_N(t)\)</span>和<span class="math">\(x_p(t)\)</span>的相乘会导致<span class="math">\(C_m\)</span>额外的时间分量。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Two-Step-Linear-Regression-Method-for-Identification-of-High-Incidence-Unsteady-Aerodynamic-Model.(AIAA-2001-4080)">Two-Step Linear Regression Method for Identification of High Incidence Unsteady Aerodynamic Model.(AIAA 2001-4080)<a class="anchor-link" href="#Two-Step-Linear-Regression-Method-for-Identification-of-High-Incidence-Unsteady-Aerodynamic-Model.(AIAA-2001-4080)">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>by N.B.Abramov,M.G.Goman,D.I.Greenwell,A.N.Khrabrov</em></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="unsteady-aerodynamic-modeling">Unsteady aerodynamic modeling</h3>
+<blockquote>
+<h4>Linear model</h4>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><span class="math">\[
+C_N(t) = C_{N_{pt}}(\alpha) + C_{\dot{\alpha}_{pt}}(\alpha)\dot{\alpha} + C_{N_{dyn}}    \\
+\tau \frac{dC_{N_{dyn}}}{dt} + C_{N_{dyn}} = \Delta C_{N_{vb}}(\alpha) \ref {1}
+\]</span></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>where:</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><span class="math">\(t = \frac{tV_{oo}}{l}\)</span>无量纲时间，<span class="math">\(\tau\)</span> 是特征时间常数，<span class="math">\(\Delta C_{N_{vb}}(\alpha) = C_{N_{st}}(\alpha) - C_{N_{pt}}(\alpha)\)</span>.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>小振幅振荡角度变化为：</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>where</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><span class="math">\[\omega = \frac{\Omega l }{  V_{\infty}}\]</span></p>
+</blockquote>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="comparative-evaluation-of-unsteady-aerodynamic-modelling-approaches-aiaa-2004-5272">Comparative Evaluation of Unsteady Aerodynamic Modelling Approaches (AIAA 2004-5272)</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>by Hilton Kyle, Mark Lowenberg and Doug Greenwell</em></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>主要讲了一些建模的方法：单位阶跃模型、状态空间模型、常微分方程建模等等方法。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Estimation-of-Unsteady-Aerodynamic-Models-from-Dynamic-Wind-Tunnel-Data-(2011)">Estimation of Unsteady Aerodynamic Models from Dynamic Wind Tunnel Data (2011)<a class="anchor-link" href="#Estimation-of-Unsteady-Aerodynamic-Models-from-Dynamic-Wind-Tunnel-Data-(2011)">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>by Patrick C.Murphy and Vladislav Klein (from NASA)</em></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="abstract">Abstract</h3>
+<blockquote>
+<p>军用和民用飞行器日益苛刻的气动建模仿真需求促使研究人员不断改善计算和试验技术，并促进这些领域更深层次的合作。模型的辨识和验证问题是这些研究对象的主要部分。本文将给出一些数学模型结构和辨识技术，这些方法已经成功运用于大多数单自由度动态试验的模型仿真上。对于模型参数，气动特性变量的预估采用了在时域和频率中线性和非线性的回归方法。模型辨识的一些步骤，包括模型结构的论证、参数预估和模型验证，将在本文中采用单自由度风洞和水洞的试验数据一一说明。这些技术采用的方法，是在飞行动力学的应用中对计算方法工具的进一步扩展。因为对于早期的模型验证采用飞行试验不是一种通用的选择，所以在计算和实验结果的时间历程比较和评估模型的精准度将通过一些被证实的结果来验证。这些方法是对传统的通用模型参数预估和标准差比较的方法的一种扩展。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="introduction">Introduction</h3>
+<blockquote>
+<p>现代解决大攻角非线性问题一般有两个方向： &gt;1. <strong>采用高精度的CFD方法</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>通过高科技试验技术获取相应运动的气动响应，并后期进行系统辨识</strong></li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><em>作者在该部分讲解了为何进行非定常气动建模，以及气动建模目前的途径，讲的比较好。</em></p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="mathematical-model-structures">Mathematical Model Structures</h3>
+<blockquote>
+<p>数学模型一般包括<strong>飞行器的运动方程组</strong>和<strong>气动力和力矩方程组（也就是气动模型方程）</strong>。</p>
+</blockquote>
+<blockquote>
+<p>常规飞行包线内，流场结构一般为附着流和准静态流，因此，气动模型方程用时不变线性项来表示（稳定性和控制导数）。而在常规飞行包线之外，这些气动项通常包含有时间作为自变量的气动项和非线性气动项。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="estimation-methods">Estimation Methods</h3>
+<blockquote>
+<h4>1. Harmonic Analysis</h4>
+</blockquote>
+<blockquote>
+<h4>2. Nonlinear Regression</h4>
+</blockquote>
+<blockquote>
+<h4>3. Two-Step Linear Regression</h4>
+</blockquote>
+<blockquote>
+<h4>4. Equation Error Method</h4>
+</blockquote>
+<blockquote>
+<h4>5. Output Error Method(Frequency Domain)</h4>
+</blockquote>
+<blockquote>
+<h4>6. Output Error Method(Time Domain)</h4>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></p><script type= "text/javascript">
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+</script>
+</div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liung</span>
+    Posted by <span class="fn">liung</span>
   </span>
-<time datetime="2015-01-19T13:36:33+08:00" pubdate>1月 19, 2015</time></p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html" data-via="Liung_" data-counturl="../../blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html" >Tweet</a>
-  <div class="g-plusone" data-size="medium"></div>
+<time datetime="2015-01-19T11:17:54" pubdate>Jan 19, 2015</time></p><div class="sharing">
 </div>    </footer>
   </article>
 
@@ -1751,25 +2277,25 @@ init_mathjax();
 </div>
 <aside class="sidebar">
   <section>
-	  <img src="../../images/author_photo.jpg" alt="Liung" width="300"/> 
+	  <img src="http://liung.github.io/images/author_photo.jpg" alt="Liung" width="300"/> 
   </section>
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="../../blog/apm/2015-04-01-APM-MissionPlanner的仿真界面.html">MissionPlanner-仿真界面分析</a>
+          <a href="http://liung.github.io/blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html">飞行器相关基础知识</a>
       </li>
       <li class="post">
-          <a href="../../blog/qi-dong/2015-03-24-由压力系数计算升力系数.html">升力系数的计算</a>
+          <a href="http://liung.github.io/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html">飞行器相关基础知识</a>
       </li>
       <li class="post">
-          <a href="../../blog/apm/2015-02-03-APM-使用Git和GitHub进行APM代码管理.html">APM-使用Git和GitHub进行APM代码管理</a>
+          <a href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html">APM-I2C</a>
       </li>
       <li class="post">
-          <a href="../../blog/apm/2015-02-01-APM-加载代码到APM2.x.html">APM-加载代码到APM2.x</a>
+          <a href="http://liung.github.io/blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">APM-采用Make方法编译APM2.x（Win，Mac，Linux）</a>
       </li>
       <li class="post">
-          <a href="../../blog/apm/2015-01-29-APM-mavlink_commands.html">APM-MAVLink命令集</a>
+          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">APM-Windows7上的MAVProxy使用</a>
       </li>
     </ul>
   </section>
@@ -1777,55 +2303,44 @@ init_mathjax();
       
     <h1>Categories</h1>
     <ul id="recent_posts">
-        <li><a href="../../category/apm/index.html">APM</a></li>
-        <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/python/index.html">Python</a></li>
-        <li><a href="../../category/qi-dong/index.html">气动</a></li>
-        <li><a href="../../category/qi-ta/index.html">其它</a></li>
+        <li><a href="http://liung.github.io/category/apm/index.html">APM</a></li>
+        <li><a href="http://liung.github.io/category/fei-xing-qi/index.html">飞行器</a></li>
+        <li><a href="http://liung.github.io/category/python/index.html">Python</a></li>
+        <li><a href="http://liung.github.io/category/qi-dong/index.html">气动</a></li>
+        <li><a href="http://liung.github.io/category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/python.html">python</a>  </section>
+    <a href="http://liung.github.io/tag/c.html">C++</a>,    <a href="http://liung.github.io/tag/git.html">Git</a>,    <a href="http://liung.github.io/tag/python.html">python</a>,    <a href="http://liung.github.io/tag/qi-dong.html">气动</a>,    <a href="http://liung.github.io/tag/bo-ke.html">博客</a>,    <a href="http://liung.github.io/tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>,    <a href="http://liung.github.io/tag/apm.html">APM</a>,    <a href="http://liung.github.io/tag/ipython.html">ipython</a>,    <a href="http://liung.github.io/tag/ying-jian.html">硬件</a>,    <a href="http://liung.github.io/tag/numpy.html">Numpy</a>,    <a href="http://liung.github.io/tag/pandas.html">pandas</a>,    <a href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
     <section>
         <h1>Blogroll</h1>
         <ul>
-            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+            <li><a href="http://google.com/" target="_blank">Google</a></li>
             <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
         </ul>
     </section>
 
-<section>
-    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
-</section>
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/117788376468366009129?rel=author">
-      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liung -
+    Copyright &copy;  2014-2015  - liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个爱折腾的实用主义者</a></span>
+  <span class="credit">一个执拗的完美主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1848,29 +2363,13 @@ init_mathjax();
 	<script type="text/javascript">
 	  var disqus_shortname = 'liunggithubio-aerodynamic';
           var disqus_identifier = '/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html';
-          var disqus_url = '../../blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html';
-          var disqus_title = '非线性非定常空气动力学建模论文摘要';
+          var disqus_url = 'http://liung.github.io/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html';
+          var disqus_title = '飞行器相关基础知识';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
 	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	   })();
 	</script>
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 </body>
 </html>
