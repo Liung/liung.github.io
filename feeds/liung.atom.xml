@@ -515,37 +515,7 @@ $$&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>飞行器相关基础知识</title><link href="http://liung.github.io/blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html" rel="alternate"></link><updated>2015-01-19T11:17:54+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-19:blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>飞行器相关基础知识</title><link href="http://liung.github.io/blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html" rel="alternate"></link><updated>2015-01-19T11:17:54+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-19:blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -942,37 +912,7 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>APM-I2C</title><link href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html" rel="alternate"></link><updated>2014-10-19T13:22:24+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-19:blog/apm/2014-10-19-APM-I2C.html</id><summary type="html">&lt;p&gt;&lt;em&gt;关于串行总线（$I^2C$），请阅读维基百科相关条目（&lt;a href="http://zh.wikipedia.org/wiki/I%C2%B2C"&gt;$I^2C$&lt;/a&gt;）&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>APM-I2C</title><link href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html" rel="alternate"></link><updated>2014-10-19T13:22:24+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-19:blog/apm/2014-10-19-APM-I2C.html</id><summary type="html">&lt;p&gt;&lt;em&gt;关于串行总线（$I^2C$），请阅读维基百科相关条目（&lt;a href="http://zh.wikipedia.org/wiki/I%C2%B2C"&gt;$I^2C$&lt;/a&gt;）&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;使用其他I2C通信传感器&lt;/h3&gt;
 &lt;p&gt;你可以使用任何你想使用的I2C传感器连接到I2C端口。I2C is a bus, so sensors can be daisy-chained using any creative wiring solution you can solder, or for neatness add an &lt;a href="http://store.3drobotics.com/products/i2c-splitter"&gt;I2C splitter&lt;/a&gt; .&lt;/p&gt;
 &lt;p&gt;你可以更改相应的代码来支持你所要添加的I2C设备类型。APM主要使用I2C库来驱动相应设备，所以，你可以尝试更改磁力计库作为扩展你自己的传感器的开端。&lt;/p&gt;
@@ -984,37 +924,7 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/i2c/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-采用Make方法编译APM2.x（Win，Mac，Linux）</title><link href="http://liung.github.io/blog/apm/2014-10-17-APM-%E9%87%87%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91APM2.x%EF%BC%88Win%EF%BC%8CMac%EF%BC%8CLinux%EF%BC%89.html" rel="alternate"></link><updated>2014-10-17T12:55:14+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-17:blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html</id><summary type="html">&lt;h3&gt;概述&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-采用Make方法编译APM2.x（Win，Mac，Linux）</title><link href="http://liung.github.io/blog/apm/2014-10-17-APM-%E9%87%87%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91APM2.x%EF%BC%88Win%EF%BC%8CMac%EF%BC%8CLinux%EF%BC%89.html" rel="alternate"></link><updated>2014-10-17T12:55:14+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-17:blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html</id><summary type="html">&lt;h3&gt;概述&lt;/h3&gt;
 &lt;p&gt;对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。&lt;/p&gt;
 &lt;p&gt;对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程。&lt;/p&gt;
 &lt;hr /&gt;
@@ -1282,37 +1192,7 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/setting-up-sitl-on-linux/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-Windows上SITL仿真设置</title><link href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows%E4%B8%8ASITL%E4%BB%BF%E7%9C%9F%E8%AE%BE%E7%BD%AE.html" rel="alternate"></link><updated>2014-10-14T13:56:44+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-14:blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html</id><summary type="html">&lt;h3&gt;简介&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-Windows上SITL仿真设置</title><link href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows%E4%B8%8ASITL%E4%BB%BF%E7%9C%9F%E8%AE%BE%E7%BD%AE.html" rel="alternate"></link><updated>2014-10-14T13:56:44+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-14:blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html</id><summary type="html">&lt;h3&gt;简介&lt;/h3&gt;
 &lt;p&gt;SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。&lt;/p&gt;
 &lt;p&gt;本页面详细说明了如何在windows平台上设置SITL。文中使用的相关命令在装有&lt;strong&gt;VMware ver 5.0.2 build -1031769&lt;/strong&gt; 和 &lt;strong&gt;Ubuntu 12.10&lt;/strong&gt;的Windows8平台上测试通过。&lt;/p&gt;
 &lt;p&gt;需要注意的是：在完成本页面操作请先将&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html"&gt;Ardupilot代码&lt;/a&gt;下载到你的电脑上，并且可以使用&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html"&gt;arduino&lt;/a&gt;或者&lt;a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html"&gt;Make方法&lt;/a&gt;编译。&lt;/p&gt;
@@ -1537,37 +1417,7 @@ together with specified mass properties.&lt;/p&gt;
 &lt;h3&gt;Foils - model airfoil plotter&lt;/h3&gt;
 &lt;p&gt;Draws accurately scaled model airfoil rib or foam cutting templates on any
 printer in Windows 3.1 or later, or via clipboard to some drawing and CAD programs.&lt;/p&gt;
-&lt;p&gt;主页地址：&lt;a href="http://foils.sourceforge.net/"&gt;&lt;strong&gt;http://foils.sourceforge.net/&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="气动"></category><category term="气动软件"></category></entry><entry><title>Pandas学习笔记</title><link href="http://liung.github.io/blog/python/2014-09-14-Pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" rel="alternate"></link><updated>2014-09-14T14:26:24+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-14:blog/python/2014-09-14-Pandas学习笔记.html</id><summary type="html">&lt;p&gt;通过索引方式返回的列只是相应数据的视图，因此，对返回的Series所做的任何就地修改都会反映到DataFrame上。通过Series的&lt;code&gt;copy&lt;/code&gt;方法可显式地复制列。&lt;/p&gt;
+&lt;p&gt;主页地址：&lt;a href="http://foils.sourceforge.net/"&gt;&lt;strong&gt;http://foils.sourceforge.net/&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</summary><category term="气动"></category><category term="气动软件"></category></entry><entry><title>Pandas学习笔记</title><link href="http://liung.github.io/blog/python/2014-09-14-Pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" rel="alternate"></link><updated>2014-09-14T14:26:24+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-14:blog/python/2014-09-14-Pandas学习笔记.html</id><summary type="html">&lt;p&gt;通过索引方式返回的列只是相应数据的视图，因此，对返回的Series所做的任何就地修改都会反映到DataFrame上。通过Series的&lt;code&gt;copy&lt;/code&gt;方法可显式地复制列。&lt;/p&gt;
 &lt;h4&gt;DataFrame构造器可以接受的数据：&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;二维ndarray：&lt;/strong&gt;&lt;/li&gt;
@@ -1806,37 +1656,7 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-px4-for-linux-with-make/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-Linux平台上用Make方法编译APM2.x</title><link href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91APM2.x.html" rel="alternate"></link><updated>2014-09-10T17:18:44+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-10:blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html</id><summary type="html">&lt;h3&gt;快速开始&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-Linux平台上用Make方法编译APM2.x</title><link href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91APM2.x.html" rel="alternate"></link><updated>2014-09-10T17:18:44+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-09-10:blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html</id><summary type="html">&lt;h3&gt;快速开始&lt;/h3&gt;
 &lt;p&gt;对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明&lt;/p&gt;
 &lt;h4&gt;1、安装&lt;/h4&gt;
 &lt;p&gt;安装git&lt;/p&gt;
