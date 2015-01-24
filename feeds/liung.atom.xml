@@ -1020,8 +1020,11 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/editing-the-code-with-eclipse/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-使用NotePad++编辑代码</title><link href="http://liung.github.io/blog/apm/2014-10-16-APM-%E4%BD%BF%E7%94%A8NotePad++%E7%BC%96%E8%BE%91%E4%BB%A3%E7%A0%81.html" rel="alternate"></link><updated>2014-10-16T13:54:19+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-16:blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html</id><summary type="html">&lt;h3&gt;NotePad++&lt;/h3&gt;
-&lt;p&gt;NOtePad++是开发团队最常用的一款编辑器，可以在&lt;a href="http://notepad-plus-plus.org/"&gt;这里&lt;/a&gt;下载。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-使用NotePad++编辑代码</title><link href="http://liung.github.io/blog/apm/2014-10-16-APM-%E4%BD%BF%E7%94%A8NotePad++%E7%BC%96%E8%BE%91%E4%BB%A3%E7%A0%81.html" rel="alternate"></link><updated>2014-10-16T13:54:19+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-10-16:blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html</id><summary type="html">
+
+&lt;h3&gt;NotePad++&lt;/h3&gt;
+&lt;p&gt;NOtePad++是开发团队最常用的一款编辑器，可以在&lt;a href="http://notepad-plus-plus.org/"&gt;这里&lt;/a&gt;下载。
+&lt;/p&gt;
 &lt;h3&gt;使用工程面板组织多文件&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/NotePad_ProjectPanel.png" /&gt;&lt;/p&gt;
 &lt;hr /&gt;
