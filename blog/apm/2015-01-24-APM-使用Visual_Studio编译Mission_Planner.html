@@ -1737,15 +1737,15 @@ init_mathjax();
 
 <p>Mission Planner（简称MP）是一款Windows平台使用（可通过mono实现Mac平台上的跨平台使用）的开源地面站软件，主要开发语言采用C#。该软件是目前使用最普遍的一款地面站软件，它不仅面向各种载具提供了完备地功能性设置，还提供了飞行任务规划、飞行实时监测、飞行后日志文件分析等功能。
 </p>
-<p>本页面将介绍如何在自己的电脑上使用微软的Visual Studio2013软件编译Mission Planner。能够顺利的完成编译工作不仅对你想要在Mission Planner上需要添加的某些变化或者面向社区的改进等都是非常有用，而且可以作为编译个人定制地面站软件开发的一个指导。</p>
-<p>深入研究之前的一些警示：</p>
+<p>本页面将介绍如何在自己的电脑上使用微软的Visual Studio2013软件编译Mission Planner。能够顺利的完成编译工作不仅对你想要在Mission Planner上需要添加的某些变化或者面向社区的改进等非常有用，而且可以对于开发编译个人定制地面站软件是一个很好的指导。</p>
+<p>深入研究之前的一些警告：</p>
 <ul>
 <li>使用个人改变/编译Mission Planner版的风险由本人承担</li>
 <li>Mission Planner具有非常复杂的库包含关系，不推荐概念模糊就改编代码。这里列出了你需要对MP做出可信改变的一些基本技术能力：</li>
 </ul>
 <p>● 具备C#编程技术与相关经验（至少有C++相关经验）</p>
 <p>● 具有微软VS开发环境相关经验。MP不是学习VS的入门应用。</p>
-<p>● 具有Windows的API（应用程序接口），包括理解数据流、进程、线程等相关经验。</p>
+<p>● 具有Windows的API（应用程序接口），包括理解数据流、进程、线程等相关知识。</p>
 <ul>
 <li>VS的相关支持，C#编程相关以及Windows API相关技术可能不会从DIY Drones社区获得。你需要从其他资源获得帮助与支持。</li>
 </ul>
@@ -1839,7 +1839,7 @@ init_mathjax();
 <p>完成上述工作后，接下来第一步先要检查能够正常连接到你的飞行控制板，并且使用已安装的Mission Planner软件能够正常解锁，然后断开常规的Mission Planner，点击“Start”按钮使用debug模式运行程序。当面板“Florm1”弹出后，选择正确的COM端口和波特率（一般115200），点击“Connect”按钮。如果连接成功，点击“Arm/Disarm”按钮尝试解锁你的载具。</p>
 <hr />
 <h3>编辑与调试Mission Planner (与其它温馨提示)</h3>
-<p>编辑与调试代码细节超出了本Wiki的范畴。调试结果可能会造成一些警告，你应该认真了解这些警告产生的原因并采取一些必要措施来解决。下面这些简单的调试例子可以让你有个很好的开始：</p>
+<p>编辑与调试代码相关细节超出了本Wiki的范畴。调试结果可能会造成一些警告，你应该认真了解这些警告产生的原因并采取一些必要措施来解决。下面这些简单的调试例子可以让你有个很好的开始：</p>
 <ul>
 <li>编译MP时不要连接你的APM。你应该首先复制一些.xml文件到bin/degub文件夹。请查看下面的详细内容。</li>
 <li>首先确保VS软件配置为调试模式（相对于发布release）。可以在主菜单中的工具菜单或者配置管理器中进行相关设置。</li>
@@ -1888,15 +1888,15 @@ init_mathjax();
 <li>Github上注册账户</li>
 <li>通过 <a href="https://github.com/diydrones/MissionPlanner">https://github.com/diydrones/MissionPlanner</a> 点击右上角的Fork按钮，创建个人账户的Mission Planner的镜像代码。</li>
 <li>“克隆”私人库代码（上一步中Fork的库）到本地电脑上。</li>
-<li>在私人库中常见新分支，提交改变并push到Github的私人仓库中。</li>
+<li>在私人库中建立新分支，提交改变并push到Github的私人仓库中。</li>
 <li>使用Github网站页面创建分支推送请求。</li>
-<li>Mission Planner维护人员(Michael Oborne)将会收到关于你推送的通知邮件。他会尽可能的审查你的代码请求，并积极地向你反馈相关信息。如果请求通过，那么你的代码将会被添加到主分支master中。</li>
+<li>Mission Planner维护人员(Michael Oborne)将会收到关于你推送的通知邮件。他会尽可能仔细地审查你的代码请求，并积极地向你反馈相关信息。如果请求通过，那么你的代码将会被添加到主分支master中。</li>
 </ul>
 <hr />
 <h4>链接</h4>
 <ol>
 <li><a href="http://dev.ardupilot.com/wiki/buildin-mission-planner/">APM官网原文链接</a></li>
-<li><a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">APM开发人员参考手册目录列表</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
 </ol>
 <p><em>(over)</em></p></div>
     <footer>
