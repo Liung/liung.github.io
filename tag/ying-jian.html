@@ -1734,9 +1734,9 @@ init_mathjax();
       <p class="meta"><time datetime="2014-10-19T13:22:24" pubdate>10月 19, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p><em>关于串行总线（$I^2C$），请阅读维基百科相关条目（<a href="http://zh.wikipedia.org/wiki/I%C2%B2C">$I^2C$</a>）</em></p>
-<h3>使用其他I2C通信传感器</h3>
-<p>你可以使用任何你想使用的I2C传感器连接到I2C端口。I2C is ...</p></div>
+  <div class="entry-content">
+你可以使用任何你想使用的I2C传感器连接到I2C端口。I2C is a bus, so sensors can be daisy-chained using any creative wiring solution you can solder, or for neatness add an <a href="http://store.3drobotics.com/products/i2c-splitter">I2C splitter</a>。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html">Read On &crarr;</a>
   </footer>
@@ -1749,9 +1749,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-10-17T12:55:14" pubdate>10月 17, 2014</time></p>
 </header>
 
-  <div class="entry-content"><h3>概述</h3>
-<p>对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。</p>
-<p>对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程 ...</p></div>
+  <div class="entry-content">
+对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。</p>
+<p>对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">Read On &crarr;</a>
   </footer>
@@ -1764,9 +1765,9 @@ init_mathjax();
       <p class="meta"><time datetime="2014-10-16T13:54:19" pubdate>10月 16, 2014</time></p>
 </header>
 
-  <div class="entry-content"><h3>简介</h3>
-<p>本说明取自于Ben Dellar在DIY Drones上的一篇<a href="http://diydrones.com/profiles/blogs/step-by-step-guide-to-mavproxy-on-windows-7-live-forward-your-uav?xg_source=activity">优秀的指导手册</a></p>
-<p>MAVProxy是一款强大的地面站软件，它极大的扩充了GUI界面的地面站。比如Mission Planner，APM ...</p></div>
+  <div class="entry-content">
+
+<p>MAVProxy是一款强大的地面站软件，它极大的扩充了GUI界面的地面站。比如Mission Planner，APM Planner等。驱动我探索MAVProxy的最大动力在于，它对通过网络的UDP协议获取到的UAV信息和不同设备上的多种地面站软件的交互具有强大的兼容性。</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">Read On &crarr;</a>
   </footer>
@@ -1812,9 +1813,7 @@ init_mathjax();
 </header>
 
   <div class="entry-content">
-
-<h3>NotePad++</h3>
-<p>NOtePad++是开发团队最常用的一款编辑器，可以在<a href="http://notepad-plus-plus.org/">这里</a>下载。
+NOtePad++是开发团队最常用的一款编辑器，可以在<a href="http://notepad-plus-plus.org/">这里</a>下载。
 </div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">Read On &crarr;</a>
@@ -1828,8 +1827,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-10-15T18:44:26" pubdate>10月 15, 2014</time></p>
 </header>
 
-  <div class="entry-content"><h3>简介</h3>
-<p>回放功能是用来处理dataflash日志文件的一套程序，并通过最近的主代码展示一系列基于真实数据的模拟结果。它可以用来重现产生bug的准确情形，或在同样的条件下测试改变EKF参数的影响。回放功能仅仅运行于Liunx/Ubuntu平台，且仅适用来自于高速CPU诸如PX4/Pixhawk运行2014年5月之后的ArduCopter/ArduPlane ...</p></div>
+  <div class="entry-content">
+
+<p>回放功能是用来处理dataflash日志文件的一套程序，并通过最近的主代码展示一系列基于真实数据的模拟结果。它可以用来重现产生bug的准确情形，或在同样的条件下测试改变EKF参数的影响。回放功能仅仅运行于Liunx/Ubuntu平台，且仅适用来自于高速CPU诸如PX4/Pixhawk运行2014年5月之后的ArduCopter/ArduPlane/ArduRover（例如AC3.2-dev或更高版本）所产生的dataflash日志文件。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html">Read On &crarr;</a>
   </footer>
@@ -1842,8 +1843,8 @@ init_mathjax();
       <p class="meta"><time datetime="2014-10-15T14:06:42" pubdate>10月 15, 2014</time></p>
 </header>
 
-  <div class="entry-content"><h3>简介</h3>
-<p>SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作 ...</p></div>
+  <div class="entry-content">
+SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">Read On &crarr;</a>
   </footer>
@@ -1870,8 +1871,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-10-14T13:52:49" pubdate>10月 14, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>本页面描述了如何使用APM进行模拟仿真，它可以让我们安全的测试试验代码和一些设置。毕竟，撞毁模拟飞机可要比真实的飞机划算的多哦！</p>
-<p><strong>硬件循环仿真（HITL）:</strong>硬件仿真使用模拟器代替真实的飞行器和大气环境，该模拟器包含有高精度的飞行动力学模型和大气环境模型（模拟气流，突风等 ...</p></div>
+  <div class="entry-content"><!-- PELICAN_BEGIN__SUMMARY -->
+
+<p>本页面描述了如何使用APM进行模拟仿真，它可以让我们安全的测试试验代码和一些设置。毕竟，撞毁模拟飞机可要比真实的飞机划算的多哦！</p>
+<p><strong>硬件循环仿真（HITL）:</strong>硬件仿真使用模拟器代替真实的飞行器和大气环境，该模拟器包含有高精度的飞行动力学模型和大气环境模型（模拟气流，突风等 ...</p></!--></div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html">Read On &crarr;</a>
   </footer>
@@ -1884,11 +1887,9 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-10T17:24:31" pubdate>9月 10, 2014</time></p>
 </header>
 
-  <div class="entry-content"><h3>快速开始</h3>
-<p>对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明</p>
-<h4>1、安装</h4>
-<p><strong>安装git</strong></p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt ...</span></pre></div></div>
+  <div class="entry-content">
+对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html">Read On &crarr;</a>
   </footer>
@@ -1901,11 +1902,9 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-10T17:18:44" pubdate>9月 10, 2014</time></p>
 </header>
 
-  <div class="entry-content"><h3>快速开始</h3>
-<p>对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明</p>
-<h4>1、安装</h4>
-<p>安装git</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt ...</span></pre></div></div>
+  <div class="entry-content">
+对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html">Read On &crarr;</a>
   </footer>
@@ -1936,7 +1935,7 @@ init_mathjax();
 
   <div class="entry-content">
 
-<p>在MacOS平台上针对AVR芯片的Ardupilot的源码编译可以有两种选择。第一种是使用特殊版的Arduino编译环境。你可以在<a href="http://firmware.diydrones.com/">http://firmware.diydrones.com/</a>的工具目录下获得。第二种选择是使用<code>make</code>命令行工具进行编译。</p>
+<p>在MacOS平台上针对AVR芯片的Ardupilot的源码编译可以有两种选择。第一种是使用特殊版的Arduino编译环境。你可以在<a href="http://firmware.diydrones.com/">http://firmware.diydrones.com/</a>的工具目录下获得。第二种选择是使用<code>make</code>命令行工具进行编译。
 </div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html">Read On &crarr;</a>
@@ -1951,9 +1950,7 @@ init_mathjax();
 </header>
 
   <div class="entry-content">
-
-<h3>Windows平台</h3>
-<p><strong>1、</strong> 安装<a href="http://windows.github.com/">Github for Windows</a></p>
+<strong>1、</strong> 安装<a href="http://windows.github.com/">Github for Windows</a></p>
 <p><strong>2、</strong> 确保你的 github 上关于行尾结束符的设置没有发生变动。</p>
 <ul>
 <li>当你安装了Git 后，“Git shell（or Bash）”也会安装好。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：</li>

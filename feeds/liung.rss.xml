@@ -1057,7 +1057,9 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Mon, 19 Jan 2015 11:17:54 +0800</pubDate><guid>tag:liung.github.io,2015-01-19:blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html</guid></item><item><title>APM-I2C</title><link>http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html</link><description>&lt;p&gt;&lt;em&gt;关于串行总线（$I^2C$），请阅读维基百科相关条目（&lt;a href="http://zh.wikipedia.org/wiki/I%C2%B2C"&gt;$I^2C$&lt;/a&gt;）&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;使用其他I2C通信传感器&lt;/h3&gt;
-&lt;p&gt;你可以使用任何你想使用的I2C传感器连接到I2C端口。I2C is a bus, so sensors can be daisy-chained using any creative wiring solution you can solder, or for neatness add an &lt;a href="http://store.3drobotics.com/products/i2c-splitter"&gt;I2C splitter&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;
+你可以使用任何你想使用的I2C传感器连接到I2C端口。I2C is a bus, so sensors can be daisy-chained using any creative wiring solution you can solder, or for neatness add an &lt;a href="http://store.3drobotics.com/products/i2c-splitter"&gt;I2C splitter&lt;/a&gt;。
+&lt;/p&gt;
 &lt;p&gt;你可以更改相应的代码来支持你所要添加的I2C设备类型。APM主要使用I2C库来驱动相应设备，所以，你可以尝试更改磁力计库作为扩展你自己的传感器的开端。&lt;/p&gt;
 &lt;p&gt;需要注意的是I2C总线已经存在于板载设备中：大气压力传感器芯片。当APM已正常模式启动，它便作为主线程驱动I2C总线，并定期读取这些从属设备。&lt;/p&gt;
 &lt;p&gt;添加第三方I2C主设备到该I2C总线是不可能的。例如： eagletree e-logger 是一个总线设备。它不能被连接和可靠地使用。eagletree powerpanel 是一个从设备，所以它（and many other i2c sensors with non-conflicting device IDs）可以被连接并读取数据。&lt;/p&gt;
@@ -1068,8 +1070,10 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sun, 19 Oct 2014 13:22:24 +0800</pubDate><guid>tag:liung.github.io,2014-10-19:blog/apm/2014-10-19-APM-I2C.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-采用Make方法编译APM2.x（Win，Mac，Linux）</title><link>http://liung.github.io/blog/apm/2014-10-17-APM-%E9%87%87%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91APM2.x%EF%BC%88Win%EF%BC%8CMac%EF%BC%8CLinux%EF%BC%89.html</link><description>&lt;h3&gt;概述&lt;/h3&gt;
-&lt;p&gt;对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。&lt;/p&gt;
-&lt;p&gt;对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程。&lt;/p&gt;
+&lt;p&gt;
+对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。&lt;/p&gt;
+&lt;p&gt;对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程。
+&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;要求&lt;/h3&gt;
 &lt;p&gt;APM的makefiles可以在Mac OS和Liunx平台运行。Windows平台用户可以通过Unix兼容系统如Mingw或Cygwin使用Makefiles。&lt;/p&gt;
@@ -1083,12 +1087,84 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;p&gt;Arduino应该安装到可以被Spotlight工具索引到的位置。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Linux&lt;/h3&gt;
+&lt;p&gt;请按照&lt;a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html"&gt;本页面&lt;/a&gt;的指导在Linux上进行代码编译。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GNU sed（stream editor，流编辑器）工具&lt;/li&gt;
+&lt;li&gt;GNU make 工具，也被称为‘gmake’&lt;/li&gt;
+&lt;li&gt;GNU awk 工具, 也被成为‘gawk’，&lt;strong&gt;注意&lt;/strong&gt;: 许多Liunx发布版本默认没有安装‘gawk’。你可以通过&lt;code&gt;which gawk&lt;/code&gt;命令测试该工具是否已经安装&lt;/li&gt;
+&lt;li&gt;AVR-GCC 工具链&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;还有许多方法能够得到针对你的系统的所有工具集。在Linux上安装AVR工具链时你可以咨询&lt;a href="http://playground.arduino.cc/learning/linux"&gt;Arduino的Linux指导手册&lt;/a&gt;相关说明。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Windows&lt;/h3&gt;
+&lt;p&gt;大概需要如下基本要求：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可正常运行的当前版本Arduino&lt;/li&gt;
+&lt;li&gt;安装了基本Cygwin软件，确保带有GNU sed、GNU make、GNU awk等模块（地址：&lt;a href="http://www.cygwin.com/"&gt;http://www.cygwin.com/&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你将arduino安装在一些特定位置，那么当前makefile是不能够自动识别其位置。这时，你需要使用环境变量定义一个ARDUINO路径，或者将arduino可执行程序路径添加在config.mk配置文件中以保证makefile正常运行。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;准备工作&lt;/h3&gt;
+&lt;p&gt;从https://github.com/diydrones/ardupilot中克隆一份APM代码库到本地。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/diydrones/ardupilot.git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;第一次编译代码之前，先从APM内的sketches中运动&lt;code&gt;make configure&lt;/code&gt;命令，将会在&lt;code&gt;ardupilot&lt;/code&gt;代码库的顶层目录生成&lt;code&gt;config.mk&lt;/code&gt;文件。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduCopter&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;configure&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="p"&gt;..&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;vim&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mk&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;根据系统类型来编辑文件&lt;code&gt;config.mk&lt;/code&gt;的内容&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;接下来你需要定制你需要的变量：&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;编译&lt;/h3&gt;
+&lt;p&gt;对于默认平台编译sketch文件，可以在该sketch目录下调用不带参数的&lt;code&gt;make&lt;/code&gt;命令。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduPlane&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;默认的编译输出位于&lt;code&gt;$TMPDIR/_sketchname_.build&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt;
+&lt;span class="o"&gt;%%&lt;/span&gt; &lt;span class="n"&gt;param_table&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;
+&lt;span class="o"&gt;%%&lt;/span&gt; &lt;span class="n"&gt;ArduPlane&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cpp&lt;/span&gt;
+&lt;span class="o"&gt;%%&lt;/span&gt; &lt;span class="n"&gt;ArduPlane&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;
+&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="o"&gt;%%&lt;/span&gt; &lt;span class="n"&gt;ArduPlane&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;elf&lt;/span&gt;
+&lt;span class="o"&gt;%%&lt;/span&gt; &lt;span class="n"&gt;ArduPlane&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;eep&lt;/span&gt;
+&lt;span class="o"&gt;%%&lt;/span&gt; &lt;span class="n"&gt;ArduPlane&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hex&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h3&gt;加载固件&lt;/h3&gt;
+&lt;p&gt;如果你已经配置了正确的&lt;code&gt;PORT&lt;/code&gt;变量，利用&lt;code&gt;upload&lt;/code&gt;参数会使用&lt;code&gt;avrdude&lt;/code&gt;工具将编译完成的APM应用加载到基于AVR的平台系统中。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduPlane&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;对于PX4平台系列，利用&lt;code&gt;px4-upload&lt;/code&gt;参数会使用PX4 bootloader来执行加载操作。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;故障排除&lt;/h3&gt;
+&lt;p&gt;编译过程中，编译器可能会抛出代码错误之外的一些诊断问题，这可能潜在地影响代码是否能够成功编译。这些诊断问题可能包括：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;WARNING: More than one copy of Arduino was found, using …(Mac OS only)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Spotlight工具检测到你系统中多个Arduino程序。检查打印出来的路径，确保使用具有正确版本号的Arduino程序。为了避免出现该问题，可以直接删除其他老版本的Arduino，也可以在调用编译系统时指定&lt;code&gt;ARDUINO&lt;/code&gt;选项。通常情况下编译系统会使用最近频繁使用的某版本Arduino。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ERROR: must set BOARD before including this file.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;sketch的Makefile文件中没有定义BOARD变量。正常情况下对于APM2.x编译该变量设置为&lt;code&gt;atmega2560&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ERROR: Spotlight cannot find Arduino on your system.(Mac OS only)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Auduino没有安装，或者是已经安装在某个位置但没有被Spotlight索引到。你既可以使Spotlight重新定向Arduino的安装位置，也可以和上面说明一样设置&lt;code&gt;ARDUINO&lt;/code&gt;选项。需要提醒的是Spotlight重新索引需要花费一些时间，所以当Spotlight能够定位Arduino位置时可能还不能够立刻解决此问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ERROR: Cannot find Arduino on this system&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（Linux 和 Windows系统可能存在）Arduino没有在默认索引位置找到。可以将Arduino移动到标路径，也可以在&lt;code&gt;config.mk&lt;/code&gt;文件中指定&lt;code&gt;ARDUINO&lt;/code&gt;选项为当前Arduino位置。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ERROR: cannot find the compiler tools anywhere on the path …&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;没有找到编译器和相关工具。对于Mac OS和Win平台，这些工具正常情况下是Arduino程序的一部分，出现该信息表明Arduino安装程序已经损坏或者不完整。&lt;/p&gt;
+&lt;p&gt;对于Linux系统，这意味着AVR工具没有安装到标准位置。可以设置&lt;code&gt;TOOLPATH&lt;/code&gt;选项指定为包含AVR工具的目录，也可以安装它们到标准位置。正常情况下Liunx系统下安装Arduino会更正AVR工具的安装问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ERROR: cannot find gawk – you may need to install GNU awk&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（Linux和Windows系统可能存在）需要GNU awk工具，但是没有安装或者没有检测到。在命令窗口使用&lt;code&gt;gawk -version&lt;/code&gt;检查awk工具是否工作。可能需要显式地使用&lt;code&gt;AWK&lt;/code&gt;选项指定其安装位置。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
@@ -1097,6 +1173,8 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 17 Oct 2014 12:55:14 +0800</pubDate><guid>tag:liung.github.io,2014-10-17:blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows7上的MAVProxy使用</title><link>http://liung.github.io/blog/apm/2014-10-16-APM-Windows7%E4%B8%8A%E7%9A%84MAVProxy%E4%BD%BF%E7%94%A8.html</link><description>&lt;h3&gt;简介&lt;/h3&gt;
 &lt;p&gt;本说明取自于Ben Dellar在DIY Drones上的一篇&lt;a href="http://diydrones.com/profiles/blogs/step-by-step-guide-to-mavproxy-on-windows-7-live-forward-your-uav?xg_source=activity"&gt;优秀的指导手册&lt;/a&gt;&lt;/p&gt;
+
+
 &lt;p&gt;MAVProxy是一款强大的地面站软件，它极大的扩充了GUI界面的地面站。比如Mission Planner，APM Planner等。驱动我探索MAVProxy的最大动力在于，它对通过网络的UDP协议获取到的UAV信息和不同设备上的多种地面站软件的交互具有强大的兼容性。例如，你可以在笔记本上运行你的地面站软件，并通过天线或者wifi和手机/平板连接，从而可以在固定的天线转向之前轻松重新定位发送信号（you can run a ground station on a laptop next to your antenna and forward via wifi to a smartphone/tablet which lets you easily relocate to launch into wind before heading back to your fixed antenna.我也不是很明白 ：&amp;gt;）。我也曾经在一次长距离飞行中将遥测数据通过网络（4G VPN）发送给几千米之外充当观测员的朋友，这样，他就可以实时监测整个飞行，从而随时可以确定飞行器的位置信息。&lt;/p&gt;
 &lt;p&gt;本手册将指导你如何成功设置MAVProxy从而可以通过命令行与网络界面通信。当然，也有许多其他方法可以让它运行，并且，为了能够使用一些高级方法，可能还需要其他的安装包，具体信息请看官方文档：&lt;a href="http://tridge.github.io/MAVProxy/"&gt;http://tridge.github.io/MAVProxy/&lt;/a&gt;。免责声明，所有信息归Andrew Tridgell及MAVProxy和这里用到的其他软件开发者所有。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/05/Mavproxy_usage.png" /&gt;&lt;/p&gt;
@@ -1163,10 +1241,9 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/editing-the-code-with-eclipse/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Thu, 16 Oct 2014 13:54:19 +0800</pubDate><guid>tag:liung.github.io,2014-10-16:blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-使用NotePad++编辑代码</title><link>http://liung.github.io/blog/apm/2014-10-16-APM-%E4%BD%BF%E7%94%A8NotePad++%E7%BC%96%E8%BE%91%E4%BB%A3%E7%A0%81.html</link><description>
-
-&lt;h3&gt;NotePad++&lt;/h3&gt;
-&lt;p&gt;NOtePad++是开发团队最常用的一款编辑器，可以在&lt;a href="http://notepad-plus-plus.org/"&gt;这里&lt;/a&gt;下载。
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Thu, 16 Oct 2014 13:54:19 +0800</pubDate><guid>tag:liung.github.io,2014-10-16:blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-使用NotePad++编辑代码</title><link>http://liung.github.io/blog/apm/2014-10-16-APM-%E4%BD%BF%E7%94%A8NotePad++%E7%BC%96%E8%BE%91%E4%BB%A3%E7%A0%81.html</link><description>&lt;h3&gt;NotePad++&lt;/h3&gt;
+&lt;p&gt;
+NOtePad++是开发团队最常用的一款编辑器，可以在&lt;a href="http://notepad-plus-plus.org/"&gt;这里&lt;/a&gt;下载。
 &lt;/p&gt;
 &lt;h3&gt;使用工程面板组织多文件&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/NotePad_ProjectPanel.png" /&gt;&lt;/p&gt;
@@ -1190,7 +1267,10 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Thu, 16 Oct 2014 13:54:19 +0800</pubDate><guid>tag:liung.github.io,2014-10-16:blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-回放功能测试</title><link>http://liung.github.io/blog/apm/2014-10-15-APM-%E5%9B%9E%E6%94%BE%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95.html</link><description>&lt;h3&gt;简介&lt;/h3&gt;
-&lt;p&gt;回放功能是用来处理dataflash日志文件的一套程序，并通过最近的主代码展示一系列基于真实数据的模拟结果。它可以用来重现产生bug的准确情形，或在同样的条件下测试改变EKF参数的影响。回放功能仅仅运行于Liunx/Ubuntu平台，且仅适用来自于高速CPU诸如PX4/Pixhawk运行2014年5月之后的ArduCopter/ArduPlane/ArduRover（例如AC3.2-dev或更高版本）所产生的dataflash日志文件。&lt;/p&gt;
+
+
+&lt;p&gt;回放功能是用来处理dataflash日志文件的一套程序，并通过最近的主代码展示一系列基于真实数据的模拟结果。它可以用来重现产生bug的准确情形，或在同样的条件下测试改变EKF参数的影响。回放功能仅仅运行于Liunx/Ubuntu平台，且仅适用来自于高速CPU诸如PX4/Pixhawk运行2014年5月之后的ArduCopter/ArduPlane/ArduRover（例如AC3.2-dev或更高版本）所产生的dataflash日志文件。
+&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/05/Replay_EKFVsINAV.png" /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;回放功能所需要的Dataflash日志信息&lt;/h3&gt;
@@ -1241,7 +1321,8 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Wed, 15 Oct 2014 18:44:26 +0800</pubDate><guid>tag:liung.github.io,2014-10-15:blog/apm/2014-10-15-APM-回放功能测试.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Linux上SITL仿真设置</title><link>http://liung.github.io/blog/apm/2014-10-14-APM-Linux%E4%B8%8ASITL%E4%BB%BF%E7%9C%9F%E8%AE%BE%E7%BD%AE.html</link><description>&lt;h3&gt;简介&lt;/h3&gt;
-&lt;p&gt;SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。&lt;/p&gt;
+&lt;p&gt;
+SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。&lt;/p&gt;
 &lt;p&gt;本页面详细说明了如何在Linux平台上设置SITL。文中使用的相关命令在 &lt;strong&gt;Ubuntu 12.10&lt;/strong&gt; 和 &lt;strong&gt;Ubuntu 13.04&lt;/strong&gt;  平台上测试通过。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/04/SITL_Linux.png" /&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1438,9 +1519,12 @@ sudo pip install mavproxy&lt;/p&gt;
 &lt;li&gt;&lt;a href="dev.ardupilot.com/wiki/setting-up-sitl-on-windows/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Tue, 14 Oct 2014 13:56:44 +0800</pubDate><guid>tag:liung.github.io,2014-10-14:blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-模拟仿真</title><link>http://liung.github.io/blog/apm/2014-10-14-APM-%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F.html</link><description>&lt;p&gt;本页面描述了如何使用APM进行模拟仿真，它可以让我们安全的测试试验代码和一些设置。毕竟，撞毁模拟飞机可要比真实的飞机划算的多哦！&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Tue, 14 Oct 2014 13:56:44 +0800</pubDate><guid>tag:liung.github.io,2014-10-14:blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-模拟仿真</title><link>http://liung.github.io/blog/apm/2014-10-14-APM-%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F.html</link><description>&lt;!-- PELICAN_BEGIN__SUMMARY --&gt;
+
+&lt;p&gt;本页面描述了如何使用APM进行模拟仿真，它可以让我们安全的测试试验代码和一些设置。毕竟，撞毁模拟飞机可要比真实的飞机划算的多哦！&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;硬件循环仿真（HITL）:&lt;/strong&gt;硬件仿真使用模拟器代替真实的飞行器和大气环境，该模拟器包含有高精度的飞行动力学模型和大气环境模型（模拟气流，突风等）。通过在飞行中采用APM飞控板，连接运行模拟器的电脑，来代替真实飞行器。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;软件循环仿真（SITL）:&lt;/strong&gt;软件仿真额外的将APM飞控板虚拟化，如同硬件仿真中的飞行器和大气环境一样，它有利于原型快速开发，或者物理硬件（autopilots板或地面站）不可用或缺失时。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;软件循环仿真（SITL）:&lt;/strong&gt;软件仿真额外的将APM飞控板虚拟化，如同硬件仿真中的飞行器和大气环境一样，它有利于原型快速开发，或者物理硬件（autopilots板或地面站）不可用或缺失时。
+&lt;!-- PELICAN_END__SUMMARY --&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html"&gt;Linux上SITL仿真设置&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html"&gt;Windows上SITL仿真设置&lt;/a&gt;&lt;/li&gt;
@@ -1685,7 +1769,9 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;strong&gt;gamma&lt;/strong&gt;：产生Gamma分布的样本值&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;uniform&lt;/strong&gt;：产生在[0, 1]中均匀分布的样本值&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sun, 14 Sep 2014 12:49:44 +0800</pubDate><guid>tag:liung.github.io,2014-09-14:blog/python/2014-09-14-numpy学习笔记.html</guid><category>Python</category><category>Numpy</category></item><item><title>APM-Linux平台上用Make方法编译Pixhawk/PX4</title><link>http://liung.github.io/blog/apm/2014-09-10-APM-Linux%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html</link><description>&lt;h3&gt;快速开始&lt;/h3&gt;
-&lt;p&gt;对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明&lt;/p&gt;
+&lt;p&gt;
+对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明
+&lt;/p&gt;
 &lt;h4&gt;1、安装&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;安装git&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;qq&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;
@@ -1803,7 +1889,9 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Wed, 10 Sep 2014 17:24:31 +0800</pubDate><guid>tag:liung.github.io,2014-09-10:blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Linux平台上用Make方法编译APM2.x</title><link>http://liung.github.io/blog/apm/2014-09-10-APM-Linux%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91APM2.x.html</link><description>&lt;h3&gt;快速开始&lt;/h3&gt;
-&lt;p&gt;对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明&lt;/p&gt;
+&lt;p&gt;
+对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明
+&lt;/p&gt;
 &lt;h4&gt;1、安装&lt;/h4&gt;
 &lt;p&gt;安装git&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;qq&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;
@@ -1945,9 +2033,8 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Mon, 08 Sep 2014 09:27:32 +0800</pubDate><guid>tag:liung.github.io,2014-09-08:blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-MacOS平台上用Arduino编译APM2.x</title><link>http://liung.github.io/blog/apm/2014-09-08-APM-MacOS%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Arduino%E7%BC%96%E8%AF%91APM2.x.html</link><description>
 
-&lt;p&gt;在MacOS平台上针对AVR芯片的Ardupilot的源码编译可以有两种选择。第一种是使用特殊版的Arduino编译环境。你可以在&lt;a href="http://firmware.diydrones.com/"&gt;http://firmware.diydrones.com/&lt;/a&gt;的工具目录下获得。第二种选择是使用&lt;code&gt;make&lt;/code&gt;命令行工具进行编译。&lt;/p&gt;
-
-
+&lt;p&gt;在MacOS平台上针对AVR芯片的Ardupilot的源码编译可以有两种选择。第一种是使用特殊版的Arduino编译环境。你可以在&lt;a href="http://firmware.diydrones.com/"&gt;http://firmware.diydrones.com/&lt;/a&gt;的工具目录下获得。第二种选择是使用&lt;code&gt;make&lt;/code&gt;命令行工具进行编译。
+&lt;/p&gt;
 &lt;p&gt;如果你选择Arduino工具，当你安装完成之后，你还需要做下面这些事情：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在Ardupilot菜单下选择你的飞控板类型&lt;/li&gt;
@@ -1960,10 +2047,9 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code-on-mac/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Mon, 08 Sep 2014 09:02:28 +0800</pubDate><guid>tag:liung.github.io,2014-09-08:blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows平台上用Make方法编译Pixhawk和PX4</title><link>http://liung.github.io/blog/apm/2014-09-07-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html</link><description>
-
-&lt;h3&gt;Windows平台&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;1、&lt;/strong&gt; 安装&lt;a href="http://windows.github.com/"&gt;Github for Windows&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Mon, 08 Sep 2014 09:02:28 +0800</pubDate><guid>tag:liung.github.io,2014-09-08:blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows平台上用Make方法编译Pixhawk和PX4</title><link>http://liung.github.io/blog/apm/2014-09-07-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html</link><description>&lt;h3&gt;Windows平台&lt;/h3&gt;
+&lt;p&gt;
+&lt;strong&gt;1、&lt;/strong&gt; 安装&lt;a href="http://windows.github.com/"&gt;Github for Windows&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2、&lt;/strong&gt; 确保你的 github 上关于行尾结束符的设置没有发生变动。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;当你安装了Git 后，“Git shell（or Bash）”也会安装好。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：&lt;/li&gt;
@@ -2015,9 +2101,8 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sun, 07 Sep 2014 13:59:57 +0800</pubDate><guid>tag:liung.github.io,2014-09-07:blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows平台上用Arduino编译ArduPilot</title><link>http://liung.github.io/blog/apm/2014-09-06-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Arduino%E7%BC%96%E8%AF%91ArduPilot.html</link><description>
 
 &lt;p&gt;&lt;strong&gt;版本要求： Copter 3.1， Plane 2.76&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;硬件要求： APM 2.0,2.5,2.6&lt;/strong&gt;&lt;/p&gt;
-
-
+&lt;p&gt;&lt;strong&gt;硬件要求： APM 2.0,2.5,2.6&lt;/strong&gt;
+&lt;/p&gt;
 &lt;p&gt;&lt;img alt="apm" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/11/image001.jpg" /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Step 1 安装Git-SCM&lt;/h3&gt;
@@ -2189,8 +2274,10 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 06 Sep 2014 14:03:34 +0800</pubDate><guid>tag:liung.github.io,2014-09-06:blog/apm/2014-09-06-APM-编译代码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-增加新的MAVLink通讯协议消息</title><link>http://liung.github.io/blog/apm/2014-09-05-APM-%E5%A2%9E%E5%8A%A0%E6%96%B0%E7%9A%84MAVLink%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE%E6%B6%88%E6%81%AF.html</link><description>&lt;h3&gt;综述&lt;/h3&gt;
-&lt;p&gt;地面站之间的数据和指令通信都是通过串行接口使用&lt;a href="http://en.wikipedia.org/wiki/MAVLink"&gt;MAVLink协议&lt;/a&gt;来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。&lt;/p&gt;
-&lt;p&gt;这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/"&gt;SITL(软件层面仿真)页面&lt;/a&gt;有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行。&lt;/p&gt;
+&lt;p&gt;
+地面站之间的数据和指令通信都是通过串行接口使用&lt;a href="http://en.wikipedia.org/wiki/MAVLink"&gt;MAVLink协议&lt;/a&gt;来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。&lt;/p&gt;
+&lt;p&gt;这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/"&gt;SITL(软件层面仿真)页面&lt;/a&gt;有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行。
+&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;：确保你已经安装了最新的ardupilot代码，同时也检查一下mavproxy是否是最新版本。mavproxy工具可以通过在终端窗口运行下面命令进行升级。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;mavproxy&lt;/span&gt;
@@ -2241,7 +2328,10 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;hr /&gt;
 &lt;h3&gt;用代码调度器运行你的代码&lt;/h3&gt;
 &lt;p&gt;在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde"&gt;ArduCopter.pde&lt;/a&gt;中的&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"&gt;&lt;code&gt;scheduler_tasks&lt;/code&gt;&lt;/a&gt;数组来完成。需要表明的是：实际上该文件中有两个任务列表，&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"&gt;上面的任务列表&lt;/a&gt;是针对高频CPUs（如Pixhawk），&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L856"&gt;下面的&lt;/a&gt;是针对低频CPUs（如APM2）。&lt;/p&gt;
-&lt;p&gt;添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。&lt;/p&gt;
+
+
+&lt;p&gt;添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。
+&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cm"&gt;/*&lt;/span&gt;
 &lt;span class="cm"&gt;  scheduler table - all regular tasks apart from the fast_loop()&lt;/span&gt;
 &lt;span class="cm"&gt;  should be listed here, along with how often they should be called&lt;/span&gt;
@@ -2309,7 +2399,10 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-scheduling-your-new-code-to-run-intermittently/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 05 Sep 2014 12:08:26 +0800</pubDate><guid>tag:liung.github.io,2014-09-05:blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html</guid><category>APM</category><category>APM:Copter</category><category>飞控板</category><category>硬件</category></item><item><title>APM-添加新的飞行模式</title><link>http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F.html</link><description>&lt;p&gt;这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制页面&lt;/a&gt;描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 05 Sep 2014 12:08:26 +0800</pubDate><guid>tag:liung.github.io,2014-09-05:blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html</guid><category>APM</category><category>APM:Copter</category><category>飞控板</category><category>硬件</category></item><item><title>APM-添加新的飞行模式</title><link>http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F.html</link><description>
+
+&lt;p&gt;这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制页面&lt;/a&gt;描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。
+&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;：在文件&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L88"&gt;defines.h&lt;/a&gt;中用&lt;code&gt;#define&lt;/code&gt;定义你自己新的飞行模式,然后将飞行模式数量&lt;code&gt;NUM_MODES&lt;/code&gt;加1。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="c1"&gt;// Auto Pilot modes&lt;/span&gt;
@@ -2480,7 +2573,10 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-adding-a-new-flight-mode/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 05 Sep 2014 11:01:10 +0800</pubDate><guid>tag:liung.github.io,2014-09-05:blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html</guid><category>APM</category><category>APM:Copter</category><category>飞控板</category><category>硬件</category></item><item><title>APM-添加新的参数</title><link>http://liung.github.io/blog/apm/2014-09-02-APM-%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E5%8F%82%E6%95%B0.html</link><description>&lt;p&gt;我们既可以在主执行代码中添加新的参数，也可以在库中添加。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 05 Sep 2014 11:01:10 +0800</pubDate><guid>tag:liung.github.io,2014-09-05:blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html</guid><category>APM</category><category>APM:Copter</category><category>飞控板</category><category>硬件</category></item><item><title>APM-添加新的参数</title><link>http://liung.github.io/blog/apm/2014-09-02-APM-%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E5%8F%82%E6%95%B0.html</link><description>
+
+&lt;p&gt;我们既可以在主执行代码中添加新的参数，也可以在库中添加。
+&lt;/p&gt;
 &lt;h3&gt;在主执行代码中添加参数&lt;/h3&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Step #1&lt;/strong&gt;：在文件&lt;a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h"&gt;Parameters.h&lt;/a&gt;参数类中的枚举变量（enum）的合适位置，像下面代码块最后一行一样添加你自己的新的参数。你需要注意下面这些事情：&lt;/p&gt;
@@ -2740,7 +2836,10 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;strong&gt;Ctrl+F&lt;/strong&gt;：将光标向前移动一个字符&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Ctrl+B&lt;/strong&gt;：将光标向后移动一个字符&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Ctrl+L&lt;/strong&gt;：清屏&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sun, 31 Aug 2014 10:55:41 +0800</pubDate><guid>tag:liung.github.io,2014-08-31:blog/python/2014-08-31-IPython命令集.html</guid><category>python</category><category>ipython</category></item><item><title>APM:Copter相关库</title><link>http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter%E7%9B%B8%E5%85%B3%E5%BA%93%E4%BB%8B%E7%BB%8D.html</link><description>&lt;p&gt;这些&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries"&gt;库文件&lt;/a&gt;也同样被ArduPlane和ArduRover所使用。下面将列出一系列高层次的库的说明和它们的函数说明。&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sun, 31 Aug 2014 10:55:41 +0800</pubDate><guid>tag:liung.github.io,2014-08-31:blog/python/2014-08-31-IPython命令集.html</guid><category>python</category><category>ipython</category></item><item><title>APM:Copter相关库</title><link>http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter%E7%9B%B8%E5%85%B3%E5%BA%93%E4%BB%8B%E7%BB%8D.html</link><description>
+
+&lt;p&gt;这些&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries"&gt;库文件&lt;/a&gt;也同样被ArduPlane和ArduRover所使用。下面将列出一系列高层次的库的说明和它们的函数说明。
+&lt;/p&gt;
 &lt;h3&gt;核心库&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_AHRS"&gt;AP_AHRS&lt;/a&gt;：采用DCM（方向余弦矩阵方法）或EKF（扩展卡尔曼滤波方法）预估飞行器姿态&lt;/li&gt;
@@ -2776,8 +2875,11 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-programming-libraries/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 30 Aug 2014 15:53:36 +0800</pubDate><guid>tag:liung.github.io,2014-08-30:blog/apm/2014-08-30-APM-Arducopter相关库介绍.html</guid><category>APM:Copter</category><category>APM</category><category>硬件</category><category>C++</category></item><item><title>APM:Copter 代码预览</title><link>http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter%E4%BB%A3%E7%A0%81%E9%A2%84%E8%A7%88.html</link><description>&lt;p&gt;&lt;a href="https://github.com/diydrones/ardupilot"&gt;&lt;strong&gt;APM::Copter&lt;/strong&gt;&lt;/a&gt;代码主要放在ArduCopter文件夹中，并且和&lt;strong&gt;ArduPlane&lt;/strong&gt;和&lt;strong&gt;ArduRover&lt;/strong&gt;使用同样的&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries"&gt;库文件&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;下面这张图展示了从飞行模式到电机输出的高级别代码概要：&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 30 Aug 2014 15:53:36 +0800</pubDate><guid>tag:liung.github.io,2014-08-30:blog/apm/2014-08-30-APM-Arducopter相关库介绍.html</guid><category>APM:Copter</category><category>APM</category><category>硬件</category><category>C++</category></item><item><title>APM:Copter 代码预览</title><link>http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter%E4%BB%A3%E7%A0%81%E9%A2%84%E8%A7%88.html</link><description>&lt;!-- PELICAN_BEGIN__SUMMARY --&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/diydrones/ardupilot"&gt;&lt;strong&gt;APM::Copter&lt;/strong&gt;&lt;/a&gt;代码主要放在ArduCopter文件夹中，并且和&lt;strong&gt;ArduPlane&lt;/strong&gt;和&lt;strong&gt;ArduRover&lt;/strong&gt;使用同样的&lt;a href="https://github.com/diydrones/ardupilot/tree/master/libraries"&gt;库文件&lt;/a&gt;。
+&lt;/p&gt;
+&lt;p&gt;下面这张图展示了从飞行模式到电机输出相关的高级视图：&lt;/p&gt;
 &lt;h2&gt;&lt;img alt="file-mode" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/AC_CodeOverview_AutoFlightModes.png" /&gt;&lt;/h2&gt;
 &lt;h3&gt;主要组成部分&lt;/h3&gt;
 &lt;ol&gt;
@@ -2785,7 +2887,7 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html"&gt;如何添加参数&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html"&gt;如何创建新的飞行模式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html"&gt;如何让你的新代码按一定频率执行&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html"&gt;如何间断地执行新代码&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html"&gt;如何增加新的MAVLink协议信息&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
@@ -2794,10 +2896,13 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmcopter-code-overview/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 30 Aug 2014 15:29:29 +0800</pubDate><guid>tag:liung.github.io,2014-08-30:blog/apm/2014-08-30-APM-Arducopter代码预览.html</guid><category>APM</category><category>APM:Copter</category><category>飞控板</category><category>硬件</category></item><item><title>APM-如何获取源码</title><link>http://liung.github.io/blog/apm/2014-08-29-APM-%E8%8E%B7%E5%8F%96%E6%BA%90%E7%A0%81.html</link><description>&lt;p&gt;整个APM工程的源码都采用&lt;a href="http://git-scm.com/"&gt;git&lt;/a&gt;（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在&lt;a href="https://github.com/"&gt;github&lt;/a&gt;网站上。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sat, 30 Aug 2014 15:29:29 +0800</pubDate><guid>tag:liung.github.io,2014-08-30:blog/apm/2014-08-30-APM-Arducopter代码预览.html</guid><category>APM</category><category>APM:Copter</category><category>飞控板</category><category>硬件</category></item><item><title>APM-如何获取源码</title><link>http://liung.github.io/blog/apm/2014-08-29-APM-%E8%8E%B7%E5%8F%96%E6%BA%90%E7%A0%81.html</link><description>
+
+&lt;p&gt;整个APM工程的源码都采用&lt;a href="http://git-scm.com/"&gt;git&lt;/a&gt;（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在&lt;a href="https://github.com/"&gt;github&lt;/a&gt;网站上。&lt;/p&gt;
 &lt;p&gt;目前APM的源码以开源的形式托管在&lt;a href="https://github.com/diydrones/ardupilot"&gt;https://github.com/diydrones/ardupilot&lt;/a&gt;上。由于历史原因，另一个老版本的Google code仓库仍然保持在线可访问状态，但是除非你对老版本（APM 1.x）有特殊的需求，一般建议您不要使用该仓库中的代码。&lt;/p&gt;
 &lt;p&gt;固定翼飞机（Plane），旋翼飞行器（Copter），无人车（Rover）模块全部包含在&lt;a href="https://github.com/diydrones/ardupilot"&gt; diydrones/ardupilot &lt;/a&gt;代码库中，天线跟踪模块虽然也包含在该代码库中，但在文件目录&lt;code&gt;Tools/&lt;/code&gt;下。&lt;/p&gt;
-&lt;p&gt;地面站MissionPlanner包含在&lt;a href="https://github.com/diydrones/MissionPlanner"&gt;diydrones/MissionPlanner&lt;/a&gt;代码库中。&lt;/p&gt;
+&lt;p&gt;地面站MissionPlanner包含在&lt;a href="https://github.com/diydrones/MissionPlanner"&gt;diydrones/MissionPlanner&lt;/a&gt;代码库中。
+&lt;/p&gt;
 &lt;h3&gt;预备知识&lt;/h3&gt;
 &lt;p&gt;Git在绝大多数操作平台上都是可以使用的，并且还存在各种工具使得开始使用Git更加简单。首先，你需要&lt;a href="http://git-scm.com/downloads"&gt;下载和安装对应你使用的操作平台的客户端程序&lt;/a&gt;，如果你刚开始接触到这种源代码控制系统，那么，&lt;a href="https://windows.github.com/"&gt;windows版的GitHub&lt;/a&gt;或&lt;a href="https://mac.github.com/"&gt;Mac版的GitHub&lt;/a&gt;客户端都有一个非常好的使用文档，并且和GitHub有着很好的集成，可以从这里开始学习如何使用Git。本次说明将同时使用Windows版的Github用户界面和OSX/Linux终端下的命令行界面进行操作。&lt;/p&gt;
 &lt;p&gt;如果你想要直接向APM官网代码库中提交代码，那么你需要&lt;a href="https://github.com/join"&gt;在Github上免费注册一个账号&lt;/a&gt;。&lt;/p&gt;
@@ -2860,9 +2965,8 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Fri, 29 Aug 2014 22:11:41 +0800</pubDate><guid>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM-获取源码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category><category>Git</category></item><item><title>APM开发人员参考手册目录列表</title><link>http://liung.github.io/blog/apm/2014-08-29-APM-%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%E7%9B%AE%E5%BD%95%E5%88%97%E8%A1%A8.html</link><description>
 
-&lt;p&gt;从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&amp;gt;&lt;/p&gt;
-
-
+&lt;p&gt;从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&amp;gt;
+&lt;/p&gt;
 &lt;p&gt;下文中的条目如果我已经翻译完成，那么我将链接到对应的博客目录中去，如果还没有翻译，那么将默认连接到原官网的链接,且用*标示出来。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/table-of-contents/"&gt;英文目录&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;

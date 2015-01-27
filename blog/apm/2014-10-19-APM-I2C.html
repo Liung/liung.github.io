@@ -1734,7 +1734,9 @@ init_mathjax();
 
   <div class="entry-content"><p><em>关于串行总线（$I^2C$），请阅读维基百科相关条目（<a href="http://zh.wikipedia.org/wiki/I%C2%B2C">$I^2C$</a>）</em></p>
 <h3>使用其他I2C通信传感器</h3>
-<p>你可以使用任何你想使用的I2C传感器连接到I2C端口。I2C is a bus, so sensors can be daisy-chained using any creative wiring solution you can solder, or for neatness add an <a href="http://store.3drobotics.com/products/i2c-splitter">I2C splitter</a> .</p>
+<p>
+你可以使用任何你想使用的I2C传感器连接到I2C端口。I2C is a bus, so sensors can be daisy-chained using any creative wiring solution you can solder, or for neatness add an <a href="http://store.3drobotics.com/products/i2c-splitter">I2C splitter</a>。
+</p>
 <p>你可以更改相应的代码来支持你所要添加的I2C设备类型。APM主要使用I2C库来驱动相应设备，所以，你可以尝试更改磁力计库作为扩展你自己的传感器的开端。</p>
 <p>需要注意的是I2C总线已经存在于板载设备中：大气压力传感器芯片。当APM已正常模式启动，它便作为主线程驱动I2C总线，并定期读取这些从属设备。</p>
 <p>添加第三方I2C主设备到该I2C总线是不可能的。例如： eagletree e-logger 是一个总线设备。它不能被连接和可靠地使用。eagletree powerpanel 是一个从设备，所以它（and many other i2c sensors with non-conflicting device IDs）可以被连接并读取数据。</p>

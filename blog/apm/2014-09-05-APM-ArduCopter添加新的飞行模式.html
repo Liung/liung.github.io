@@ -1732,7 +1732,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-05T11:01:10" pubdate>9月 05, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面</a>描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。</p>
+  <div class="entry-content">
+
+<p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面</a>描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。
+</p>
 <hr />
 <p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L88">defines.h</a>中用<code>#define</code>定义你自己新的飞行模式,然后将飞行模式数量<code>NUM_MODES</code>加1。</p>
 <div class="highlight"><pre>    <span class="c1">// Auto Pilot modes</span>

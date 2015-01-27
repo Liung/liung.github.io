@@ -1734,10 +1734,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-05T12:08:26" pubdate>9月 05, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>本页面将向你介绍如何规划你的新代码块使之可以按需运行。</p>
-<hr />
-<h3>用代码调度器运行你的代码</h3>
-<p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是 ...</p></div>
+  <div class="entry-content">
+
+<p>添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
   </footer>
@@ -1750,7 +1750,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-05T11:01:10" pubdate>9月 05, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面 ...</a></p></div>
+  <div class="entry-content">
+
+<p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面</a>描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
   </footer>
@@ -1763,10 +1766,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-02T14:21:41" pubdate>9月 02, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。</p>
-<h3>在主执行代码中添加参数</h3>
-<hr />
-<p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum ...</p></div>
+  <div class="entry-content">
+
+<p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
   </footer>
@@ -1779,10 +1782,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-08-30T15:53:36" pubdate>8月 30, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>这些<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>也同样被ArduPlane和ArduRover所使用。下面将列出一系列高层次的库的说明和它们的函数说明。</p>
-<h3>核心库</h3>
-<ul>
-<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_AHRS">AP_AHRS</a>：采用DCM（方向余弦矩阵方法）或EKF（扩展卡尔曼滤波方法 ...</li></ul></div>
+  <div class="entry-content">
+
+<p>这些<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>也同样被ArduPlane和ArduRover所使用。下面将列出一系列高层次的库的说明和它们的函数说明。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">Read On &crarr;</a>
   </footer>
@@ -1795,8 +1798,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-08-30T15:29:29" pubdate>8月 30, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p><a href="https://github.com/diydrones/ardupilot"><strong>APM::Copter</strong></a>代码主要放在ArduCopter文件夹中，并且和<strong>ArduPlane</strong>和<strong>ArduRover</strong>使用同样的<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>。</p>
-<p>下面这张图展示了从飞行模式到电机输出的高级别代码概要 ...</p></div>
+  <div class="entry-content"><!-- PELICAN_BEGIN__SUMMARY -->
+
+<p><a href="https://github.com/diydrones/ardupilot"><strong>APM::Copter</strong></a>代码主要放在ArduCopter文件夹中，并且和<strong>ArduPlane</strong>和<strong>ArduRover</strong>使用同样的<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">Read On &crarr;</a>
   </footer>

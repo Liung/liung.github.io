@@ -1737,7 +1737,7 @@ init_mathjax();
   <div class="entry-content">
 
 <p><strong>版本要求： Copter 3.1， Plane 2.76</strong></p>
-<p><strong>硬件要求： APM 2.0,2.5,2.6</strong></p>
+<p><strong>硬件要求： APM 2.0,2.5,2.6</strong>
 </div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html">Read On &crarr;</a>
@@ -1767,9 +1767,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-05T14:41:58" pubdate>9月 05, 2014</time></p>
 </header>
 
-  <div class="entry-content"><h3>综述</h3>
-<p>地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
-<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真 ...</a></p></div>
+  <div class="entry-content">
+地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
+<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真)页面</a>有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">Read On &crarr;</a>
   </footer>
@@ -1782,10 +1783,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-05T12:08:26" pubdate>9月 05, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>本页面将向你介绍如何规划你的新代码块使之可以按需运行。</p>
-<hr />
-<h3>用代码调度器运行你的代码</h3>
-<p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是 ...</p></div>
+  <div class="entry-content">
+
+<p>添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
   </footer>
@@ -1798,7 +1799,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-05T11:01:10" pubdate>9月 05, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面 ...</a></p></div>
+  <div class="entry-content">
+
+<p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面</a>描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
   </footer>
@@ -1811,10 +1815,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-02T14:21:41" pubdate>9月 02, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。</p>
-<h3>在主执行代码中添加参数</h3>
-<hr />
-<p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum ...</p></div>
+  <div class="entry-content">
+
+<p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
   </footer>
@@ -1843,8 +1847,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-08-30T15:29:29" pubdate>8月 30, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p><a href="https://github.com/diydrones/ardupilot"><strong>APM::Copter</strong></a>代码主要放在ArduCopter文件夹中，并且和<strong>ArduPlane</strong>和<strong>ArduRover</strong>使用同样的<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>。</p>
-<p>下面这张图展示了从飞行模式到电机输出的高级别代码概要 ...</p></div>
+  <div class="entry-content"><!-- PELICAN_BEGIN__SUMMARY -->
+
+<p><a href="https://github.com/diydrones/ardupilot"><strong>APM::Copter</strong></a>代码主要放在ArduCopter文件夹中，并且和<strong>ArduPlane</strong>和<strong>ArduRover</strong>使用同样的<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html">Read On &crarr;</a>
   </footer>
@@ -1857,8 +1863,13 @@ init_mathjax();
       <p class="meta"><time datetime="2014-08-29T15:05:30" pubdate>8月 29, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>整个APM工程的源码都采用<a href="http://git-scm.com/">git</a>（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在<a href="https://github.com/">github</a>网站上。</p>
-<p>目前APM的源码以开源的形式托管在<a href="https://github.com/diydrones/ardupilot">https ...</a></p></div>
+  <div class="entry-content">
+
+<p>整个APM工程的源码都采用<a href="http://git-scm.com/">git</a>（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在<a href="https://github.com/">github</a>网站上。</p>
+<p>目前APM的源码以开源的形式托管在<a href="https://github.com/diydrones/ardupilot">https://github.com/diydrones/ardupilot</a>上。由于历史原因，另一个老版本的Google code仓库仍然保持在线可访问状态，但是除非你对老版本（APM 1.x）有特殊的需求，一般建议您不要使用该仓库中的代码。</p>
+<p>固定翼飞机（Plane），旋翼飞行器（Copter），无人车（Rover）模块全部包含在<a href="https://github.com/diydrones/ardupilot"> diydrones/ardupilot </a>代码库中，天线跟踪模块虽然也包含在该代码库中，但在文件目录<code>Tools/</code>下。</p>
+<p>地面站MissionPlanner包含在<a href="https://github.com/diydrones/MissionPlanner">diydrones/MissionPlanner</a>代码库中。
+</div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html">Read On &crarr;</a>
   </footer>
@@ -1873,7 +1884,7 @@ init_mathjax();
 
   <div class="entry-content">
 
-<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&gt;</p>
+<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&gt;
 </div>
   <footer>
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">Read On &crarr;</a>

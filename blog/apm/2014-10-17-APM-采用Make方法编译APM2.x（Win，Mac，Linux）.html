@@ -1733,8 +1733,10 @@ init_mathjax();
 </header>
 
   <div class="entry-content"><h3>概述</h3>
-<p>对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。</p>
-<p>对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程。</p>
+<p>
+对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。</p>
+<p>对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程。
+</p>
 <hr />
 <h3>要求</h3>
 <p>APM的makefiles可以在Mac OS和Liunx平台运行。Windows平台用户可以通过Unix兼容系统如Mingw或Cygwin使用Makefiles。</p>
@@ -1748,12 +1750,84 @@ init_mathjax();
 <p>Arduino应该安装到可以被Spotlight工具索引到的位置。</p>
 <hr />
 <h3>Linux</h3>
+<p>请按照<a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html">本页面</a>的指导在Linux上进行代码编译。</p>
+<ul>
+<li>GNU sed（stream editor，流编辑器）工具</li>
+<li>GNU make 工具，也被称为‘gmake’</li>
+<li>GNU awk 工具, 也被成为‘gawk’，<strong>注意</strong>: 许多Liunx发布版本默认没有安装‘gawk’。你可以通过<code>which gawk</code>命令测试该工具是否已经安装</li>
+<li>AVR-GCC 工具链</li>
+</ul>
+<p>还有许多方法能够得到针对你的系统的所有工具集。在Linux上安装AVR工具链时你可以咨询<a href="http://playground.arduino.cc/learning/linux">Arduino的Linux指导手册</a>相关说明。</p>
 <hr />
 <h3>Windows</h3>
+<p>大概需要如下基本要求：</p>
+<ul>
+<li>可正常运行的当前版本Arduino</li>
+<li>安装了基本Cygwin软件，确保带有GNU sed、GNU make、GNU awk等模块（地址：<a href="http://www.cygwin.com/">http://www.cygwin.com/</a>）</li>
+</ul>
+<p>如果你将arduino安装在一些特定位置，那么当前makefile是不能够自动识别其位置。这时，你需要使用环境变量定义一个ARDUINO路径，或者将arduino可执行程序路径添加在config.mk配置文件中以保证makefile正常运行。</p>
 <hr />
 <h3>准备工作</h3>
+<p>从https://github.com/diydrones/ardupilot中克隆一份APM代码库到本地。</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/diydrones/ardupilot.git</span>
+</pre></div>
+
+
+<p>第一次编译代码之前，先从APM内的sketches中运动<code>make configure</code>命令，将会在<code>ardupilot</code>代码库的顶层目录生成<code>config.mk</code>文件。</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">cd</span> <span class="n">ardupilot</span><span class="o">/</span><span class="n">ArduCopter</span>
+<span class="err">$</span> <span class="n">make</span> <span class="n">configure</span>
+<span class="err">$</span> <span class="n">cd</span> <span class="p">..</span>
+<span class="err">$</span> <span class="n">vim</span> <span class="n">config</span><span class="p">.</span><span class="n">mk</span>
+</pre></div>
+
+
+<p>根据系统类型来编辑文件<code>config.mk</code>的内容</p>
+<p><strong>接下来你需要定制你需要的变量：</strong></p>
+<hr />
+<h3>编译</h3>
+<p>对于默认平台编译sketch文件，可以在该sketch目录下调用不带参数的<code>make</code>命令。</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">cd</span> <span class="n">ardupilot</span><span class="o">/</span><span class="n">ArduPlane</span>
+<span class="err">$</span> <span class="n">make</span>
+</pre></div>
+
+
+<p>默认的编译输出位于<code>$TMPDIR/_sketchname_.build</code></p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">make</span>
+<span class="o">%%</span> <span class="n">param_table</span><span class="p">.</span><span class="n">o</span>
+<span class="o">%%</span> <span class="n">ArduPlane</span><span class="p">.</span><span class="n">cpp</span>
+<span class="o">%%</span> <span class="n">ArduPlane</span><span class="p">.</span><span class="n">o</span>
+<span class="p">...</span>
+<span class="o">%%</span> <span class="n">ArduPlane</span><span class="p">.</span><span class="n">elf</span>
+<span class="o">%%</span> <span class="n">ArduPlane</span><span class="p">.</span><span class="n">eep</span>
+<span class="o">%%</span> <span class="n">ArduPlane</span><span class="p">.</span><span class="n">hex</span>
+</pre></div>
+
+
+<hr />
+<h3>加载固件</h3>
+<p>如果你已经配置了正确的<code>PORT</code>变量，利用<code>upload</code>参数会使用<code>avrdude</code>工具将编译完成的APM应用加载到基于AVR的平台系统中。</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">cd</span> <span class="n">ardupilot</span><span class="o">/</span><span class="n">ArduPlane</span>
+<span class="err">$</span> <span class="n">make</span> <span class="n">upload</span>
+</pre></div>
+
+
+<p>对于PX4平台系列，利用<code>px4-upload</code>参数会使用PX4 bootloader来执行加载操作。</p>
 <hr />
 <h3>故障排除</h3>
+<p>编译过程中，编译器可能会抛出代码错误之外的一些诊断问题，这可能潜在地影响代码是否能够成功编译。这些诊断问题可能包括：</p>
+<p><strong>WARNING: More than one copy of Arduino was found, using …(Mac OS only)</strong></p>
+<p>Spotlight工具检测到你系统中多个Arduino程序。检查打印出来的路径，确保使用具有正确版本号的Arduino程序。为了避免出现该问题，可以直接删除其他老版本的Arduino，也可以在调用编译系统时指定<code>ARDUINO</code>选项。通常情况下编译系统会使用最近频繁使用的某版本Arduino。</p>
+<p><strong>ERROR: must set BOARD before including this file.</strong></p>
+<p>sketch的Makefile文件中没有定义BOARD变量。正常情况下对于APM2.x编译该变量设置为<code>atmega2560</code></p>
+<p><strong>ERROR: Spotlight cannot find Arduino on your system.(Mac OS only)</strong></p>
+<p>Auduino没有安装，或者是已经安装在某个位置但没有被Spotlight索引到。你既可以使Spotlight重新定向Arduino的安装位置，也可以和上面说明一样设置<code>ARDUINO</code>选项。需要提醒的是Spotlight重新索引需要花费一些时间，所以当Spotlight能够定位Arduino位置时可能还不能够立刻解决此问题。</p>
+<p><strong>ERROR: Cannot find Arduino on this system</strong></p>
+<p>（Linux 和 Windows系统可能存在）Arduino没有在默认索引位置找到。可以将Arduino移动到标路径，也可以在<code>config.mk</code>文件中指定<code>ARDUINO</code>选项为当前Arduino位置。</p>
+<p><strong>ERROR: cannot find the compiler tools anywhere on the path …</strong></p>
+<p>没有找到编译器和相关工具。对于Mac OS和Win平台，这些工具正常情况下是Arduino程序的一部分，出现该信息表明Arduino安装程序已经损坏或者不完整。</p>
+<p>对于Linux系统，这意味着AVR工具没有安装到标准位置。可以设置<code>TOOLPATH</code>选项指定为包含AVR工具的目录，也可以安装它们到标准位置。正常情况下Liunx系统下安装Arduino会更正AVR工具的安装问题。</p>
+<p><strong>ERROR: cannot find gawk – you may need to install GNU awk</strong></p>
+<p>（Linux和Windows系统可能存在）需要GNU awk工具，但是没有安装或者没有检测到。在命令窗口使用<code>gawk -version</code>检查awk工具是否工作。可能需要显式地使用<code>AWK</code>选项指定其安装位置。</p>
 <hr />
 <h4>链接</h4>
 <ol>
