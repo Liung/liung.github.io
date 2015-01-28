@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-Combo4</title>
-  <meta name="author" content="Liung">
+  <meta name="author" content="liung">
 
 
     
@@ -1689,12 +1689,12 @@ init_mathjax();
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="../../favicon.png" rel="icon">
-  <link href="../../theme/css/main.css" media="screen, projection"
+  <link href="http://liung.github.io/favicon.png" rel="icon">
+  <link href="http://liung.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
-  <script src="../../theme/js/modernizr-2.0.js"></script>
-  <script src="../../theme/js/ender.js"></script>
-  <script src="../../theme/js/octopress.js" type="text/javascript"></script>
+  <script src="http://liung.github.io/theme/js/modernizr-2.0.js"></script>
+  <script src="http://liung.github.io/theme/js/ender.js"></script>
+  <script src="http://liung.github.io/theme/js/octopress.js" type="text/javascript"></script>
 
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
@@ -1704,8 +1704,8 @@ init_mathjax();
 
 <body>
   <header role="banner"><hgroup>
-  <h1><a href="../../">Liung</a></h1>
-    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
+  <h1><a href="http://liung.github.io/">折返的Liung</a></h1>
+    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1713,7 +1713,7 @@ init_mathjax();
 
 <form action="//google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:../.." />
+    <input type="hidden" name="q" value="site:liung.github.io" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -1721,7 +1721,7 @@ init_mathjax();
 <ul class="main-navigation">
     <li><a href="/archives.html">目  录</a></li>
     <li><a href="http://liung.github.io">主  页</a></li>
-      <li><a href="../../pages/aboutme.html">Me</a></li>
+      <li><a href="http://liung.github.io/pages/aboutme.html">Me</a></li>
 </ul></nav>
   <div id="main">
     <div id="content">
@@ -1729,83 +1729,83 @@ init_mathjax();
   <article class="hentry" role="article">
 <header>
       <h1 class="entry-title">APM-Combo4</h1>
-      <p class="meta"><time datetime="2015-01-28T14:36:02+08:00" pubdate>1月 28, 2015</time></p>
+      <p class="meta"><time datetime="2015-01-28T14:36:02" pubdate>1月 28, 2015</time></p>
 </header>
 
   <div class="entry-content">
 
 
 
-<div class="highlight"><pre>//-------------------------------------
-#define GPS_PROTOCOL GPS_PROTOCOL_MTK
-//   *AVAILABLE OPTIONS*
-// GPS_PROTOCOL_NONENo GPS attached
-// GPS_PROTOCOL_IMU X-Plane interface or ArduPilot IMU.
-// GPS_PROTOCOL_MTK MediaTek-based GPS.
-// GPS_PROTOCOL_MTK16   MediaTek GPS with firmware 1.6
-// GPS_PROTOCOL_UBLOX   UBLOX GPS
-// GPS_PROTOCOL_SIRFSiRF-based GPS in Binary mode.  NOT TESTED
-//-------------------------------------
-#define AIRSPEED_SENSOR ENABLED
-//   *AVAILABLE OPTIONS*
-//  #define AIRSPEED_SENSOR DISABLED
-//  #define AIRSPEED_SENSOR ENABLED
-//-------------------------------------
-#define SERIAL3_BAUD   57600
-//   *AVAILABLE SPEED OPTIONS*   NOTE: When choosing a speed for APM, you need to configure your Xbee modules and GCS for that same speed)
-//  #define SERIAL3_BAUD   9600  
-//  #define SERIAL3_BAUD   19200  
-//  #define SERIAL3_BAUD   38400
-//  #define SERIAL3_BAUD   57600
-//  #define SERIAL3_BAUD   115200
-//-------------------------------------
-#define GCS_PORT  3 
-// *AVAILABLE OPTIONS*
-// #  define GCS_PORT    0  (APM will send information through the mini usb port) 
-// #  define GCS_PORT    3  (APM will send information through the Telemport to be sent wirelessly by Xbee module)
-//
-//--------------------------------------
-#define GCS_PROTOCOL GCS_PROTOCOL_LEGACY
-//
-// *AVAILABLE OPTIONS* 
-// GCS_PROTOCOL_NONE  No GCS output
-// GCS_PROTOCOL_STANDARD  standard APM protocol
-// GCS_PROTOCOL_SPECIAL   special test protocol (?)
-// GCS_PROTOCOL_LEGACYlegacy ArduPilot protocol
-// GCS_PROTOCOL_XPLANEHIL simulation ground station
-// GCS_PROTOCOL_IMU   ArdiPilot IMU output
-// GCS_PROTOCOL_JASON Jason&#39;s special secret GCS
-//
-//--------------------------------------
-#define BATTERY_EVENT ENABLED
-//   
-//*AVAILABLE OPTIONS*
-// #define BATTERY_EVENT  ENABLED
-// #define BATTERY_EVENT  DISABLED
-//
-//---------------------------------------
-#define BATTERY_TYPE  1 
-//
-//*AVAILABLE OPTIONS*
-//  #define BATTERY_TYPE 1
-//  #define BATTERY_TYPE 0
-//
-//---------------------------------------
-#define LOW_VOLTAGE  11.4  
-//
-//*AVAILABLE OPTIONS*
-//  What ever you consider as a low voltage
-//
-//---------------------------------------
-#define INPUT_VOLTAGE 5.0 
-//
-//*AVAILABE OPTIONS*
-//   The default value is 5.0 measure for other input value
-//
-//---------------------------------------
-#define VOLT_DIV_RATIO  3.0 
-//
-//*AVAILABLE OPTIONS*
+<div class="highlight"><pre><span class="c1">//-------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">GPS_PROTOCOL</span> <span class="no">GPS_PROTOCOL_MTK</span>
+<span class="c1">//   *AVAILABLE OPTIONS*</span>
+<span class="c1">// GPS_PROTOCOL_NONENo GPS attached</span>
+<span class="c1">// GPS_PROTOCOL_IMU X-Plane interface or ArduPilot IMU.</span>
+<span class="c1">// GPS_PROTOCOL_MTK MediaTek-based GPS.</span>
+<span class="c1">// GPS_PROTOCOL_MTK16   MediaTek GPS with firmware 1.6</span>
+<span class="c1">// GPS_PROTOCOL_UBLOX   UBLOX GPS</span>
+<span class="c1">// GPS_PROTOCOL_SIRFSiRF-based GPS in Binary mode.  NOT TESTED</span>
+<span class="c1">//-------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">AIRSPEED_SENSOR</span> <span class="no">ENABLED</span>
+<span class="c1">//   *AVAILABLE OPTIONS*</span>
+<span class="c1">//  #define AIRSPEED_SENSOR DISABLED</span>
+<span class="c1">//  #define AIRSPEED_SENSOR ENABLED</span>
+<span class="c1">//-------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">SERIAL3_BAUD</span>   <span class="mh">57600</span>
+<span class="c1">//   *AVAILABLE SPEED OPTIONS*   NOTE: When choosing a speed for APM, you need to configure your Xbee modules and GCS for that same speed)</span>
+<span class="c1">//  #define SERIAL3_BAUD   9600  </span>
+<span class="c1">//  #define SERIAL3_BAUD   19200  </span>
+<span class="c1">//  #define SERIAL3_BAUD   38400</span>
+<span class="c1">//  #define SERIAL3_BAUD   57600</span>
+<span class="c1">//  #define SERIAL3_BAUD   115200</span>
+<span class="c1">//-------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">GCS_PORT</span>  <span class="mh">3</span> 
+<span class="c1">// *AVAILABLE OPTIONS*</span>
+<span class="c1">// #  define GCS_PORT    0  (APM will send information through the mini usb port) </span>
+<span class="c1">// #  define GCS_PORT    3  (APM will send information through the Telemport to be sent wirelessly by Xbee module)</span>
+<span class="c1">//</span>
+<span class="c1">//--------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">GCS_PROTOCOL</span> <span class="no">GCS_PROTOCOL_LEGACY</span>
+<span class="c1">//</span>
+<span class="c1">// *AVAILABLE OPTIONS* </span>
+<span class="c1">// GCS_PROTOCOL_NONE  No GCS output</span>
+<span class="c1">// GCS_PROTOCOL_STANDARD  standard APM protocol</span>
+<span class="c1">// GCS_PROTOCOL_SPECIAL   special test protocol (?)</span>
+<span class="c1">// GCS_PROTOCOL_LEGACYlegacy ArduPilot protocol</span>
+<span class="c1">// GCS_PROTOCOL_XPLANEHIL simulation ground station</span>
+<span class="c1">// GCS_PROTOCOL_IMU   ArdiPilot IMU output</span>
+<span class="c1">// GCS_PROTOCOL_JASON Jason&#39;s special secret GCS</span>
+<span class="c1">//</span>
+<span class="c1">//--------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">BATTERY_EVENT</span> <span class="no">ENABLED</span>
+<span class="c1">//   </span>
+<span class="c1">//*AVAILABLE OPTIONS*</span>
+<span class="c1">// #define BATTERY_EVENT  ENABLED</span>
+<span class="c1">// #define BATTERY_EVENT  DISABLED</span>
+<span class="c1">//</span>
+<span class="c1">//---------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">BATTERY_TYPE</span>  <span class="mh">1</span> 
+<span class="c1">//</span>
+<span class="c1">//*AVAILABLE OPTIONS*</span>
+<span class="c1">//  #define BATTERY_TYPE 1</span>
+<span class="c1">//  #define BATTERY_TYPE 0</span>
+<span class="c1">//</span>
+<span class="c1">//---------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">LOW_VOLTAGE</span>  <span class="mf">11.4</span>  
+<span class="c1">//</span>
+<span class="c1">//*AVAILABLE OPTIONS*</span>
+<span class="c1">//  What ever you consider as a low voltage</span>
+<span class="c1">//</span>
+<span class="c1">//---------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">INPUT_VOLTAGE</span> <span class="mf">5.0</span> 
+<span class="c1">//</span>
+<span class="c1">//*AVAILABE OPTIONS*</span>
+<span class="c1">//   The default value is 5.0 measure for other input value</span>
+<span class="c1">//</span>
+<span class="c1">//---------------------------------------</span>
+<span class="p">#</span><span class="n">define</span> <span class="no">VOLT_DIV_RATIO</span>  <span class="mf">3.0</span> 
+<span class="c1">//</span>
+<span class="c1">//*AVAILABLE OPTIONS*</span>
 </pre></div>
 
 
@@ -1813,20 +1813,18 @@ init_mathjax();
 <h4>链接</h4>
 <ol>
 <li><a href="http://dev.ardupilot.com/wiki/combo_4/">APM官网原文链接</a></li>
-<li><a href="../../blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
 </ol>
 <p><em>(over)</em></p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liung</span>
+    Posted by <span class="fn">liung</span>
   </span>
-<time datetime="2015-01-28T14:36:02+08:00" pubdate>1月 28, 2015</time>  <span class="categories">
-    <a class="category" href="../../tag/apm.html">APM</a>
+<time datetime="2015-01-28T14:36:02" pubdate>1月 28, 2015</time>  <span class="categories">
+    <a class="category" href="http://liung.github.io/tag/apm.html">APM</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2015-01-28-APM-Combo4.html" data-via="Liung_" data-counturl="../../blog/apm/2015-01-28-APM-Combo4.html" >Tweet</a>
-  <div class="g-plusone" data-size="medium"></div>
 </div>    </footer>
   </article>
 
@@ -1837,25 +1835,25 @@ init_mathjax();
 </div>
 <aside class="sidebar">
   <section>
-	  <img src="../../images/author_photo.jpg" alt="Liung" width="300"/> 
+	  <img src="http://liung.github.io/images/author_photo.jpg" alt="Liung" width="300"/> 
   </section>
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="../../blog/apm/2015-04-01-APM-MissionPlanner的仿真界面.html">MissionPlanner-仿真界面分析</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html">APM-Combo4</a>
       </li>
       <li class="post">
-          <a href="../../blog/qi-dong/2015-03-24-由压力系数计算升力系数.html">升力系数的计算</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo3.html">APM-Combo3</a>
       </li>
       <li class="post">
-          <a href="../../blog/apm/2015-02-03-APM-使用Git和GitHub进行APM代码管理.html">APM-使用Git和GitHub进行APM代码管理</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo2.html">APM-Combo2</a>
       </li>
       <li class="post">
-          <a href="../../blog/apm/2015-02-01-APM-加载代码到APM2.x.html">APM-加载代码到APM2.x</a>
+          <a href="http://liung.github.io/blog/fei-xing-qi/2015-01-27-web_site_about_aircraft.html">飞行器相关站点</a>
       </li>
       <li class="post">
-          <a href="../../blog/apm/2015-01-29-APM-mavlink_commands.html">APM-MAVLink命令集</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">APM-使用Visual Studio编译Mission Planner</a>
       </li>
     </ul>
   </section>
@@ -1863,55 +1861,44 @@ init_mathjax();
       
     <h1>Categories</h1>
     <ul id="recent_posts">
-        <li><a href="../../category/apm/index.html">APM</a></li>
-        <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/python/index.html">Python</a></li>
-        <li><a href="../../category/qi-dong/index.html">气动</a></li>
-        <li><a href="../../category/qi-ta/index.html">其它</a></li>
+        <li><a href="http://liung.github.io/category/apm/index.html">APM</a></li>
+        <li><a href="http://liung.github.io/category/fei-xing-qi/index.html">飞行器</a></li>
+        <li><a href="http://liung.github.io/category/python/index.html">Python</a></li>
+        <li><a href="http://liung.github.io/category/qi-dong/index.html">气动</a></li>
+        <li><a href="http://liung.github.io/category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/python.html">python</a>  </section>
+    <a href="http://liung.github.io/tag/c.html">C++</a>,    <a href="http://liung.github.io/tag/git.html">Git</a>,    <a href="http://liung.github.io/tag/python.html">python</a>,    <a href="http://liung.github.io/tag/mission-planner.html">Mission Planner</a>,    <a href="http://liung.github.io/tag/qi-dong.html">气动</a>,    <a href="http://liung.github.io/tag/bo-ke.html">博客</a>,    <a href="http://liung.github.io/tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>,    <a href="http://liung.github.io/tag/apm.html">APM</a>,    <a href="http://liung.github.io/tag/ipython.html">ipython</a>,    <a href="http://liung.github.io/tag/ying-jian.html">硬件</a>,    <a href="http://liung.github.io/tag/numpy.html">Numpy</a>,    <a href="http://liung.github.io/tag/pandas.html">pandas</a>,    <a href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
     <section>
         <h1>Blogroll</h1>
         <ul>
-            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+            <li><a href="http://google.com/" target="_blank">Google</a></li>
             <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
         </ul>
     </section>
 
-<section>
-    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
-</section>
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/117788376468366009129?rel=author">
-      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liung -
+    Copyright &copy;  2012-2015  - liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个爱折腾的实用主义者</a></span>
+  <span class="credit">一个执拗的完美主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1934,7 +1921,7 @@ init_mathjax();
 	<script type="text/javascript">
 	  var disqus_shortname = 'liunggithubio-aerodynamic';
           var disqus_identifier = '/blog/apm/2015-01-28-APM-Combo4.html';
-          var disqus_url = '../../blog/apm/2015-01-28-APM-Combo4.html';
+          var disqus_url = 'http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html';
           var disqus_title = 'APM-Combo4';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -1942,21 +1929,5 @@ init_mathjax();
 	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	   })();
 	</script>
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 </body>
 </html>

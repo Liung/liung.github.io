@@ -1729,6 +1729,67 @@ init_mathjax();
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">APM-Linux上SITL仿真设置</a>
+      </h1>
+      <p class="meta"><time datetime="2014-10-15T14:06:42" pubdate>10月 15, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">APM-Windows上SITL仿真设置</a>
+      </h1>
+      <p class="meta"><time datetime="2014-10-14T13:56:44" pubdate>10月 14, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</p>
+<p>本页面详细说明了如何在windows平台上设置SITL。文中使用的相关命令在装有<strong>VMware ver 5.0.2 build -1031769</strong> 和 <strong>Ubuntu 12.10</strong>的Windows8平台上测试通过。
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html">APM-模拟仿真</a>
+      </h1>
+      <p class="meta"><time datetime="2014-10-14T13:52:49" pubdate>10月 14, 2014</time></p>
+</header>
+
+  <div class="entry-content"><!-- PELICAN_BEGIN__SUMMARY -->
+
+<p>本页面描述了如何使用APM进行模拟仿真，它可以让我们安全的测试试验代码和一些设置。毕竟，撞毁模拟飞机可要比真实的飞机划算的多哦！</p>
+<p><strong>硬件循环仿真（HITL）:</strong>硬件仿真使用模拟器代替真实的飞行器和大气环境，该模拟器包含有高精度的飞行动力学模型和大气环境模型（模拟气流，突风等 ...</p></!--></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/qi-dong/2014-09-17-常用气动软件.html">常用气动软件</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-17T10:55:29" pubdate>9月 17, 2014</time></p>
+</header>
+
+  <div class="entry-content"><h3>XFoil</h3>
+<p>XFoil是一个为设计和分析亚音速飞机独立翼型编写的互动式的程序</p>
+<p>主页：<a href="http://web.mit.edu/drela/Public/web/xfoil/"><strong>http://web.mit.edu/drela/Public/web ...</strong></a></p></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/qi-dong/2014-09-17-常用气动软件.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/python/2014-09-14-Pandas学习笔记.html">Pandas学习笔记</a>
       </h1>
       <p class="meta"><time datetime="2014-09-14T14:26:24" pubdate>9月 14, 2014</time></p>
@@ -1907,69 +1968,6 @@ init_mathjax();
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
   </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T11:01:10" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面</a>描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-02T14:21:41" pubdate>9月 02, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-31T21:53:09" pubdate>8月 31, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>在从版本AC3.1向AC3.2的过渡中，姿态控制逻辑运算作为“the onion”（洋葱头）工程的一部分进行了重构。下面来展示重构后的程序执行流程。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/python/2014-08-31-IPython命令集.html">IPython学习笔记</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-31T10:55:41" pubdate>8月 31, 2014</time></p>
-</header>
-
-  <div class="entry-content"><ul>
-<li><strong>ipython --pylab=inline:</strong>ipython启动后默认导入numpy和matplotlib.pylab模块</li>
-<li><strong>ipython qtconsole</strong>:使用Qt Gui 后台 ...</li></ul></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/python/2014-08-31-IPython命令集.html">Read On &crarr;</a>
-  </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="http://liung.github.io/author/liung3.html">&larr; Older</a>
 
@@ -1984,19 +1982,19 @@ init_mathjax();
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html">APM-Combo4</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo3.html">APM-Combo3</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo2.html">APM-Combo2</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/fei-xing-qi/2015-01-27-web_site_about_aircraft.html">飞行器相关站点</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">APM-使用Visual Studio编译Mission Planner</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/UAV.html">无人机（UAV）</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html">非线性非定常空气动力学建模论文摘要</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html">飞行器相关基础知识</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html">APM-I2C</a>
       </li>
     </ul>
   </section>

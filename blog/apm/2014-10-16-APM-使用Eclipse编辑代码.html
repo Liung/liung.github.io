@@ -1733,6 +1733,106 @@ init_mathjax();
 </header>
 
   <div class="entry-content"><hr />
+<h3>综述</h3>
+<p>
+1. Eclipse是一款精致地多语言集成开发平台
+1. Eclipse CDT（C++开发工具）实现了支持在Eclipse平台进行C/C++开发
+1. Eclipse CDT工具可以帮助管理与组织大型C++工程，比如ArduPilot Mega的固件开发工程
+1. 本指南用来说明如何将最近的ArduPilot Mega 固件开发工程设置为Eclipse CDT工程
+1. 提醒：这些操作都在Eclipse Kepler（4.3.0）版本上进行。
+</p>
+<hr />
+<h3>当前编译相关信息</h3>
+<ol>
+<li>基于make的编译系统支持在Windows，MacOS，Liunx平台进行APM编译</li>
+<li>但是，你仍然可以使用安装的Arduino IDE进行，因为在编译过程中也使用到了它的工具链的一部分</li>
+<li>位于ardupilot-mega工程文件顶层目录的文件README.txt记录了编译说明相关信息</li>
+<li>在Readme.txt文件中关于使用Eclipse的编译说明仍然可以使用，但是相对复杂一些</li>
+</ol>
+<hr />
+<h3>安装Eclipse和CDT组件</h3>
+<p>如果你已经安装了Eclipse，但是没有安装CDT组件，那么你可以直接跳到下一部分内容。</p>
+<ul>
+<li>下载并安装最新版本的<a href="http://java.com/en/download/index.jsp">Java Runtime Environment（Java运行时环境）</a></li>
+<li>对于C/C++开发者下载并安装最新版本的Eclipse IDE。</li>
+</ul>
+<p>A.前往<a href="http://www.eclipse.org/downloads/">下载页面</a></p>
+<p>B.在“安装包选型”中点击“Eclipse IDE for C/C++ Developer”</p>
+<ul>
+<li>将下载的压缩包解压到你的桌面上。</li>
+</ul>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractEclipse1.png" /></p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractDesktop1.png" /></p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractToDesktop1.png" /></p>
+<ul>
+<li>如果Eclipse不能正常运行并弹出“不能找到Java JDK or JRE”相关信息，请阅读<strong>问题排查</strong>部分内容</li>
+</ul>
+<hr />
+<h3>在Eclipse安装程序中添加C开发工具</h3>
+<ul>
+<li>如果你按照上一部分的说明下载了Eclipse，那么你可以跳过该部分</li>
+</ul>
+<p>A.因为你安装的Eclipse中已经带有CDT组件</p>
+<ul>
+<li>如果你还没有加载C开发工具（或者还不能够正确加载）</li>
+</ul>
+<p>A. 前往<a href="http://www.eclipse.org/cdt/downloads.php">http://www.eclipse.org/cdt/downloads.php</a>的<strong>CDT 8.2.0 for Eclipse Kepler</strong>部分</p>
+<p>B. 运行Eclipse 工程，选择<strong>Windows</strong>下拉菜单中的<strong>参数（Preference）</strong>选项</p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/Eclipse-Preferences.png" /></p>
+<ul>
+<li>单击参数窗口的<strong>Install/Unpdate</strong>左侧小三角箭头，选择<strong>可用站点（Availabel Sorftware Sites）</strong>，然后选择添加按钮</li>
+</ul>
+<p>A.在添加站点（<strong>Add Site</strong>）窗口的<strong>Name</strong>栏键入<strong>CDT</strong></p>
+<p>B.然后从CDT的下载页面复制URL链接<strong>http://download.eclipse.org/tools/cdt/releases/kepler</strong>到<strong>Location</strong>栏</p>
+<p>C.在添加站点（<strong>Add Site</strong>）窗口点击<strong>OK</strong>，然后在<strong>参数（Preference）</strong>窗口点击<strong>OK</strong></p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseLoadCDT.png" /></p>
+<hr />
+<h3>创建工作空间</h3>
+<ul>
+<li>运行Eclipse：</li>
+</ul>
+<p>A.导航到桌面的Eclipse目录</p>
+<p>B.双击eclipse.exe</p>
+<ul>
+<li>当Eclipse窗口打开：</li>
+</ul>
+<p>A.选择<strong>Window</strong>菜单项中的<strong>Preference</strong>选项</p>
+<p>B.在<strong>Preference</strong>窗口点击<strong>C/C++</strong>的左侧箭头，然后选择<strong>File Types</strong></p>
+<p>C.如果列表中没有“*.pde”条目，使用<strong>New</strong>按钮打开<strong>C/C++文件类型</strong>窗口</p>
+<p>D.在<strong>Pattern</strong>栏键入<strong>*.pde</strong>，在<strong>Type</strong>下拉选项中选择<strong>C++ Source File</strong></p>
+<p>E.在<strong>C/C++ File Type</strong>窗口点击<strong>OK</strong>，然后点击<strong>Preference</strong>窗口的<strong>OK</strong>按钮</p>
+<p>F.这样就解决了Eclipse中pde文件与C++的关联</p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipsePrefPDE.png" /></p>
+<ul>
+<li>Eclipse的代码分析功能不能够正确的解析arduino的.pde文件。为了避免编辑arduino代码时出现上百个“undeclared（未声明）”和“unused（未使用）”错误信息，禁用代码解析带来的错误</li>
+</ul>
+<p>A.选择<strong>Window</strong>菜单项中的<strong>Preference</strong>选项</p>
+<p>B.点击<strong>C/C++</strong>选项卡左侧的小三角展开内容，选择<strong>Code Analysis</strong></p>
+<p>C.取消选中<strong>Syntax and Semantic Errors</strong>，然后点击<strong>OK</strong>按钮</p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/UntitledEclipsePrefTurnOffErrors.png" /></p>
+<hr />
+<h3>创建Ardupilot Mega工程</h3>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSelectExistCodeAsMake.png" /></p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseImportArduPilot.png" /></p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseOpenPerspectiveCC++.png" /></p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseBuildSettings.png" /></p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSetBuildTarget.png" /></p>
+<hr />
+<h3>编译ArduPilot工程</h3>
+<hr />
+<h3>可用插件</h3>
+<p>1、<strong>AVR Eclipse 插件</strong>可能在Eclipse中进行APM编程非常有用</p>
+<p>A、 现在，它在窗口底部区域添加了一个AVR Device管理器，有助于找到AVR注册者的相关名称</p>
+<p>2、<strong>EGit插件</strong>能够在Eclipse进行版本控制，并允许你尽可能的在不脱离IDE的情况下对代码进行升级、比较和提交操作</p>
+<hr />
+<h3>问题排查</h3>
+<p>1、当启动Eclipse时得到“不能找到Java JRE或者JDK”相关错误信息，你需要编辑Eclipse.ini配置文件，设置Java安装包的正确路径</p>
+<p>2、定位到你的Java安装位置，可能位于：<strong>C:/program files/java/jdk1.7.0_07/bin/java</strong></p>
+<p>3、用文本编辑器，如NotePad++，代开Eclipse.ini配置文件，添加Java安装路径到出现<strong>-vm</strong>的下一行</p>
+<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/JavaPathInEclipseIni.png" /></p>
+<p>4、编辑完成后保存<strong>Eclipse.ini</strong>文件，然后点击<strong>Eclipse.exe</strong>重启Eclipse</p>
+<p>5、（在完成编辑Eclipse.ini文件，启动Eclipse之前可能还需要重启电脑）</p>
+<hr />
 <h4>链接</h4>
 <ol>
 <li><a href="http://dev.ardupilot.com/wiki/editing-the-code-with-eclipse/">APM官网原文链接</a></li>
@@ -1766,19 +1866,19 @@ init_mathjax();
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html">APM-Combo4</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo3.html">APM-Combo3</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo2.html">APM-Combo2</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/fei-xing-qi/2015-01-27-web_site_about_aircraft.html">飞行器相关站点</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">APM-使用Visual Studio编译Mission Planner</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/UAV.html">无人机（UAV）</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html">非线性非定常空气动力学建模论文摘要</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html">飞行器相关基础知识</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html">APM-I2C</a>
       </li>
     </ul>
   </section>

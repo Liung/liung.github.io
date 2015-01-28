@@ -1,5 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 24 Jan 2015 14:19:53 +0800</lastBuildDate><item><title>APM-使用Visual Studio编译Mission Planner</title><link>http://liung.github.io/blog/apm/2015-01-24-APM-%E4%BD%BF%E7%94%A8Visual_Studio%E7%BC%96%E8%AF%91Mission_Planner.html</link><description>&lt;h3&gt;简介&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 28 Jan 2015 14:36:02 +0800</lastBuildDate><item><title>APM-Combo4</title><link>http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html</link><description>
+
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;//-------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;GPS_PROTOCOL&lt;/span&gt; &lt;span class="no"&gt;GPS_PROTOCOL_MTK&lt;/span&gt;
+&lt;span class="c1"&gt;//   *AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_NONENo GPS attached&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_IMU X-Plane interface or ArduPilot IMU.&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_MTK MediaTek-based GPS.&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_MTK16   MediaTek GPS with firmware 1.6&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_UBLOX   UBLOX GPS&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_SIRFSiRF-based GPS in Binary mode.  NOT TESTED&lt;/span&gt;
+&lt;span class="c1"&gt;//-------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;AIRSPEED_SENSOR&lt;/span&gt; &lt;span class="no"&gt;ENABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//   *AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define AIRSPEED_SENSOR DISABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define AIRSPEED_SENSOR ENABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//-------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;SERIAL3_BAUD&lt;/span&gt;   &lt;span class="mh"&gt;57600&lt;/span&gt;
+&lt;span class="c1"&gt;//   *AVAILABLE SPEED OPTIONS*   NOTE: When choosing a speed for APM, you need to configure your Xbee modules and GCS for that same speed)&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   9600  &lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   19200  &lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   38400&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   57600&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   115200&lt;/span&gt;
+&lt;span class="c1"&gt;//-------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;GCS_PORT&lt;/span&gt;  &lt;span class="mh"&gt;3&lt;/span&gt; 
+&lt;span class="c1"&gt;// *AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;// #  define GCS_PORT    0  (APM will send information through the mini usb port) &lt;/span&gt;
+&lt;span class="c1"&gt;// #  define GCS_PORT    3  (APM will send information through the Telemport to be sent wirelessly by Xbee module)&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//--------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;GCS_PROTOCOL&lt;/span&gt; &lt;span class="no"&gt;GCS_PROTOCOL_LEGACY&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;// *AVAILABLE OPTIONS* &lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_NONE  No GCS output&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_STANDARD  standard APM protocol&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_SPECIAL   special test protocol (?)&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_LEGACYlegacy ArduPilot protocol&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_XPLANEHIL simulation ground station&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_IMU   ArdiPilot IMU output&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_JASON Jason&amp;#39;s special secret GCS&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//--------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;BATTERY_EVENT&lt;/span&gt; &lt;span class="no"&gt;ENABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//   &lt;/span&gt;
+&lt;span class="c1"&gt;//*AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;// #define BATTERY_EVENT  ENABLED&lt;/span&gt;
+&lt;span class="c1"&gt;// #define BATTERY_EVENT  DISABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//---------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;BATTERY_TYPE&lt;/span&gt;  &lt;span class="mh"&gt;1&lt;/span&gt; 
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//*AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define BATTERY_TYPE 1&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define BATTERY_TYPE 0&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//---------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;LOW_VOLTAGE&lt;/span&gt;  &lt;span class="mf"&gt;11.4&lt;/span&gt;  
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//*AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;//  What ever you consider as a low voltage&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//---------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;INPUT_VOLTAGE&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt; 
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//*AVAILABE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;//   The default value is 5.0 measure for other input value&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//---------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;VOLT_DIV_RATIO&lt;/span&gt;  &lt;span class="mf"&gt;3.0&lt;/span&gt; 
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//*AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/combo_4/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Wed, 28 Jan 2015 14:36:02 +0800</pubDate><guid>tag:liung.github.io,2015-01-28:blog/apm/2015-01-28-APM-Combo4.html</guid><category>APM</category></item><item><title>APM-Combo3</title><link>http://liung.github.io/blog/apm/2015-01-28-APM-Combo3.html</link><description>
+
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;//-------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;GPS_PROTOCOL&lt;/span&gt; &lt;span class="no"&gt;GPS_PROTOCOL_MTK&lt;/span&gt;
+&lt;span class="c1"&gt;//   *AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_NONENo GPS attached&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_IMU X-Plane interface or ArduPilot IMU.&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_MTK MediaTek-based GPS.&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_MTK16   MediaTek GPS with firmware 1.6&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_UBLOX   UBLOX GPS&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_SIRFSiRF-based GPS in Binary mode.  NOT TESTED&lt;/span&gt;
+&lt;span class="c1"&gt;//-------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;AIRSPEED_SENSOR&lt;/span&gt; &lt;span class="no"&gt;ENABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//   *AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define AIRSPEED_SENSOR DISABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define AIRSPEED_SENSOR ENABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//-------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;SERIAL3_BAUD&lt;/span&gt;   &lt;span class="mh"&gt;57600&lt;/span&gt;
+&lt;span class="c1"&gt;//   *AVAILABLE SPEED OPTIONS*   NOTE: When choosing a speed for APM, you need to configure your Xbee modules and GCS for that same speed)&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   9600  &lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   19200  &lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   38400&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   57600&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define SERIAL3_BAUD   115200&lt;/span&gt;
+&lt;span class="c1"&gt;//-------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;GCS_PORT&lt;/span&gt;  &lt;span class="mh"&gt;3&lt;/span&gt; 
+&lt;span class="c1"&gt;// *AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;// #  define GCS_PORT    0  (APM will send information through the mini usb port) &lt;/span&gt;
+&lt;span class="c1"&gt;// #  define GCS_PORT    3  (APM will send information through the Telemport to be sent wirelessly by Xbee module)&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;//--------------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;GCS_PROTOCOL&lt;/span&gt; &lt;span class="no"&gt;GCS_PROTOCOL_LEGACY&lt;/span&gt;
+&lt;span class="c1"&gt;//&lt;/span&gt;
+&lt;span class="c1"&gt;// *AVAILABLE OPTIONS* &lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_NONENo GCS output&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_STANDARDstandard APM protocol&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_SPECIAL special test protocol (?)&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_LEGACY  legacy ArduPilot protocol&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_XPLANE  HIL simulation ground station&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_IMU ArdiPilot IMU output&lt;/span&gt;
+&lt;span class="c1"&gt;// GCS_PROTOCOL_JASON   Jason&amp;#39;s special secret GCS protocol&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/combo_3/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Wed, 28 Jan 2015 14:35:01 +0800</pubDate><guid>tag:liung.github.io,2015-01-28:blog/apm/2015-01-28-APM-Combo3.html</guid><category>APM</category></item><item><title>APM-Combo2</title><link>http://liung.github.io/blog/apm/2015-01-28-APM-Combo2.html</link><description>
+
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;//-------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;GPS_PROTOCOL&lt;/span&gt; &lt;span class="no"&gt;GPS_PROTOCOL_MTK&lt;/span&gt;
+&lt;span class="c1"&gt;//   *AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_NONENo GPS attached&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_IMU X-Plane interface or ArduPilot IMU.&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_MTK MediaTek-based GPS.&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_MTK16   MediaTek GPS with firmware 1.6&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_UBLOX   UBLOX GPS&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_SIRFSiRF-based GPS in Binary mode.  NOT TESTED&lt;/span&gt;
+&lt;span class="c1"&gt;//-------------------------------&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;AIRSPEED_SENSOR&lt;/span&gt; &lt;span class="no"&gt;ENABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//   *AVAILABLE OPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define AIRSPEED_SENSOR DISABLED&lt;/span&gt;
+&lt;span class="c1"&gt;//  #define AIRSPEED_SENSOR ENABLED&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/combo_2/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Wed, 28 Jan 2015 14:28:05 +0800</pubDate><guid>tag:liung.github.io,2015-01-28:blog/apm/2015-01-28-APM-Combo2.html</guid><category>APM</category></item><item><title>飞行器相关站点</title><link>http://liung.github.io/blog/fei-xing-qi/2015-01-27-web_site_about_aircraft.html</link><description>&lt;h3&gt;飞行器设计站点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;http://mach-up.com/&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Tue, 27 Jan 2015 16:16:17 +0800</pubDate><guid>tag:liung.github.io,2015-01-27:blog/fei-xing-qi/2015-01-27-web_site_about_aircraft.html</guid></item><item><title>APM-使用Visual Studio编译Mission Planner</title><link>http://liung.github.io/blog/apm/2015-01-24-APM-%E4%BD%BF%E7%94%A8Visual_Studio%E7%BC%96%E8%AF%91Mission_Planner.html</link><description>&lt;h3&gt;简介&lt;/h3&gt;
 
 
 &lt;p&gt;Mission Planner（简称MP）是一款Windows平台使用（可通过mono实现Mac平台上的跨平台使用）的开源地面站软件，主要开发语言采用C#。该软件是目前使用最普遍的一款地面站软件，它不仅面向各种载具提供了完备地功能性设置，还提供了飞行任务规划、飞行实时监测、飞行后日志文件分析等功能。
@@ -45,10 +210,10 @@
 &lt;li&gt;运行Visual Studio&lt;/li&gt;
 &lt;li&gt;点击 文件 &amp;gt;&amp;gt; 打开 &amp;gt;&amp;gt; 工程 / 解决方案&lt;/li&gt;
 &lt;li&gt;导航到Mission Planner文件夹，选择ArdupilotMega.sla文件打开&lt;/li&gt;
-&lt;li&gt;Visual Studio应该打开包含有Mission Planner和其他一些相关引用（如“3DR Radio”, “Updater”等）的相关解决方案（solution）,可以在“解决方案”管理器面板看到（上图黄色高亮区域）&lt;/li&gt;
+&lt;li&gt;Visual Studio应该打开包含有Mission Planner和其他一些相关引用（如“3DR Radio”, “Updater”等）的相关解决方案（solution）,可以在“解决方案”资源管理器面板看到（上图黄色高亮区域）&lt;/li&gt;
 &lt;li&gt;设置“Solution Configuration”为“Debug”或者“Release”（可在工具菜单下找到相关命令）&lt;/li&gt;
 &lt;li&gt;设置“Solution Platforms”为“x86″&lt;/li&gt;
-&lt;li&gt;在“解决方案”管理器面板中，在Mission Planner项右击选择属性，在Signing选型卡中取消选中“Sign the ClickOnce manifests”&lt;/li&gt;
+&lt;li&gt;在“解决方案”管理器面板中，在Mission Planner项右击选择属性，在Signing（签名）选型卡中取消选中“Sign the ClickOnce manifests”(为ClickOnce清单签名)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img alt="img2" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/MPBuild_UncheckSigning-1024x641.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Mission Planner有如下几个工程项目组成，你可以通过在解决方案面板中打开“Mission Planner”和“Libs”文件夹看到。&lt;/p&gt;
@@ -75,7 +240,7 @@
 &lt;h3&gt;编译Mission Planner&lt;/h3&gt;
 &lt;p&gt;在尝试编译Mission Planner之前，还必须在你的电脑上安装官方安装版Mission Planner。这是因为有一些动态库文件.dll没有包含在Git代码库中。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/MPBuild_BatchBuild-1024x741.png" /&gt;&lt;/p&gt;
-&lt;p&gt;选择Build &amp;gt;&amp;gt; Batch Build…（编译 &amp;gt;&amp;gt; 批编译），“Select All”（选择全部），然后点击“Rebuild”（重新编译）。第一次尝试编译Mission Planner时可能会出现一些错误，所以多尝试几次。&lt;/p&gt;
+&lt;p&gt;选择Build &amp;gt;&amp;gt; Batch Build…（生成 &amp;gt;&amp;gt; 批生成），“Select All”（全选），然后点击“Rebuild”（重新生成）。第一次尝试编译Mission Planner时可能会出现一些错误，所以多尝试几次。&lt;/p&gt;
 &lt;p&gt;如果一些错误仍然存在，那么试着使用下面这些方法：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;对于缺失dlls相关的错误:&lt;/li&gt;
@@ -1091,7 +1256,7 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;ul&gt;
 &lt;li&gt;GNU sed（stream editor，流编辑器）工具&lt;/li&gt;
 &lt;li&gt;GNU make 工具，也被称为‘gmake’&lt;/li&gt;
-&lt;li&gt;GNU awk 工具, 也被成为‘gawk’，&lt;strong&gt;注意&lt;/strong&gt;: 许多Liunx发布版本默认没有安装‘gawk’。你可以通过&lt;code&gt;which gawk&lt;/code&gt;命令测试该工具是否已经安装&lt;/li&gt;
+&lt;li&gt;GNU awk 工具, 也被称为‘gawk’，&lt;strong&gt;注意&lt;/strong&gt;: 许多Liunx发布版本默认没有安装‘gawk’。你可以通过&lt;code&gt;which gawk&lt;/code&gt;命令测试该工具是否已经安装&lt;/li&gt;
 &lt;li&gt;AVR-GCC 工具链&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;还有许多方法能够得到针对你的系统的所有工具集。在Linux上安装AVR工具链时你可以咨询&lt;a href="http://playground.arduino.cc/learning/linux"&gt;Arduino的Linux指导手册&lt;/a&gt;相关说明。&lt;/p&gt;
@@ -1102,7 +1267,7 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;li&gt;可正常运行的当前版本Arduino&lt;/li&gt;
 &lt;li&gt;安装了基本Cygwin软件，确保带有GNU sed、GNU make、GNU awk等模块（地址：&lt;a href="http://www.cygwin.com/"&gt;http://www.cygwin.com/&lt;/a&gt;）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;如果你将arduino安装在一些特定位置，那么当前makefile是不能够自动识别其位置。这时，你需要使用环境变量定义一个ARDUINO路径，或者将arduino可执行程序路径添加在config.mk配置文件中以保证makefile正常运行。&lt;/p&gt;
+&lt;p&gt;如果你将arduino安装在一些特定地方，那么当前makefile是不能够自动识别其位置。这时，你需要使用环境变量定义一个ARDUINO路径，或者将arduino可执行程序路径添加在config.mk配置文件中以保证makefile能够正常运行。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;准备工作&lt;/h3&gt;
 &lt;p&gt;从https://github.com/diydrones/ardupilot中克隆一份APM代码库到本地。&lt;/p&gt;
@@ -1110,26 +1275,26 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;第一次编译代码之前，先从APM内的sketches中运动&lt;code&gt;make configure&lt;/code&gt;命令，将会在&lt;code&gt;ardupilot&lt;/code&gt;代码库的顶层目录生成&lt;code&gt;config.mk&lt;/code&gt;文件。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduCopter&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;configure&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="p"&gt;..&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;vim&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mk&lt;/span&gt;
+&lt;p&gt;第一次编译代码前，先从APM内相应模式下的sketches中使用&lt;code&gt;make configure&lt;/code&gt;命令，将会在&lt;code&gt;ardupilot&lt;/code&gt;代码库的顶层目录生成&lt;code&gt;config.mk&lt;/code&gt;文件。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduCopter&lt;/span&gt;
+&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;configure&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="p"&gt;..&lt;/span&gt;
+&lt;span class="n"&gt;vim&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mk&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;根据系统类型来编辑文件&lt;code&gt;config.mk&lt;/code&gt;的内容&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;接下来你需要定制你需要的变量：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;根据自己的系统类型来编辑&lt;code&gt;config.mk&lt;/code&gt;文件内容&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;接下来你需要根据自己的需要执行：&lt;/strong&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;编译&lt;/h3&gt;
 &lt;p&gt;对于默认平台编译sketch文件，可以在该sketch目录下调用不带参数的&lt;code&gt;make&lt;/code&gt;命令。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduPlane&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduPlane&lt;/span&gt;
+&lt;span class="n"&gt;make&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;默认的编译输出位于&lt;code&gt;$TMPDIR/_sketchname_.build&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt;
+&lt;p&gt;默认的编译文件输出位于&lt;code&gt;$TMPDIR/_sketchname_.build&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt;
 &lt;span class="o"&gt;%%&lt;/span&gt; &lt;span class="n"&gt;param_table&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;
 &lt;span class="o"&gt;%%&lt;/span&gt; &lt;span class="n"&gt;ArduPlane&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cpp&lt;/span&gt;
 &lt;span class="o"&gt;%%&lt;/span&gt; &lt;span class="n"&gt;ArduPlane&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;
@@ -1142,7 +1307,7 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 
 &lt;hr /&gt;
 &lt;h3&gt;加载固件&lt;/h3&gt;
-&lt;p&gt;如果你已经配置了正确的&lt;code&gt;PORT&lt;/code&gt;变量，利用&lt;code&gt;upload&lt;/code&gt;参数会使用&lt;code&gt;avrdude&lt;/code&gt;工具将编译完成的APM应用加载到基于AVR的平台系统中。&lt;/p&gt;
+&lt;p&gt;如果你已经配置了正确的&lt;code&gt;PORT&lt;/code&gt;变量，那么可以利用&lt;code&gt;upload&lt;/code&gt;参数会使用&lt;code&gt;avrdude&lt;/code&gt;工具将编译完成的APM应用加载到基于AVR的平台系统中。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;ardupilot&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ArduPlane&lt;/span&gt;
 &lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1153,13 +1318,13 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;h3&gt;故障排除&lt;/h3&gt;
 &lt;p&gt;编译过程中，编译器可能会抛出代码错误之外的一些诊断问题，这可能潜在地影响代码是否能够成功编译。这些诊断问题可能包括：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;WARNING: More than one copy of Arduino was found, using …(Mac OS only)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Spotlight工具检测到你系统中多个Arduino程序。检查打印出来的路径，确保使用具有正确版本号的Arduino程序。为了避免出现该问题，可以直接删除其他老版本的Arduino，也可以在调用编译系统时指定&lt;code&gt;ARDUINO&lt;/code&gt;选项。通常情况下编译系统会使用最近频繁使用的某版本Arduino。&lt;/p&gt;
+&lt;p&gt;Spotlight工具检测到你系统中存在多个Arduino程序。检查打印出来的Arduino路径，确保使用具有正确版本号的Arduino程序。为了避免出现该问题，可以直接删除其他老版本的Arduino，也可以在调用编译系统时指定&lt;code&gt;ARDUINO&lt;/code&gt;选项。通常情况下编译系统会使用最近频繁使用的某版本Arduino。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ERROR: must set BOARD before including this file.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;sketch的Makefile文件中没有定义BOARD变量。正常情况下对于APM2.x编译该变量设置为&lt;code&gt;atmega2560&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;sketch的Makefile文件中没有定义BOARD变量。正常情况下对于编译APM2.x该变量设置为&lt;code&gt;atmega2560&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ERROR: Spotlight cannot find Arduino on your system.(Mac OS only)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Auduino没有安装，或者是已经安装在某个位置但没有被Spotlight索引到。你既可以使Spotlight重新定向Arduino的安装位置，也可以和上面说明一样设置&lt;code&gt;ARDUINO&lt;/code&gt;选项。需要提醒的是Spotlight重新索引需要花费一些时间，所以当Spotlight能够定位Arduino位置时可能还不能够立刻解决此问题。&lt;/p&gt;
+&lt;p&gt;Arduino没有安装，或者是已经安装在某个位置但没有被Spotlight索引到。你既可以使Spotlight重新定向Arduino的安装位置，也可以和上面说明一样设置&lt;code&gt;ARDUINO&lt;/code&gt;选项。需要注意地是Spotlight重新索引需要花费一些时间，所以当Spotlight能够定位Arduino位置时可能还不能够立刻解决此问题。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ERROR: Cannot find Arduino on this system&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;（Linux 和 Windows系统可能存在）Arduino没有在默认索引位置找到。可以将Arduino移动到标路径，也可以在&lt;code&gt;config.mk&lt;/code&gt;文件中指定&lt;code&gt;ARDUINO&lt;/code&gt;选项为当前Arduino位置。&lt;/p&gt;
+&lt;p&gt;（Linux 和 Windows系统可能存在）Arduino没有在默认索引位置找到。可以将Arduino移动到标准路径，也可以直接在&lt;code&gt;config.mk&lt;/code&gt;文件中指定&lt;code&gt;ARDUINO&lt;/code&gt;选项为当前Arduino位置。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ERROR: cannot find the compiler tools anywhere on the path …&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;没有找到编译器和相关工具。对于Mac OS和Win平台，这些工具正常情况下是Arduino程序的一部分，出现该信息表明Arduino安装程序已经损坏或者不完整。&lt;/p&gt;
 &lt;p&gt;对于Linux系统，这意味着AVR工具没有安装到标准位置。可以设置&lt;code&gt;TOOLPATH&lt;/code&gt;选项指定为包含AVR工具的目录，也可以安装它们到标准位置。正常情况下Liunx系统下安装Arduino会更正AVR工具的安装问题。&lt;/p&gt;
@@ -1236,6 +1401,106 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Thu, 16 Oct 2014 13:54:19 +0800</pubDate><guid>tag:liung.github.io,2014-10-16:blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-使用Eclipse编辑Pixhawk代码</title><link>http://liung.github.io/blog/apm/2014-10-16-APM-%E4%BD%BF%E7%94%A8Eclipse%E7%BC%96%E8%BE%91%E4%BB%A3%E7%A0%81.html</link><description>&lt;hr /&gt;
+&lt;h3&gt;综述&lt;/h3&gt;
+&lt;p&gt;
+1. Eclipse是一款精致地多语言集成开发平台
+1. Eclipse CDT（C++开发工具）实现了支持在Eclipse平台进行C/C++开发
+1. Eclipse CDT工具可以帮助管理与组织大型C++工程，比如ArduPilot Mega的固件开发工程
+1. 本指南用来说明如何将最近的ArduPilot Mega 固件开发工程设置为Eclipse CDT工程
+1. 提醒：这些操作都在Eclipse Kepler（4.3.0）版本上进行。
+&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;当前编译相关信息&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;基于make的编译系统支持在Windows，MacOS，Liunx平台进行APM编译&lt;/li&gt;
+&lt;li&gt;但是，你仍然可以使用安装的Arduino IDE进行，因为在编译过程中也使用到了它的工具链的一部分&lt;/li&gt;
+&lt;li&gt;位于ardupilot-mega工程文件顶层目录的文件README.txt记录了编译说明相关信息&lt;/li&gt;
+&lt;li&gt;在Readme.txt文件中关于使用Eclipse的编译说明仍然可以使用，但是相对复杂一些&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h3&gt;安装Eclipse和CDT组件&lt;/h3&gt;
+&lt;p&gt;如果你已经安装了Eclipse，但是没有安装CDT组件，那么你可以直接跳到下一部分内容。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载并安装最新版本的&lt;a href="http://java.com/en/download/index.jsp"&gt;Java Runtime Environment（Java运行时环境）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;对于C/C++开发者下载并安装最新版本的Eclipse IDE。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A.前往&lt;a href="http://www.eclipse.org/downloads/"&gt;下载页面&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;B.在“安装包选型”中点击“Eclipse IDE for C/C++ Developer”&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将下载的压缩包解压到你的桌面上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractEclipse1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractDesktop1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractToDesktop1.png" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果Eclipse不能正常运行并弹出“不能找到Java JDK or JRE”相关信息，请阅读&lt;strong&gt;问题排查&lt;/strong&gt;部分内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3&gt;在Eclipse安装程序中添加C开发工具&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;如果你按照上一部分的说明下载了Eclipse，那么你可以跳过该部分&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A.因为你安装的Eclipse中已经带有CDT组件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果你还没有加载C开发工具（或者还不能够正确加载）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A. 前往&lt;a href="http://www.eclipse.org/cdt/downloads.php"&gt;http://www.eclipse.org/cdt/downloads.php&lt;/a&gt;的&lt;strong&gt;CDT 8.2.0 for Eclipse Kepler&lt;/strong&gt;部分&lt;/p&gt;
+&lt;p&gt;B. 运行Eclipse 工程，选择&lt;strong&gt;Windows&lt;/strong&gt;下拉菜单中的&lt;strong&gt;参数（Preference）&lt;/strong&gt;选项&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/Eclipse-Preferences.png" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;单击参数窗口的&lt;strong&gt;Install/Unpdate&lt;/strong&gt;左侧小三角箭头，选择&lt;strong&gt;可用站点（Availabel Sorftware Sites）&lt;/strong&gt;，然后选择添加按钮&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A.在添加站点（&lt;strong&gt;Add Site&lt;/strong&gt;）窗口的&lt;strong&gt;Name&lt;/strong&gt;栏键入&lt;strong&gt;CDT&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;B.然后从CDT的下载页面复制URL链接&lt;strong&gt;http://download.eclipse.org/tools/cdt/releases/kepler&lt;/strong&gt;到&lt;strong&gt;Location&lt;/strong&gt;栏&lt;/p&gt;
+&lt;p&gt;C.在添加站点（&lt;strong&gt;Add Site&lt;/strong&gt;）窗口点击&lt;strong&gt;OK&lt;/strong&gt;，然后在&lt;strong&gt;参数（Preference）&lt;/strong&gt;窗口点击&lt;strong&gt;OK&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseLoadCDT.png" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;创建工作空间&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;运行Eclipse：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A.导航到桌面的Eclipse目录&lt;/p&gt;
+&lt;p&gt;B.双击eclipse.exe&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当Eclipse窗口打开：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A.选择&lt;strong&gt;Window&lt;/strong&gt;菜单项中的&lt;strong&gt;Preference&lt;/strong&gt;选项&lt;/p&gt;
+&lt;p&gt;B.在&lt;strong&gt;Preference&lt;/strong&gt;窗口点击&lt;strong&gt;C/C++&lt;/strong&gt;的左侧箭头，然后选择&lt;strong&gt;File Types&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;C.如果列表中没有“*.pde”条目，使用&lt;strong&gt;New&lt;/strong&gt;按钮打开&lt;strong&gt;C/C++文件类型&lt;/strong&gt;窗口&lt;/p&gt;
+&lt;p&gt;D.在&lt;strong&gt;Pattern&lt;/strong&gt;栏键入&lt;strong&gt;*.pde&lt;/strong&gt;，在&lt;strong&gt;Type&lt;/strong&gt;下拉选项中选择&lt;strong&gt;C++ Source File&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;E.在&lt;strong&gt;C/C++ File Type&lt;/strong&gt;窗口点击&lt;strong&gt;OK&lt;/strong&gt;，然后点击&lt;strong&gt;Preference&lt;/strong&gt;窗口的&lt;strong&gt;OK&lt;/strong&gt;按钮&lt;/p&gt;
+&lt;p&gt;F.这样就解决了Eclipse中pde文件与C++的关联&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipsePrefPDE.png" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eclipse的代码分析功能不能够正确的解析arduino的.pde文件。为了避免编辑arduino代码时出现上百个“undeclared（未声明）”和“unused（未使用）”错误信息，禁用代码解析带来的错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A.选择&lt;strong&gt;Window&lt;/strong&gt;菜单项中的&lt;strong&gt;Preference&lt;/strong&gt;选项&lt;/p&gt;
+&lt;p&gt;B.点击&lt;strong&gt;C/C++&lt;/strong&gt;选项卡左侧的小三角展开内容，选择&lt;strong&gt;Code Analysis&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;C.取消选中&lt;strong&gt;Syntax and Semantic Errors&lt;/strong&gt;，然后点击&lt;strong&gt;OK&lt;/strong&gt;按钮&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/UntitledEclipsePrefTurnOffErrors.png" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;创建Ardupilot Mega工程&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSelectExistCodeAsMake.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseImportArduPilot.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseOpenPerspectiveCC++.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseBuildSettings.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSetBuildTarget.png" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;编译ArduPilot工程&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h3&gt;可用插件&lt;/h3&gt;
+&lt;p&gt;1、&lt;strong&gt;AVR Eclipse 插件&lt;/strong&gt;可能在Eclipse中进行APM编程非常有用&lt;/p&gt;
+&lt;p&gt;A、 现在，它在窗口底部区域添加了一个AVR Device管理器，有助于找到AVR注册者的相关名称&lt;/p&gt;
+&lt;p&gt;2、&lt;strong&gt;EGit插件&lt;/strong&gt;能够在Eclipse进行版本控制，并允许你尽可能的在不脱离IDE的情况下对代码进行升级、比较和提交操作&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;问题排查&lt;/h3&gt;
+&lt;p&gt;1、当启动Eclipse时得到“不能找到Java JRE或者JDK”相关错误信息，你需要编辑Eclipse.ini配置文件，设置Java安装包的正确路径&lt;/p&gt;
+&lt;p&gt;2、定位到你的Java安装位置，可能位于：&lt;strong&gt;C:/program files/java/jdk1.7.0_07/bin/java&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3、用文本编辑器，如NotePad++，代开Eclipse.ini配置文件，添加Java安装路径到出现&lt;strong&gt;-vm&lt;/strong&gt;的下一行&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/JavaPathInEclipseIni.png" /&gt;&lt;/p&gt;
+&lt;p&gt;4、编辑完成后保存&lt;strong&gt;Eclipse.ini&lt;/strong&gt;文件，然后点击&lt;strong&gt;Eclipse.exe&lt;/strong&gt;重启Eclipse&lt;/p&gt;
+&lt;p&gt;5、（在完成编辑Eclipse.ini文件，启动Eclipse之前可能还需要重启电脑）&lt;/p&gt;
+&lt;hr /&gt;
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/editing-the-code-with-eclipse/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
@@ -1420,8 +1685,10 @@ SITL（software in the loop）仿真可以让你在没有任何硬件的情况�
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Wed, 15 Oct 2014 14:06:42 +0800</pubDate><guid>tag:liung.github.io,2014-10-15:blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows上SITL仿真设置</title><link>http://liung.github.io/blog/apm/2014-10-14-APM-Windows%E4%B8%8ASITL%E4%BB%BF%E7%9C%9F%E8%AE%BE%E7%BD%AE.html</link><description>&lt;h3&gt;简介&lt;/h3&gt;
-&lt;p&gt;SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。&lt;/p&gt;
-&lt;p&gt;本页面详细说明了如何在windows平台上设置SITL。文中使用的相关命令在装有&lt;strong&gt;VMware ver 5.0.2 build -1031769&lt;/strong&gt; 和 &lt;strong&gt;Ubuntu 12.10&lt;/strong&gt;的Windows8平台上测试通过。&lt;/p&gt;
+&lt;p&gt;
+SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。&lt;/p&gt;
+&lt;p&gt;本页面详细说明了如何在windows平台上设置SITL。文中使用的相关命令在装有&lt;strong&gt;VMware ver 5.0.2 build -1031769&lt;/strong&gt; 和 &lt;strong&gt;Ubuntu 12.10&lt;/strong&gt;的Windows8平台上测试通过。
+&lt;/p&gt;
 &lt;p&gt;需要注意的是：在完成本页面操作请先将&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html"&gt;Ardupilot代码&lt;/a&gt;下载到你的电脑上，并且可以使用&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html"&gt;arduino&lt;/a&gt;或者&lt;a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html"&gt;Make方法&lt;/a&gt;编译。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/12/Ubuntu_SITL_running_Copter.png" /&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -2743,6 +3010,8 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 
 &lt;p&gt;这样，新添加的参数将以&lt;code&gt;_my_new_lib_parameter&lt;/code&gt;包含在库中。需要指明的是：&lt;code&gt;protected&lt;/code&gt;保护类型的参数是不能够在类外被访问的。如果我们将其变为&lt;code&gt;public&lt;/code&gt;类型，那么我们就可以在主代码中使用&lt;code&gt;compass._my_new_lib_parameter&lt;/code&gt;参数了。&lt;/p&gt;
 &lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Step #3&lt;/strong&gt;：如果在代码中添加的是一个完整的新类（相对于已经存在的类，如&lt;code&gt;AP_Compass&lt;/code&gt;），那么应该在&lt;code&gt;Parameters.pde&lt;/code&gt;文件主要载具的变量信息var_info表中添加该类的相关信息（变量表中的顺序并不重要）。如下面代码块红色部分的Compass类。&lt;/p&gt;
+&lt;hr /&gt;
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-parameter/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
@@ -2988,7 +3257,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html"&gt;Linux平台上用Make方法编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html"&gt;Linux平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html"&gt;采用Make方法编译APM2.x（Win，Mac，Linux）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-with-eclipse/"&gt;使用Eclipse编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-with-eclipse/"&gt;使用Eclipse进行ArduPilot Mega 开发 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-ardupilot-apm-with-visual-studio-visual-micro/"&gt;使用Atmel Studio或者Visual Studio编译APM *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html"&gt;使用Visual Studio编译Mission Planner&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-for-beaglebone-black-on-linux/"&gt;Linux上针对BeagleBone Black的编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -3021,9 +3290,9 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/gps_guide/"&gt;GPS指导 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/gps_input/"&gt;GPS输入 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/gps_input_raw/"&gt;GPS原始输入 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/combo_2/"&gt;组合方式2 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/combo_3/"&gt;组合方式3 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/combo_4/"&gt;组合方式4 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo2.html"&gt;组合方式2&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo3.html"&gt;组合方式3&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html"&gt;组合方式4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/common-editor-information-resource/"&gt;APM官网的网站编辑器信息资源 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/editor-notes/"&gt;编辑器须知 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/graphics-resource-page/"&gt;图片资源页面 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
