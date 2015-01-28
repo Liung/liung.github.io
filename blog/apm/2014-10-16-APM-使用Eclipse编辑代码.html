@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>APM-使用Eclipse编辑Pixhawk代码</title>
+  <title>APM-使用Eclipse进行ArduPilot Mega开发</title>
   <meta name="author" content="liung">
 
 
@@ -1728,19 +1728,22 @@ init_mathjax();
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">APM-使用Eclipse编辑Pixhawk代码</h1>
+      <h1 class="entry-title">APM-使用Eclipse进行ArduPilot Mega开发</h1>
       <p class="meta"><time datetime="2014-10-16T13:54:19" pubdate>10月 16, 2014</time></p>
 </header>
 
-  <div class="entry-content"><hr />
-<h3>综述</h3>
-<p>
-1. Eclipse是一款精致地多语言集成开发平台
-1. Eclipse CDT（C++开发工具）实现了支持在Eclipse平台进行C/C++开发
-1. Eclipse CDT工具可以帮助管理与组织大型C++工程，比如ArduPilot Mega的固件开发工程
-1. 本指南用来说明如何将最近的ArduPilot Mega 固件开发工程设置为Eclipse CDT工程
-1. 提醒：这些操作都在Eclipse Kepler（4.3.0）版本上进行。
-</p>
+  <div class="entry-content"><h3>综述</h3>
+
+
+<ol>
+<li>Eclipse是一款精致地多语言集成开发平台</li>
+<li>Eclipse CDT（C++开发工具）实现了支持在Eclipse平台进行C/C++开发</li>
+<li>Eclipse CDT工具可以帮助管理与组织大型C++工程，比如ArduPilot Mega的固件开发工程</li>
+<li>本指南用来说明如何将最近的ArduPilot Mega 固件开发工程设置为Eclipse CDT工程</li>
+<li>提醒：这些操作都在Eclipse Kepler（4.3.0）版本上进行。</li>
+</ol>
+
+
 <hr />
 <h3>当前编译相关信息</h3>
 <ol>
@@ -1761,9 +1764,9 @@ init_mathjax();
 <ul>
 <li>将下载的压缩包解压到你的桌面上。</li>
 </ul>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractEclipse1.png" /></p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractDesktop1.png" /></p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractToDesktop1.png" /></p>
+<p><img alt="1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractEclipse1.png" /></p>
+<p><img alt="2" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractDesktop1.png" /></p>
+<p><img alt="3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/ExtractToDesktop1.png" /></p>
 <ul>
 <li>如果Eclipse不能正常运行并弹出“不能找到Java JDK or JRE”相关信息，请阅读<strong>问题排查</strong>部分内容</li>
 </ul>
@@ -1778,14 +1781,14 @@ init_mathjax();
 </ul>
 <p>A. 前往<a href="http://www.eclipse.org/cdt/downloads.php">http://www.eclipse.org/cdt/downloads.php</a>的<strong>CDT 8.2.0 for Eclipse Kepler</strong>部分</p>
 <p>B. 运行Eclipse 工程，选择<strong>Windows</strong>下拉菜单中的<strong>参数（Preference）</strong>选项</p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/Eclipse-Preferences.png" /></p>
+<p><img alt="4" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/Eclipse-Preferences.png" /></p>
 <ul>
 <li>单击参数窗口的<strong>Install/Unpdate</strong>左侧小三角箭头，选择<strong>可用站点（Availabel Sorftware Sites）</strong>，然后选择添加按钮</li>
 </ul>
 <p>A.在添加站点（<strong>Add Site</strong>）窗口的<strong>Name</strong>栏键入<strong>CDT</strong></p>
 <p>B.然后从CDT的下载页面复制URL链接<strong>http://download.eclipse.org/tools/cdt/releases/kepler</strong>到<strong>Location</strong>栏</p>
 <p>C.在添加站点（<strong>Add Site</strong>）窗口点击<strong>OK</strong>，然后在<strong>参数（Preference）</strong>窗口点击<strong>OK</strong></p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseLoadCDT.png" /></p>
+<p><img alt="5" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseLoadCDT.png" /></p>
 <hr />
 <h3>创建工作空间</h3>
 <ul>
@@ -1802,21 +1805,21 @@ init_mathjax();
 <p>D.在<strong>Pattern</strong>栏键入<strong>*.pde</strong>，在<strong>Type</strong>下拉选项中选择<strong>C++ Source File</strong></p>
 <p>E.在<strong>C/C++ File Type</strong>窗口点击<strong>OK</strong>，然后点击<strong>Preference</strong>窗口的<strong>OK</strong>按钮</p>
 <p>F.这样就解决了Eclipse中pde文件与C++的关联</p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipsePrefPDE.png" /></p>
+<p><img alt="6" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipsePrefPDE.png" /></p>
 <ul>
 <li>Eclipse的代码分析功能不能够正确的解析arduino的.pde文件。为了避免编辑arduino代码时出现上百个“undeclared（未声明）”和“unused（未使用）”错误信息，禁用代码解析带来的错误</li>
 </ul>
 <p>A.选择<strong>Window</strong>菜单项中的<strong>Preference</strong>选项</p>
 <p>B.点击<strong>C/C++</strong>选项卡左侧的小三角展开内容，选择<strong>Code Analysis</strong></p>
 <p>C.取消选中<strong>Syntax and Semantic Errors</strong>，然后点击<strong>OK</strong>按钮</p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/UntitledEclipsePrefTurnOffErrors.png" /></p>
+<p><img alt="7" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/UntitledEclipsePrefTurnOffErrors.png" /></p>
 <hr />
 <h3>创建Ardupilot Mega工程</h3>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSelectExistCodeAsMake.png" /></p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseImportArduPilot.png" /></p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseOpenPerspectiveCC++.png" /></p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseBuildSettings.png" /></p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSetBuildTarget.png" /></p>
+<p><img alt="8" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSelectExistCodeAsMake.png" /></p>
+<p><img alt="9" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseImportArduPilot.png" /></p>
+<p><img alt="10" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseOpenPerspectiveCC++.png" /></p>
+<p><img alt="11" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseBuildSettings.png" /></p>
+<p><img alt="12" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSetBuildTarget.png" /></p>
 <hr />
 <h3>编译ArduPilot工程</h3>
 <hr />
@@ -1829,7 +1832,7 @@ init_mathjax();
 <p>1、当启动Eclipse时得到“不能找到Java JRE或者JDK”相关错误信息，你需要编辑Eclipse.ini配置文件，设置Java安装包的正确路径</p>
 <p>2、定位到你的Java安装位置，可能位于：<strong>C:/program files/java/jdk1.7.0_07/bin/java</strong></p>
 <p>3、用文本编辑器，如NotePad++，代开Eclipse.ini配置文件，添加Java安装路径到出现<strong>-vm</strong>的下一行</p>
-<p><img alt="" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/JavaPathInEclipseIni.png" /></p>
+<p><img alt="13" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/JavaPathInEclipseIni.png" /></p>
 <p>4、编辑完成后保存<strong>Eclipse.ini</strong>文件，然后点击<strong>Eclipse.exe</strong>重启Eclipse</p>
 <p>5、（在完成编辑Eclipse.ini文件，启动Eclipse之前可能还需要重启电脑）</p>
 <hr />
@@ -1947,7 +1950,7 @@ init_mathjax();
 	  var disqus_shortname = 'liunggithubio-aerodynamic';
           var disqus_identifier = '/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html';
           var disqus_url = 'http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html';
-          var disqus_title = 'APM-使用Eclipse编辑Pixhawk代码';
+          var disqus_title = 'APM-使用Eclipse进行ArduPilot Mega开发';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
