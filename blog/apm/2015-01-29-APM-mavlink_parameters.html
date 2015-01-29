@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-MAVLink参数集</title>
-  <meta name="author" content="Liung">
+  <meta name="author" content="liung">
 
 
     
@@ -1689,12 +1689,12 @@ init_mathjax();
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="../../favicon.png" rel="icon">
-  <link href="../../theme/css/main.css" media="screen, projection"
+  <link href="http://liung.github.io/favicon.png" rel="icon">
+  <link href="http://liung.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
-  <script src="../../theme/js/modernizr-2.0.js"></script>
-  <script src="../../theme/js/ender.js"></script>
-  <script src="../../theme/js/octopress.js" type="text/javascript"></script>
+  <script src="http://liung.github.io/theme/js/modernizr-2.0.js"></script>
+  <script src="http://liung.github.io/theme/js/ender.js"></script>
+  <script src="http://liung.github.io/theme/js/octopress.js" type="text/javascript"></script>
 
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
@@ -1704,8 +1704,8 @@ init_mathjax();
 
 <body>
   <header role="banner"><hgroup>
-  <h1><a href="../../">Liung</a></h1>
-    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
+  <h1><a href="http://liung.github.io/">折返的Liung</a></h1>
+    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1713,7 +1713,7 @@ init_mathjax();
 
 <form action="//google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:../.." />
+    <input type="hidden" name="q" value="site:liung.github.io" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -1721,7 +1721,7 @@ init_mathjax();
 <ul class="main-navigation">
     <li><a href="/archives.html">目  录</a></li>
     <li><a href="http://liung.github.io">主  页</a></li>
-      <li><a href="../../pages/aboutme.html">Me</a></li>
+      <li><a href="http://liung.github.io/pages/aboutme.html">Me</a></li>
 </ul></nav>
   <div id="main">
     <div id="content">
@@ -1729,7 +1729,7 @@ init_mathjax();
   <article class="hentry" role="article">
 <header>
       <h1 class="entry-title">APM-MAVLink参数集</h1>
-      <p class="meta"><time datetime="2015-01-29T17:45:52+08:00" pubdate>1月 29, 2015</time></p>
+      <p class="meta"><time datetime="2015-01-29T17:45:52" pubdate>1月 29, 2015</time></p>
 </header>
 
   <div class="entry-content">
@@ -1752,36 +1752,36 @@ init_mathjax();
 <tbody>
 <tr>
 <td align="left">MAH</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center"></td>
-<td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="left"></td>
 </tr>
 <tr>
 <td align="left">CURRENT_ENABLE</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center"></td>
-<td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="left"></td>
 </tr>
 <tr>
 <td align="left">AOA</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center"></td>
-<td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="left"></td>
 </tr>
 <tr>
 <td align="left">MAG_ENABLE</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center"></td>
-<td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="left"></td>
@@ -2160,9 +2160,9 @@ init_mathjax();
 <td align="center">0</td>
 <td align="center">0</td>
 <td align="center">1</td>
-<td align="center">THROTTLE_FAILSAFE - The throttle failsafe allows you to configure a software failsafe activated by a setting on the throttle input channel (channel 3). This can be used to achieve a failsafe override on loss of radio control without having to sacrifice one of your FLIGHT_MODE settings as the throttle failsafe overrides the switch-selected mode. Throttle failsafe is enabled by setting THROTTLE_FAILSAFE to 1.</td>
 <td align="center"></td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">THROTTLE_FAILSAFE - The throttle failsafe allows you to configure a software failsafe activated by a setting on the throttle input channel (channel 3). This can be used to achieve a failsafe override on loss of radio control without having to sacrifice one of your FLIGHT_MODE settings as the throttle failsafe overrides the switch-selected mode. Throttle failsafe is enabled by setting THROTTLE_FAILSAFE to 1.</td>
 </tr>
 <tr>
 <td align="left">THR_FS_ACTION</td>
@@ -2170,8 +2170,8 @@ init_mathjax();
 <td align="center">2</td>
 <td align="center">1</td>
 <td align="center">1</td>
-<td align="center">THROTTLE_FAILSAFE_ACTION - The FAILSAFE_ACTION setting determines what APM will do when throttle failsafe mode is entered while flying in AUTO mode. This is important in order to avoid accidental failsafe behaviour when flying waypoints that take the aircraft temporarily out of radio range. If FAILSAFE_ACTION is 1 when failsafe is entered in AUTO or LOITER modes the aircraft will head for home in RTL mode. If the throttle channel moves back up it will return to AUTO or LOITER mode. The default behavior is to ignore throttle failsafe in AUTO and LOITER modes.</td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">THROTTLE_FAILSAFE_ACTION - The FAILSAFE_ACTION setting determines what APM will do when throttle failsafe mode is entered while flying in AUTO mode. This is important in order to avoid accidental failsafe behaviour when flying waypoints that take the aircraft temporarily out of radio range. If FAILSAFE_ACTION is 1 when failsafe is entered in AUTO or LOITER modes the aircraft will head for home in RTL mode. If the throttle channel moves back up it will return to AUTO or LOITER mode. The default behavior is to ignore throttle failsafe in AUTO and LOITER modes.</td>
 </tr>
 <tr>
 <td align="left">TRIM_THROTTLE</td>
@@ -2206,8 +2206,8 @@ init_mathjax();
 <td align="center">14</td>
 <td align="center">11</td>
 <td align="center">1</td>
-<td align="center">"FLIGHT_MODE_1 - The following standard flight modes are available: MANUAL = Full manual control via the hardware multiplexer. STABILIZE = Tries to maintain level flight but can be overridden with radio control inputs. FLY_BY_WIRE_A = Autopilot style control via user input with manual throttle. FLY_BY_WIRE_B = Autopilot style control via user input</td>
-<td align="left">aispeed controlled with throttle. RTL = Returns to the Home location and then LOITERs at a safe altitude. AUTO = Autonomous flight based on programmed waypoints."</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_1 - The following standard flight modes are available: MANUAL = Full manual control via the hardware multiplexer. STABILIZE = Tries to maintain level flight but can be overridden with radio control inputs. FLY_BY_WIRE_A = Autopilot style control via user input with manual throttle. FLY_BY_WIRE_B = Autopilot style control via user input</td>
 </tr>
 <tr>
 <td align="left">FLIGHT_MODE_2</td>
@@ -2215,8 +2215,8 @@ init_mathjax();
 <td align="center">14</td>
 <td align="center">11</td>
 <td align="center">1</td>
-<td align="center">FLIGHT_MODE_2</td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_2</td>
 </tr>
 <tr>
 <td align="left">FLIGHT_MODE_3</td>
@@ -2224,8 +2224,8 @@ init_mathjax();
 <td align="center">14</td>
 <td align="center">5</td>
 <td align="center">1</td>
-<td align="center">FLIGHT_MODE_3</td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_3</td>
 </tr>
 <tr>
 <td align="left">FLIGHT_MODE_4</td>
@@ -2233,8 +2233,8 @@ init_mathjax();
 <td align="center">14</td>
 <td align="center">5</td>
 <td align="center">1</td>
-<td align="center">FLIGHT_MODE_4</td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_4</td>
 </tr>
 <tr>
 <td align="left">FLIGHT_MODE_5</td>
@@ -2242,8 +2242,8 @@ init_mathjax();
 <td align="center">14</td>
 <td align="center">0</td>
 <td align="center">1</td>
-<td align="center">FLIGHT_MODE_5</td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_5</td>
 </tr>
 <tr>
 <td align="left">FLIGHT_MODE_6</td>
@@ -2251,8 +2251,8 @@ init_mathjax();
 <td align="center">14</td>
 <td align="center">0</td>
 <td align="center">1</td>
-<td align="center">FLIGHT_MODE_6</td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_6</td>
 </tr>
 <tr>
 <td align="left">RC1_MIN</td>
@@ -2484,99 +2484,99 @@ init_mathjax();
 <td align="center">0</td>
 <td align="center">0</td>
 <td align="center">0</td>
-<td align="center">IMU_OFFSET_0 - IMU Calibration</td>
 <td align="center"></td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_0 - IMU Calibration</td>
 </tr>
 <tr>
 <td align="left">IMU_OFFSET_1</td>
 <td align="center">0</td>
 <td align="center">0</td>
 <td align="center">0</td>
-<td align="center">IMU_OFFSET_1 - IMU Calibration</td>
 <td align="center"></td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_1 - IMU Calibration</td>
 </tr>
 <tr>
 <td align="left">IMU_OFFSET_2</td>
 <td align="center">0</td>
 <td align="center">0</td>
 <td align="center">0</td>
-<td align="center">IMU_OFFSET_2 - IMU Calibration</td>
 <td align="center"></td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_2 - IMU Calibration</td>
 </tr>
 <tr>
 <td align="left">IMU_OFFSET_3</td>
 <td align="center">0</td>
 <td align="center">0</td>
 <td align="center">0</td>
-<td align="center">IMU_OFFSET_3 - IMU Calibration</td>
 <td align="center"></td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_3 - IMU Calibration</td>
 </tr>
 <tr>
 <td align="left">IMU_OFFSET_4</td>
 <td align="center">0</td>
 <td align="center">0</td>
 <td align="center">0</td>
-<td align="center">IMU_OFFSET_4 - IMU Calibration</td>
 <td align="center"></td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_4 - IMU Calibration</td>
 </tr>
 <tr>
 <td align="left">IMU_OFFSET_5</td>
 <td align="center">0</td>
 <td align="center">0</td>
 <td align="center">0</td>
-<td align="center">IMU_OFFSET_5 - IMU Calibration</td>
 <td align="center"></td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_5 - IMU Calibration</td>
 </tr>
 <tr>
 <td align="left">YAW_MODE</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center">YAW_MODE</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">YAW_MODE</td>
 </tr>
 <tr>
 <td align="left">WP_MODE</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center">WP_MODE</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">WP_MODE</td>
 </tr>
 <tr>
 <td align="left">WP_TOTAL</td>
 <td align="center">0</td>
 <td align="center">255</td>
-<td align="center">0</td>
-<td align="center">WP_TOTAL</td>
 <td align="center"></td>
-<td align="left"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="left">WP_TOTAL</td>
 </tr>
 <tr>
 <td align="left">WP_INDEX</td>
 <td align="center">0</td>
 <td align="center">255</td>
-<td align="center">0</td>
-<td align="center">WP_INDEX</td>
 <td align="center"></td>
-<td align="left"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="left">WP_INDEX</td>
 </tr>
 <tr>
 <td align="left">CONFIG</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">CONFIG_OPTIONS</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">CONFIG_OPTIONS</td>
 </tr>
 <tr>
 <td align="left">SWITCH_ENABLE</td>
@@ -2589,12 +2589,12 @@ init_mathjax();
 </tr>
 <tr>
 <td align="left">FIRMWARE_VER</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center">FIRMWARE_VER</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">FIRMWARE_VER</td>
 </tr>
 <tr>
 <td align="left">LOG_BITMASK</td>
@@ -2643,21 +2643,21 @@ init_mathjax();
 </tr>
 <tr>
 <td align="left">AP_OFFSET</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center">AP_OFFSET</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">AP_OFFSET</td>
 </tr>
 <tr>
 <td align="left">TRIM_PITCH_CD</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center">TRIM_PITCH_CD</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">TRIM_PITCH_CD</td>
 </tr>
 <tr>
 <td align="left">ALT_HOLD_RTL</td>
@@ -2742,12 +2742,12 @@ init_mathjax();
 </tr>
 <tr>
 <td align="left">GND_ABS_PRESS</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center">GND_ABS_PRESS</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">GND_ABS_PRESS</td>
 </tr>
 <tr>
 <td align="left">COMPASS_DEC</td>
@@ -2755,8 +2755,8 @@ init_mathjax();
 <td align="center">1.57075</td>
 <td align="center">0</td>
 <td align="center">1</td>
-<td align="center">COMPASS_DEC - Compass Declination</td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="left">COMPASS_DEC - Compass Declination</td>
 </tr>
 <tr>
 <td align="left">SR0_EXT_STAT</td>
@@ -2985,264 +2985,264 @@ init_mathjax();
 </tr>
 <tr>
 <td align="left">AOA</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center"></td>
-<td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="left"></td>
 </tr>
 <tr>
 <td align="left">ACR_PIT_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_PIT_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_PIT_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_PIT_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_RLL_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_RLL_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_RLL_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_RLL_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_YAW_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_YAW_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_YAW_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ACR_YAW_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ESC</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">ESC_CALIBRATE_MODE</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">ESC_CALIBRATE_MODE</td>
 </tr>
 <tr>
 <td align="left">FRAME</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">FRAME_ORIENTATION</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">FRAME_ORIENTATION</td>
 </tr>
 <tr>
 <td align="left">LOITER_RADIUS</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_LAT_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_LAT_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_LAT_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_LAT_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_LON_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_LON_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_LON_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_LON_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_WP_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_WP_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_WP_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">NAV_WP_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">PITCH_MAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">SONAR_ENABLE</td>
@@ -3255,228 +3255,228 @@ init_mathjax();
 </tr>
 <tr>
 <td align="left">STB_PIT_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_PIT_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_PIT_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_PIT_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_RLL_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_RLL_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_RLL_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_RLL_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_YAW_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_YAW_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_YAW_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">STB_YAW_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">THR_BAR_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">THR_BAR_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">THR_BAR_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">THR_BAR_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soo</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soo</td>
 </tr>
 <tr>
 <td align="left">THR_SON_D</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">THR_SON_I</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">THR_SON_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">THR_SON_P</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">WP_MODE</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">WP_MUST_INDEX</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">XTRACK_ANGLE</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">XTRK_GAIN</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">1</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ARSPD_OFFSET</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">ELEVON_CH1_REV</td>
@@ -3597,21 +3597,21 @@ init_mathjax();
 </tr>
 <tr>
 <td align="left">SYSID_SW_MREV</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">SYSID_SW_TYPE</td>
+<td align="center"></td>
+<td align="center"></td>
 <td align="center">0</td>
-<td align="center">Description coming soon</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
-<td align="left"></td>
+<td align="left">Description coming soon</td>
 </tr>
 <tr>
 <td align="left">THR_SLEWRATE</td>
@@ -3628,8 +3628,8 @@ init_mathjax();
 <td align="center">20</td>
 <td align="center">1</td>
 <td align="center">1</td>
-<td align="center">"FLIGHT_MODE_1 - Mode switch setting 1 - APM: 0 = Manual</td>
-<td align="left">2 = Stabilize</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_1 - Mode switch setting 1 - APM: 0 = Manual</td>
 </tr>
 <tr>
 <td align="left">FLTMODE2</td>
@@ -3637,8 +3637,8 @@ init_mathjax();
 <td align="center">20</td>
 <td align="center">1</td>
 <td align="center">1</td>
-<td align="center">"FLIGHT_MODE_2 - Mode switch setting 2 - APM: 0 = Manual</td>
-<td align="left">2 = Stabilize</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_2 - Mode switch setting 2 - APM: 0 = Manual</td>
 </tr>
 <tr>
 <td align="left">FLTMODE3</td>
@@ -3646,8 +3646,8 @@ init_mathjax();
 <td align="center">20</td>
 <td align="center">1</td>
 <td align="center">1</td>
-<td align="center">"FLIGHT_MODE_3 - Mode switch setting 3 - APM: 0 = Manual</td>
-<td align="left">2 = Stabilize</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_3 - Mode switch setting 3 - APM: 0 = Manual</td>
 </tr>
 <tr>
 <td align="left">FLTMODE4</td>
@@ -3655,8 +3655,8 @@ init_mathjax();
 <td align="center">20</td>
 <td align="center">1</td>
 <td align="center">1</td>
-<td align="center">"FLIGHT_MODE_4 - Mode switch setting 4 - APM: 0 = Manual</td>
-<td align="left">2 = Stabilize</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_4 - Mode switch setting 4 - APM: 0 = Manual</td>
 </tr>
 <tr>
 <td align="left">FLTMODE5</td>
@@ -3664,8 +3664,8 @@ init_mathjax();
 <td align="center">20</td>
 <td align="center">1</td>
 <td align="center">1</td>
-<td align="center">"FLIGHT_MODE_5 - Mode switch setting 5 - APM: 0 = Manual</td>
-<td align="left">2 = Stabilize</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_5 - Mode switch setting 5 - APM: 0 = Manual</td>
 </tr>
 <tr>
 <td align="left">FLTMODE6</td>
@@ -3673,8 +3673,8 @@ init_mathjax();
 <td align="center">20</td>
 <td align="center">1</td>
 <td align="center">1</td>
-<td align="center">"FLIGHT_MODE_6 - Mode switch setting 6 - APM: 0 = Manual</td>
-<td align="left">2 = Stabilize</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_6 - Mode switch setting 6 - APM: 0 = Manual</td>
 </tr>
 </tbody>
 </table>
@@ -3682,21 +3682,19 @@ init_mathjax();
 <h4>链接</h4>
 <ol>
 <li><a href="http://dev.ardupilot.com/wiki/mavlink-parameters/">APM官网原文链接</a></li>
-<li><a href="../../blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
 </ol>
 <p><em>(over)</em></p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liung</span>
+    Posted by <span class="fn">liung</span>
   </span>
-<time datetime="2015-01-29T17:45:52+08:00" pubdate>1月 29, 2015</time>  <span class="categories">
-    <a class="category" href="../../tag/apm.html">APM</a>
-    <a class="category" href="../../tag/mavlink.html">MAVLink</a>
+<time datetime="2015-01-29T17:45:52" pubdate>1月 29, 2015</time>  <span class="categories">
+    <a class="category" href="http://liung.github.io/tag/apm.html">APM</a>
+    <a class="category" href="http://liung.github.io/tag/mavlink.html">MAVLink</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2015-01-29-APM-mavlink_parameters.html" data-via="Liung_" data-counturl="../../blog/apm/2015-01-29-APM-mavlink_parameters.html" >Tweet</a>
-  <div class="g-plusone" data-size="medium"></div>
 </div>    </footer>
   </article>
 
@@ -3707,25 +3705,25 @@ init_mathjax();
 </div>
 <aside class="sidebar">
   <section>
-	  <img src="../../images/author_photo.jpg" alt="Liung" width="300"/> 
+	  <img src="http://liung.github.io/images/author_photo.jpg" alt="Liung" width="300"/> 
   </section>
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="../../blog/apm/2015-04-01-APM-MissionPlanner的仿真界面.html">MissionPlanner-仿真界面分析</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-mavlink_parameters.html">APM-MAVLink参数集</a>
       </li>
       <li class="post">
-          <a href="../../blog/qi-dong/2015-03-24-由压力系数计算升力系数.html">升力系数的计算</a>
+          <a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
       </li>
       <li class="post">
-          <a href="../../blog/apm/2015-02-03-APM-使用Git和GitHub进行APM代码管理.html">APM-使用Git和GitHub进行APM代码管理</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS_input_raw.html">APM-GPS原始输出</a>
       </li>
       <li class="post">
-          <a href="../../blog/apm/2015-02-01-APM-加载代码到APM2.x.html">APM-加载代码到APM2.x</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS-Guide.html">APM-GPS指南</a>
       </li>
       <li class="post">
-          <a href="../../blog/apm/2015-01-29-APM-mavlink_commands.html">APM-MAVLink命令集</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html">APM-Combo4</a>
       </li>
     </ul>
   </section>
@@ -3733,55 +3731,44 @@ init_mathjax();
       
     <h1>Categories</h1>
     <ul id="recent_posts">
-        <li><a href="../../category/apm/index.html">APM</a></li>
-        <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/python/index.html">Python</a></li>
-        <li><a href="../../category/qi-dong/index.html">气动</a></li>
-        <li><a href="../../category/qi-ta/index.html">其它</a></li>
+        <li><a href="http://liung.github.io/category/apm/index.html">APM</a></li>
+        <li><a href="http://liung.github.io/category/fei-xing-qi/index.html">飞行器</a></li>
+        <li><a href="http://liung.github.io/category/python/index.html">Python</a></li>
+        <li><a href="http://liung.github.io/category/qi-dong/index.html">气动</a></li>
+        <li><a href="http://liung.github.io/category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/python.html">python</a>  </section>
+    <a href="http://liung.github.io/tag/c.html">C++</a>,    <a href="http://liung.github.io/tag/git.html">Git</a>,    <a href="http://liung.github.io/tag/python.html">python</a>,    <a href="http://liung.github.io/tag/mission-planner.html">Mission Planner</a>,    <a href="http://liung.github.io/tag/qi-dong.html">气动</a>,    <a href="http://liung.github.io/tag/bo-ke.html">博客</a>,    <a href="http://liung.github.io/tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="http://liung.github.io/tag/mavlink.html">MAVLink</a>,    <a href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>,    <a href="http://liung.github.io/tag/apm.html">APM</a>,    <a href="http://liung.github.io/tag/ipython.html">ipython</a>,    <a href="http://liung.github.io/tag/ying-jian.html">硬件</a>,    <a href="http://liung.github.io/tag/numpy.html">Numpy</a>,    <a href="http://liung.github.io/tag/pandas.html">pandas</a>,    <a href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
     <section>
         <h1>Blogroll</h1>
         <ul>
-            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+            <li><a href="http://google.com/" target="_blank">Google</a></li>
             <li><a href="http://python.org/" target="_blank">Python.org</a></li>
-            <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
         </ul>
     </section>
 
-<section>
-    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
-</section>
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/117788376468366009129?rel=author">
-      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liung -
+    Copyright &copy;  2012-2015  - liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个爱折腾的实用主义者</a></span>
+  <span class="credit">一个执拗的完美主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -3804,7 +3791,7 @@ init_mathjax();
 	<script type="text/javascript">
 	  var disqus_shortname = 'liunggithubio-aerodynamic';
           var disqus_identifier = '/blog/apm/2015-01-29-APM-mavlink_parameters.html';
-          var disqus_url = '../../blog/apm/2015-01-29-APM-mavlink_parameters.html';
+          var disqus_url = 'http://liung.github.io/blog/apm/2015-01-29-APM-mavlink_parameters.html';
           var disqus_title = 'APM-MAVLink参数集';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -3812,21 +3799,5 @@ init_mathjax();
 	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	   })();
 	</script>
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 </body>
 </html>
