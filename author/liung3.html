@@ -1729,6 +1729,54 @@ init_mathjax();
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">APM-编译代码</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-06T14:03:34" pubdate>9月 06, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+
+<p>下面这些页面的链接，将提供给你更多关于如何编译APM2.x和PX4的飞行器控制和地面站源码的信息。</p>
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-05T14:41:58" pubdate>9月 05, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
+<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真)页面</a>有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行。
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-05T12:08:26" pubdate>9月 05, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+
+<p>添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
       </h1>
       <p class="meta"><time datetime="2014-09-05T11:01:10" pubdate>9月 05, 2014</time></p>
@@ -1843,22 +1891,6 @@ init_mathjax();
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-29T13:08:10" pubdate>8月 29, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&gt;
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/qi-ta/home.html">测试，这是我的第一个博客网站</a>
       </h1>
       <p class="meta"><time datetime="2014-08-29T00:00:00" pubdate>8月 29, 2014</time></p>
@@ -1917,19 +1949,19 @@ Tag: other</p>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS_input_raw.html">APM-GPS原始输出</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS-Guide.html">APM-GPS指南</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html">APM-Combo4</a>
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo3.html">APM-Combo3</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo2.html">APM-Combo2</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/2015-01-27-web_site_about_aircraft.html">飞行器相关站点</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">APM-使用Visual Studio编译Mission Planner</a>
       </li>
     </ul>
   </section>

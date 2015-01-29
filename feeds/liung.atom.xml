@@ -1,5 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2015-01-28T14:36:02+08:00</updated><entry><title>APM-Combo4</title><link href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html" rel="alternate"></link><updated>2015-01-28T14:36:02+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-28:blog/apm/2015-01-28-APM-Combo4.html</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>折返的Liung</title><link href="http://liung.github.io/" rel="alternate"></link><link href="http://liung.github.io/feeds%5Cliung.atom.xml" rel="self"></link><id>http://liung.github.io/</id><updated>2015-01-29T17:17:54+08:00</updated><entry><title>APM开发人员参考手册目录列表</title><link href="http://liung.github.io/blog/apm/2014-08-29-APM-%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%E7%9B%AE%E5%BD%95%E5%88%97%E8%A1%A8.html" rel="alternate"></link><updated>2015-01-29T17:17:54+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-29:blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html</id><summary type="html">
+
+&lt;p&gt;从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&amp;gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;由于本人已经加入到APM中文网翻译组，所以关于该目录中的相关翻译内容可以在&lt;a href="http://ardupilot.cn"&gt;APM中文网&lt;/a&gt;的开发者页面找到，不过在本博客中某些内容的翻译加入了博主的理解，与官方翻译各有特点。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;下文中的条目如果我已经翻译完成，那么我将链接到对应的博客目录中去，如果还没有翻译，那么将默认连接到原官网的链接,且用*标示出来。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/table-of-contents/"&gt;英文目录&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.cn/"&gt;介  绍&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html"&gt;获取代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html"&gt;ArduCopter源码预览&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html"&gt;代码库介绍&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html"&gt;添加新的参数&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html"&gt;添加新的飞行模式&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html"&gt;规划新代码使之按一定频率运行&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html"&gt;增加新的MAVLink通讯协议消息&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html"&gt;编译代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html"&gt;Windows平台上用Arduino编译ArduPilot&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html"&gt;Windows平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html"&gt;MacOS平台上用Arduino编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html"&gt;MacOS平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html"&gt;Linux平台上用Make方法编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html"&gt;Linux平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html"&gt;采用Make方法编译APM2.x（Win，Mac，Linux）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html"&gt;使用Eclipse进行ArduPilot Mega 开发&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-ardupilot-apm-with-visual-studio-visual-micro/"&gt;使用Atmel Studio或者Visual Studio编译APM *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html"&gt;使用Visual Studio编译Mission Planner&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-for-beaglebone-black-on-linux/"&gt;Linux上针对BeagleBone Black的编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-apm-for-flymaple/"&gt;Linux上针对Flymaple的APM编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/load-the-code-onto-apm2x/"&gt;加载代码到APM2.x *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html"&gt;编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html"&gt;使用Eclipse编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html"&gt;使用Atmel Studio 或者微软的Visual Studio编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/git_github_guide/"&gt;Git和Github操作指南 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html"&gt;模拟仿真&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html"&gt;Windows上设置SITL（Sorftware In The Loop，软件循环仿真）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html"&gt;Linux上设置SITL（Sorftware In The Loop，软件循环仿真）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html"&gt;日志回放测试&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/debugging-with-gdb/"&gt;GDB调试 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/submitting-patches-back-to-master/"&gt;提交补丁（patches）到git仓库（master） *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/raspberry-pi-via-mavlink/"&gt;通过MAVLink协议和树莓派（Raspberry Pi）通信 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/odroid-via-mavlink/"&gt;通过MAVLink协议和Odroid通信 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html"&gt;Windows7上的MAVProxy使用&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmpilot_project_developer_information/"&gt;APMPilot开发信息 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/guidelines-for-contributors-to-the-apm-codebase/"&gt;面向新开发人员向APM代码库添加代码的一些指导 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/interfacing-with-apm-using-the-debug-terminal/"&gt;用Debug终端盒APM交互 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/interfacing-with-pixhawk-using-the-nsh/"&gt;使用NSH和Pixhawk交互 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/mavlink-parameters/"&gt;MavLink参数集 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/mavlink-commands/"&gt;MavLink命令集 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/serial_output/"&gt;串行输出 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html"&gt;I2C&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/release-procedures/"&gt;代码发布流程 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/advanced-configuration-settings/"&gt;高级配置设置 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/updating-the-apm2-x-bootloade/"&gt;升级APM2.x的引导程序 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS-Guide.html"&gt;GPS指南&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/gps_input/"&gt;GPS输出 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS_input_raw.html"&gt;GPS原始输出&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo2.html"&gt;组合方式2&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo3.html"&gt;组合方式3&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html"&gt;组合方式4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/common-editor-information-resource/"&gt;APM官网的网站编辑器信息资源 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/editor-notes/"&gt;编辑器须知 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/graphics-resource-page/"&gt;图片资源页面 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-developer-walk-throughs-for-windows/"&gt;EZ Developer Walk Throughs for Windows *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-install-the-ardupilot-source-code-on-your-computer-using-zip/"&gt;EZ Install the ArduPilot Source Code on your Computer Using Zip *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-get-arduino-and-initialize-it-to-work-with-ardupilot/"&gt;EZ Get Arduino and Initialize it to work with ArduPilot *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-arduino-compile-and-upload-the-ardupilot-firmware-to-your-apm/"&gt;EZ Arduino Compile and Upload the ArduPilot Firmware to your APM *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-building-apm2-with-make-in-windows/"&gt;EZ Building APM2 with Make in Windows *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-using-eclipse-for-ardupilot-development-in-windows/"&gt;EZ Using Eclipse for ArduPilot Development in Windows *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-set-up-and-build-ardupilot-for-px4-in-windows/"&gt;EZ Set up and Build ArduPilot for PX4 in Windows *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/git_tortise/"&gt;Git_Tortise的使用 *&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>APM-GPS原始输出</title><link href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS_input_raw.html" rel="alternate"></link><updated>2015-01-29T15:39:21+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-29:blog/apm/2015-01-29-APM-GPS_input_raw.html</id><summary type="html">&lt;h3&gt;原始GPS输出&lt;/h3&gt;
+&lt;p&gt;
+本页面用来说明GPS模块原始的输出形式。如果你在GPS的正常测试过程中遇到问题，那么这些命令可能有助于你进行调试。
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;大多数用户不推荐，仅用于GPS底层硬件调试&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;如果你想要以ASCII格式查看GPS输出，在测试命令窗口将该行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;incoming&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;BYTE&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// will output Byte values&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;改为:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;incoming&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;ASCII&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// will output ASCII values&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/gps_input_raw/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category></entry><entry><title>APM-GPS指南</title><link href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS-Guide.html" rel="alternate"></link><updated>2015-01-29T14:36:02+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-29:blog/apm/2015-01-29-APM-GPS-Guide.html</id><summary type="html">
+
+
+
+&lt;h3&gt;GPS指南&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;//  *EXPLAINED*   &lt;/span&gt;
+&lt;span class="c1"&gt;// Diydrones is a Open source site and different people use different quipement,&lt;/span&gt;
+&lt;span class="c1"&gt;// because of this there are different GPS modules available to use and APM needs to be told wich one you have purchased.&lt;/span&gt;
+&lt;span class="c1"&gt;//  &lt;/span&gt;
+&lt;span class="c1"&gt;//  *INSTRUCTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;// Look at the list of GPS modules below, look for your specific module and define it as follows&lt;/span&gt;
+&lt;span class="c1"&gt;// example&amp;quot; #define GPS_PROTOCOL GPS_PROTOCOL_UBLOX &amp;quot; please note that only the &amp;quot;GPS_PROTOCOL_UBLOX &amp;quot; part of the statement changes &lt;/span&gt;
+&lt;span class="c1"&gt;// and your&amp;#39;s should look identical after editing.&lt;/span&gt;
+&lt;span class="c1"&gt;//   &lt;/span&gt;
+&lt;span class="c1"&gt;//   *AVAILABLE OPPTIONS*&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_NONENo GPS attached&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_IMU X-Plane interface or ArduPilot IMU.&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_MTK MediaTek-based GPS.&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_MTK16   MediaTek GPS with firmware 1.6&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_UBLOX   UBLOX GPS&lt;/span&gt;
+&lt;span class="c1"&gt;// GPS_PROTOCOL_SIRFSiRF-based GPS in Binary mode.  NOT TESTED&lt;/span&gt;
+&lt;span class="c1"&gt;//  ******************&lt;/span&gt;
+&lt;span class="c1"&gt;//   *SELECTED OPPTION*&lt;/span&gt;
+&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;define&lt;/span&gt; &lt;span class="no"&gt;GPS_PROTOCOL&lt;/span&gt; &lt;span class="no"&gt;GPS_PROTOCOL_UBLOX&lt;/span&gt;
+&lt;span class="c1"&gt;//  ******************&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/gps_guide/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category></entry><entry><title>APM-Combo4</title><link href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html" rel="alternate"></link><updated>2015-01-28T14:36:02+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2015-01-28:blog/apm/2015-01-28-APM-Combo4.html</id><summary type="html">
 
 
 
@@ -3235,80 +3364,7 @@ diydrones/ardupilot 代码库上右击选择“open in explorer”（在文件�
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/where-to-get-the-code/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category><category term="Git"></category></entry><entry><title>APM开发人员参考手册目录列表</title><link href="http://liung.github.io/blog/apm/2014-08-29-APM-%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%E7%9B%AE%E5%BD%95%E5%88%97%E8%A1%A8.html" rel="alternate"></link><updated>2014-08-29T13:08:10+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-08-29:blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html</id><summary type="html">
-
-&lt;p&gt;从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&amp;gt;
-&lt;/p&gt;
-&lt;p&gt;下文中的条目如果我已经翻译完成，那么我将链接到对应的博客目录中去，如果还没有翻译，那么将默认连接到原官网的链接,且用*标示出来。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/table-of-contents/"&gt;英文目录&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.cn/"&gt;介  绍&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-获取源码.html"&gt;获取代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter代码预览.html"&gt;ArduCopter源码预览&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-30-APM-Arducopter相关库介绍.html"&gt;代码库介绍&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html"&gt;姿态控制&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-02-APM-添加新的参数.html"&gt;添加新的参数&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html"&gt;添加新的飞行模式&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html"&gt;规划新代码使之按一定频率运行&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html"&gt;增加新的MAVLink通讯协议消息&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html"&gt;编译代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html"&gt;Windows平台上用Arduino编译ArduPilot&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html"&gt;Windows平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html"&gt;MacOS平台上用Arduino编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html"&gt;MacOS平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html"&gt;Linux平台上用Make方法编译APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html"&gt;Linux平台上用Make方法编译Pixhawk/PX4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html"&gt;采用Make方法编译APM2.x（Win，Mac，Linux）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html"&gt;使用Eclipse进行ArduPilot Mega 开发&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-ardupilot-apm-with-visual-studio-visual-micro/"&gt;使用Atmel Studio或者Visual Studio编译APM *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html"&gt;使用Visual Studio编译Mission Planner&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-for-beaglebone-black-on-linux/"&gt;Linux上针对BeagleBone Black的编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-apm-for-flymaple/"&gt;Linux上针对Flymaple的APM编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/load-the-code-onto-apm2x/"&gt;加载代码到APM2.x *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html"&gt;编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html"&gt;使用Eclipse编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html"&gt;使用Atmel Studio 或者微软的Visual Studio编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/git_github_guide/"&gt;Git和Github操作指南 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html"&gt;模拟仿真&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html"&gt;Windows上设置SITL（Sorftware In The Loop，软件循环仿真）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html"&gt;Linux上设置SITL（Sorftware In The Loop，软件循环仿真）&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html"&gt;日志回放测试&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/debugging-with-gdb/"&gt;GDB调试 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/submitting-patches-back-to-master/"&gt;提交补丁（patches）到git仓库（master） *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/raspberry-pi-via-mavlink/"&gt;通过MAVLink协议和树莓派（Raspberry Pi）通信 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/odroid-via-mavlink/"&gt;通过MAVLink协议和Odroid通信 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html"&gt;Windows7上的MAVProxy使用&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/apmpilot_project_developer_information/"&gt;APMPilot开发信息 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/guidelines-for-contributors-to-the-apm-codebase/"&gt;面向新开发人员向APM代码库添加代码的一些指导 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/interfacing-with-apm-using-the-debug-terminal/"&gt;用Debug终端盒APM交互 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/interfacing-with-pixhawk-using-the-nsh/"&gt;使用NSH和Pixhawk交互 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/mavlink-parameters/"&gt;MavLink参数集 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/mavlink-commands/"&gt;MavLink命令集 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/serial_output/"&gt;串行输出 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html"&gt;I2C&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/release-procedures/"&gt;代码发布流程 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/advanced-configuration-settings/"&gt;高级配置设置 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/updating-the-apm2-x-bootloade/"&gt;升级APM2.x的引导程序 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/gps_guide/"&gt;GPS指导 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/gps_input/"&gt;GPS输入 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/gps_input_raw/"&gt;GPS原始输入 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo2.html"&gt;组合方式2&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo3.html"&gt;组合方式3&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html"&gt;组合方式4&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/common-editor-information-resource/"&gt;APM官网的网站编辑器信息资源 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/editor-notes/"&gt;编辑器须知 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/graphics-resource-page/"&gt;图片资源页面 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-developer-walk-throughs-for-windows/"&gt;EZ Developer Walk Throughs for Windows *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-install-the-ardupilot-source-code-on-your-computer-using-zip/"&gt;EZ Install the ArduPilot Source Code on your Computer Using Zip *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-get-arduino-and-initialize-it-to-work-with-ardupilot/"&gt;EZ Get Arduino and Initialize it to work with ArduPilot *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-arduino-compile-and-upload-the-ardupilot-firmware-to-your-apm/"&gt;EZ Arduino Compile and Upload the ArduPilot Firmware to your APM *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-building-apm2-with-make-in-windows/"&gt;EZ Building APM2 with Make in Windows *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-using-eclipse-for-ardupilot-development-in-windows/"&gt;EZ Using Eclipse for ArduPilot Development in Windows *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/ez-set-up-and-build-ardupilot-for-px4-in-windows/"&gt;EZ Set up and Build ArduPilot for PX4 in Windows *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/git_tortise/"&gt;Git_Tortise的使用 *&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category></entry><entry><title>测试，这是我的第一个博客网站</title><link href="http://liung.github.io/blog/qi-ta/home.html" rel="alternate"></link><updated>2014-08-29T00:00:00+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-08-29:blog/qi-ta/home.html</id><summary type="html">&lt;p&gt;Category：Python
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</summary><category term="APM"></category><category term="飞控板"></category><category term="硬件"></category><category term="Git"></category></entry><entry><title>测试，这是我的第一个博客网站</title><link href="http://liung.github.io/blog/qi-ta/home.html" rel="alternate"></link><updated>2014-08-29T00:00:00+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-08-29:blog/qi-ta/home.html</id><summary type="html">&lt;p&gt;Category：Python
 Tag: other&lt;/p&gt;
 &lt;p&gt;这是用来测试的blog。第一次blog搭建过程。&lt;/p&gt;</summary></entry><entry><title>Pelican官方文档阅读笔记</title><link href="http://liung.github.io/blog/python/2014-08-27-Pelican%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html" rel="alternate"></link><updated>2014-08-27T20:13:00+08:00</updated><author><name>liung</name></author><id>tag:liung.github.io,2014-08-27:blog/python/2014-08-27-Pelican官方文档阅读笔记.html</id><summary type="html">&lt;hr /&gt;
 &lt;h3&gt;Articles and pages&lt;/h3&gt;

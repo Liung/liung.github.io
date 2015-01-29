@@ -1729,6 +1729,59 @@ init_mathjax();
   		<article>
 <header>
       <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html">APM-使用Eclipse进行ArduPilot Mega开发</a>
+      </h1>
+      <p class="meta"><time datetime="2014-10-16T13:54:19" pubdate>10月 16, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+
+<ol>
+<li>Eclipse是一款精致地多语言集成开发平台</li>
+<li>Eclipse CDT（C++开发工具）实现了支持在Eclipse平台进行C/C++开发</li>
+<li>Eclipse CDT工具可以帮助管理与组织大型C++工程，比如ArduPilot Mega的固件开发工程</li>
+<li>本指南用来说明如何将最近的ArduPilot Mega 固件开发工程设置为Eclipse CDT工程</li>
+<li>提醒：这些操作都在Eclipse Kepler（4.3.0）版本上进行。</li>
+</ol>
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">APM-使用NotePad++编辑代码</a>
+      </h1>
+      <p class="meta"><time datetime="2014-10-16T13:54:19" pubdate>10月 16, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+NOtePad++是开发团队最常用的一款编辑器，可以在<a href="http://notepad-plus-plus.org/">这里</a>下载。
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html">APM-回放功能测试</a>
+      </h1>
+      <p class="meta"><time datetime="2014-10-15T18:44:26" pubdate>10月 15, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+
+<p>回放功能是用来处理dataflash日志文件的一套程序，并通过最近的主代码展示一系列基于真实数据的模拟结果。它可以用来重现产生bug的准确情形，或在同样的条件下测试改变EKF参数的影响。回放功能仅仅运行于Liunx/Ubuntu平台，且仅适用来自于高速CPU诸如PX4/Pixhawk运行2014年5月之后的ArduCopter/ArduPlane/ArduRover（例如AC3.2-dev或更高版本）所产生的dataflash日志文件。
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">APM-Linux上SITL仿真设置</a>
       </h1>
       <p class="meta"><time datetime="2014-10-15T14:06:42" pubdate>10月 15, 2014</time></p>
@@ -1920,54 +1973,6 @@ SITL（software in the loop）仿真可以让你在没有任何硬件的情况�
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html">Read On &crarr;</a>
   </footer>
   		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">APM-编译代码</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-06T14:03:34" pubdate>9月 06, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>下面这些页面的链接，将提供给你更多关于如何编译APM2.x和PX4的飞行器控制和地面站源码的信息。</p>
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-06-APM-编译代码.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T14:41:58" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
-<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真)页面</a>有相关介绍。如果你要运行SITL，你最好遵循下面的一些建议。这些指令不能直接在Windows或者Mac平台上本地运行。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-05T12:08:26" pubdate>9月 05, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
-  </footer>
-  		</article>
 <div class="pagination">
     <a class="prev" href="http://liung.github.io/index3.html">&larr; Older</a>
 
@@ -1982,19 +1987,19 @@ SITL（software in the loop）仿真可以让你在没有任何硬件的情况�
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS_input_raw.html">APM-GPS原始输出</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS-Guide.html">APM-GPS指南</a>
+      </li>
+      <li class="post">
           <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo4.html">APM-Combo4</a>
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo3.html">APM-Combo3</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2015-01-28-APM-Combo2.html">APM-Combo2</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/2015-01-27-web_site_about_aircraft.html">飞行器相关站点</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">APM-使用Visual Studio编译Mission Planner</a>
       </li>
     </ul>
   </section>
