@@ -1739,2048 +1739,1944 @@ init_mathjax();
 <table>
 <thead>
 <tr>
-<th>dog</th>
-<th>bird</th>
-<th>cat</th>
+<th align="left">EEPROM variable name</th>
+<th align="center">Min</th>
+<th align="center">Max</th>
+<th align="center">Default</th>
+<th align="center">Multiplier</th>
+<th align="center">Enabled (0 = no, 1 = yes)</th>
+<th align="left">Comment</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>foo</td>
-<td>foo</td>
-<td>foo</td>
+<td align="left">MAH</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td>bar</td>
-<td>bar</td>
-<td>bar</td>
+<td align="left">CURRENT_ENABLE</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td>baz</td>
-<td>baz</td>
-<td>baz</td>
+<td align="left">AOA</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">MAG_ENABLE</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">HDNG2RLL_P</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">0.7</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">NAV_ROLL_P - Navigation control gains. Tuning values for the navigation control PID loops. The P term is the primary tuning value. This determines how the control deflection varies in proportion to the required correction.</td>
+</tr>
+<tr>
+<td align="left">HDNG2RLL_I</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0.01</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">NAV_ROLL_I - Navigation control gains. Tuning values for the navigation control PID loops. The I term is used to control drift.</td>
+</tr>
+<tr>
+<td align="left">HDNG2RLL_D</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0.02</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">NAV_ROLL_D - Navigation control gains. Tuning values for the navigation control PID loops. The D term is used to control overshoot. Avoid adjusting this term if you are not familiar with tuning PID loops.</td>
+</tr>
+<tr>
+<td align="left">HDNG2RLL_IMAX</td>
+<td align="center">0</td>
+<td align="center">3000</td>
+<td align="center">500</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">NAV_ROLL_INT_MAX_CENTIDEGREE - In Degrees - Maximum control offset due to the integral. This prevents the control output from being overdriven due to a persistent offset (e.g. native flight AoA). If you find this value is insufficient consider adjusting the AOA parameter.</td>
+</tr>
+<tr>
+<td align="left">RLL2SRV_P</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">0.4</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SERVO_ROLL_P - Attitude control gains - Tuning values for the attitude control PID loops. The P term is the primary tuning value. This determines how the control deflection varies in proportion to the required correction.</td>
+</tr>
+<tr>
+<td align="left">RLL2SRV_I</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SERVO_ROLL_I - Attitude control gains - Tuning values for the attitude control PID loops. The I term is used to help control surfaces settle. This value should normally be kept low.</td>
+</tr>
+<tr>
+<td align="left">RLL2SRV_D</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SERVO_ROLL_D - Attitude control gains - Tuning values for the attitude control PID loops. The D term is used to control overshoot. Avoid using or adjusting this term if you are not familiar with tuning PID loops. It should normally be zero for most aircraft.</td>
+</tr>
+<tr>
+<td align="left">RLL2SRV_IMAX</td>
+<td align="center">0</td>
+<td align="center">3000</td>
+<td align="center">500</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">SERVO_ROLL_INT_MAX_CENTIDEGREE - In Degrees - Maximum control offset due to the integral. This prevents the control output from being overdriven due to a persistent offset (e.g. crosstracking). Default is 5 degrees.</td>
+</tr>
+<tr>
+<td align="left">PTCH2SRV_P</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">0.6</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SERVO_PITCH_P - Attitude control gains - Tuning values for the attitude control PID loops. The P term is the primary tuning value. This determines how the control deflection varies in proportion to the required correction.</td>
+</tr>
+<tr>
+<td align="left">PTCH2SRV_I</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SERVO_PITCH_I - Attitude control gains - Tuning values for the attitude control PID loops. The I term is used to help control surfaces settle. This value should normally be kept low.</td>
+</tr>
+<tr>
+<td align="left">PTCH2SRV_D</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SERVO_PITCH_D - Attitude control gains - Tuning values for the attitude control PID loops. The D term is used to control overshoot. Avoid using or adjusting this term if you are not familiar with tuning PID loops. It should normally be zero for most aircraft.</td>
+</tr>
+<tr>
+<td align="left">PTCH2SRV_IMAX</td>
+<td align="center">0</td>
+<td align="center">3000</td>
+<td align="center">500</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">SERVO_PITCH_INT_MAX_CENTIDEGREE - In Degrees - Maximum control offset due to the integral. This prevents the control output from being overdriven due to a persistent offset (e.g. crosstracking). Default is 5 degrees.</td>
+</tr>
+<tr>
+<td align="left">ARSPD2PTCH_P</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">0.65</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">NAV_PITCH_ASP_P - P. I and D terms for pitch adjustments made to maintain airspeed.</td>
+</tr>
+<tr>
+<td align="left">ARSPD2PTCH_I</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">NAV_PITCH_ASP_I - P. I and D terms for pitch adjustments made to maintain airspeed.</td>
+</tr>
+<tr>
+<td align="left">ARSPD2PTCH_D</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">NAV_PITCH_ASP_D - P. I and D terms for pitch adjustments made to maintain airspeed.</td>
+</tr>
+<tr>
+<td align="left">ARSPD2PTCH_IMA</td>
+<td align="center">0</td>
+<td align="center">3000</td>
+<td align="center">500</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">NAV_PITCH_ASP_INT_MAX_CMSEC - In Degrees - Maximum pitch offset due to the integral. This limits the control output from being overdriven due to a persistent offset (eg. inability to maintain the programmed airspeed).</td>
+</tr>
+<tr>
+<td align="left">YW2SRV_P</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SERVO_YAW_P - P. I and D terms for the YAW control. Note units of this control loop are unusual. PID input is in m/s2</td>
+</tr>
+<tr>
+<td align="left">YW2SRV_I</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SERVO_YAW_I - P. I and D terms for the YAW control. Note units of this control loop are unusual. PID input is in m/s2</td>
+</tr>
+<tr>
+<td align="left">YW2SRV_D</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SERVO_YAW_D - P. I and D terms for the YAW control. Note units of this control loop are unusual. PID input is in m/s2</td>
+</tr>
+<tr>
+<td align="left">YW2SRV_IMAX</td>
+<td align="center">0</td>
+<td align="center">3000</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">SERVO_YAW_INT_MAX - Maximum control offset due to the integral. This prevents the control output from being overdriven due to a persistent offset (e.g. crosstracking).</td>
+</tr>
+<tr>
+<td align="left">ENRGY2THR_P</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">0.5</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">THROTTLE_TE_P - P. I and D terms for throttle adjustments made to control altitude.</td>
+</tr>
+<tr>
+<td align="left">ENRGY2THR_I</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">THROTTLE_TE_I - P. I and D terms for throttle adjustments made to control altitude.</td>
+</tr>
+<tr>
+<td align="left">ENRGY2THR_D</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">THROTTLE_TE_D - P. I and D terms for throttle adjustments made to control altitude.</td>
+</tr>
+<tr>
+<td align="left">ENRGY2THR_IMAX</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">THROTTLE_TE_INT_MAX - In Percent - Maximum throttle input due to the integral term. This limits the throttle from being overdriven due to a persistent offset (e.g. inability to maintain the programmed altitude).</td>
+</tr>
+<tr>
+<td align="left">ALT2PTCH_P</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">0.65</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">NAV_PITCH_ALT_P - P. I and D terms for pitch adjustments made to maintain altitude.</td>
+</tr>
+<tr>
+<td align="left">ALT2PTCH_I</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">NAV_PITCH_ALT_I - P. I and D terms for pitch adjustments made to maintain altitude.</td>
+</tr>
+<tr>
+<td align="left">ALT2PTCH_D</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">NAV_PITCH_ALT_D - P. I and D terms for pitch adjustments made to maintain altitude.</td>
+</tr>
+<tr>
+<td align="left">ALT2PTCH_IMAX</td>
+<td align="center">0</td>
+<td align="center">3000</td>
+<td align="center">500</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">NAV_PITCH_ALT_INT_MAX_CM - In Meters - Maximum pitch offset due to the integral. This limits the control output from being overdriven due to a persistent offset (eg. inability to maintain the programmed altitude).</td>
+</tr>
+<tr>
+<td align="left">KFF_PTCHCOMP</td>
+<td align="center">-3</td>
+<td align="center">3</td>
+<td align="center">0.2</td>
+<td align="center">0.01</td>
+<td align="center">1</td>
+<td align="left">PITCH_COMP - In Percent - Adds pitch input to compensate for the loss of lift due to roll control.</td>
+</tr>
+<tr>
+<td align="left">KFF_RDDRMIX</td>
+<td align="center">-3</td>
+<td align="center">3</td>
+<td align="center">0.5</td>
+<td align="center">0.01</td>
+<td align="center">1</td>
+<td align="left">RUDDER_MIX - Roll to yaw mixing. This allows for co-ordinated turns.</td>
+</tr>
+<tr>
+<td align="left">KFF_PTCH2THR</td>
+<td align="center">-3</td>
+<td align="center">3</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">P_TO_T - Pitch to throttle feed-forward gain.</td>
+</tr>
+<tr>
+<td align="left">KFF_THR2PTCH</td>
+<td align="center">-3</td>
+<td align="center">3</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">T_TO_P - Throttle to pitch feed-forward gain.</td>
+</tr>
+<tr>
+<td align="left">XTRK_GAIN_SC</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">100</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">XTRACK_GAIN_SCALED - Default value is 1.0 degrees per metre. Values lower than 0.001 will disable crosstrack compensation.</td>
+</tr>
+<tr>
+<td align="left">ALT_MIX</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0.01</td>
+<td align="center">1</td>
+<td align="left">"ALTITUDE_MIX - In Percent - Configures the blend between GPS and pressure altitude. 0 = GPS altitude</td>
+</tr>
+<tr>
+<td align="left">ARSPD_RATIO</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">1.9936</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">AIRSPEED_RATIO - Adjust AIRSPEED_RATIO in small increments to calibrate the airspeed sensor relative to your GPS. The calculation and default value are optimized for speeds around 12 m/s</td>
+</tr>
+<tr>
+<td align="left">WP_RADIUS</td>
+<td align="center">0</td>
+<td align="center">200</td>
+<td align="center">30</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"WP_RADIUS_DEFAULT - When the user performs a factory reset on the APM</td>
+</tr>
+<tr>
+<td align="left">WP_LOITER_RAD</td>
+<td align="center">0</td>
+<td align="center">200</td>
+<td align="center">60</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"LOITER_RADIUS_DEFAULT - When the user performs a factory reset on the APM</td>
+</tr>
+<tr>
+<td align="left">ARSPD_FBW_MIN</td>
+<td align="center">5</td>
+<td align="center">50</td>
+<td align="center">6</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">AIRSPEED_FBW_MIN - In m/s - Airspeed corresponding to minimum and maximum throttle in Fly By Wire B mode.</td>
+</tr>
+<tr>
+<td align="left">ARSPD_FBW_MAX</td>
+<td align="center">5</td>
+<td align="center">50</td>
+<td align="center">22</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">AIRSPEED_FBW_MAX - In m/s - Airspeed corresponding to minimum and maximum throttle in Fly By Wire B mode. AIRSPEED_FBW_MAX also sets the maximum airspeed that the cruise airspeed can be ※§nudged§§ to in AUTO mode when ENABLE_STICK_MIXING is set. In AUTO the cruise airspeed can be increased between AIRSPEED_CRUISE and AIRSPEED_FBW_MAX by positioning the throttle stick in the top 1/2 of its range. Throttle stick in the bottom 1/2 provide regular AUTO control.</td>
+</tr>
+<tr>
+<td align="left">THR_MIN</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"THROTTLE_MIN - The minimum throttle setting to which the autopilot will reduce the throttle while descending. The default is zero</td>
+</tr>
+<tr>
+<td align="left">THR_MAX</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">75</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">THROTTLE_MAX - The maximum throttle setting the autopilot will apply. The default is 75%. Reduce this value if your aicraft is overpowered or has complex flight characteristics at high throttle settings.</td>
+</tr>
+<tr>
+<td align="left">THR_FAILSAFE</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">THROTTLE_FAILSAFE - The throttle failsafe allows you to configure a software failsafe activated by a setting on the throttle input channel (channel 3). This can be used to achieve a failsafe override on loss of radio control without having to sacrifice one of your FLIGHT_MODE settings as the throttle failsafe overrides the switch-selected mode. Throttle failsafe is enabled by setting THROTTLE_FAILSAFE to 1.</td>
+</tr>
+<tr>
+<td align="left">THR_FS_ACTION</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">THROTTLE_FAILSAFE_ACTION - The FAILSAFE_ACTION setting determines what APM will do when throttle failsafe mode is entered while flying in AUTO mode. This is important in order to avoid accidental failsafe behaviour when flying waypoints that take the aircraft temporarily out of radio range. If FAILSAFE_ACTION is 1 when failsafe is entered in AUTO or LOITER modes the aircraft will head for home in RTL mode. If the throttle channel moves back up it will return to AUTO or LOITER mode. The default behavior is to ignore throttle failsafe in AUTO and LOITER modes.</td>
+</tr>
+<tr>
+<td align="left">TRIM_THROTTLE</td>
+<td align="center">0</td>
+<td align="center">90</td>
+<td align="center">45</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">THROTTLE_CRUISE - In Percent - The approximate throttle setting to achieve AIRSPEED_CRUISE in level flight. The default is 45% which is reasonable for a modestly powered aircraft.</td>
+</tr>
+<tr>
+<td align="left">TRIM_AUTO</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">AUTO_TRIM - ArduPilot Mega can update its trim settings by looking at the radio inputs when switching out of MANUAL mode. This allows you to manually trim your aircraft before switching to an assisted mode but it also means that you should avoid switching out of MANUAL while you have any control stick deflection.</td>
+</tr>
+<tr>
+<td align="left">FLTMODE_CH</td>
+<td align="center">5</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"FLIGHT_MODE_CHANNEL - Flight modes assigned to the control channel</td>
+</tr>
+<tr>
+<td align="left">FLIGHT_MODE_1</td>
+<td align="center">0</td>
+<td align="center">14</td>
+<td align="center">11</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_1 - The following standard flight modes are available: MANUAL = Full manual control via the hardware multiplexer. STABILIZE = Tries to maintain level flight but can be overridden with radio control inputs. FLY_BY_WIRE_A = Autopilot style control via user input with manual throttle. FLY_BY_WIRE_B = Autopilot style control via user input</td>
+</tr>
+<tr>
+<td align="left">FLIGHT_MODE_2</td>
+<td align="center">0</td>
+<td align="center">14</td>
+<td align="center">11</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_2</td>
+</tr>
+<tr>
+<td align="left">FLIGHT_MODE_3</td>
+<td align="center">0</td>
+<td align="center">14</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_3</td>
+</tr>
+<tr>
+<td align="left">FLIGHT_MODE_4</td>
+<td align="center">0</td>
+<td align="center">14</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_4</td>
+</tr>
+<tr>
+<td align="left">FLIGHT_MODE_5</td>
+<td align="center">0</td>
+<td align="center">14</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_5</td>
+</tr>
+<tr>
+<td align="left">FLIGHT_MODE_6</td>
+<td align="center">0</td>
+<td align="center">14</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">FLIGHT_MODE_6</td>
+</tr>
+<tr>
+<td align="left">RC1_MIN</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC1_MIN - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC1_MAX</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC1_MAX - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC1_TRIM</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1200</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC1_TRIM - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC2_MIN</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC2_MIN - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC2_MAX</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC2_MAX - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC2_TRIM</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1200</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC2_TRIM - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC3_MIN</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC3_MIN - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC3_MAX</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC3_MAX - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC3_TRIM</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC3_TRIM - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC4_MIN</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC4_MIN - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC4_MAX</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC4_MAX - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC4_TRIM</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1200</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_RC4_TRIM - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC5_MIN</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH5_MIN - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC5_MAX</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH5_MAX - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC5_MAX</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH5_MAX - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC5_TRIM</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH5_TRIM - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC6_MIN</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH6_MIN - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC6_MAX</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH6_MAX - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC6_TRIM</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH6_TRIM - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC7_MIN</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH7_MIN - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC7_MAX</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH7_MAX - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC7_TRIM</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH7_TRIM - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC8_MIN</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH8_MIN - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC8_MAX</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH8_MAX - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">RC8_TRIM</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"PWM_CH8_TRIM - Radio Settings - all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit</td>
+</tr>
+<tr>
+<td align="left">IMU_OFFSET_0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_0 - IMU Calibration</td>
+</tr>
+<tr>
+<td align="left">IMU_OFFSET_1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_1 - IMU Calibration</td>
+</tr>
+<tr>
+<td align="left">IMU_OFFSET_2</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_2 - IMU Calibration</td>
+</tr>
+<tr>
+<td align="left">IMU_OFFSET_3</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_3 - IMU Calibration</td>
+</tr>
+<tr>
+<td align="left">IMU_OFFSET_4</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_4 - IMU Calibration</td>
+</tr>
+<tr>
+<td align="left">IMU_OFFSET_5</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">IMU_OFFSET_5 - IMU Calibration</td>
+</tr>
+<tr>
+<td align="left">YAW_MODE</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">YAW_MODE</td>
+</tr>
+<tr>
+<td align="left">WP_MODE</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">WP_MODE</td>
+</tr>
+<tr>
+<td align="left">WP_TOTAL</td>
+<td align="center">0</td>
+<td align="center">255</td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="left">WP_TOTAL</td>
+</tr>
+<tr>
+<td align="left">WP_INDEX</td>
+<td align="center">0</td>
+<td align="center">255</td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="left">WP_INDEX</td>
+</tr>
+<tr>
+<td align="left">CONFIG</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">CONFIG_OPTIONS</td>
+</tr>
+<tr>
+<td align="left">SWITCH_ENABLE</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"REVERS_SWITCH_ENABLE - 0 = Off</td>
+</tr>
+<tr>
+<td align="left">FIRMWARE_VER</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">FIRMWARE_VER</td>
+</tr>
+<tr>
+<td align="left">LOG_BITMASK</td>
+<td align="center">0</td>
+<td align="center">65535</td>
+<td align="center">334</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">LOG_BITMASK</td>
+</tr>
+<tr>
+<td align="left">TRIM_ELEVON</td>
+<td align="center">900</td>
+<td align="center">2100</td>
+<td align="center">1500</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">TRIM_ELEVON</td>
+</tr>
+<tr>
+<td align="left">THR_FS_VALUE</td>
+<td align="center">850</td>
+<td align="center">1000</td>
+<td align="center">950</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"THROTTLE_FS_VALUE - If the throttle failsafe is enabled</td>
+</tr>
+<tr>
+<td align="left">TRIM_ARSPD_CM</td>
+<td align="center">500</td>
+<td align="center">5000</td>
+<td align="center">1200</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">"AIRSPEED_CRUISE_CM - The speed in metres per second to maintain during cruise. The default is 10m/s</td>
+</tr>
+<tr>
+<td align="left">GND_TEMP</td>
+<td align="center">-10</td>
+<td align="center">50</td>
+<td align="center">28</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">GND_TEMP - Ground Temperature</td>
+</tr>
+<tr>
+<td align="left">AP_OFFSET</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">AP_OFFSET</td>
+</tr>
+<tr>
+<td align="left">TRIM_PITCH_CD</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">TRIM_PITCH_CD</td>
+</tr>
+<tr>
+<td align="left">ALT_HOLD_RTL</td>
+<td align="center">0</td>
+<td align="center">20000</td>
+<td align="center">10000</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">ALT_HOLD_HOME_CM - When the user performs a factory reset on the APM. Sets the flag for weather the current altitude or ALT_HOLD_HOME altitude should be used for Return To Launch. Also sets the value of USE_CURRENT_ALT in meters. This is mainly intended to allow users to start using the APM without programming a mission first.</td>
+</tr>
+<tr>
+<td align="left">XTRK_ANGLE_CD</td>
+<td align="center">0</td>
+<td align="center">6000</td>
+<td align="center">3000</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">XTRACK_ENTRY_ANGLE_CENTIDEGREE - Maximum angle used to correct for track following.</td>
+</tr>
+<tr>
+<td align="left">ROLL_SRV_MAX</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">4500</td>
+<td align="center">100</td>
+<td align="center">0</td>
+<td align="left">ROLL_SERVO_MAX_CENTIDEGREE</td>
+</tr>
+<tr>
+<td align="left">PITCH_SRV_MAX</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">4500</td>
+<td align="center">100</td>
+<td align="center">0</td>
+<td align="left">PITCH_SERVO_MAX_CENTIDEGREE</td>
+</tr>
+<tr>
+<td align="left">RUDER_SRV_MAX</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">4500</td>
+<td align="center">100</td>
+<td align="center">0</td>
+<td align="left">RUDDER_SERVO_MAX_CENTIDEGREE</td>
+</tr>
+<tr>
+<td align="left">LIM_ROLL_CD</td>
+<td align="center">0</td>
+<td align="center">6000</td>
+<td align="center">4500</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">HEAD_MAX_CENTIDEGREE - The maximum commanded bank angle in either direction. The default is 45 degrees. Decrease this value if your aircraft is not stable or has difficulty maintaining altitude in a steep bank.</td>
+</tr>
+<tr>
+<td align="left">LIM_PITCH_MAX</td>
+<td align="center">0</td>
+<td align="center">6000</td>
+<td align="center">1500</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">"PITCH_MAX_CENTIDEGREE - The maximum commanded pitch up angle. The default is 15 degrees. Care should be taken not to set this value too large</td>
+</tr>
+<tr>
+<td align="left">LIM_PITCH_MIN</td>
+<td align="center">-6000</td>
+<td align="center">0</td>
+<td align="center">-2500</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">PITCH_MIN_CENTIDEGREE - The maximum commanded pitch down angle. Note that this value must be negative. The default is -25 degrees. Care should be taken not to set this value too large as it may result in overspeeding the aircraft.</td>
+</tr>
+<tr>
+<td align="left">GND_ALT_CM</td>
+<td align="center">0</td>
+<td align="center">500000</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="left">GND_ALT_CM</td>
+</tr>
+<tr>
+<td align="left">GND_ABS_PRESS</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">GND_ABS_PRESS</td>
+</tr>
+<tr>
+<td align="left">COMPASS_DEC</td>
+<td align="center">-1.57075</td>
+<td align="center">1.57075</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">COMPASS_DEC - Compass Declination</td>
+</tr>
+<tr>
+<td align="left">SR0_EXT_STAT</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 0 - Enable GPS_STATUS</td>
+</tr>
+<tr>
+<td align="left">SR0_EXTRA1</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">10</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">TELEMETRY_ENABLE Port 0 - Enable MSG_ATTITUDE</td>
+</tr>
+<tr>
+<td align="left">SR0_EXTRA2</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">TELEMETRY_ENABLE Port 0 - Enable MSG_VFR_HUD</td>
+</tr>
+<tr>
+<td align="left">SR0_EXTRA3</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">TELEMETRY_ENABLE Port 0 - Not currently used</td>
+</tr>
+<tr>
+<td align="left">SR0_POSITION</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 0 - Enable LOCAL_POSITION</td>
+</tr>
+<tr>
+<td align="left">SR0_RAW_CTRL</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 0 - Enable ATTITUDE_CONTROLLER_OUTPUT</td>
+</tr>
+<tr>
+<td align="left">SR0_RAW_SENS</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 0 - Enable IMU_RAW</td>
+</tr>
+<tr>
+<td align="left">SR0_RC_CHAN</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 0 - Enable RC_CHANNELS_SCALED</td>
+</tr>
+<tr>
+<td align="left">SR3_EXT_STAT</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 3 - Enable GPS_STATUS</td>
+</tr>
+<tr>
+<td align="left">SR3_EXTRA1</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">TELEMETRY_ENABLE Port 3 - Enable MSG_ATTITUDE</td>
+</tr>
+<tr>
+<td align="left">SR3_EXTRA2</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">TELEMETRY_ENABLE Port 3 - Enable MSG_VFR_HUD</td>
+</tr>
+<tr>
+<td align="left">SR3_EXTRA3</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">TELEMETRY_ENABLE Port 3 - Not currently used</td>
+</tr>
+<tr>
+<td align="left">SR3_POSITION</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 3 - Enable LOCAL_POSITION</td>
+</tr>
+<tr>
+<td align="left">SR3_RAW_CTRL</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 3 - Enable ATTITUDE_CONTROLLER_OUTPUT</td>
+</tr>
+<tr>
+<td align="left">SR3_RAW_SENS</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 3 - Enable IMU_RAW</td>
+</tr>
+<tr>
+<td align="left">SR3_RC_CHAN</td>
+<td align="center">0</td>
+<td align="center">50</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"TELEMETRY_ENABLE Port 3 - Enable RC_CHANNELS_SCALED</td>
+</tr>
+<tr>
+<td align="left">MAG_ENABLE</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"MAG_ENABLE - 0 = Off</td>
+</tr>
+<tr>
+<td align="left">ARSPD_ENABLE</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"AIRSPEED_ENABLE - 0 = Off</td>
+</tr>
+<tr>
+<td align="left">BATT_CAPACITY</td>
+<td align="center">0</td>
+<td align="center">10000</td>
+<td align="center">1760</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">BATTERY_MAH - Battery capacity in mAh</td>
+</tr>
+<tr>
+<td align="left">BATT_MONITOR</td>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"BATTERY_MONITOR - The value should be set to 0 to disable battery monitoring</td>
+</tr>
+<tr>
+<td align="left">FS_GCS_ENABL</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"FS_GCS_ENABLE - 0 = Off</td>
+</tr>
+<tr>
+<td align="left">FS_LONG_ACTN</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"FS_LONG_ACTION - 0 = Off</td>
+</tr>
+<tr>
+<td align="left">FS_SHORT_ACTN</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"FS_SHORT_ACTION - 0 = Off</td>
+</tr>
+<tr>
+<td align="left">SYSID_MYGCS</td>
+<td align="center">0</td>
+<td align="center">255</td>
+<td align="center">255</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SYSID_MYGCS - The system ID of the GCS</td>
+</tr>
+<tr>
+<td align="left">SYSID_THISMAV</td>
+<td align="center">0</td>
+<td align="center">255</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">SYSID_THISMAV - The system ID of the MAVlink vehicle</td>
+</tr>
+<tr>
+<td align="left">AOA</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">ACR_PIT_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_PIT_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_PIT_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_PIT_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_RLL_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_RLL_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_RLL_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_RLL_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_YAW_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_YAW_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_YAW_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ACR_YAW_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ESC</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">ESC_CALIBRATE_MODE</td>
+</tr>
+<tr>
+<td align="left">FRAME</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">FRAME_ORIENTATION</td>
+</tr>
+<tr>
+<td align="left">LOITER_RADIUS</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_LAT_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_LAT_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_LAT_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_LAT_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_LON_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_LON_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_LON_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_LON_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_WP_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_WP_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_WP_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">NAV_WP_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">PITCH_MAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">SONAR_ENABLE</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"SONAR_ENABLE - 0 = Off</td>
+</tr>
+<tr>
+<td align="left">STB_PIT_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_PIT_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_PIT_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_PIT_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_RLL_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_RLL_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_RLL_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_RLL_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_YAW_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_YAW_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_YAW_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">STB_YAW_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">THR_BAR_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">THR_BAR_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">THR_BAR_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">THR_BAR_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soo</td>
+</tr>
+<tr>
+<td align="left">THR_SON_D</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">THR_SON_I</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">THR_SON_IMAX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">THR_SON_P</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">WP_MODE</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">WP_MUST_INDEX</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">XTRACK_ANGLE</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">XTRK_GAIN</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ARSPD_OFFSET</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">ELEVON_CH1_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">ELEVON_CHANNEL1_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">ELEVON_CH2_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">ELEVON_CHANNEL2_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">ELEVON_MIXING</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"ELEVON_MIXING - 0 = Disabled</td>
+</tr>
+<tr>
+<td align="left">ELEVON_REVERSE</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">ELEVON_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">INVERTEDFLT_CH</td>
+<td align="center">0</td>
+<td align="center">8</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"INVERTED_FLIGHT_CHANNEL - Channel to select inverted flight mode</td>
+</tr>
+<tr>
+<td align="left">RC1_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">RC_CHANNEL1_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">RC2_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">RC_CHANNEL2_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">RC3_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">RC_CHANNEL3_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">RC4_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">RC_CHANNEL4_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">RC5_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">RC_CHANNEL5_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">RC6_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">RC_CHANNEL6_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">RC7_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">RC_CHANNEL7_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">RC8_REV</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">RC_CHANNEL8_REVERSE - Channel Reversing (Future use on APM board 2.0) - Does not override dip switches</td>
+</tr>
+<tr>
+<td align="left">SYSID_SW_MREV</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">SYSID_SW_TYPE</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">Description coming soon</td>
+</tr>
+<tr>
+<td align="left">THR_SLEWRATE</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">"THROTTLE_SLEW_RATE - 0 = Disabled</td>
+</tr>
+<tr>
+<td align="left">FLTMODE1</td>
+<td align="center">0</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_1 - Mode switch setting 1 - APM: 0 = Manual</td>
+</tr>
+<tr>
+<td align="left">FLTMODE2</td>
+<td align="center">0</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_2 - Mode switch setting 2 - APM: 0 = Manual</td>
+</tr>
+<tr>
+<td align="left">FLTMODE3</td>
+<td align="center">0</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_3 - Mode switch setting 3 - APM: 0 = Manual</td>
+</tr>
+<tr>
+<td align="left">FLTMODE4</td>
+<td align="center">0</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_4 - Mode switch setting 4 - APM: 0 = Manual</td>
+</tr>
+<tr>
+<td align="left">FLTMODE5</td>
+<td align="center">0</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_5 - Mode switch setting 5 - APM: 0 = Manual</td>
+</tr>
+<tr>
+<td align="left">FLTMODE6</td>
+<td align="center">0</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="left">"FLIGHT_MODE_6 - Mode switch setting 6 - APM: 0 = Manual</td>
 </tr>
 </tbody>
 </table>
-<table>
-<thead>
-<tr>
-<th>Tables</th>
-<th align="center">Are</th>
-<th align="right">Cool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>col 3 is</td>
-<td align="center">right-aligned</td>
-<td align="right">$1600</td>
-</tr>
-<tr>
-<td>col 2 is</td>
-<td align="center">centered</td>
-<td align="right">$12</td>
-</tr>
-<tr>
-<td>zebra stripes</td>
-<td align="center">are neat</td>
-<td align="right">$1</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>EEPROM variable name</th>
-<th>Min</th>
-<th>Max</th>
-<th>Default</th>
-<th>Multiplier</th>
-<th>Enabled（0=no，1=yes）</th>
-<th>Comment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MATH</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>CURRENT_ENALBE</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>MAG_ENALBE</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>HDNG2RLL_P</td>
-<td>0</td>
-<td>5</td>
-<td>0.7</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_ROLL_P – Navigation control gains. Tuning values for the navigation control PID loops. The P term is the primary tuning value. This determines how the control deflection varies in proportion to the required correction.</td>
-</tr>
-</tbody>
-</table>
-<div class="row">
-<div class="span6">
-<table>
-<tbody>
-<tr>
-<td><strong>EEPROM variable name</strong></td>
-<td><strong>Min</strong></td>
-<td><strong>Max</strong></td>
-<td><strong>Default</strong></td>
-<td><strong>Multiplier</strong></td>
-<td><strong>Enabled (0 = no, 1 = yes)</strong></td>
-<td><strong>Comment</strong></td>
-</tr>
-<tr>
-<td>MAH</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>CURRENT_ENABLE</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>AOA</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>MAG_ENABLE</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>HDNG2RLL_P</td>
-<td>0</td>
-<td>5</td>
-<td>0.7</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_ROLL_P &#8211; Navigation control gains. Tuning values for the navigation control PID loops. The P term is the primary tuning value. This determines how the control deflection varies in proportion to the required correction.</td>
-</tr>
-<tr>
-<td>HDNG2RLL_I</td>
-<td>0</td>
-<td>1</td>
-<td>0.01</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_ROLL_I &#8211; Navigation control gains. Tuning values for the navigation control PID loops. The I term is used to control drift.</td>
-</tr>
-<tr>
-<td>HDNG2RLL_D</td>
-<td>0</td>
-<td>1</td>
-<td>0.02</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_ROLL_D &#8211; Navigation control gains. Tuning values for the navigation control PID loops. The D term is used to control overshoot. Avoid adjusting this term if you are not familiar with tuning PID loops.</td>
-</tr>
-<tr>
-<td>HDNG2RLL_IMAX</td>
-<td>0</td>
-<td>3000</td>
-<td>500</td>
-<td>100</td>
-<td>1</td>
-<td>NAV_ROLL_INT_MAX_CENTIDEGREE &#8211; In Degrees &#8211; Maximum control offset due to the integral. This prevents the control output from being overdriven due to a persistent offset (e.g. native flight AoA). If you find this value is insufficient consider adjusting the AOA parameter.</td>
-</tr>
-<tr>
-<td>RLL2SRV_P</td>
-<td>0</td>
-<td>5</td>
-<td>0.4</td>
-<td>1</td>
-<td>1</td>
-<td>SERVO_ROLL_P &#8211; Attitude control gains &#8211; Tuning values for the attitude control PID loops. The P term is the primary tuning value. This determines how the control deflection varies in proportion to the required correction.</td>
-</tr>
-<tr>
-<td>RLL2SRV_I</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>SERVO_ROLL_I &#8211; Attitude control gains &#8211; Tuning values for the attitude control PID loops. The I term is used to help control surfaces settle. This value should normally be kept low.</td>
-</tr>
-<tr>
-<td>RLL2SRV_D</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>SERVO_ROLL_D &#8211; Attitude control gains &#8211; Tuning values for the attitude control PID loops. The D term is used to control overshoot. Avoid using or adjusting this term if you are not familiar with tuning PID loops. It should normally be zero for most aircraft.</td>
-</tr>
-<tr>
-<td>RLL2SRV_IMAX</td>
-<td>0</td>
-<td>3000</td>
-<td>500</td>
-<td>100</td>
-<td>1</td>
-<td>SERVO_ROLL_INT_MAX_CENTIDEGREE &#8211; In Degrees &#8211; Maximum control offset due to the integral. This prevents the control output from being overdriven due to a persistent offset (e.g. crosstracking). Default is 5 degrees.</td>
-</tr>
-<tr>
-<td>PTCH2SRV_P</td>
-<td>0</td>
-<td>5</td>
-<td>0.6</td>
-<td>1</td>
-<td>1</td>
-<td>SERVO_PITCH_P &#8211; Attitude control gains &#8211; Tuning values for the attitude control PID loops. The P term is the primary tuning value. This determines how the control deflection varies in proportion to the required correction.</td>
-</tr>
-<tr>
-<td>PTCH2SRV_I</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>SERVO_PITCH_I &#8211; Attitude control gains &#8211; Tuning values for the attitude control PID loops. The I term is used to help control surfaces settle. This value should normally be kept low.</td>
-</tr>
-<tr>
-<td>PTCH2SRV_D</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>SERVO_PITCH_D &#82#8211; Attitude control gains &#8211; Tuning values for the attitude control PID loops. The D term is used to control overshoot. Avoid using or adjusting this term if you are not familiar with tuning PID loops. It should normally be zero for most aircraft.</td>
-</tr>
-<tr>
-<td>PTCH2SRV_IMAX</td>
-<td>0</td>
-<td>3000</td>
-<td>500</td>
-<td>100</td>
-<td>1</td>
-<td>SERVO_PITCH_INT_MAX_CENTIDEGREE &#8211; In Degrees &#8211; Maximum control offset due to the integral. This prevents the control output from being overdriven due to a persistent offset (e.g. crosstracking). Default is 5 degrees.</td>
-</tr>
-<tr>
-<td>ARSPD2PTCH_P</td>
-<td>0</td>
-<td>5</td>
-<td>0.65</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_PITCH_ASP_P &#8211; P. I and D terms for pitch adjustments made to maintain airspeed.</td>
-</tr>
-<tr>
-<td>ARSPD2PTCH_I</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_PITCH_ASP_I &#8211; P. I and D terms for pitch adjustments made to maintain airspeed.</td>
-</tr>
-<tr>
-<td>ARSPD2PTCH_D</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_PITCH_ASP_D &#8211; P. I and D terms for pitch adjustments made to maintain airspeed.</td>
-</tr>
-<tr>
-<td>ARSPD2PTCH_IMA</td>
-<td>0</td>
-<td>3000</td>
-<td>500</td>
-<td>100</td>
-<td>1</td>
-<td>NAV_PITCH_ASP_INT_MAX_CMSEC &#8211; In Degrees &#8211; Maximum pitch offset due to the integral. This limits the control output from being overdriven due to a persistent offset (eg. inability to maintain the programmed airspeed).</td>
-</tr>
-<tr>
-<td>YW2SRV_P</td>
-<td>0</td>
-<td>5</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>SERVO_YAW_P &#8211; P. I and D terms for the YAW control. Note units of this control loop are unusual. PID input is in m/s<strong></strong>2</td>
-</tr>
-<tr>
-<td>YW2SRV_I</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>SERVO_YAW_I &#8211; P. I and D terms for the YAW control. Note units of this control loop are unusual. PID input is in m/s<strong></strong>2</td>
-</tr>
-<tr>
-<td>YW2SRV_D</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>SERVO_YAW_D &#8211; P. I and D terms for the YAW control. Note units of this control loop are unusual. PID input is in m/s<strong></strong>2</td>
-</tr>
-<tr>
-<td>YW2SRV_IMAX</td>
-<td>0</td>
-<td>3000</td>
-<td>0</td>
-<td>100</td>
-<td>1</td>
-<td>SERVO_YAW_INT_MAX &#8211; Maximum control offset due to the integral. This prevents the control output from being overdriven due to a persistent offset (e.g. crosstracking).</td>
-</tr>
-<tr>
-<td>ENRGY2THR_P</td>
-<td>0</td>
-<td>5</td>
-<td>0.5</td>
-<td>1</td>
-<td>1</td>
-<td>THROTTLE_TE_P &#8211; P. I and D terms for throttle adjustments made to control altitude.</td>
-</tr>
-<tr>
-<td>ENRGY2THR_I</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>THROTTLE_TE_I &#8211; P. I and D terms for throttle adjustments made to control altitude.</td>
-</tr>
-<tr>
-<td>ENRGY2THR_D</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>THROTTLE_TE_D &#8211; P. I and D terms for throttle adjustments made to control altitude.</td>
-</tr>
-<tr>
-<td>ENRGY2THR_IMAX</td>
-<td>0</td>
-<td>100</td>
-<td>20</td>
-<td>1</td>
-<td>1</td>
-<td>THROTTLE_TE_INT_MAX &#8211; In Percent &#8211; Maximum throttle input due to the integral term. This limits the throttle from being overdriven due to a persistent offset (e.g. inability to maintain the programmed altitude).</td>
-</tr>
-<tr>
-<td>ALT2PTCH_P</td>
-<td>0</td>
-<td>5</td>
-<td>0.65</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_PITCH_ALT_P &#8211; P. I and D terms for pitch adjustments made to maintain altitude.</td>
-</tr>
-<tr>
-<td>ALT2PTCH_I</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_PITCH_ALT_I &#8211; P. I and D terms for pitch adjustments made to maintain altitude.</td>
-</tr>
-<tr>
-<td>ALT2PTCH_D</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>NAV_PITCH_ALT_D &#8211; P. I and D terms for pitch adjustments made to maintain altitude.</td>
-</tr>
-<tr>
-<td>ALT2PTCH_IMAX</td>
-<td>0</td>
-<td>3000</td>
-<td>500</td>
-<td>100</td>
-<td>1</td>
-<td>NAV_PITCH_ALT_INT_MAX_CM &#8211; In Meters &#8211; Maximum pitch offset due to the integral. This limits the control output from being overdriven due to a persistent offset (eg. inability to maintain the programmed altitude).</td>
-</tr>
-<tr>
-<td>KFF_PTCHCOMP</td>
-<td>-3</td>
-<td>3</td>
-<td>0.2</td>
-<td>0.01</td>
-<td>1</td>
-<td>PITCH_COMP &#8211; In Percent &#8211; Adds pitch input to compensate for the loss of lift due to roll control.</td>
-</tr>
-<tr>
-<td>KFF_RDDRMIX</td>
-<td>-3</td>
-<td>3</td>
-<td>0.5</td>
-<td>0.01</td>
-<td>1</td>
-<td>RUDDER_MIX &#8211; Roll to yaw mixing. This allows for co-ordinated turns.</td>
-</tr>
-<tr>
-<td>KFF_PTCH2THR</td>
-<td>-3</td>
-<td>3</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>P_TO_T &#8211; Pitch to throttle feed-forward gain.</td>
-</tr>
-<tr>
-<td>KFF_THR2PTCH</td>
-<td>-3</td>
-<td>3</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>T_TO_P &#8211; Throttle to pitch feed-forward gain.</td>
-</tr>
-<tr>
-<td>XTRK_GAIN_SC</td>
-<td>0</td>
-<td>100</td>
-<td>100</td>
-<td>100</td>
-<td>1</td>
-<td>XTRACK_GAIN_SCALED &#8211; Default value is 1.0 degrees per metre. Values lower than 0.001 will disable crosstrack compensation.</td>
-</tr>
-<tr>
-<td>ALT_MIX</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0.01</td>
-<td>1</td>
-<td>ALTITUDE_MIX &#8211; In Percent &#8211; Configures the blend between GPS and pressure altitude. 0 = GPS altitude, 1 = Press alt, 0.5 = half and half, etc.</td>
-</tr>
-<tr>
-<td>ARSPD_RATIO</td>
-<td>0</td>
-<td>5</td>
-<td>1.9936</td>
-<td>1</td>
-<td>1</td>
-<td>AIRSPEED_RATIO &#8211; Adjust AIRSPEED_RATIO in small increments to calibrate the airspeed sensor relative to your GPS. The calculation and default value are optimized for speeds around 12 m/s</td>
-</tr>
-<tr>
-<td>WP_RADIUS</td>
-<td>0</td>
-<td>200</td>
-<td>30</td>
-<td>1</td>
-<td>1</td>
-<td>WP_RADIUS_DEFAULT &#8211; When the user performs a factory reset on the APM, sets the waypoint radius (the radius from a target waypoint within which the APM will consider itself to have arrived at the waypoint) to this value in meters. This is mainly intended to allow users to start using the APM without programming a mission first.</td>
-</tr>
-<tr>
-<td>WP_LOITER_RAD</td>
-<td>0</td>
-<td>200</td>
-<td>60</td>
-<td>1</td>
-<td>1</td>
-<td>LOITER_RADIUS_DEFAULT &#8211; When the user performs a factory reset on the APM, sets the loiter radius (the distance the APM will attempt to maintain from a waypoint while loitering) to this value in meters. This is mainly intended to allow users to start using the APM without programming a mission first.</td>
-</tr>
-<tr>
-<td>ARSPD_FBW_MIN</td>
-<td>5</td>
-<td>50</td>
-<td>6</td>
-<td>1</td>
-<td>1</td>
-<td>AIRSPEED_FBW_MIN &#8211; In m/s &#8211; Airspeed corresponding to minimum and maximum throttle in Fly By Wire B mode.</td>
-</tr>
-<tr>
-<td>ARSPD_FBW_MAX</td>
-<td>5</td>
-<td>50</td>
-<td>22</td>
-<td>1</td>
-<td>1</td>
-<td>AIRSPEED_FBW_MAX &#8211; In m/s &#8211; Airspeed corresponding to minimum and maximum throttle in Fly By Wire B mode. AIRSPEED_FBW_MAX also sets the maximum airspeed that the cruise airspeed can be &#8220;&#8221;nudged&#8221;&#8221; to in AUTO mode when ENABLE_STICK_MIXING is set. In AUTO the cruise airspeed can be increased between AIRSPEED_CRUISE and AIRSPEED_FBW_MAX by positioning the throttle stick in the top 1/2 of its range. Throttle stick in the bottom 1/2 provide regular AUTO control.</td>
-</tr>
-<tr>
-<td>THR_MIN</td>
-<td>0</td>
-<td>100</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>THROTTLE_MIN &#8211; The minimum throttle setting to which the autopilot will reduce the throttle while descending. The default is zero, which is suitable for aircraft with a steady power-off glide. Increase this value if your aircraft needs throttle to maintain a stable descent in level flight.</td>
-</tr>
-<tr>
-<td>THR_MAX</td>
-<td>0</td>
-<td>100</td>
-<td>75</td>
-<td>1</td>
-<td>1</td>
-<td>THROTTLE_MAX &#8211; The maximum throttle setting the autopilot will apply. The default is 75%. Reduce this value if your aicraft is overpowered or has complex flight characteristics at high throttle settings.</td>
-</tr>
-<tr>
-<td>THR_FAILSAFE</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>THROTTLE_FAILSAFE &#8211; The throttle failsafe allows you to configure a software failsafe activated by a setting on the throttle input channel (channel 3). This can be used to achieve a failsafe override on loss of radio control without having to sacrifice one of your FLIGHT_MODE settings as the throttle failsafe overrides the switch-selected mode. Throttle failsafe is enabled by setting THROTTLE_FAILSAFE to 1.</td>
-</tr>
-<tr>
-<td>THR_FS_ACTION</td>
-<td>0</td>
-<td>2</td>
-<td>1</td>
-<td>1</td>
-<td></td>
-<td>THROTTLE_FAILSAFE_ACTION &#8211; The FAILSAFE_ACTION setting determines what APM will do when throttle failsafe mode is entered while flying in AUTO mode. This is important in order to avoid accidental failsafe behaviour when flying waypoints that take the aircraft temporarily out of radio range. If FAILSAFE_ACTION is 1 when failsafe is entered in AUTO or LOITER modes the aircraft will head for home in RTL mode. If the throttle channel moves back up it will return to AUTO or LOITER mode. The default behavior is to ignore throttle failsafe in AUTO and LOITER modes.</td>
-</tr>
-<tr>
-<td>TRIM_THROTTLE</td>
-<td>0</td>
-<td>90</td>
-<td>45</td>
-<td>1</td>
-<td>1</td>
-<td>THROTTLE_CRUISE &#8211; In Percent &#8211; The approximate throttle setting to achieve AIRSPEED_CRUISE in level flight. The default is 45% which is reasonable for a modestly powered aircraft.</td>
-</tr>
-<tr>
-<td>TRIM_AUTO</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>AUTO_TRIM &#8211; ArduPilot Mega can update its trim settings by looking at the radio inputs when switching out of MANUAL mode. This allows you to manually trim your aircraft before switching to an assisted mode but it also means that you should avoid switching out of MANUAL while you have any control stick deflection.</td>
-</tr>
-<tr>
-<td>FLTMODE_CH</td>
-<td>5</td>
-<td>8</td>
-<td>8</td>
-<td>1</td>
-<td>1</td>
-<td>FLIGHT_MODE_CHANNEL &#8211; Flight modes assigned to the control channel, and the input channel that is read for the control mode. Use a servo tester or the ArduPilotMega_demo test program to check your switch settings. ATTENTION: Some ArduPilot Mega boards have radio channels marked 0-7 and others have them marked the standard 1-8. The FLIGHT_MODE_CHANNEL option uses channel numbers 1-8 (and defaults to 8). If you only have a three-position switch or just want three modes set your switch to produce 1165, 1425, and 1815 microseconds and configure FLIGHT_MODE 1 &amp; 2, 3 &amp; 4 and 5 &amp; 6 to be the same. This is the default. If you have FLIGHT_MODE_CHANNEL set to 8 (the default) and your control channel connected to input channel 8, the hardware failsafe mode will activate for any control input over 1750ms.</td>
-</tr>
-<tr>
-<td>FLIGHT_MODE_1</td>
-<td>0</td>
-<td>14</td>
-<td>11</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_1 &#8211; The following standard flight modes are available: MANUAL = Full manual control via the hardware multiplexer. STABILIZE = Tries to maintain level flight but can be overridden with radio control inputs. FLY_BY_WIRE_A = Autopilot style control via user input with manual throttle. FLY_BY_WIRE_B = Autopilot style control via user input, aispeed controlled with throttle. RTL = Returns to the Home location and then LOITERs at a safe altitude. AUTO = Autonomous flight based on programmed waypoints.</td>
-</tr>
-<tr>
-<td>FLIGHT_MODE_2</td>
-<td>0</td>
-<td>14</td>
-<td>11</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_2</td>
-</tr>
-<tr>
-<td>FLIGHT_MODE_3</td>
-<td>0</td>
-<td>14</td>
-<td>5</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_3</td>
-</tr>
-<tr>
-<td>FLIGHT_MODE_4</td>
-<td>0</td>
-<td>14</td>
-<td>5</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_4</td>
-</tr>
-<tr>
-<td>FLIGHT_MODE_5</td>
-<td>0</td>
-<td>14</td>
-<td>0</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_5</td>
-</tr>
-<tr>
-<td>FLIGHT_MODE_6</td>
-<td>0</td>
-<td>14</td>
-<td>0</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_6</td>
-</tr>
-<tr>
-<td>RC1_MIN</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC1_MIN &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC1_MAX</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC1_MAX &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC1_TRIM</td>
-<td>900</td>
-<td>2100</td>
-<td>1200</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC1_TRIM &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC2_MIN</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC2_MIN &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC2_MAX</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC2_MAX &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC2_TRIM</td>
-<td>900</td>
-<td>2100</td>
-<td>1200</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC2_TRIM &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC3_MIN</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC3_MIN &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC3_MAX</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC3_MAX &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC3_TRIM</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC3_TRIM &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC4_MIN</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC4_MIN &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC4_MAX</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC4_MAX &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC4_TRIM</td>
-<td>900</td>
-<td>2100</td>
-<td>1200</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_RC4_TRIM &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC5_MIN</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH5_MIN &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC5_MAX</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH5_MAX &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC5_MAX</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH5_MAX &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC5_TRIM</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH5_TRIM &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC6_MIN</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH6_MIN &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC6_MAX</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH6_MAX &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC6_TRIM</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH6_TRIM &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC7_MIN</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH7_MIN &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC7_MAX</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH7_MAX &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC7_TRIM</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH7_TRIM &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC8_MIN</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH8_MIN &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC8_MAX</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH8_MAX &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>RC8_TRIM</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>PWM_CH8_TRIM &#8211; Radio Settings &#8211; all radio settings represent the period of the pulse width modulated signal. Typically 1000 ms is the lower limit, 1500 is neutral, and 2000 is the upper limit</td>
-</tr>
-<tr>
-<td>IMU_OFFSET_0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>IMU_OFFSET_0 &#8211; IMU Calibration</td>
-</tr>
-<tr>
-<td>IMU_OFFSET_1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>IMU_OFFSET_1 &#8211; IMU Calibration</td>
-</tr>
-<tr>
-<td>IMU_OFFSET_2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>IMU_OFFSET_2 &#8211; IMU Calibration</td>
-</tr>
-<tr>
-<td>IMU_OFFSET_3</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>IMU_OFFSET_3 &#8211; IMU Calibration</td>
-</tr>
-<tr>
-<td>IMU_OFFSET_4</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>IMU_OFFSET_4 &#8211; IMU Calibration</td>
-</tr>
-<tr>
-<td>IMU_OFFSET_5</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>IMU_OFFSET_5 &#8211; IMU Calibration</td>
-</tr>
-<tr>
-<td>YAW_MODE</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>YAW_MODE</td>
-</tr>
-<tr>
-<td>WP_MODE</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>WP_MODE</td>
-</tr>
-<tr>
-<td>WP_TOTAL</td>
-<td>0</td>
-<td>255</td>
-<td></td>
-<td>0</td>
-<td></td>
-<td>WP_TOTAL</td>
-</tr>
-<tr>
-<td>WP_INDEX</td>
-<td>0</td>
-<td>255</td>
-<td></td>
-<td>0</td>
-<td></td>
-<td>WP_INDEX</td>
-</tr>
-<tr>
-<td>CONFIG</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>CONFIG_OPTIONS</td>
-</tr>
-<tr>
-<td>SWITCH_ENABLE</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>REVERS_SWITCH_ENABLE &#8211; 0 = Off, 1 = On, Enables/Disables physical reverse switches on APM board</td>
-</tr>
-<tr>
-<td>FIRMWARE_VER</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>FIRMWARE_VER</td>
-</tr>
-<tr>
-<td>LOG_BITMASK</td>
-<td>0</td>
-<td>65535</td>
-<td>334</td>
-<td>1</td>
-<td>1</td>
-<td>LOG_BITMASK</td>
-</tr>
-<tr>
-<td>TRIM_ELEVON</td>
-<td>900</td>
-<td>2100</td>
-<td>1500</td>
-<td>1</td>
-<td>1</td>
-<td>TRIM_ELEVON</td>
-</tr>
-<tr>
-<td>THR_FS_VALUE</td>
-<td>850</td>
-<td>1000</td>
-<td>950</td>
-<td>1</td>
-<td>1</td>
-<td>THROTTLE_FS_VALUE &#8211; If the throttle failsafe is enabled, THROTTLE_FS_VALUE sets the channel value below which the failsafe engages. The default is 975ms, which is a very low throttle setting. Most transmitters will let you trim the manual throttle position up so that you cannot engage the failsafe with a regular stick movement. Configure your receiver&#8217;s failsafe setting for the throttle channel to the absolute minimum, and use the ArduPilotMega_demo program to check that you cannot reach that value with the throttle control. Leave a margin of at least 50 microseconds between the lowest throttle setting and THROTTLE_FS_VALUE.</td>
-</tr>
-<tr>
-<td>TRIM_ARSPD_CM</td>
-<td>500</td>
-<td>5000</td>
-<td>1200</td>
-<td>100</td>
-<td>1</td>
-<td>AIRSPEED_CRUISE_CM &#8211; The speed in metres per second to maintain during cruise. The default is 10m/s, which is a conservative value suitable for relatively small, light aircraft.</td>
-</tr>
-<tr>
-<td>GND_TEMP</td>
-<td>-10</td>
-<td>50</td>
-<td>28</td>
-<td>1</td>
-<td>1</td>
-<td>GND_TEMP &#8211; Ground Temperature</td>
-</tr>
-<tr>
-<td>AP_OFFSET</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>AP_OFFSET</td>
-</tr>
-<tr>
-<td>TRIM_PITCH_CD</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>TRIM_PITCH_CD</td>
-</tr>
-<tr>
-<td>ALT_HOLD_RTL</td>
-<td>0</td>
-<td>20000</td>
-<td>10000</td>
-<td>100</td>
-<td>1</td>
-<td>ALT_HOLD_HOME_CM &#8211; When the user performs a factory reset on the APM. Sets the flag for weather the current altitude or ALT_HOLD_HOME altitude should be used for Return To Launch. Also sets the value of USE_CURRENT_ALT in meters. This is mainly intended to allow users to start using the APM without programming a mission first.</td>
-</tr>
-<tr>
-<td>XTRK_ANGLE_CD</td>
-<td>0</td>
-<td>6000</td>
-<td>3000</td>
-<td>100</td>
-<td>1</td>
-<td>XTRACK_ENTRY_ANGLE_CENTIDEGREE &#8211; Maximum angle used to correct for track following.</td>
-</tr>
-<tr>
-<td>ROLL_SRV_MAX</td>
-<td>0</td>
-<td>100</td>
-<td>4500</td>
-<td>100</td>
-<td>0</td>
-<td>ROLL_SERVO_MAX_CENTIDEGREE</td>
-</tr>
-<tr>
-<td>PITCH_SRV_MAX</td>
-<td>0</td>
-<td>100</td>
-<td>4500</td>
-<td>100</td>
-<td>0</td>
-<td>PITCH_SERVO_MAX_CENTIDEGREE</td>
-</tr>
-<tr>
-<td>RUDER_SRV_MAX</td>
-<td>0</td>
-<td>100</td>
-<td>4500</td>
-<td>100</td>
-<td>0</td>
-<td>RUDDER_SERVO_MAX_CENTIDEGREE</td>
-</tr>
-<tr>
-<td>LIM_ROLL_CD</td>
-<td>0</td>
-<td>6000</td>
-<td>4500</td>
-<td>100</td>
-<td>1</td>
-<td>HEAD_MAX_CENTIDEGREE &#8211; The maximum commanded bank angle in either direction. The default is 45 degrees. Decrease this value if your aircraft is not stable or has difficulty maintaining altitude in a steep bank.</td>
-</tr>
-<tr>
-<td>LIM_PITCH_MAX</td>
-<td>0</td>
-<td>6000</td>
-<td>1500</td>
-<td>100</td>
-<td>1</td>
-<td>PITCH_MAX_CENTIDEGREE &#8211; The maximum commanded pitch up angle. The default is 15 degrees. Care should be taken not to set this value too large, as the aircraft may stall</td>
-</tr>
-<tr>
-<td>LIM_PITCH_MIN</td>
-<td>-6000</td>
-<td>0</td>
-<td>-2500</td>
-<td>100</td>
-<td>1</td>
-<td>PITCH_MIN_CENTIDEGREE &#8211; The maximum commanded pitch down angle. Note that this value must be negative. The default is -25 degrees. Care should be taken not to set this value too large as it may result in overspeeding the aircraft.</td>
-</tr>
-<tr>
-<td>GND_ALT_CM</td>
-<td>0</td>
-<td>500000</td>
-<td>0</td>
-<td>100</td>
-<td>1</td>
-<td>GND_ALT_CM</td>
-</tr>
-<tr>
-<td>GND_ABS_PRESS</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>GND_ABS_PRESS</td>
-</tr>
-<tr>
-<td>COMPASS_DEC</td>
-<td>-1.57075</td>
-<td>1.57075</td>
-<td>0</td>
-<td>1</td>
-<td></td>
-<td>COMPASS_DEC &#8211; Compass Declination</td>
-</tr>
-<tr>
-<td>SR0_EXT_STAT</td>
-<td>0</td>
-<td>50</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 0 &#8211; Enable GPS_STATUS, CONTROL_STATUS, AUX_STATUS</td>
-</tr>
-<tr>
-<td>SR0_EXTRA1</td>
-<td>0</td>
-<td>50</td>
-<td>10</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 0 &#8211; Enable MSG_ATTITUDE</td>
-</tr>
-<tr>
-<td>SR0_EXTRA2</td>
-<td>0</td>
-<td>50</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 0 &#8211; Enable MSG_VFR_HUD</td>
-</tr>
-<tr>
-<td>SR0_EXTRA3</td>
-<td>0</td>
-<td>50</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 0 &#8211; Not currently used</td>
-</tr>
-<tr>
-<td>SR0_POSITION</td>
-<td>0</td>
-<td>50</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 0 &#8211; Enable LOCAL_POSITION, GLOBAL_POSITION/GLOBAL_POSITION_INT messages</td>
-</tr>
-<tr>
-<td>SR0_RAW_CTRL</td>
-<td>0</td>
-<td>50</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 0 &#8211; Enable ATTITUDE_CONTROLLER_OUTPUT, POSITION_CONTROLLER_OUTPUT, NAV_CONTROLLER_OUTPUT</td>
-</tr>
-<tr>
-<td>SR0_RAW_SENS</td>
-<td>0</td>
-<td>50</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 0 &#8211; Enable IMU_RAW, GPS_RAW, GPS_STATUS packets</td>
-</tr>
-<tr>
-<td>SR0_RC_CHAN</td>
-<td>0</td>
-<td>50</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 0 &#8211; Enable RC_CHANNELS_SCALED, RC_CHANNELS_RAW, SERVO_OUTPUT_RAW</td>
-</tr>
-<tr>
-<td>SR3_EXT_STAT</td>
-<td>0</td>
-<td>50</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 3 &#8211; Enable GPS_STATUS, CONTROL_STATUS, AUX_STATUS</td>
-</tr>
-<tr>
-<td>SR3_EXTRA1</td>
-<td>0</td>
-<td>50</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 3 &#8211; Enable MSG_ATTITUDE</td>
-</tr>
-<tr>
-<td>SR3_EXTRA2</td>
-<td>0</td>
-<td>50</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 3 &#8211; Enable MSG_VFR_HUD</td>
-</tr>
-<tr>
-<td>SR3_EXTRA3</td>
-<td>0</td>
-<td>50</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 3 &#8211; Not currently used</td>
-</tr>
-<tr>
-<td>SR3_POSITION</td>
-<td>0</td>
-<td>50</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 3 &#8211; Enable LOCAL_POSITION, GLOBAL_POSITION/GLOBAL_POSITION_INT messages</td>
-</tr>
-<tr>
-<td>SR3_RAW_CTRL</td>
-<td>0</td>
-<td>50</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 3 &#8211; Enable ATTITUDE_CONTROLLER_OUTPUT, POSITION_CONTROLLER_OUTPUT, NAV_CONTROLLER_OUTPUT</td>
-</tr>
-<tr>
-<td>SR3_RAW_SENS</td>
-<td>0</td>
-<td>50</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 3 &#8211; Enable IMU_RAW, GPS_RAW, GPS_STATUS packets</td>
-</tr>
-<tr>
-<td>SR3_RC_CHAN</td>
-<td>0</td>
-<td>50</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>TELEMETRY_ENABLE Port 3 &#8211; Enable RC_CHANNELS_SCALED, RC_CHANNELS_RAW, SERVO_OUTPUT_RAW</td>
-</tr>
-<tr>
-<td>MAG_ENABLE</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>MAG_ENABLE &#8211; 0 = Off, 1 = On, Magnetometer Enable</td>
-</tr>
-<tr>
-<td>ARSPD_ENABLE</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>AIRSPEED_ENABLE &#8211; 0 = Off, 1 = On, Airspeed Sensor Enable</td>
-</tr>
-<tr>
-<td>BATT_CAPACITY</td>
-<td>0</td>
-<td>10000</td>
-<td>1760</td>
-<td>1</td>
-<td>1</td>
-<td>BATTERY_MAH &#8211; Battery capacity in mAh</td>
-</tr>
-<tr>
-<td>BATT_MONITOR</td>
-<td>0</td>
-<td>4</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>BATTERY_MONITOR &#8211; The value should be set to 0 to disable battery monitoring, 1 to measure cell voltages for a 3 cell lipo, 2 to measure cell voltages for a 4 cell lipo, 3 to measure the total battery voltage (only) on input 1, or 4 to measure total battery voltage on input 1 and current on input 2.</td>
-</tr>
-<tr>
-<td>FS_GCS_ENABL</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>FS_GCS_ENABLE &#8211; 0 = Off, 1 = On, If the GCS heartbeat is lost for 20 seconds, the plane will Return to Launch</td>
-</tr>
-<tr>
-<td>FS_LONG_ACTN</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>FS_LONG_ACTION &#8211; 0 = Off, 1 = On, If heartbeat is lost for 20 srconds, the plane will Return to Launch</td>
-</tr>
-<tr>
-<td>FS_SHORT_ACTN</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>FS_SHORT_ACTION &#8211; 0 = Off, 1 = On, If heartbeat is lost for 1.5 seconds, the plane will circle until heartbeat is found again or 20 seconds has passed</td>
-</tr>
-<tr>
-<td>SYSID_MYGCS</td>
-<td>0</td>
-<td>255</td>
-<td>255</td>
-<td>1</td>
-<td>1</td>
-<td>SYSID_MYGCS &#8211; The system ID of the GCS</td>
-</tr>
-<tr>
-<td>SYSID_THISMAV</td>
-<td>0</td>
-<td>255</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>SYSID_THISMAV &#8211; The system ID of the MAVlink vehicle</td>
-</tr>
-<tr>
-<td>AOA</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-</tr>
-<tr>
-<td>ACR_PIT_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_PIT_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_PIT_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_PIT_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_RLL_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_RLL_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_RLL_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_RLL_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_YAW_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_YAW_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_YAW_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ACR_YAW_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ESC</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>ESC_CALIBRATE_MODE</td>
-</tr>
-<tr>
-<td>FRAME</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>FRAME_ORIENTATION</td>
-</tr>
-<tr>
-<td>LOITER_RADIUS</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_LAT_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_LAT_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_LAT_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_LAT_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_LON_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_LON_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_LON_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_LON_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_WP_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_WP_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_WP_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>NAV_WP_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>PITCH_MAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>SONAR_ENABLE</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>SONAR_ENABLE &#8211; 0 = Off, 1 = On, Sonar Enable</td>
-</tr>
-<tr>
-<td>STB_PIT_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_PIT_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_PIT_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_PIT_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_RLL_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_RLL_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_RLL_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_RLL_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_YAW_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_YAW_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_YAW_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>STB_YAW_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>THR_BAR_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>THR_BAR_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>THR_BAR_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>THR_BAR_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soo</td>
-</tr>
-<tr>
-<td>THR_SON_D</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>THR_SON_I</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>THR_SON_IMAX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>THR_SON_P</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>WP_MODE</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>WP_MUST_INDEX</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>XTRACK_ANGLE</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>XTRK_GAIN</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ARSPD_OFFSET</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>ELEVON_CH1_REV</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>ELEVON_CHANNEL1_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>ELEVON_CH2_REV</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>ELEVON_CHANNEL2_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>ELEVON_MIXING</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>ELEVON_MIXING &#8211; 0 = Disabled, 1 = Enabled</td>
-</tr>
-<tr>
-<td>ELEVON_REVERSE</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>ELEVON_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>INVERTEDFLT_CH</td>
-<td>0</td>
-<td>8</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>INVERTED_FLIGHT_CHANNEL &#8211; Channel to select inverted flight mode, 0 = Disabled</td>
-</tr>
-<tr>
-<td>RC1_REV</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>RC_CHANNEL1_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>RC2_REV</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>RC_CHANNEL2_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>RC3_REV</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>RC_CHANNEL3_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>RC4_REV</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>RC_CHANNEL4_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>RC5_REV</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>RC_CHANNEL5_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>RC6_REV</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>RC_CHANNEL6_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>RC7_REV</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>RC_CHANNEL7_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>RC8_REV</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>RC_CHANNEL8_REVERSE &#8211; Channel Reversing (Future use on APM board 2.0) &#8211; Does not override dip switches</td>
-</tr>
-<tr>
-<td>SYSID_SW_MREV</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>SYSID_SW_TYPE</td>
-<td></td>
-<td></td>
-<td>0</td>
-<td></td>
-<td></td>
-<td>Description coming soon</td>
-</tr>
-<tr>
-<td>THR_SLEWRATE</td>
-<td>0</td>
-<td>100</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>THROTTLE_SLEW_RATE &#8211; 0 = Disabled, otherwise it limits throttle movement rate. Units are % per second. This is a test feature and may go away.</td>
-</tr>
-<tr>
-<td>FLTMODE1</td>
-<td>0</td>
-<td>20</td>
-<td>1</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_1 &#8211; Mode switch setting 1 &#8211; APM: 0 = Manual, 2 = Stabilize, 5 &#8211; Fly-By-Wire-A, 6 = Fly-By-Wire-B, 7 = Fly-By-Wire-C, 10 = Auto &#8211; Mission, 11 = RTL, 12 = Loiter, 13 = Take-off, 14 = Land, 15= Guided; ACM2: 0 = Stabilize, 2 = Acro, 3 = Simple, 4 = Auto, 5 = Guided, 6 = Loiter, 7 = RTL</td>
-</tr>
-<tr>
-<td>FLTMODE2</td>
-<td>0</td>
-<td>20</td>
-<td>1</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_2 &#8211; Mode switch setting 2 &#8211; APM: 0 = Manual, 2 = Stabilize, 5 &#8211; Fly-By-Wire-A, 6 = Fly-By-Wire-B, 7 = Fly-By-Wire-C, 10 = Auto &#8211; Mission, 11 = RTL, 12 = Loiter, 13 = Take-off, 14 = Land, 15= Guided; ACM2: 0 = Stabilize, 2 = Acro, 3 = Simple, 4 = Auto, 5 = Guided, 6 = Loiter, 7 = RTL</td>
-</tr>
-<tr>
-<td>FLTMODE3</td>
-<td>0</td>
-<td>20</td>
-<td>1</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_3 &#8211; Mode switch setting 3 &#8211; APM: 0 = Manual, 2 = Stabilize, 5 &#8211; Fly-By-Wire-A, 6 = Fly-By-Wire-B, 7 = Fly-By-Wire-C, 10 = Auto &#8211; Mission, 11 = RTL, 12 = Loiter, 13 = Take-off, 14 = Land, 15= Guided; ACM2: 0 = Stabilize, 2 = Acro, 3 = Simple, 4 = Auto, 5 = Guided, 6 = Loiter, 7 = RTL</td>
-</tr>
-<tr>
-<td>FLTMODE4</td>
-<td>0</td>
-<td>20</td>
-<td>1</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_4 &#8211; Mode switch setting 4 &#8211; APM: 0 = Manual, 2 = Stabilize, 5 &#8211; Fly-By-Wire-A, 6 = Fly-By-Wire-B, 7 = Fly-By-Wire-C, 10 = Auto &#8211; Mission, 11 = RTL, 12 = Loiter, 13 = Take-off, 14 = Land, 15= Guided; ACM2: 0 = Stabilize, 2 = Acro, 3 = Simple, 4 = Auto, 5 = Guided, 6 = Loiter, 7 = RTL</td>
-</tr>
-<tr>
-<td>FLTMODE5</td>
-<td>0</td>
-<td>20</td>
-<td>1</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_5 &#8211; Mode switch setting 5 &#8211; APM: 0 = Manual, 2 = Stabilize, 5 &#8211; Fly-By-Wire-A, 6 = Fly-By-Wire-B, 7 = Fly-By-Wire-C, 10 = Auto &#8211; Mission, 11 = RTL, 12 = Loiter, 13 = Take-off, 14 = Land, 15= Guided; ACM2: 0 = Stabilize, 2 = Acro, 3 = Simple, 4 = Auto, 5 = Guided, 6 = Loiter, 7 = RTL</td>
-</tr>
-<tr>
-<td>FLTMODE6</td>
-<td>0</td>
-<td>20</td>
-<td>1</td>
-<td>1</td>
-<td></td>
-<td>FLIGHT_MODE_6 &#8211; Mode switch setting 6 &#8211; APM: 0 = Manual, 2 = Stabilize, 5 &#8211; Fly-By-Wire-A, 6 = Fly-By-Wire-B, 7 = Fly-By-Wire-C, 10 = Auto &#8211; Mission, 11 = RTL, 12 = Loiter, 13 = Take-off, 14 = Land, 15= Guided; ACM2: 0 = Stabilize, 2 = Acro, 3 = Simple, 4 = Auto, 5 = Guided, 6 = Loiter, 7 = RTL</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-
 <hr />
 <h4>链接</h4>
 <ol>
