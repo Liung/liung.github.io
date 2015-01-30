@@ -1821,21 +1821,21 @@ init_mathjax();
 <p><img alt="8" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSelectExistCodeAsMake.png" /></p>
 <p><strong>4、</strong>在<strong>New Project</strong>的文件导航窗口，选择ardupilot-mega代码的顶层目录到<strong>Existing Code Location</strong>文本栏，然后点击<strong>Finish</strong>按钮。</p>
 <p><img alt="9" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseImportArduPilot.png" /></p>
-<p><strong>5、</strong>为了针对你特定类型的载具和飞控板类型编译相应代码，需要进行更改编译配置。</p>
+<p><strong>5、</strong>为了针对你特定类型的载具和飞控板类型编译相应代码，需要对编译配置进行更改。</p>
 <p><strong>A、</strong>选择Eclipse软件页面左上侧的如Java页面部件的菜单项（打开视图窗口）。</p>
 <p><strong>B、</strong>在弹出的视图窗口中选择<strong>C/C++(default)</strong>项，点击<strong>OK</strong>按钮。</p>
 <p><strong>C、</strong>在工程管理器页面你的工程（下图的<strong>ardupilot-master</strong>）上右击</p>
 <p><img alt="10" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseOpenPerspectiveCC++.png" /></p>
 <p><strong>6、</strong>在弹出菜单中选择<strong>Properties</strong></p>
-<p><strong>7、</strong>属性窗口（Properties）选择<strong>C/C++ Build</strong>（应该显示<strong>Builder Settings</strong>选项卡）</p>
+<p><strong>7、</strong>属性窗口（Properties）选择<strong>C/C++ Build</strong>（当前选项卡应该是<strong>Builder Settings</strong>）</p>
 <p><strong>8、</strong>在<strong>C/C++ Build</strong>窗口，编辑<strong>Build directory</strong>文本栏内容为你想要编译的载具目录。</p>
 <p>A、例如，将<code>${workspace_loc:/ardupilot-master}</code>变为<code>${workspace_loc:/ardupilot-master/ArduPlane}</code></p>
 <p><img alt="11" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseBuildSettings.png" /></p>
-<p><strong>9、</strong>现在选择<strong>Behavior</strong>选项卡</p>
+<p><strong>9、</strong>现在，选择<strong>Behavior</strong>选项卡</p>
 <p><strong>10、</strong>在<strong>Build（Incremental Build）</strong>项，用你的编译目标（编译参数）替换<strong>all</strong>，如果你想编译近期的APM飞控板，那么可以改为<strong>apm2</strong></p>
 <p><strong>11、</strong>这里还可以填写其他的编译目标（编译参数），包括SIL和各种旋翼构型</p>
 <p><strong>12、</strong>可以在不同飞行器目录中的Makefiles文件中查看可用的参数类型（目标类型）</p>
-<p><strong>13、</strong>选择<strong>C/C++ Build</strong>窗口底部的<strong>OK</strong>按钮</p>
+<p><strong>13、</strong>最后点击<strong>C/C++ Build</strong>窗口底部的<strong>OK</strong>按钮</p>
 <p><img alt="12" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/08/EclipseSetBuildTarget.png" /></p>
 <hr />
 <h3>编译ArduPilot工程</h3>
