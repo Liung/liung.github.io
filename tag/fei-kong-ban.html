@@ -1729,22 +1729,6 @@ init_mathjax();
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
-      </h1>
-      <p class="meta"><time datetime="2015-01-29T17:17:54" pubdate>1月 29, 2015</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog，对APM的源码进行解析，以了解APM自动飞控的工作原理（希望我的C++水平过关，可以理解源码的意思），由于涉及到了非常专业的单片机、飞行器控制、空气动力学原理、计算机编程、调试等非常专业的知识，所以难免出现一些错误，如有发现，希望通过邮箱与我指正。同时，真切希望国内也有如此爱好开源、爱好贡献的人们积极参与到诸如此类如此有趣的项目中来，让每个人从中受益。帮助别人的同时，也在丰富自己。 :&gt;
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
         <a href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html">APM-I2C</a>
       </h1>
       <p class="meta"><time datetime="2014-10-19T13:22:24" pubdate>10月 19, 2014</time></p>
@@ -1964,6 +1948,27 @@ SITL（software in the loop）仿真可以让你在没有任何硬件的情况�
     <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html">Read On &crarr;</a>
   </footer>
   		</article>
+  		<article>
+<header>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">APM-Windows平台上用Make方法编译Pixhawk和PX4</a>
+      </h1>
+      <p class="meta"><time datetime="2014-09-07T13:59:57" pubdate>9月 07, 2014</time></p>
+</header>
+
+  <div class="entry-content">
+<strong>1、</strong> 安装<a href="http://windows.github.com/">Github for Windows</a></p>
+<p><strong>2、</strong> 确保你的 github 上关于行尾结束符的设置没有发生变动。</p>
+<ul>
+<li>当你安装了Git 后，“Git shell（or Bash）”也会安装好。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：</li>
+</ul>
+<p><code>git config --global core.autocrlf false</code></p>
+<p><strong>3、</strong>“克隆”（clone）Ardupilot，PX4Firmware和PX4NuttX代码库到你的本地电脑上：</p>
+</div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">Read On &crarr;</a>
+  </footer>
+  		</article>
 <div class="pagination">
     <a class="prev" href="http://liung.github.io/tag/fei-kong-ban2.html">&larr; Older</a>
 
@@ -1977,9 +1982,6 @@ SITL（software in the loop）仿真可以让你在没有任何硬件的情况�
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
-      </li>
-      <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html">APM-I2C</a>
       </li>
       <li class="post">
@@ -1990,6 +1992,9 @@ SITL（software in the loop）仿真可以让你在没有任何硬件的情况�
       </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">APM-使用Atmel Studio 或者微软的Visual Studio编辑代码</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html">APM-使用Eclipse进行ArduPilot Mega开发</a>
       </li>
     </ul>
   </section>
@@ -2030,7 +2035,7 @@ SITL（software in the loop）仿真可以让你在没有任何硬件的情况�
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2014-2015  - liung -
+    Copyright &copy;  2014  - liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
