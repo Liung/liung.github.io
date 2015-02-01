@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 29 Jan 2015 17:45:52 +0800</lastBuildDate><item><title>APM-MAVLink命令集</title><link>http://liung.github.io/blog/apm/2015-01-29-APM-mavlink_commands.html</link><description>&lt;h3&gt;APM 2.0 命令集&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 01 Feb 2015 12:48:01 +0800</lastBuildDate><item><title>APM-加载代码到APM2.x</title><link>http://liung.github.io/blog/apm/2015-02-01-APM-%E5%8A%A0%E8%BD%BD%E4%BB%A3%E7%A0%81%E5%88%B0APM2.x.html</link><description>&lt;h3&gt;你还需要：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;mini USB传输线（APM需要） 或者 micro USB传输线（APM2需要）&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://firmware.diydrones.com/Tools/Arduino/"&gt;Windows&lt;/a&gt;或&lt;a href="http://firmware.diydrones.com/Tools/Arduino/"&gt;Macintosh&lt;/a&gt;平台下的特定修改版的Arduino IDE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3&gt;设置软件驱动&lt;/h3&gt;
+&lt;p&gt;
+首先，下载并安装Arduino（按照上面给的链接）。如果之前从没有使用过Arduino，请参阅&lt;a href="http://arduino.cc/en/Guide/HomePage"&gt;这些设置说明&lt;/a&gt;来了解Arduino的基础操作。&lt;/p&gt;
+&lt;p&gt;接下来，设置APM连接到电脑上需要的USB驱动器。绝大多数人都会使用常规的USB-A到miniB连接线（一端是常规USB口，另一端是mini USB）通过IMU模块连接APM，如果没有IMU模块，还可以选择使用FIDI传输。下图展示了如何使用这种传输线。
+&lt;/p&gt;
+&lt;p&gt;当第一次连接APM或FTDI传输线到电脑上时，Windows 7系统会自动辨识FTDI USB端口到串口芯片的类型，并安装正确的驱动器。如果系统没有出现上述描述的情况或者使用的是较老的系统，那么你应该从&lt;a href="http://www.ftdichip.com/Drivers/VCP.htm"&gt;这里&lt;/a&gt;下载并安装对应系统的合适驱动软件。一旦成功安装了驱动，需要重启电脑并重新连接传输线。推荐您查看电脑的设备管理器（可以在电脑控制面板中找到），如下图所示，在你的电脑上可能会显示不同的端口号，这取决于操作系统中连接了多少其他外部设备。确认将在Arduino或与APM连接通信中使用的正确端口号。&lt;/p&gt;
+&lt;p&gt;注意：如果你正在使用的是FTDI连接线，必须在控制面板/设备管理器中将COM端口设置为FTDI/USB模式。具体操作：找到USB串口端，如下图所示（你的FTDI可能已经被设置为与COM3不同的端口；不用在意所给的端口号），在属性/端口设置/高级选项（Properties/Port Settings/Advanced）中，确保勾选了“Set RTS On close”选项框，如下图。当其它地方发生改变，你不需要再进行上述的操作。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/07/eighteen.png" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;连接传输线&lt;/h3&gt;
+&lt;p&gt;FTDI或USB线提供了足够电力用来进行桌面操作，但是可能不能驱动两个以上的常规舵机。如果你想要驱动更多舵机或使用的是数字舵机，就需要提供额外的电源（通常使用电调（ESC）连接到APM舵机输出端）。&lt;/p&gt;
+&lt;p&gt;如果使用的是USB传输线，像下图一样进行连接：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="2" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/07/IMG_4805.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;如果使用是FTDI传输线，像下图一样进行连接，注意将传输线中的黑线与黄线标记出来：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/07/IMG_4804.jpg" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;设置Sketchbook目录文件夹&lt;/h3&gt;
+&lt;p&gt;接下来你必须定义Arduino的"Sketches"文件目录（Arduino要使用的包含程序代码的文件集合）和库。&lt;/p&gt;
+&lt;p&gt;创建一个你可以找到的文件夹，可以在你的&lt;strong&gt;文档&lt;/strong&gt;目录或桌面其它地方。（如果你曾经使用过Arduino，可能已经设置了某个路径）。运行Arduino IDE，打开&lt;strong&gt;Preferences&lt;/strong&gt;对话框。设置Sketchbook位置为你刚创建的或使用的Sketchbook文件夹。下图是我电脑上的位置：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="4" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/07/sketchfile.png" /&gt;&lt;/p&gt;
+&lt;p&gt;一旦你改变了目录，就必须重启Arduino让程序自动检测并识别。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;设置板子类型&lt;/h3&gt;
+&lt;p&gt;在Arduino IDE修改版中，有一个新添加的菜单项“ArduPilot”，它可以用来设置板子类型。&lt;/p&gt;
+&lt;p&gt;对于2.9.1或更早版本的Arducopter，应该在该菜单下选择“None”，并且在“Tools”菜单中确保板子类型为“ArduinoMega 2560 or Mega ADK”。如果正在使用的是APM2，你需要将APM_Comfig.h文件中的第5行代码取消注释（如最底部截图所示）。
+对于2.9.1之后的版本，应该设置ArduPilot/HAL Board为“ArduPilot Mega 1”或者“ArduPilot Mega 2.x”，这取决于你使用的板子类型&lt;/p&gt;
+&lt;p&gt;注意：进行上述操作后需要重启Arduino IDE。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="5" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/07/ArduinoIDEmodified.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="6" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/07/ArduinoAPMConfig.png" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/load-the-code-onto-apm2x/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sun, 01 Feb 2015 12:48:01 +0800</pubDate><guid>tag:liung.github.io,2015-02-01:blog/apm/2015-02-01-APM-加载代码到APM2.x.html</guid><category>APM</category></item><item><title>APM-MAVLink命令集</title><link>http://liung.github.io/blog/apm/2015-01-29-APM-mavlink_commands.html</link><description>&lt;h3&gt;APM 2.0 命令集&lt;/h3&gt;
 &lt;p&gt;
 APM 2.0版本已经采用部分MAVLink消息协议。&lt;a href="http://diydrones.com/group/arducopterusergroup/forum/topics/mavlink-tutorial-for-absolute-dummies-part-i?xg_source=activity"&gt;这里&lt;/a&gt;有一份“傻瓜式指南”直接对MAVLink进行操作。&lt;/p&gt;
 &lt;p&gt;APM命令集以14个字节形式存储，字节对应的含义如下表所示：&lt;/p&gt;
@@ -5678,7 +5719,7 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html"&gt;使用Visual Studio编译Mission Planner&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-for-beaglebone-black-on-linux/"&gt;Linux上针对BeagleBone Black的编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-apm-for-flymaple/"&gt;Linux上针对Flymaple的APM编译 *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://dev.ardupilot.com/wiki/load-the-code-onto-apm2x/"&gt;加载代码到APM2.x *&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2015-02-01-APM-加载代码到APM2.x.html"&gt;加载代码到APM2.x&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html"&gt;编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html"&gt;使用Eclipse编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;------------&amp;gt;&amp;gt; &lt;strong&gt;&lt;a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html"&gt;使用Atmel Studio 或者微软的Visual Studio编辑代码&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;

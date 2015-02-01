@@ -1729,88 +1729,20 @@ init_mathjax();
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/python/2014-09-14-Pandas学习笔记.html">Pandas学习笔记</a>
+        <a href="http://liung.github.io/blog/python/simple-3d-visualization-in-matplotlib.html">Quaternions and Key Bindings: Simple 3D Visualization in Matplotlib</a>
       </h1>
-      <p class="meta"><time datetime="2014-09-14T14:26:24" pubdate>9月 14, 2014</time></p>
+      <p class="meta"><time datetime="2012-11-24T11:04:00" pubdate>11月 24, 2012</time></p>
 </header>
 
-  <div class="entry-content"><p>通过索引方式返回的列只是相应数据的视图，因此，对返回的Series所做的任何就地修改都会反映到DataFrame上。通过Series的<code>copy</code>方法可显式地复制列。</p>
-<h4>DataFrame构造器可以接受的数据：</h4>
-<ul>
-<li><strong>二维ndarray：</strong></li>
-<li><strong>由数组、列表或元祖组成的字典 ...</strong></li></ul></div>
+  <div class="entry-content">
+<p>Matplotlib is a powerful framework, but its 3D capabilities still have a lot of room to grow. The <a href="http://matplotlib.org/mpl_toolkits/mplot3d/index.html">mplot3d</a> toolkit allows for several kinds of 3D plotting, but the ability to create and rotate solid 3D objects is hindered by the inflexibility of the <code>zorder</code> attribute: because it is not updated when the view is rotated, things in the &quot;back&quot; will cover things in the &quot;front&quot;, obscuring them and leading to very unnatural-looking results.</p>
+<p>I decided to see if I could create a simple script that addresses this. Though it would be possible to use the built-in <code>mplot3d</code> architecture to take care of rotating and projecting the points, I decided to do it from scratch for the sake of my own education.</p>
+<p>We'll step through it below: by the end of this post we will have created a 3D viewer in matplotlib which I think is quite nice. </div>
   <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/python/2014-09-14-Pandas学习笔记.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/python/2014-09-14-numpy学习笔记.html">Numpy学习笔记</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-14T12:49:44" pubdate>9月 14, 2014</time></p>
-</header>
-
-  <div class="entry-content"><hr />
-<h3>数组的方法</h3>
-<h4>数组转置和轴对换</h4>
-<p>转置（<strong>transpose</strong>，或者通过<strong>T属性</strong>）返回的是源数据视图（不会进行任何复制操作）。ndarray还有一个<strong>swapaxes ...</strong></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/python/2014-09-14-numpy学习笔记.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html">APM-Linux平台上用Make方法编译Pixhawk/PX4</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-10T17:24:31" pubdate>9月 10, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>快速开始</h3>
-<p>对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明</p>
-<h4>1、安装</h4>
-<p><strong>安装git</strong></p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt ...</span></pre></div></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html">APM-Linux平台上用Make方法编译APM2.x</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-10T17:18:44" pubdate>9月 10, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>快速开始</h3>
-<p>对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明</p>
-<h4>1、安装</h4>
-<p>安装git</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt ...</span></pre></div></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html">APM-MacOS平台上用Make方法编译Pixhawk/PX4</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-08T09:27:32" pubdate>9月 08, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>MAC (10.6版本或更早)</h3>
-<p><strong>1、</strong>在Mac OS X上安装Homebrew</p>
-<p><strong>2、</strong>使用brew命令安装下列包</p>
-<div class="highlight"><pre><span class="n">brew ...</span></pre></div></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html">Read On &crarr;</a>
+    <a rel="full-article" href="http://liung.github.io/blog/python/simple-3d-visualization-in-matplotlib.html">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
-    <a class="prev" href="http://liung.github.io/author/liung5.html">&larr; Older</a>
 
     <a class="next" href="http://liung.github.io/author/liung3.html">Newer &rarr;</a>
   <br />
@@ -1823,19 +1755,19 @@ init_mathjax();
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="http://liung.github.io/blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">APM-使用Visual Studio编译Mission Planner</a>
+          <a href="http://liung.github.io/blog/apm/2015-02-01-APM-加载代码到APM2.x.html">APM-加载代码到APM2.x</a>
       </li>
       <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/UAV.html">无人机（UAV）</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-mavlink_commands.html">APM-MAVLink命令集</a>
       </li>
       <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/Nonlinear_Unsteady_Model_Notebook_about_Aircraft_Modeling_Papers.html">非线性非定常空气动力学建模论文摘要</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-mavlink_parameters.html">APM-MAVLink参数集</a>
       </li>
       <li class="post">
-          <a href="http://liung.github.io/blog/fei-xing-qi/Aircraft-Modeling-Knowledge.html">飞行器相关基础知识</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS_input_raw.html">APM-GPS原始输出</a>
       </li>
       <li class="post">
-          <a href="http://liung.github.io/blog/apm/2014-10-19-APM-I2C.html">APM-I2C</a>
+          <a href="http://liung.github.io/blog/apm/2015-01-29-APM-GPS-Guide.html">APM-GPS指南</a>
       </li>
     </ul>
   </section>
@@ -1854,7 +1786,7 @@ init_mathjax();
 
   <section>
   <h1>Tags</h1>
-    <a href="http://liung.github.io/tag/c.html">C++</a>,    <a href="http://liung.github.io/tag/git.html">Git</a>,    <a href="http://liung.github.io/tag/python.html">python</a>,    <a href="http://liung.github.io/tag/mission-planner.html">Mission Planner</a>,    <a href="http://liung.github.io/tag/qi-dong.html">气动</a>,    <a href="http://liung.github.io/tag/bo-ke.html">博客</a>,    <a href="http://liung.github.io/tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>,    <a href="http://liung.github.io/tag/apm.html">APM</a>,    <a href="http://liung.github.io/tag/ipython.html">ipython</a>,    <a href="http://liung.github.io/tag/ying-jian.html">硬件</a>,    <a href="http://liung.github.io/tag/numpy.html">Numpy</a>,    <a href="http://liung.github.io/tag/pandas.html">pandas</a>,    <a href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>  </section>
+    <a href="http://liung.github.io/tag/c.html">C++</a>,    <a href="http://liung.github.io/tag/git.html">Git</a>,    <a href="http://liung.github.io/tag/python.html">python</a>,    <a href="http://liung.github.io/tag/mission-planner.html">Mission Planner</a>,    <a href="http://liung.github.io/tag/qi-dong.html">气动</a>,    <a href="http://liung.github.io/tag/bo-ke.html">博客</a>,    <a href="http://liung.github.io/tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="http://liung.github.io/tag/mavlink.html">MAVLink</a>,    <a href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>,    <a href="http://liung.github.io/tag/apm.html">APM</a>,    <a href="http://liung.github.io/tag/ipython.html">ipython</a>,    <a href="http://liung.github.io/tag/ying-jian.html">硬件</a>,    <a href="http://liung.github.io/tag/numpy.html">Numpy</a>,    <a href="http://liung.github.io/tag/pandas.html">pandas</a>,    <a href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>  </section>
 
 
     <section>
