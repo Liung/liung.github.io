@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 01 Feb 2015 12:48:01 +0800</lastBuildDate><item><title>APM-加载代码到APM2.x</title><link>http://liung.github.io/blog/apm/2015-02-01-APM-%E5%8A%A0%E8%BD%BD%E4%BB%A3%E7%A0%81%E5%88%B0APM2.x.html</link><description>&lt;h3&gt;你还需要：&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>折返的Liung</title><link>http://liung.github.io/</link><description>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</description><atom:link href="http://liung.github.io/feeds%5Cliung.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 03 Feb 2015 19:27:42 +0800</lastBuildDate><item><title>APM-加载代码到APM2.x</title><link>http://liung.github.io/blog/apm/2015-02-03-APM-Git%E5%92%8CGitHub%E4%BD%BF%E7%94%A8.html</link><description>&lt;h3&gt;如何开始使用Git进行APM源码操作&lt;/h3&gt;
+&lt;p&gt;目前APM源代码在线托管在&lt;a href="https://github.com/diydrones/ardupilot"&gt;https://github.com/diydrones/ardupilot&lt;/a&gt;上。如果你需要了解更多关于forking/cloning该项目的一些细节，请阅读&lt;a href="http://dev.ardupilot.com/wiki/git_github_guide/wiki/where-to-get-the-code/"&gt;这篇在线指南&lt;/a&gt;。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;教程：使用Git向APM贡献代码&lt;/h3&gt;
+&lt;p&gt;
+这篇指南假定你已具有GitHub账户。如果使用的是Windows平台，本指南假设你已经下载并安装了&lt;a href="https://windows.github.com/"&gt;GitHub的windows客户端&lt;/a&gt;程序。如果你使用Mac OSX或者是Linux的任意一种发布版本，本指南假定你已经安装了git并能够使用终端进行目录切换和输入命令操作。
+&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;创建分支并更改代码&lt;/h3&gt;
+&lt;p&gt;分支作为将开发分离为不同路径的方法，之后可以和一个单独分支（经常命名为“master”）中进行合并。参考下面“学习Git”部分的更多资源，或快速浏览这篇&lt;a href="http://gitready.com/beginner/2009/01/25/branching-and-merging.html"&gt;简短说明&lt;/a&gt;。这一部分，你可以创建代码分支并对代码进行更改。&lt;/p&gt;
+&lt;p&gt;分支命名取决于你，但是选择一个简短且描述性的名字是非常有用的。本指南中的代码分支命名为“apm_git_tutorial”。&lt;/p&gt;
+&lt;p&gt;对于OSX/Linux终端命令，假设你目前的工作目录位于你“克隆”到的代码库的根目录中。&lt;/p&gt;
+&lt;p&gt;1、创建分支。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OSX/Linux终端：&lt;code&gt;git checkout -b apm_git_tutorial&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Windows(GitHub GUI):在安装GitHub的Windows应用程序中，点击窗口右上角的“master”按钮，输入“aom_git_tutorial”并点击下拉列表中的"+创建分支amp_git_tutorial”：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="github for windows" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/04/APM-Git-Github-Windows-Branch.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;2、更改代码。对于本指南，在你喜欢的文本编辑器中代开&lt;code&gt;Tools/GIT_Test/GIT_Success.txt&lt;/code&gt;文件，在文件末行输入你的名字并保存。&lt;/p&gt;
+&lt;p&gt;3、使用&lt;code&gt;git status&lt;/code&gt;查看那些文件改变了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OSX/Linux终端：&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;4、确认在分支上的改动。该命令将你的改动提交到git历史中。请查看下面更多信息，为方便起见已经忽略了对于提交你的改动到官方发布版的确认请求操作。当你确定改动时，你需要添加一段日志消息，说明改动中你做了什么。请阅读下方更多如何操作相关信息。鉴于本指南旨在全面的说明操作，你可以仅仅使用命令行第一句命令：&lt;code&gt;Added name to GIT_Success.txt&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;OSX/Linux终端：&lt;/p&gt;
+&lt;p&gt;git add Tools/GIT_Test/Git_Success.txt
+git commit -m'Added name to GIT_Success.txt'&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;5、推送分支到GitHub。该操作将会复制你本地分支的文件到GitHub上新的分支上。推送分支是对于其他GitHUb上的合作者或向官方发布版提交补丁支持的一个前提条件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OSX/Linux终端：&lt;code&gt;git push origin amp_git_tutorial&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;恭喜你！你已经完成了从更改代码到向官方项目提交相关的正常进程中的所有工作内容。下一步的&lt;a href="http://dev.ardupilot.com/wiki/submitting-patches-back-to-master/"&gt;确认推送请求&lt;/a&gt;，将把让你的改变内容添加到主项目中。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;rebase-base： 保持你的代码最新&lt;/h3&gt;
+&lt;p&gt;当你进行项目开发时，上游的ArduPilot代码库的master主分支有可能已经升级，所以你应该&lt;a href="http://robots.thoughtbot.com/keeping-a-github-fork-updated"&gt;保持你fork的代码库和本地分支最新&lt;/a&gt;。如果使用的是Windows版的Github，启动“Git Shell”工具，该工具在你安装GitHub的Windows客户端时已经默认安装，使用下面的命令：&lt;/p&gt;
+&lt;p&gt;1、保证你的代码库连接到你fork的代码库：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;remote&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;upstream&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/diydrones/ardupilot.git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;2、获取上游主分支的改动：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;fetch&lt;/span&gt; &lt;span class="n"&gt;upstream&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;3、重新将上游主分支的当前分支作为基准：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;rebase&lt;/span&gt; &lt;span class="n"&gt;upstream&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;master&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h4&gt;链接&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/git_github_guide/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Tue, 03 Feb 2015 19:27:42 +0800</pubDate><guid>tag:liung.github.io,2015-02-03:blog/apm/2015-02-03-APM-Git和GitHub使用.html</guid><category>APM</category><category>Git</category><category>GitHub</category></item><item><title>APM-加载代码到APM2.x</title><link>http://liung.github.io/blog/apm/2015-02-01-APM-%E5%8A%A0%E8%BD%BD%E4%BB%A3%E7%A0%81%E5%88%B0APM2.x.html</link><description>&lt;h3&gt;你还需要：&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;mini USB传输线（APM需要） 或者 micro USB传输线（APM2需要）&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://firmware.diydrones.com/Tools/Arduino/"&gt;Windows&lt;/a&gt;或&lt;a href="http://firmware.diydrones.com/Tools/Arduino/"&gt;Macintosh&lt;/a&gt;平台下的特定修改版的Arduino IDE&lt;/li&gt;
@@ -3895,8 +3955,8 @@ k_4 &amp;amp;= f(t_n + h,y_n + hk_3)
 &lt;p&gt;&lt;strong&gt;编译老版本Ardupilot&lt;/strong&gt;：如果你仍然使用是2.9.1b版本或者比HAL更老的版本，那么你可以充分利用带有Visual Micro 的Atmel Studio或Visual Studio IDE。仅需按照如下执行：&lt;/p&gt;
 &lt;p&gt;●　下载&lt;a href="https://code.google.com/p/ardupilot-mega/downloads/detail?name=ArduPilot-Arduino-1.0.3-windows.zip&amp;amp;can=2&amp;amp;q="&gt;Ardupilot Arduino that supports the 2.x.x revisions&lt;/a&gt;。不要对当前版本存在疑惑，实质上他们大部分都一样仅有少量不同&lt;/p&gt;
 &lt;p&gt;●　安装Ardupilot Arduino到一个单独文件目录，并且添加apm/boards.txt文件到hardware文件夹（和之前介绍的一样）&lt;/p&gt;
-&lt;p&gt;●　在Atmel（或Visual） Studio的Tools&amp;gt;&amp;gt;Options&amp;gt;&amp;gt;Visual Micro，设置应用程序和Arduino位置，参考位置为之前安装的支持2.x.x版Ardupilot Arduino且包含2.x.x源代码的文件夹。你可以在&lt;a href="https://github.com/diydrones/ardupilot"&gt;diydrones/ardupilot&lt;/a&gt;代码库中得到2.9.1b版源代码（通过选择需要的Ardupilot分支，点击下载zip）
-　　　　●　设置Tools&amp;gt;&amp;gt;Visual Micro&amp;gt;&amp;gt;Boards为APM Arduino Mega 2560&lt;/p&gt;
+&lt;p&gt;●　在Atmel（或Visual） Studio的Tools&amp;gt;&amp;gt;Options&amp;gt;&amp;gt;Visual Micro，设置应用程序和Arduino位置，参考位置为之前安装的支持2.x.x版Ardupilot Arduino且包含2.x.x源代码的文件夹。你可以在&lt;a href="https://github.com/diydrones/ardupilot"&gt;diydrones/ardupilot&lt;/a&gt;代码库中得到2.9.1b版源代码（通过选择需要的Ardupilot分支，点击下载zip）&lt;/p&gt;
+&lt;p&gt;●　设置Tools&amp;gt;&amp;gt;Visual Micro&amp;gt;&amp;gt;Boards为APM Arduino Mega 2560&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
@@ -4837,12 +4897,12 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-the-code-on-mac/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Mon, 08 Sep 2014 09:02:28 +0800</pubDate><guid>tag:liung.github.io,2014-09-08:blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows平台上用Make方法编译Pixhawk和PX4</title><link>http://liung.github.io/blog/apm/2014-09-07-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html</link><description>&lt;h3&gt;Windows平台&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Mon, 08 Sep 2014 09:02:28 +0800</pubDate><guid>tag:liung.github.io,2014-09-08:blog/apm/2014-09-08-APM-MacOS平台上用Arduino编译APM2.x.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows平台使用Make方法编译Pixhawk和PX4</title><link>http://liung.github.io/blog/apm/2014-09-07-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Make%E6%96%B9%E6%B3%95%E7%BC%96%E8%AF%91Pixhawk%E5%92%8CPX4.html</link><description>&lt;h3&gt;Windows平台&lt;/h3&gt;
 &lt;p&gt;
 &lt;strong&gt;1、&lt;/strong&gt; 安装&lt;a href="http://windows.github.com/"&gt;Github for Windows&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2、&lt;/strong&gt; 确保你的 github 上关于行尾结束符的设置没有发生变动。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、&lt;/strong&gt;  确保你的github上设置行结束符不发生改变。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;当你安装了Git 后，“Git shell（or Bash）”也会安装好。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：&lt;/li&gt;
+&lt;li&gt;当你安装完成Git，顺带也安装了“Git shell（or Bash）”。点击“Git shell（or Bash）”图标，然后在弹出的Git “MINGW32”终端窗口键入：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;git config --global core.autocrlf false&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3、&lt;/strong&gt;“克隆”（clone）Ardupilot，PX4Firmware和PX4NuttX代码库到你的本地电脑上：&lt;/p&gt;
@@ -4857,38 +4917,38 @@ printer in Windows 3.1 or later, or via clipboard to some drawing and CAD progra
 &lt;p&gt;&lt;strong&gt;4、&lt;/strong&gt;运行&lt;a href="http://www.inf.ethz.ch/personal/lomeier/downloads/px4_toolchain_installer_v12_win.exe"&gt; px4_toolchain_installer_v12_win.exe &lt;/a&gt;下载并安装PX4工具链（在&lt;a href="http://pixhawk.org/firmware/downloads#px4_arm_toolchain"&gt;该页面&lt;/a&gt;的底部搜索“PX4 Toolchain Installer”）&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;5、&lt;/strong&gt;创建并定制config.mk文件：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;win7平台上可以在开始&amp;gt;&amp;gt;所有程序&amp;gt;&amp;gt;PX4 Toolchain找到PX4Console，并运行。或者直接去该目录C:\px4\toolchain\msys\1.0\px4_console.bat运行。&lt;/li&gt;
-&lt;li&gt;“cd”到步骤三中Ardupilot固件的文件目录，然后进入ArduCopter目录（确保这里ArduCopter中的A和C都是大写形式）。在命令行中可以这样执行：&lt;/li&gt;
+&lt;li&gt;win7平台可以在开始&amp;gt;&amp;gt;所有程序&amp;gt;&amp;gt;PX4 Toolchain找到PX4Console并运行，或直接运行该C:\px4\toolchain\msys\1.0\px4_console.bat文件。&lt;/li&gt;
+&lt;li&gt;切换到步骤三中Ardupilot固件的文件目录，然后进入ArduCopter目录（确保这里&lt;strong&gt;A&lt;/strong&gt;rdu&lt;strong&gt;C&lt;/strong&gt;opter中的A和C要大写）。上述操作可以在命令行中如下执行：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;cd /c/Users/&amp;lt;username&amp;gt;/Documents/GitHub/ardupilot/ArduCopter&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;通过下命令行中键入下列命令创建config.mk。系统将会出现下面的警示信息：包含有文件准确链接位置的config.mk文件已经创建并写入。&lt;/li&gt;
+&lt;li&gt;通过在终端键入下列命令创建config.mk文件。系统将会出现这样的 &amp;#8220;WARNING &amp;#8211; 信息：包含有准确文件位置信息的config.mk文件已经写入。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;make configure&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;如果步骤三中创建PX4Firmware和PX4NuttX仓库时使用了相同的名字和位置，那么就不需要更改config.mk文件。但是如果名字或者位置有一个不同，那你就需要用诸如&lt;a href="http://notepad-plus-plus.org/download/v6.4.5.html"&gt;NotePad++&lt;/a&gt;等文本编辑器打开config.mk，并将PX4_ROOT和/或NUTTX_SRC值设置正确。&lt;/p&gt;
+&lt;p&gt;如果步骤三中创建PX4Firmware和PX4NuttX仓库时使用了相同的名字和位置，那么就不需要更改config.mk文件。但是如果名字或者位置有一个不同，那你就需要用诸如&lt;a href="http://notepad-plus-plus.org/download/v6.4.5.html"&gt;NotePad++&lt;/a&gt;等文本编辑器打开config.mk，并将PX4_ROOT和/或NUTTX_SRC值设置与实际位置匹配。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img2" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/BuildingTheCode_PX4OnWindows2.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;6、&lt;/strong&gt;打开PX4控制台开始编译固件，首先切换到ArduCopter目录，然后输入下面命令执行编译&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;make px4&lt;/code&gt;                &amp;lt;– 将会编译四旋翼形式的PX4和PixHawk固件&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make px4-v2&lt;/code&gt;           &amp;lt;– 将会编译四旋翼形式的PixHawk固件&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make px4-v2-hexa&lt;/code&gt;  &amp;lt;–将会编译六旋翼形式的PixHawk固件(其它可支持的后缀名包括“octa”和"heli")&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make px4&lt;/code&gt;                &amp;lt;– 将会编译四旋翼的PX4和PixHawk固件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make px4-v2&lt;/code&gt;           &amp;lt;– 将会编译四旋翼的PixHawk固件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make px4-v2-hexa&lt;/code&gt;  &amp;lt;–将会编译六旋翼的PixHawk固件(其它可支持的后缀参数包括“octa”和"heli")&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make clean&lt;/code&gt;             &amp;lt;– 清理（“clean”） ardupilot 文件目录&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make px4-clean&lt;/code&gt;      &amp;lt;– 清理（“clean”）PX4Firmware 和 PX4NuttX  文件目录以便于下次重新编译&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make px4-v2-upload&lt;/code&gt;  &amp;lt;– 编译并加载 Pixhawk 的四旋翼固件(如果使用该命令，那么就不需要执行下面的步骤七了)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make px4-v2-upload&lt;/code&gt;  &amp;lt;– 编译并上传四旋翼的Pixhawk固件(如果使用该命令，那么就不需要执行下面的步骤七了)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;编译好的固件以.px4文件扩展名结尾，位于在ArduCopter目录&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img3" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/06/PX4_ArduCopter_Build.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;7、&lt;/strong&gt;使用Mission Planner 加载固件的方法：初始设置（Initial Setup）&amp;gt;&amp;gt;安装固件（Install Firmware）界面点击“Load custom firmware”链接&lt;/p&gt;
 &lt;h3&gt;加快编译时间的一些小建议&lt;/h3&gt;
 &lt;p&gt;杀毒防护软件有可能会减慢编译时间，特别对PX4尤为明显，所以建议包含有Ardupilot、PX4Firmware和PX4NuttX源代码的文件夹不在你的杀毒软件实时扫描范围内。&lt;/p&gt;
-&lt;p&gt;当执行完&lt;code&gt;make px4-clean&lt;/code&gt;后第一次编译将会非常的慢，因为要重新编译每一个文件。&lt;/p&gt;
+&lt;p&gt;当执行完&lt;code&gt;make px4-clean&lt;/code&gt;后的第一次编译将会非常的慢，这是因为要重新编译链接每一个文件。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h4&gt;链接&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="http://dev.ardupilot.com/wiki/building-px4-with-make/"&gt;APM官网原文链接&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html"&gt;APM开发人员参考手册目录列表&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sun, 07 Sep 2014 13:59:57 +0800</pubDate><guid>tag:liung.github.io,2014-09-07:blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html</guid><category>APM</category><category>飞控板</category><category>硬件</category></item><item><title>APM-Windows平台上用Arduino编译ArduPilot</title><link>http://liung.github.io/blog/apm/2014-09-06-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Arduino%E7%BC%96%E8%AF%91ArduPilot.html</link><description>
+&lt;p&gt;&lt;em&gt;(over)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">liung</dc:creator><pubDate>Sun, 07 Sep 2014 13:59:57 +0800</pubDate><guid>tag:liung.github.io,2014-09-07:blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html</guid><category>APM</category><category>硬件</category></item><item><title>APM-Windows平台上用Arduino编译ArduPilot</title><link>http://liung.github.io/blog/apm/2014-09-06-APM-Windows%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%94%A8Arduino%E7%BC%96%E8%AF%91ArduPilot.html</link><description>
 
 &lt;p&gt;&lt;strong&gt;版本要求： Copter 3.1， Plane 2.76&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;硬件要求： APM 2.0,2.5,2.6&lt;/strong&gt;

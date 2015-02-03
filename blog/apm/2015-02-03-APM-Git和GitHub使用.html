@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>折返的Liung</title>
+  <title>APM-加载代码到APM2.x</title>
   <meta name="author" content="liung">
 
 
@@ -1725,252 +1725,93 @@ init_mathjax();
 </ul></nav>
   <div id="main">
     <div id="content">
-<div class="blog-index">
-  		<article>
+<div>
+  <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">APM-采用Make方法编译APM2.x（Win，Mac，Linux）</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-17T12:55:14" pubdate>10月 17, 2014</time></p>
+      <h1 class="entry-title">APM-加载代码到APM2.x</h1>
+      <p class="meta"><time datetime="2015-02-03T19:27:42" pubdate>2月 03, 2015</time></p>
 </header>
 
-  <div class="entry-content">
-对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。</p>
-<p>对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">APM-Windows7上的MAVProxy使用</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-16T13:54:19" pubdate>10月 16, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>MAVProxy是一款强大的地面站软件，它极大的扩充了GUI界面的地面站。比如Mission Planner，APM Planner等。驱动我探索MAVProxy的最大动力在于，它对通过网络的UDP协议获取到的UAV信息和不同设备上的多种地面站软件的交互具有强大的兼容性。</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">APM-使用Atmel Studio 或者微软的Visual Studio编辑代码</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-16T13:54:19" pubdate>10月 16, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-对APM代码开发需要一款高鲁棒性的开发环境？请尝试使用Atmel Studio 6.2或者带有<a href="http://www.visualmicro.com/">Visual Micro</a>插件的微软Visual Studio吧。使用这些工具你可以编辑、编译、上载你的APM代码，其中，编译与上传代码与Ardupilot Arduino的编译方法一致。本指南带你开始这方面的内容。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html">APM-使用Eclipse进行ArduPilot Mega开发</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-16T13:54:19" pubdate>10月 16, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<ol>
-<li>Eclipse是一款精致地多语言集成开发平台</li>
-<li>Eclipse CDT（C++开发工具）实现了支持在Eclipse平台进行C/C++开发</li>
-<li>Eclipse CDT工具可以帮助管理与组织大型C++工程，比如ArduPilot Mega的固件开发工程</li>
-<li>本指南用来说明如何将最近的ArduPilot Mega 固件开发工程设置为Eclipse CDT工程</li>
-<li>提醒：这些操作都在Eclipse Kepler（4.3.0）版本上进行。</li>
-</ol>
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-16-APM-使用Eclipse编辑代码.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">APM-使用NotePad++编辑代码</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-16T13:54:19" pubdate>10月 16, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-NOtePad++是开发团队最常用的一款编辑器，可以在<a href="http://notepad-plus-plus.org/">这里</a>下载。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html">APM-回放功能测试</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-15T18:44:26" pubdate>10月 15, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-
-<p>回放功能是用来处理dataflash日志文件的一套程序，并通过最近的主代码展示一系列基于真实数据的模拟结果。它可以用来重现产生bug的准确情形，或在同样的条件下测试改变EKF参数的影响。回放功能仅仅运行于Liunx/Ubuntu平台，且仅适用来自于高速CPU诸如PX4/Pixhawk运行2014年5月之后的ArduCopter/ArduPlane/ArduRover（例如AC3.2-dev或更高版本）所产生的dataflash日志文件。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-15-APM-回放功能测试.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">APM-Linux上SITL仿真设置</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-15T14:06:42" pubdate>10月 15, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">APM-Windows上SITL仿真设置</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-14T13:56:44" pubdate>10月 14, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</p>
-<p>本页面详细说明了如何在windows平台上设置SITL。文中使用的相关命令在装有<strong>VMware ver 5.0.2 build -1031769</strong> 和 <strong>Ubuntu 12.10</strong>的Windows8平台上测试通过。
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html">APM-模拟仿真</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-14T13:52:49" pubdate>10月 14, 2014</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN__SUMMARY -->
-
-<p>本页面描述了如何使用APM进行模拟仿真，它可以让我们安全的测试试验代码和一些设置。毕竟，撞毁模拟飞机可要比真实的飞机划算的多哦！</p>
-<p><strong>硬件循环仿真（HITL）:</strong>硬件仿真使用模拟器代替真实的飞行器和大气环境，该模拟器包含有高精度的飞行动力学模型和大气环境模型（模拟气流，突风等 ...</p></!--></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-10-14-APM-模拟仿真.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/qi-dong/2014-09-17-常用气动软件.html">常用气动软件</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-17T10:55:29" pubdate>9月 17, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>XFoil</h3>
-<p>XFoil是一个为设计和分析亚音速飞机独立翼型编写的互动式的程序</p>
-<p>主页：<a href="http://web.mit.edu/drela/Public/web/xfoil/"><strong>http://web.mit.edu/drela/Public/web ...</strong></a></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/qi-dong/2014-09-17-常用气动软件.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/python/2014-09-14-Pandas学习笔记.html">Pandas学习笔记</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-14T14:26:24" pubdate>9月 14, 2014</time></p>
-</header>
-
-  <div class="entry-content"><p>通过索引方式返回的列只是相应数据的视图，因此，对返回的Series所做的任何就地修改都会反映到DataFrame上。通过Series的<code>copy</code>方法可显式地复制列。</p>
-<h4>DataFrame构造器可以接受的数据：</h4>
+  <div class="entry-content"><h3>如何开始使用Git进行APM源码操作</h3>
+<p>目前APM源代码在线托管在<a href="https://github.com/diydrones/ardupilot">https://github.com/diydrones/ardupilot</a>上。如果你需要了解更多关于forking/cloning该项目的一些细节，请阅读<a href="http://dev.ardupilot.com/wiki/git_github_guide/wiki/where-to-get-the-code/">这篇在线指南</a>。</p>
+<hr />
+<h3>教程：使用Git向APM贡献代码</h3>
+<p>
+这篇指南假定你已具有GitHub账户。如果使用的是Windows平台，本指南假设你已经下载并安装了<a href="https://windows.github.com/">GitHub的windows客户端</a>程序。如果你使用Mac OSX或者是Linux的任意一种发布版本，本指南假定你已经安装了git并能够使用终端进行目录切换和输入命令操作。
+</p>
+<hr />
+<h3>创建分支并更改代码</h3>
+<p>分支作为将开发分离为不同路径的方法，之后可以和一个单独分支（经常命名为“master”）中进行合并。参考下面“学习Git”部分的更多资源，或快速浏览这篇<a href="http://gitready.com/beginner/2009/01/25/branching-and-merging.html">简短说明</a>。这一部分，你可以创建代码分支并对代码进行更改。</p>
+<p>分支命名取决于你，但是选择一个简短且描述性的名字是非常有用的。本指南中的代码分支命名为“apm_git_tutorial”。</p>
+<p>对于OSX/Linux终端命令，假设你目前的工作目录位于你“克隆”到的代码库的根目录中。</p>
+<p>1、创建分支。</p>
 <ul>
-<li><strong>二维ndarray：</strong></li>
-<li><strong>由数组、列表或元祖组成的字典 ...</strong></li></ul></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/python/2014-09-14-Pandas学习笔记.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/python/2014-09-14-numpy学习笔记.html">Numpy学习笔记</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-14T12:49:44" pubdate>9月 14, 2014</time></p>
-</header>
+<li>OSX/Linux终端：<code>git checkout -b apm_git_tutorial</code></li>
+<li>Windows(GitHub GUI):在安装GitHub的Windows应用程序中，点击窗口右上角的“master”按钮，输入“aom_git_tutorial”并点击下拉列表中的"+创建分支amp_git_tutorial”：</li>
+</ul>
+<p><img alt="github for windows" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/04/APM-Git-Github-Windows-Branch.jpg" /></p>
+<p>2、更改代码。对于本指南，在你喜欢的文本编辑器中代开<code>Tools/GIT_Test/GIT_Success.txt</code>文件，在文件末行输入你的名字并保存。</p>
+<p>3、使用<code>git status</code>查看那些文件改变了：</p>
+<ul>
+<li>OSX/Linux终端：<code>git status</code></li>
+</ul>
+<p>4、确认在分支上的改动。该命令将你的改动提交到git历史中。请查看下面更多信息，为方便起见已经忽略了对于提交你的改动到官方发布版的确认请求操作。当你确定改动时，你需要添加一段日志消息，说明改动中你做了什么。请阅读下方更多如何操作相关信息。鉴于本指南旨在全面的说明操作，你可以仅仅使用命令行第一句命令：<code>Added name to GIT_Success.txt</code>：</p>
+<ul>
+<li>
+<p>OSX/Linux终端：</p>
+<p>git add Tools/GIT_Test/Git_Success.txt
+git commit -m'Added name to GIT_Success.txt'</p>
+</li>
+</ul>
+<p>5、推送分支到GitHub。该操作将会复制你本地分支的文件到GitHub上新的分支上。推送分支是对于其他GitHUb上的合作者或向官方发布版提交补丁支持的一个前提条件。</p>
+<ul>
+<li>OSX/Linux终端：<code>git push origin amp_git_tutorial</code></li>
+</ul>
+<p>恭喜你！你已经完成了从更改代码到向官方项目提交相关的正常进程中的所有工作内容。下一步的<a href="http://dev.ardupilot.com/wiki/submitting-patches-back-to-master/">确认推送请求</a>，将把让你的改变内容添加到主项目中。</p>
+<hr />
+<h3>rebase-base： 保持你的代码最新</h3>
+<p>当你进行项目开发时，上游的ArduPilot代码库的master主分支有可能已经升级，所以你应该<a href="http://robots.thoughtbot.com/keeping-a-github-fork-updated">保持你fork的代码库和本地分支最新</a>。如果使用的是Windows版的Github，启动“Git Shell”工具，该工具在你安装GitHub的Windows客户端时已经默认安装，使用下面的命令：</p>
+<p>1、保证你的代码库连接到你fork的代码库：</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/diydrones/ardupilot.git</span>
+</pre></div>
 
-  <div class="entry-content"><hr />
-<h3>数组的方法</h3>
-<h4>数组转置和轴对换</h4>
-<p>转置（<strong>transpose</strong>，或者通过<strong>T属性</strong>）返回的是源数据视图（不会进行任何复制操作）。ndarray还有一个<strong>swapaxes ...</strong></p></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/python/2014-09-14-numpy学习笔记.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html">APM-Linux平台上用Make方法编译Pixhawk/PX4</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-10T17:24:31" pubdate>9月 10, 2014</time></p>
-</header>
 
-  <div class="entry-content">
-对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明
+<p>2、获取上游主分支的改动：</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
+</pre></div>
+
+
+<p>3、重新将上游主分支的当前分支作为基准：</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">rebase</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span>
+</pre></div>
+
+
+<hr />
+<h4>链接</h4>
+<ol>
+<li><a href="http://dev.ardupilot.com/wiki/git_github_guide/">APM官网原文链接</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
+</ol>
+<p><em>(over)</em></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">liung</span>
+  </span>
+<time datetime="2015-02-03T19:27:42" pubdate>2月 03, 2015</time>  <span class="categories">
+    <a class="category" href="http://liung.github.io/tag/apm.html">APM</a>
+    <a class="category" href="http://liung.github.io/tag/git.html">Git</a>
+    <a class="category" href="http://liung.github.io/tag/github.html">GitHub</a>
+  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
 </div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html">APM-Linux平台上用Make方法编译APM2.x</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-10T17:18:44" pubdate>9月 10, 2014</time></p>
-</header>
-
-  <div class="entry-content">
-对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明
-</div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html">APM-MacOS平台上用Make方法编译Pixhawk/PX4</a>
-      </h1>
-      <p class="meta"><time datetime="2014-09-08T09:27:32" pubdate>9月 08, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>MAC (10.6版本或更早)</h3>
-<p><strong>1、</strong>在Mac OS X上安装Homebrew</p>
-<p><strong>2、</strong>使用brew命令安装下列包</p>
-<div class="highlight"><pre><span class="n">brew ...</span></pre></div></div>
-  <footer>
-    <a rel="full-article" href="http://liung.github.io/blog/apm/2014-09-08-APM-MacOS平台上用Make方法编译Pixhawk和PX4.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-<div class="pagination">
-    <a class="prev" href="http://liung.github.io/index3.html">&larr; Older</a>
-
-    <a class="next" href="http://liung.github.io/index.html">Newer &rarr;</a>
-  <br />
-</div></div>
 <aside class="sidebar">
   <section>
 	  <img src="http://liung.github.io/images/author_photo.jpg" alt="Liung" width="300"/> 
@@ -2058,6 +1899,9 @@ SITL（software in the loop）仿真可以让你在没有任何硬件的情况�
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'liunggithubio-aerodynamic';
+          var disqus_identifier = '/blog/apm/2015-02-03-APM-Git和GitHub使用.html';
+          var disqus_url = 'http://liung.github.io/blog/apm/2015-02-03-APM-Git和GitHub使用.html';
+          var disqus_title = 'APM-加载代码到APM2.x';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
