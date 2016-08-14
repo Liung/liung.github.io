@@ -1733,23 +1733,80 @@ init_mathjax();
 </header>
 
   <div class="entry-content"><p>法向力N、轴向力A与升力L和阻力D的关系为：</p>
-<p>$$
+<div class="math">$$
 L &amp; = &amp; N cos \alpha - A sin \alpha 
-D &amp; = &amp; N sin \alpha + A cos \alpha<br />
-$$</p>
+D &amp; = &amp; N sin \alpha + A cos \alpha  
+$$</div>
 <p>翼型上表面，有：</p>
-<p>$$
+<div class="math">$$
 dN'_u = - p_u cos \theta ds_u - \tau sin \theta ds_u 
 dA'_u = - p_u sin \theta ds_u + \tau cos \theta ds_u 
-$$</p>
+$$</div>
 <p>下表面，有：</p>
-<p>$$
+<div class="math">$$
 dN'_l = - p_l cos \theta ds_l - \tau sin \theta ds_l 
 dA'_l = - p_l sin \theta ds_l + \tau cos \theta ds_l 
-$$</p>
+$$</div>
 <p>对于单位展长翼型段的法向力和轴向力就可以表示为：</p>
 <p>$$</p>
-<p>$$</p></div>
+<p>$$</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -1808,7 +1865,7 @@ $$</p>
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
+    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/qi-dong.html">气动</a>  </section>
 
 
     <section>
