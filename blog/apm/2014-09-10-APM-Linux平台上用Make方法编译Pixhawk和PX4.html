@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-Linux平台上用Make方法编译Pixhawk/PX4</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1733,40 +1733,40 @@ init_mathjax();
 </header>
 
   <div class="entry-content"><h3>快速开始</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
+<p>
 对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明
-<!-- PELICAN_END_SUMMARY --></p>
+</p>
 <h4>1、安装</h4>
 <p><strong>安装git</strong></p>
-<div class="highlight"><pre><span></span>sudo apt-get -qq -y install git
+<div class="highlight"><pre>sudo apt-get -qq -y install git
 </pre></div>
 
 
 <p><strong>“克隆”源码</strong></p>
-<div class="highlight"><pre><span></span>git clone https://github.com/diydrones/ardupilot.git
+<div class="highlight"><pre>git clone https://github.com/diydrones/ardupilot.git
 </pre></div>
 
 
 <p><strong>运行 install-prereqs-ubuntu.sh 脚本</strong></p>
-<div class="highlight"><pre><span></span>ardupilot/Tools/scripts/install-prereqs-ubuntu.sh -y
+<div class="highlight"><pre>ardupilot/Tools/scripts/install-prereqs-ubuntu.sh -y
 </pre></div>
 
 
 <p>重载路径(注销并再次登陆使其写入系统配置文件中)</p>
-<div class="highlight"><pre><span></span>. ~/.profile
+<div class="highlight"><pre>. ~/.profile
 </pre></div>
 
 
 <h4>2、编译</h4>
 <p><strong>编译ArduCopter</strong></p>
-<div class="highlight"><pre><span></span>cd ardupilot/ArduCopter
+<div class="highlight"><pre>cd ardupilot/ArduCopter
 make configure
 make px4-v2
 </pre></div>
 
 
 <p><strong>编译ArduPlane</strong></p>
-<div class="highlight"><pre><span></span>cd ardupilot/ArduPlane
+<div class="highlight"><pre>cd ardupilot/ArduPlane
 make configure
 make px4-v2
 </pre></div>
@@ -1786,7 +1786,7 @@ make px4-v2
 <p>需要注意的是你需要使用diydrones的github账户下的PX4nuttx和PX4Firmware代码库，而不是PX4下的。因为来自于PX4的代码库没有使用APM相关代码进行过验证。</p>
 <h4>设置权限</h4>
 <p>你需要将你当前用户添加到dialout群组中：</p>
-<div class="highlight"><pre><span></span><span class="x">sudo usermod -a -G dialout </span><span class="p">$</span><span class="nv">USER</span><span class="x"></span>
+<div class="highlight"><pre><span class="x">sudo usermod -a -G dialout </span><span class="p">$</span><span class="nv">USER</span><span class="x"></span>
 </pre></div>
 
 
@@ -1797,18 +1797,18 @@ make px4-v2
 <h4>编译器</h4>
 <p>需要指定gcc-arm交叉编译器链接上述文件。</p>
 <p>首先，你需要解压编译器：</p>
-<div class="highlight"><pre><span></span>tar -xjvf gcc-arm-none-eabi-4_6-2012q2-20120614.tar.bz2
+<div class="highlight"><pre>tar -xjvf gcc-arm-none-eabi-4_6-2012q2-20120614.tar.bz2
 </pre></div>
 
 
 <p>然后编辑$HOME/.bashrc文件，在文件末尾添加如下链接，将原始代码中的bin目录添加到你的环境变量中<code>%PATH</code>.</p>
-<div class="highlight"><pre><span></span><span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:/home/your_username/bin/gcc-arm-none-eabi-4_6-2012q2/bin</span>
+<div class="highlight"><pre><span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:/home/your_username/bin/gcc-arm-none-eabi-4_6-2012q2/bin</span>
 </pre></div>
 
 
 <h4>快速编译工具ccache</h4>
 <p>安装ccache工具将极大加速你的编译时间。一旦你安装了它（例如通过“<code>sudo apt-get install ccache</code>”）你应该像这样链接编译器到/usr/lib/ccache。</p>
-<div class="highlight"><pre><span></span>cd /usr/lib/ccache
+<div class="highlight"><pre>cd /usr/lib/ccache
 sudo ln -s /usr/bin/ccache arm-none-eabi-g++
 sudo ln -s /usr/bin/ccache arm-none-eabi-gcc
 </pre></div>
@@ -1817,7 +1817,7 @@ sudo ln -s /usr/bin/ccache arm-none-eabi-gcc
 <p>然后像前面一样将/usr/lib/ccache加入你的环境变量里<code>%PATH</code></p>
 <h4>编译</h4>
 <p>当你下载好了上述三个git代码库并配置完成编译器，就可以在你的飞行器目录开始编译工作。例如，编译ArduPlane：</p>
-<div class="highlight"><pre><span></span>cd ardupilot/ArduPlane
+<div class="highlight"><pre>cd ardupilot/ArduPlane
 make configure
 make px4
 </pre></div>
@@ -1828,12 +1828,12 @@ make px4
 <p>第一次编译时间可能有点漫长，因为它需要编译整个px4的文件架构。之后的编译过程将变得非常快（特别是你正确地设置了ccache）。</p>
 <h4>加载固件</h4>
 <p>使用下面的命令将固件加载到飞控板上：</p>
-<div class="highlight"><pre><span></span>make px4-v1-upload
+<div class="highlight"><pre>make px4-v1-upload
 </pre></div>
 
 
 <p>或</p>
-<div class="highlight"><pre><span></span>make px4-v2-upload
+<div class="highlight"><pre>make px4-v2-upload
 </pre></div>
 
 
@@ -1841,7 +1841,7 @@ make px4
 <p>如果在擦出阶段上传总是失败，检查是否运行了modemmanager，它可以控制PX4的USB端口。如果是，尝试移除modemmanager来获得帮助。</p>
 <h4>清理</h4>
 <p>更新完成git代码后，你可能需要一个干净的编译结果。使用下面命令来实现：</p>
-<div class="highlight"><pre><span></span>make px4-clean
+<div class="highlight"><pre>make px4-clean
 </pre></div>
 
 
@@ -1856,7 +1856,7 @@ make px4
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liuchao</span>
+    Posted by <span class="fn">Liung</span>
   </span>
 <time datetime="2014-09-10T17:24:31+08:00" pubdate>9月 10, 2014</time>  <span class="categories">
     <a class="category" href="../../tag/apm.html">APM</a>
@@ -1864,9 +1864,8 @@ make px4
     <a class="category" href="../../tag/ying-jian.html">硬件</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html" data-via="" data-counturl="../../blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html" data-via="Liung_" data-counturl="../../blog/apm/2014-09-10-APM-Linux平台上用Make方法编译Pixhawk和PX4.html" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
   </article>
 
@@ -1905,22 +1904,22 @@ make px4
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1933,14 +1932,25 @@ make px4
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liuchao -
+    Copyright &copy;  2012-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1987,13 +1997,5 @@ make px4
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

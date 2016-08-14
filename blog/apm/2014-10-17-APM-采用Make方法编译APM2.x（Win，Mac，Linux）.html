@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-采用Make方法编译APM2.x（Win，Mac，Linux）</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1733,10 +1733,10 @@ init_mathjax();
 </header>
 
   <div class="entry-content"><h3>概述</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
+<p>
 对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。</p>
 <p>对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程。
-<!-- PELICAN_END_SUMMARY --></p>
+</p>
 <hr />
 <h3>要求</h3>
 <p>APM的makefiles可以在Mac OS和Liunx平台运行。Windows平台用户可以通过Unix兼容系统如Mingw或Cygwin使用Makefiles。</p>
@@ -1769,12 +1769,12 @@ init_mathjax();
 <hr />
 <h3>准备工作</h3>
 <p>从https://github.com/diydrones/ardupilot中克隆一份APM代码库到本地。</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/diydrones/ardupilot.git
+<div class="highlight"><pre>git clone https://github.com/diydrones/ardupilot.git
 </pre></div>
 
 
 <p>第一次编译代码前，先从APM内相应模式下的sketches中使用<code>make configure</code>命令，将会在<code>ardupilot</code>代码库的顶层目录生成<code>config.mk</code>文件。</p>
-<div class="highlight"><pre><span></span>cd ardupilot/ArduCopter
+<div class="highlight"><pre>cd ardupilot/ArduCopter
 make configure
 cd ..
 vim config.mk
@@ -1786,13 +1786,13 @@ vim config.mk
 <hr />
 <h3>编译</h3>
 <p>对于默认平台编译sketch文件，可以在该sketch目录下调用不带参数的<code>make</code>命令。</p>
-<div class="highlight"><pre><span></span>cd ardupilot/ArduPlane
+<div class="highlight"><pre>cd ardupilot/ArduPlane
 make
 </pre></div>
 
 
 <p>默认的编译文件输出位于<code>$TMPDIR/_sketchname_.build</code></p>
-<div class="highlight"><pre><span></span>make
+<div class="highlight"><pre>make
 %% param_table.o
 %% ArduPlane.cpp
 %% ArduPlane.o
@@ -1806,8 +1806,8 @@ make
 <hr />
 <h3>加载固件</h3>
 <p>如果你已经配置了正确的<code>PORT</code>变量，那么可以利用<code>upload</code>参数会使用<code>avrdude</code>工具将编译完成的APM应用加载到基于AVR的平台系统中。</p>
-<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ardupilot/ArduPlane
-$ make upload
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>ardupilot/ArduPlane
+<span class="nv">$ </span>make upload
 </pre></div>
 
 
@@ -1838,7 +1838,7 @@ $ make upload
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liuchao</span>
+    Posted by <span class="fn">Liung</span>
   </span>
 <time datetime="2014-10-17T12:55:14+08:00" pubdate>10月 17, 2014</time>  <span class="categories">
     <a class="category" href="../../tag/apm.html">APM</a>
@@ -1846,9 +1846,8 @@ $ make upload
     <a class="category" href="../../tag/ying-jian.html">硬件</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html" data-via="" data-counturl="../../blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html" data-via="Liung_" data-counturl="../../blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
   </article>
 
@@ -1887,22 +1886,22 @@ $ make upload
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1915,14 +1914,25 @@ $ make upload
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liuchao -
+    Copyright &copy;  2012-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1969,13 +1979,5 @@ $ make upload
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

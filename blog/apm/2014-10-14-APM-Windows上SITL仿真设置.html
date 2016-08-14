@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-Windows上SITL仿真设置</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1733,10 +1733,10 @@ init_mathjax();
 </header>
 
   <div class="entry-content"><h3>简介</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
+<p>
 SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</p>
 <p>本页面详细说明了如何在windows平台上设置SITL。文中使用的相关命令在装有<strong>VMware ver 5.0.2 build -1031769</strong> 和 <strong>Ubuntu 12.10</strong>的Windows8平台上测试通过。
-<!-- PELICAN_END_SUMMARY --></p>
+</p>
 <p>需要注意的是：在完成本页面操作请先将<a href="../../blog/apm/2014-08-29-APM-获取源码.html">Ardupilot代码</a>下载到你的电脑上，并且可以使用<a href="../../blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html">arduino</a>或者<a href="../../blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">Make方法</a>编译。</p>
 <p><img alt="img1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/12/Ubuntu_SITL_running_Copter.png" /></p>
 <hr />
@@ -1819,7 +1819,7 @@ sudo pip install mavproxy</p>
 <p>注意：你可能需要尝试图片中的各个IP地址，直到地面站可以正常通信为止</p>
 <p><img alt="img8" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/12/SITL_ipconfig.png" /></p>
 <p>那么，在Ubuntu虚拟机的终端就可以键入如下命令：</p>
-<div class="highlight"><pre><span></span>./Tools/autotest/autotest.py build.ArduCopter fly.ArduCopter logs.ArduCopter --map --viewerip=192.168.184.1
+<div class="highlight"><pre>./Tools/autotest/autotest.py build.ArduCopter fly.ArduCopter logs.ArduCopter --map --viewerip=192.168.184.1
 </pre></div>
 
 
@@ -1838,7 +1838,7 @@ sudo pip install mavproxy</p>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liuchao</span>
+    Posted by <span class="fn">Liung</span>
   </span>
 <time datetime="2014-10-14T13:56:44+08:00" pubdate>10月 14, 2014</time>  <span class="categories">
     <a class="category" href="../../tag/apm.html">APM</a>
@@ -1846,9 +1846,8 @@ sudo pip install mavproxy</p>
     <a class="category" href="../../tag/ying-jian.html">硬件</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html" data-via="" data-counturl="../../blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html" data-via="Liung_" data-counturl="../../blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
   </article>
 
@@ -1887,22 +1886,22 @@ sudo pip install mavproxy</p>
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1915,14 +1914,25 @@ sudo pip install mavproxy</p>
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liuchao -
+    Copyright &copy;  2012-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1969,13 +1979,5 @@ sudo pip install mavproxy</p>
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

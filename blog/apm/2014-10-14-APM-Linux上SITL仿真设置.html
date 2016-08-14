@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-Linux上SITL仿真设置</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1733,8 +1733,8 @@ init_mathjax();
 </header>
 
   <div class="entry-content"><h3>简介</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
-SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。<!-- PELICAN_END_SUMMARY --></p>
+<p>
+SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</p>
 <p>本页面详细说明了如何在Linux平台上设置SITL。文中使用的相关命令在 <strong>Ubuntu 12.10</strong> 和 <strong>Ubuntu 13.04</strong>  平台上测试通过。</p>
 <p><img alt="img0" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2013/04/SITL_Linux.png" /></p>
 <hr />
@@ -1761,19 +1761,19 @@ SITL（software in the loop）仿真可以让你在没有任何硬件的情况�
 <p>请遵循以下步骤</p>
 <h4>Step 1： 下载ardupilot</h4>
 <p>如果没有ardupilot的git库本地备份，请打开终端并运行：</p>
-<div class="highlight"><pre><span></span>git clone git://github.com/diydrones/ardupilot.git
+<div class="highlight"><pre>git clone git://github.com/diydrones/ardupilot.git
 </pre></div>
 
 
 <h4>Step 2： JSBSim</h4>
 <p>如果你想要运行固定翼模拟器，那么你就需要JSBSim包。在同一目录下（home目录）运行下面命令：</p>
-<div class="highlight"><pre><span></span>git clone git://github.com/tridge/jsbsim.git
+<div class="highlight"><pre>git clone git://github.com/tridge/jsbsim.git
 apt-get install libtool automake autoconf libexpat1-dev
 </pre></div>
 
 
 <h4>Step 3： 安装所需包</h4>
-<div class="highlight"><pre><span></span>sudo apt-get install python-matplotlib python-serial python-wxgtk2.8 python-lxml
+<div class="highlight"><pre>sudo apt-get install python-matplotlib python-serial python-wxgtk2.8 python-lxml
 sudo apt-get install python-scipy python-opencv ccache gawk git python-pip
 sudo pip install pymavlink MAVProxy
 </pre></div>
@@ -1781,7 +1781,7 @@ sudo pip install pymavlink MAVProxy
 
 <h4>Step 4： 将目录添加到搜索路径</h4>
 <p>添加下面几行到home目录中“.bashrc”的文件尾部（注意文件名以<strong>.</strong>开始）</p>
-<div class="highlight"><pre><span></span><span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/ardupilot/Tools/autotest</span>
+<div class="highlight"><pre><span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/ardupilot/Tools/autotest</span>
 <span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/MAVProxy</span>
 <span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/mavlink/pymavlink/examples</span>
 <span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/jsbsim/src</span>
@@ -1790,13 +1790,13 @@ sudo pip install pymavlink MAVProxy
 
 
 <p>然后使用“<strong>.</strong>”命令在终端重载路径文件</p>
-<div class="highlight"><pre><span></span>. ~/.bashrc
+<div class="highlight"><pre>. ~/.bashrc
 </pre></div>
 
 
 <h4>Step 5： 编译JSBSim，运行如下命令</h4>
 <p>如果要运行SITL中的固定翼版本，那么你需要安装JSBSim。（Copter 和 Rover 不需要）</p>
-<div class="highlight"><pre><span></span>cd jsbsim
+<div class="highlight"><pre>cd jsbsim
 ./autogen.sh
 make
 </pre></div>
@@ -1805,20 +1805,20 @@ make
 <h4>Step 6： 启动SITL模拟器</h4>
 <p>开始运行模拟器，首先需要将目录切换到对应飞行器目录。例如，对于固定翼需要将目录切换到ardupilot/ArduPlane。</p>
 <p>使用sim_vehicle.sh启动模拟器。第一次启动时需要加-w命令选项来清除之前的EEPROM数据，加载当前你的飞行器的正确默认参数，并使用“make configure”来生成配置文件。</p>
-<div class="highlight"><pre><span></span>make configure
+<div class="highlight"><pre>make configure
 sim_vehicle.sh -w
 </pre></div>
 
 
 <p>当默认参数加载完成，就可以正常启动模拟器了。</p>
-<div class="highlight"><pre><span></span>sim_vehicle.sh --console --map --aircraft test
+<div class="highlight"><pre>sim_vehicle.sh --console --map --aircraft test
 </pre></div>
 
 
 <p>sim_vehicle.sh有许多有用参数选项。请使用-h项查看可用的选项哦~</p>
 <h4>Step 7： 加载任务</h4>
 <p>让我们来开始加载测试任务吧~</p>
-<div class="highlight"><pre><span></span>wp load ../Tools/autotest/ArduPlane-Missions/CMAC-toff-loop.txt
+<div class="highlight"><pre>wp load ../Tools/autotest/ArduPlane-Missions/CMAC-toff-loop.txt
 </pre></div>
 
 
@@ -1835,7 +1835,7 @@ sim_vehicle.sh -w
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liuchao</span>
+    Posted by <span class="fn">Liung</span>
   </span>
 <time datetime="2014-10-15T14:06:42+08:00" pubdate>10月 15, 2014</time>  <span class="categories">
     <a class="category" href="../../tag/apm.html">APM</a>
@@ -1843,9 +1843,8 @@ sim_vehicle.sh -w
     <a class="category" href="../../tag/ying-jian.html">硬件</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html" data-via="" data-counturl="../../blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html" data-via="Liung_" data-counturl="../../blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
   </article>
 
@@ -1884,22 +1883,22 @@ sim_vehicle.sh -w
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1912,14 +1911,25 @@ sim_vehicle.sh -w
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liuchao -
+    Copyright &copy;  2012-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1966,13 +1976,5 @@ sim_vehicle.sh -w
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

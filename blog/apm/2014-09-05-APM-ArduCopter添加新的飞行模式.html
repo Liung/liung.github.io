@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-添加新的飞行模式</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1732,13 +1732,13 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-05T11:01:10+08:00" pubdate>9月 05, 2014</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="../../blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面</a>描述的一样。不过遗憾的是本页面并没有提供给你关于所创建的理想飞行模式需要的所有信息，但是希望这将是一个好的开始。
-<!-- PELICAN_END_SUMMARY --></p>
+</p>
 <hr />
 <p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L88">defines.h</a>中用<code>#define</code>定义你自己新的飞行模式,然后将飞行模式数量<code>NUM_MODES</code>加1。</p>
-<div class="highlight"><pre><span></span>    // Auto Pilot modes
+<div class="highlight"><pre>    // Auto Pilot modes
     #define STABILIZE 0 // hold level position
     #define ACRO 1 // rate control
     #define ALT_HOLD 2 // AUTO control
@@ -1762,53 +1762,53 @@ init_mathjax();
 
 <hr />
 <p><strong>Step #2</strong>：类似于相似的飞行模式的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.pde">control_stabilize.pde</a>或者<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_loiter.pde">control_loiter.pde</a>文件，创建新的飞行模式的<code>&lt;new flight mode&gt;.pde</code>控制sketch文件。该文件中必须包含一个<code>_init()</code>初始化函数和<code>_run()</code>运行函数。</p>
-<div class="highlight"><pre><span></span><span class="o">///</span> <span class="nt">-</span><span class="o">*</span><span class="nt">-</span> <span class="nt">tab-width</span><span class="o">:</span> <span class="nt">4</span><span class="o">;</span> <span class="nt">Mode</span><span class="o">:</span> <span class="nt">C</span><span class="o">++;</span> <span class="nt">c-basic-offset</span><span class="o">:</span> <span class="nt">4</span><span class="o">;</span> <span class="nt">indent-tabs-mode</span><span class="o">:</span> <span class="nt">nil</span> <span class="nt">-</span><span class="o">*</span><span class="nt">-</span>
+<div class="highlight"><pre><span class="c1">/// -*- tab-width: 4; Mode: C++; c-basic-offset: 4; indent-tabs-mode: nil -*-</span>
 
-<span class="c">/*</span>
-<span class="c"> * control_newflightmode.pde - init and run calls for new flight mode</span>
-<span class="c"> */</span>
+<span class="cm">/*</span>
+<span class="cm"> * control_newflightmode.pde - init and run calls for new flight mode</span>
+<span class="cm"> */</span>
 
-<span class="o">//</span> <span class="nt">newflightmode_init</span> <span class="nt">-</span> <span class="nt">initialise</span> <span class="nt">flight</span> <span class="nt">mode</span>
-<span class="nt">static</span> <span class="nt">bool</span> <span class="nt">newflightmode_init</span><span class="o">(</span><span class="nt">bool</span> <span class="nt">ignore_checks</span><span class="o">)</span>
+<span class="c1">// newflightmode_init - initialise flight mode</span>
+<span class="kr">static</span> <span class="nx">bool</span> <span class="nx">newflightmode_init</span><span class="p">(</span><span class="nx">bool</span> <span class="nx">ignore_checks</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="o">//</span> <span class="n">do</span> <span class="n">any</span> <span class="n">required</span> <span class="n">initialisation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">flight</span> <span class="n">mode</span> <span class="n">here</span>
-    <span class="o">//</span> <span class="n">this</span> <span class="n">code</span> <span class="n">will</span> <span class="n">be</span> <span class="n">called</span> <span class="n">whenever</span> <span class="n">the</span> <span class="n">operator</span> <span class="n">switches</span> <span class="n">into</span> <span class="n">this</span> <span class="n">mode</span>
+    <span class="c1">// do any required initialisation of the flight mode here</span>
+    <span class="c1">// this code will be called whenever the operator switches into this mode</span>
 
-    <span class="o">//</span> <span class="n">return</span> <span class="n">true</span> <span class="n">initialisation</span> <span class="n">is</span> <span class="n">successful</span><span class="o">,</span> <span class="n">false</span> <span class="n">if</span> <span class="n">it</span> <span class="n">fails</span>
-    <span class="o">//</span> <span class="n">if</span> <span class="n">false</span> <span class="n">is</span> <span class="n">returned</span> <span class="n">here</span> <span class="n">the</span> <span class="n">vehicle</span> <span class="n">will</span> <span class="n">remain</span> <span class="n">in</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">flight</span> <span class="n">mode</span>
-    <span class="n">return</span> <span class="n">true</span><span class="p">;</span>
+    <span class="c1">// return true initialisation is successful, false if it fails</span>
+    <span class="c1">// if false is returned here the vehicle will remain in the previous flight mode</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="o">//</span> <span class="nt">newflightmode_run</span> <span class="nt">-</span> <span class="nt">runs</span> <span class="nt">the</span> <span class="nt">main</span> <span class="nt">controller</span>
-<span class="o">//</span> <span class="nt">will</span> <span class="nt">be</span> <span class="nt">called</span> <span class="nt">at</span> <span class="nt">100hz</span> <span class="nt">or</span> <span class="nt">more</span>
-<span class="nt">static</span> <span class="nt">void</span> <span class="nt">newflightmode_run</span><span class="o">()</span>
+<span class="c1">// newflightmode_run - runs the main controller</span>
+<span class="c1">// will be called at 100hz or more</span>
+<span class="kr">static</span> <span class="k">void</span> <span class="nx">newflightmode_run</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="o">//</span> <span class="n">if</span> <span class="n">not</span> <span class="n">armed</span> <span class="n">or</span> <span class="n">throttle</span> <span class="n">at</span> <span class="n">zero</span><span class="o">,</span> <span class="n">set</span> <span class="n">throttle</span> <span class="n">to</span> <span class="n">zero</span> <span class="n">and</span> <span class="n">exit</span> <span class="n">immediately</span>
-    <span class="n">if</span><span class="p">(</span><span class="o">!</span><span class="n">motors</span><span class="o">.</span><span class="n">armed</span><span class="p">()</span> <span class="o">||</span> <span class="n">g</span><span class="o">.</span><span class="n">rc_3</span><span class="o">.</span><span class="n">control_in</span> <span class="o">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="err">{</span>
-        <span class="n">attitude_control</span><span class="o">.</span><span class="n">relax_bf_rate_controller</span><span class="p">();</span>
-        <span class="n">attitude_control</span><span class="o">.</span><span class="n">set_yaw_target_to_current_heading</span><span class="p">();</span>
-        <span class="n">attitude_control</span><span class="o">.</span><span class="n">set_throttle_out</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="n">false</span><span class="p">);</span>
-        <span class="n">return</span><span class="p">;</span>
+    <span class="c1">// if not armed or throttle at zero, set throttle to zero and exit immediately</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">motors</span><span class="p">.</span><span class="nx">armed</span><span class="p">()</span> <span class="o">||</span> <span class="nx">g</span><span class="p">.</span><span class="nx">rc_3</span><span class="p">.</span><span class="nx">control_in</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">attitude_control</span><span class="p">.</span><span class="nx">relax_bf_rate_controller</span><span class="p">();</span>
+        <span class="nx">attitude_control</span><span class="p">.</span><span class="nx">set_yaw_target_to_current_heading</span><span class="p">();</span>
+        <span class="nx">attitude_control</span><span class="p">.</span><span class="nx">set_throttle_out</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="o">//</span> <span class="nt">convert</span> <span class="nt">pilot</span> <span class="nt">input</span> <span class="nt">into</span> <span class="nt">desired</span> <span class="nt">vehicle</span> <span class="nt">angles</span> <span class="nt">or</span> <span class="nt">rotation</span> <span class="nt">rates</span>
-    <span class="o">//</span>   <span class="nt">g</span><span class="nc">.rc_1.control_in</span> <span class="o">:</span> <span class="nt">pilots</span> <span class="nt">roll</span> <span class="nt">input</span> <span class="nt">in</span> <span class="nt">the</span> <span class="nt">range</span> <span class="nt">-4500</span> <span class="o">~</span> <span class="nt">4500</span>
-    <span class="o">//</span>   <span class="nt">g</span><span class="nc">.rc_2.control_in</span> <span class="o">:</span> <span class="nt">pilot</span> <span class="nt">pitch</span> <span class="nt">input</span> <span class="nt">in</span> <span class="nt">the</span> <span class="nt">range</span> <span class="nt">-4500</span> <span class="o">~</span> <span class="nt">4500</span>
-    <span class="o">//</span>   <span class="nt">g</span><span class="nc">.rc_3.control_in</span> <span class="o">:</span> <span class="nt">pilot</span><span class="s1">&#39;s throttle input in the range 0 ~ 1000</span>
-<span class="s1">    //   g.rc_4.control_in : pilot&#39;</span><span class="nt">s</span> <span class="nt">yaw</span> <span class="nt">input</span> <span class="nt">in</span> <span class="nt">the</span> <span class="nt">range</span> <span class="nt">-4500</span> <span class="o">~</span> <span class="nt">4500</span>
+    <span class="c1">// convert pilot input into desired vehicle angles or rotation rates</span>
+    <span class="c1">//   g.rc_1.control_in : pilots roll input in the range -4500 ~ 4500</span>
+    <span class="c1">//   g.rc_2.control_in : pilot pitch input in the range -4500 ~ 4500</span>
+    <span class="c1">//   g.rc_3.control_in : pilot&#39;s throttle input in the range 0 ~ 1000</span>
+    <span class="c1">//   g.rc_4.control_in : pilot&#39;s yaw input in the range -4500 ~ 4500</span>
 
-    <span class="o">//</span> <span class="nt">call</span> <span class="nt">one</span> <span class="nt">of</span> <span class="nt">attitude</span> <span class="nt">controller</span><span class="s1">&#39;s attitude control functions like</span>
-<span class="s1">    //   attitude_control.angle_ef_roll_pitch_rate_yaw(roll angle, pitch angle, yaw rate);</span>
+    <span class="c1">// call one of attitude controller&#39;s attitude control functions like</span>
+    <span class="c1">//   attitude_control.angle_ef_roll_pitch_rate_yaw(roll angle, pitch angle, yaw rate);</span>
 
-<span class="s1">    // call position controller&#39;</span><span class="nt">s</span> <span class="nt">z-axis</span> <span class="nt">controller</span> <span class="nt">or</span> <span class="nt">simply</span> <span class="nt">pass</span> <span class="nt">through</span> <span class="nt">throttle</span>
-    <span class="o">//</span>   <span class="nt">attitude_control</span><span class="nc">.set_throttle_out</span><span class="o">(</span><span class="nt">desired</span> <span class="nt">throttle</span><span class="o">,</span> <span class="nt">true</span><span class="o">);</span>
-<span class="err">}</span>
+    <span class="c1">// call position controller&#39;s z-axis controller or simply pass through throttle</span>
+    <span class="c1">//   attitude_control.set_throttle_out(desired throttle, true);</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <hr />
 <p><strong>Step #3</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/flight_mode.pde#L269">flight_mode.pde</a>文件的<code>set_mode()</code>函数中增加一个新飞行模式的<code>case</code>（C++中switch..case语法）选项，然后调用上面的<code>_init()</code>函数。</p>
-<div class="highlight"><pre><span></span>// set_mode - change flight mode and perform any necessary initialisation
+<div class="highlight"><pre>// set_mode - change flight mode and perform any necessary initialisation
 static bool set_mode(uint8_t mode)
 {
     // boolean to record if flight mode could be set
@@ -1840,7 +1840,7 @@ static bool set_mode(uint8_t mode)
 
 <hr />
 <p><strong>Step #4</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/flight_mode.pde#L269">flight_mode.pde</a>文件的<code>update_flight_mode()</code>函数中增加一个新飞行模式的<code>case</code>选项，然后调用上面的<code>_run()</code>函数。</p>
-<div class="highlight"><pre><span></span>// update_flight_mode - calls the appropriate attitude controllers based on flight mode
+<div class="highlight"><pre>// update_flight_mode - calls the appropriate attitude controllers based on flight mode
 // called at 100hz or more
 static void update_flight_mode()
 {
@@ -1864,7 +1864,7 @@ static void update_flight_mode()
 
 <hr />
 <p><strong>Step #5</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/flight_mode.pde#L269">flight_mode.pde</a>文件的<code>print_flight_mode()</code>函数中增加可以输出新飞行模式字符串的<code>case</code>选项。</p>
-<div class="highlight"><pre><span></span>static void
+<div class="highlight"><pre>static void
 print_flight_mode(AP_HAL::BetterStream *port, uint8_t mode)
 {
     switch (mode) {
@@ -1881,7 +1881,7 @@ print_flight_mode(AP_HAL::BetterStream *port, uint8_t mode)
 
 <hr />
 <p><strong>Step #6</strong>：在文件<a href="">Parameters.pde</a>中向<code>FLTMODE1</code> ~ <code>FLTMODE6</code>参数中正确的增加你的新飞行模式到<code>@Values</code>列表中。</p>
-<div class="highlight"><pre><span></span>// @Param: FLTMODE1
+<div class="highlight"><pre>// @Param: FLTMODE1
 // @DisplayName: Flight Mode 1
 // @Description: Flight mode when Channel 5 pwm is 1230, &lt;= 1360
 // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,8:Position,9:Land,10:OF_Loiter,11:ToyA,12:ToyM,13:Sport,17:NewFlightMode  //列表末尾添加新的正确形式飞行模式
@@ -1910,7 +1910,7 @@ GSCALAR(flight_mode2, &quot;FLTMODE2&quot;,               FLIGHT_MODE_2),
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liuchao</span>
+    Posted by <span class="fn">Liung</span>
   </span>
 <time datetime="2014-09-05T11:01:10+08:00" pubdate>9月 05, 2014</time>  <span class="categories">
     <a class="category" href="../../tag/apm.html">APM</a>
@@ -1919,9 +1919,8 @@ GSCALAR(flight_mode2, &quot;FLTMODE2&quot;,               FLIGHT_MODE_2),
     <a class="category" href="../../tag/ying-jian.html">硬件</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html" data-via="" data-counturl="../../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html" data-via="Liung_" data-counturl="../../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
   </article>
 
@@ -1960,22 +1959,22 @@ GSCALAR(flight_mode2, &quot;FLTMODE2&quot;,               FLIGHT_MODE_2),
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1988,14 +1987,25 @@ GSCALAR(flight_mode2, &quot;FLTMODE2&quot;,               FLIGHT_MODE_2),
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liuchao -
+    Copyright &copy;  2012-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -2042,13 +2052,5 @@ GSCALAR(flight_mode2, &quot;FLTMODE2&quot;,               FLIGHT_MODE_2),
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

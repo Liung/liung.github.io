@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>Liung</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1729,123 +1729,82 @@ init_mathjax();
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
+        <a href="../../blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">APM-使用Visual Studio编译Mission Planner</a>
       </h1>
-      <p class="meta"><time datetime="2014-09-05T11:01:10+08:00" pubdate>9月 05, 2014</time></p>
+      <p class="meta"><time datetime="2015-01-24T14:19:53+08:00" pubdate>1月 24, 2015</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
-<p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="../../blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面 ...</a></p></!--></div>
+<p>Mission Planner（简称MP）是一款Windows平台使用（可通过mono实现Mac平台上的跨平台使用）的开源地面站软件，主要开发语言采用C#。该软件是目前使用最普遍的一款地面站软件，它不仅面向各种载具提供了完备地功能性设置，还提供了飞行任务规划、飞行实时监测、飞行后日志文件分析等功能。
+</div>
   <footer>
-    <a rel="full-article" href="../../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
+    <a rel="full-article" href="../../blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../../blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
+        <a href="../../blog/apm/2014-10-19-APM-I2C.html">APM-I2C</a>
       </h1>
-      <p class="meta"><time datetime="2014-09-02T14:21:41+08:00" pubdate>9月 02, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-19T13:22:24+08:00" pubdate>10月 19, 2014</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。
-<!-- PELICAN_END_SUMMARY --></p>
-<h3>在主执行代码中添加参数</h3>
-<hr />
-<p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum ...</p></!--></div>
+  <div class="entry-content">
+你可以使用任何你想使用的I2C传感器连接到I2C端口。I2C is a bus, so sensors can be daisy-chained using any creative wiring solution you can solder, or for neatness add an <a href="http://store.3drobotics.com/products/i2c-splitter">I2C splitter</a>。
+</div>
   <footer>
-    <a rel="full-article" href="../../blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
+    <a rel="full-article" href="../../blog/apm/2014-10-19-APM-I2C.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../../blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
+        <a href="../../blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">APM-采用Make方法编译APM2.x（Win，Mac，Linux）</a>
       </h1>
-      <p class="meta"><time datetime="2014-08-31T21:53:09+08:00" pubdate>8月 31, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-17T12:55:14+08:00" pubdate>10月 17, 2014</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>在从版本AC3.1向AC3.2的过渡中，姿态控制逻辑运算作为“the onion”（洋葱头）工程的一部分进行了重构。下面来展示重构后的程序执行流程。
-<!-- PELICAN_END_SUMMARY --></p>
-<hr />
-<h3>手动飞行模式 ...</h3></!--></div>
+  <div class="entry-content">
+对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。</p>
+<p>对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程。
+</div>
   <footer>
-    <a rel="full-article" href="../../blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">Read On &crarr;</a>
+    <a rel="full-article" href="../../blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../../blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">APM:Copter相关库</a>
+        <a href="../../blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">APM-Windows7上的MAVProxy使用</a>
       </h1>
-      <p class="meta"><time datetime="2014-08-30T15:53:36+08:00" pubdate>8月 30, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-16T13:54:19+08:00" pubdate>10月 16, 2014</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
-<p>这些<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>也同样被ArduPlane和ArduRover所使用。下面将列出一系列高层次的库的说明和它们的函数说明。
-<!-- PELICAN_END_SUMMARY --></p>
-<h3>核心库</h3>
-<ul>
-<li><a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_AHRS">AP_AHRS</a>：采用DCM（方向余弦矩阵方法）或EKF（扩展卡尔曼滤波方法 ...</li></ul></!--></div>
+<p>MAVProxy是一款强大的地面站软件，它极大的扩充了GUI界面的地面站。比如Mission Planner，APM Planner等。驱动我探索MAVProxy的最大动力在于，它对通过网络的UDP协议获取到的UAV信息和不同设备上的多种地面站软件的交互具有强大的兼容性。</div>
   <footer>
-    <a rel="full-article" href="../../blog/apm/2014-08-30-APM-Arducopter相关库介绍.html">Read On &crarr;</a>
+    <a rel="full-article" href="../../blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../../blog/apm/2014-08-30-APM-Arducopter代码预览.html">APM:Copter 代码预览</a>
+        <a href="../../blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">APM-使用Atmel Studio 或者微软的Visual Studio编辑代码</a>
       </h1>
-      <p class="meta"><time datetime="2014-08-30T15:29:29+08:00" pubdate>8月 30, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-16T13:54:19+08:00" pubdate>10月 16, 2014</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN__SUMMARY -->
-
-<p><a href="https://github.com/diydrones/ardupilot"><strong>APM::Copter</strong></a>代码主要放在ArduCopter文件夹中，并且和<strong>ArduPlane</strong>和<strong>ArduRover</strong>使用同样的<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>。
-<!-- PELICAN_END_SUMMARY --></p>
-<p>下面这张图展示了从飞行模式到电机输出相关的高级视图 ...</p></!--></div>
+  <div class="entry-content">
+对APM代码开发需要一款高鲁棒性的开发环境？请尝试使用Atmel Studio 6.2或者带有<a href="http://www.visualmicro.com/">Visual Micro</a>插件的微软Visual Studio吧。使用这些工具你可以编辑、编译、上载你的APM代码，其中，编译与上传代码与Ardupilot Arduino的编译方法一致。本指南带你开始这方面的内容。
+</div>
   <footer>
-    <a rel="full-article" href="../../blog/apm/2014-08-30-APM-Arducopter代码预览.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-29T17:17:54+08:00" pubdate>8月 29, 2014</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog ...</p></!--></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2014-08-29-APM-获取源码.html">APM-如何获取源码</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-29T15:05:30+08:00" pubdate>8月 29, 2014</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>整个APM工程的源码都采用<a href="http://git-scm.com/">git</a>（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在<a href="https://github.com/">github</a>网站上。</p>
-<p>目前APM的源码以开源的形式托管在<a href="https://github.com/diydrones/ardupilot">https ...</a></p></!--></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2014-08-29-APM-获取源码.html">Read On &crarr;</a>
+    <a rel="full-article" href="../../blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
+    <a class="prev" href="../../category/apm/index4.html">&larr; Older</a>
 
     <a class="next" href="../../category/apm/index2.html">Newer &rarr;</a>
   <br />
@@ -1880,22 +1839,22 @@ init_mathjax();
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1908,14 +1867,25 @@ init_mathjax();
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2014-2015  - Liuchao -
+    Copyright &copy;  2014-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1959,13 +1929,5 @@ init_mathjax();
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

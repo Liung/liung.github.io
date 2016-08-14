@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-Linux平台上用Make方法编译APM2.x</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1733,40 +1733,40 @@ init_mathjax();
 </header>
 
   <div class="entry-content"><h3>快速开始</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
+<p>
 对于Ubuntu平台，采用下面步骤来编译代码。对于Linux其他平台，请参阅下面的更深入的说明
-<!-- PELICAN_END_SUMMARY --></p>
+</p>
 <h4>1、安装</h4>
 <p>安装git</p>
-<div class="highlight"><pre><span></span>sudo apt-get -qq -y install git
+<div class="highlight"><pre>sudo apt-get -qq -y install git
 </pre></div>
 
 
 <p>“克隆”源码</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/diydrones/ardupilot.git
+<div class="highlight"><pre>git clone https://github.com/diydrones/ardupilot.git
 </pre></div>
 
 
 <p>运行 install-prereqs-ubuntu.sh 脚本</p>
-<div class="highlight"><pre><span></span>ardupilot/Tools/scripts/install-prereqs-ubuntu.sh -y
+<div class="highlight"><pre>ardupilot/Tools/scripts/install-prereqs-ubuntu.sh -y
 </pre></div>
 
 
 <p>重载路径(注销并再次登陆使其写入系统配置文件中)</p>
-<div class="highlight"><pre><span></span>. ~/.profile
+<div class="highlight"><pre>. ~/.profile
 </pre></div>
 
 
 <h4>2、编译</h4>
 <p>编译ArduCopter</p>
-<div class="highlight"><pre><span></span>cd ardupilot/ArduCopter
+<div class="highlight"><pre>cd ardupilot/ArduCopter
 make configure
 make
 </pre></div>
 
 
 <p>编译ArduPlane</p>
-<div class="highlight"><pre><span></span>cd ardupilot/ArduPlane
+<div class="highlight"><pre>cd ardupilot/ArduPlane
 make configure
 make
 </pre></div>
@@ -1775,19 +1775,19 @@ make
 <hr />
 <h3>深入介绍</h3>
 <p>为了在Linux上编译Ardupilot固件，你需要一个针对板子芯片的类型相同的特定编译器。如果你使用的是基于Ubuntu发布框架的debian系统，可以使用下面命令获取你所需要的核心包：</p>
-<div class="highlight"><pre><span></span>sudo apt-get install gcc-avr avrdude avr-libc binutils-avr
+<div class="highlight"><pre>sudo apt-get install gcc-avr avrdude avr-libc binutils-avr
 </pre></div>
 
 
 <p>此外，使用SITL系统和开发者工具还需要一些其他的辅助工具。</p>
-<div class="highlight"><pre><span></span>sudo apt-get install python-serial python-wxgtk2.8 python-matplotlib python-opencv python-pexpect python-scipy
+<div class="highlight"><pre>sudo apt-get install python-serial python-wxgtk2.8 python-matplotlib python-opencv python-pexpect python-scipy
 </pre></div>
 
 
 <p>安装完成之后，你就可以切换到你需要编译的的飞行器目录，通过运行<code>make</code>来编译你想要的代码。具体编译目标列表请查看mk/targets.mk。</p>
 <h4>Ubuntu Linux</h4>
 <p>Ubuntu上针对APM1/APM2(arduino)系统的编译还需要下面的工具。</p>
-<div class="highlight"><pre><span></span>gawk make git arduino-core g++
+<div class="highlight"><pre>gawk make git arduino-core g++
 </pre></div>
 
 
@@ -1813,7 +1813,7 @@ make
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liuchao</span>
+    Posted by <span class="fn">Liung</span>
   </span>
 <time datetime="2014-09-10T17:18:44+08:00" pubdate>9月 10, 2014</time>  <span class="categories">
     <a class="category" href="../../tag/apm.html">APM</a>
@@ -1821,9 +1821,8 @@ make
     <a class="category" href="../../tag/ying-jian.html">硬件</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html" data-via="" data-counturl="../../blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html" data-via="Liung_" data-counturl="../../blog/apm/2014-09-10-APM-Linux平台上用Make方法编译APM2.x.html" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
   </article>
 
@@ -1862,22 +1861,22 @@ make
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1890,14 +1889,25 @@ make
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liuchao -
+    Copyright &copy;  2012-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1944,13 +1954,5 @@ make
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-规划新代码使之按一定频率运行</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1736,34 +1736,34 @@ init_mathjax();
 <hr />
 <h3>用代码调度器运行你的代码</h3>
 <p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是：实际上该文件中有两个任务列表，<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788">上面的任务列表</a>是针对高频CPUs（如Pixhawk），<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L856">下面的</a>是针对低频CPUs（如APM2）。</p>
-<!-- PELICAN_BEGIN_SUMMARY -->
+
 
 <p>添加一个任务是相当的简单，你只要在列表添加新的一行代码就可以了（列表中位置越靠前意味着拥有更高的级别）。任务项中的第一列代表了函数名，第二列是以2.5ms为单位的数字（或者APM2中以10ms为单位）。所以，如果你想要你的函数执行频率为400Hz，那么该列就需要填写为“1”，如果想要50Hz，那么就需要改为“8”。任务项的最后一列代表该函数预计运行花费的微秒（百万分之一秒）时间。这可以帮助调度器来预估在下一个主循环开始之前有否有足够的时间来运行你的函数。
-<!-- PELICAN_END_SUMMARY --></p>
-<div class="highlight"><pre><span></span><span class="cm">/*</span>
+</p>
+<div class="highlight"><pre><span class="cm">/*</span>
 <span class="cm">  scheduler table - all regular tasks apart from the fast_loop()</span>
 <span class="cm">  should be listed here, along with how often they should be called</span>
 <span class="cm">  (in 10ms units) and the maximum time they are expected to take (in</span>
 <span class="cm">  microseconds)</span>
-<span class="cm"> */</span><span class="w"></span>
-static<span class="w"> </span>const<span class="w"> </span><span class="nl">AP_Scheduler</span><span class="o">:</span><span class="err">:</span>Task<span class="w"> </span>scheduler_tasks<span class="err">[]</span><span class="w"> </span>PROGMEM<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>update_GPS<span class="o">,</span><span class="w">            </span><span class="m">2</span><span class="o">,</span><span class="w">     </span><span class="m">900</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>update_nav_mode<span class="o">,</span><span class="w">       </span><span class="m">1</span><span class="o">,</span><span class="w">     </span><span class="m">400</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>medium_loop<span class="o">,</span><span class="w">           </span><span class="m">2</span><span class="o">,</span><span class="w">     </span><span class="m">700</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>update_altitude<span class="o">,</span><span class="w">      </span><span class="m">10</span><span class="o">,</span><span class="w">    </span><span class="m">1000</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>fifty_hz_loop<span class="o">,</span><span class="w">         </span><span class="m">2</span><span class="o">,</span><span class="w">     </span><span class="m">950</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>run_nav_updates<span class="o">,</span><span class="w">      </span><span class="m">10</span><span class="o">,</span><span class="w">     </span><span class="m">800</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>slow_loop<span class="o">,</span><span class="w">            </span><span class="m">10</span><span class="o">,</span><span class="w">     </span><span class="m">500</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>gcs_check_input<span class="o">,</span><span class="w">       </span><span class="m">2</span><span class="o">,</span><span class="w">     </span><span class="m">700</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>gcs_send_heartbeat<span class="o">,</span><span class="w">  </span><span class="m">100</span><span class="o">,</span><span class="w">     </span><span class="m">700</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>gcs_data_stream_send<span class="o">,</span><span class="w">  </span><span class="m">2</span><span class="o">,</span><span class="w">    </span><span class="m">1500</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>gcs_send_deferred<span class="o">,</span><span class="w">     </span><span class="m">2</span><span class="o">,</span><span class="w">    </span><span class="m">1200</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>compass_accumulate<span class="o">,</span><span class="w">    </span><span class="m">2</span><span class="o">,</span><span class="w">     </span><span class="m">700</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>barometer_accumulate<span class="o">,</span><span class="w">  </span><span class="m">2</span><span class="o">,</span><span class="w">     </span><span class="m">900</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>super_slow_loop<span class="o">,</span><span class="w">     </span><span class="m">100</span><span class="o">,</span><span class="w">    </span><span class="m">1100</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w"></span>
-<span class="w">      </span><span class="err">{</span><span class="w"> </span>my_new_function<span class="o">,</span><span class="w">      </span><span class="m">10</span><span class="o">,</span><span class="w">     </span><span class="m">200</span><span class="w"> </span><span class="err">}</span><span class="o">,</span><span class="w">  </span><span class="o">//</span>here<span class="o">,</span><span class="err">添加你的任务项</span><span class="w"></span>
-<span class="w">    </span><span class="err">{</span><span class="w"> </span>perf_update<span class="o">,</span><span class="w">        </span><span class="m">1000</span><span class="o">,</span><span class="w">     </span><span class="m">500</span><span class="w"> </span><span class="err">}</span><span class="w"></span>
-<span class="err">};</span><span class="w"></span>
+<span class="cm"> */</span>
+<span class="kr">static</span> <span class="kr">const</span> <span class="nx">AP_Scheduler</span><span class="o">::</span><span class="nx">Task</span> <span class="nx">scheduler_tasks</span><span class="cp">[]</span> <span class="nx">PROGMEM</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span> <span class="nx">update_GPS</span><span class="p">,</span>            <span class="mi">2</span><span class="p">,</span>     <span class="mi">900</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">update_nav_mode</span><span class="p">,</span>       <span class="mi">1</span><span class="p">,</span>     <span class="mi">400</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">medium_loop</span><span class="p">,</span>           <span class="mi">2</span><span class="p">,</span>     <span class="mi">700</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">update_altitude</span><span class="p">,</span>      <span class="mi">10</span><span class="p">,</span>    <span class="mi">1000</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">fifty_hz_loop</span><span class="p">,</span>         <span class="mi">2</span><span class="p">,</span>     <span class="mi">950</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">run_nav_updates</span><span class="p">,</span>      <span class="mi">10</span><span class="p">,</span>     <span class="mi">800</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">slow_loop</span><span class="p">,</span>            <span class="mi">10</span><span class="p">,</span>     <span class="mi">500</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">gcs_check_input</span><span class="p">,</span>       <span class="mi">2</span><span class="p">,</span>     <span class="mi">700</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">gcs_send_heartbeat</span><span class="p">,</span>  <span class="mi">100</span><span class="p">,</span>     <span class="mi">700</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">gcs_data_stream_send</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>    <span class="mi">1500</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">gcs_send_deferred</span><span class="p">,</span>     <span class="mi">2</span><span class="p">,</span>    <span class="mi">1200</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">compass_accumulate</span><span class="p">,</span>    <span class="mi">2</span><span class="p">,</span>     <span class="mi">700</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">barometer_accumulate</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>     <span class="mi">900</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">super_slow_loop</span><span class="p">,</span>     <span class="mi">100</span><span class="p">,</span>    <span class="mi">1100</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">my_new_function</span><span class="p">,</span>      <span class="mi">10</span><span class="p">,</span>     <span class="mi">200</span> <span class="p">},</span>  <span class="c1">//here,添加你的任务项</span>
+    <span class="p">{</span> <span class="nx">perf_update</span><span class="p">,</span>        <span class="mi">1000</span><span class="p">,</span>     <span class="mi">500</span> <span class="p">}</span>
+<span class="p">};</span>
 </pre></div>
 
 
@@ -1778,26 +1778,26 @@ static<span class="w"> </span>const<span class="w"> </span><span class="nl">AP_S
 <li><a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1159"><strong>on_hz_loop</strong></a>:运行频率1hz</li>
 </ul>
 <p>所以举个例子，如果你想让你的代码运行频率为10hz，那么你就要将它添加到<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>文件的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L1101"><code>ten_hz_logging_loop()</code></a>函数声明中。</p>
-<div class="highlight"><pre><span></span>// ten_hz_logging_loop
-// should be run at 10hz
-static void ten_hz_logging_loop()
-{
-    if (g.log_bitmask &amp; MASK_LOG_ATTITUDE_MED) {
-        Log_Write_Attitude();
-    }
-    if (g.log_bitmask &amp; MASK_LOG_RCIN) {
-        DataFlash.Log_Write_RCIN();
-    }
-    if (g.log_bitmask &amp; MASK_LOG_RCOUT) {
-        DataFlash.Log_Write_RCOUT();
-    }
-    if ((g.log_bitmask &amp; MASK_LOG_NTUN) &amp;&amp; mode_requires_GPS(control_mode)) {
-        Log_Write_Nav_Tuning();
-    }
+<div class="highlight"><pre><span class="c1">// ten_hz_logging_loop</span>
+<span class="c1">// should be run at 10hz</span>
+<span class="kr">static</span> <span class="k">void</span> <span class="nx">ten_hz_logging_loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">log_bitmask</span> <span class="o">&amp;</span> <span class="nx">MASK_LOG_ATTITUDE_MED</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Log_Write_Attitude</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">log_bitmask</span> <span class="o">&amp;</span> <span class="nx">MASK_LOG_RCIN</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">DataFlash</span><span class="p">.</span><span class="nx">Log_Write_RCIN</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">log_bitmask</span> <span class="o">&amp;</span> <span class="nx">MASK_LOG_RCOUT</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">DataFlash</span><span class="p">.</span><span class="nx">Log_Write_RCOUT</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">((</span><span class="nx">g</span><span class="p">.</span><span class="nx">log_bitmask</span> <span class="o">&amp;</span> <span class="nx">MASK_LOG_NTUN</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">mode_requires_GPS</span><span class="p">(</span><span class="nx">control_mode</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">Log_Write_Nav_Tuning</span><span class="p">();</span>
+    <span class="p">}</span>
 
-        // 在这里添加你的新代码
-        my_new_function();
-}
+        <span class="c1">// 在这里添加你的新代码</span>
+        <span class="nx">my_new_function</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 
 
@@ -1811,7 +1811,7 @@ static void ten_hz_logging_loop()
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liuchao</span>
+    Posted by <span class="fn">Liung</span>
   </span>
 <time datetime="2014-09-05T12:08:26+08:00" pubdate>9月 05, 2014</time>  <span class="categories">
     <a class="category" href="../../tag/apm.html">APM</a>
@@ -1820,9 +1820,8 @@ static void ten_hz_logging_loop()
     <a class="category" href="../../tag/ying-jian.html">硬件</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html" data-via="" data-counturl="../../blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html" data-via="Liung_" data-counturl="../../blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
   </article>
 
@@ -1861,22 +1860,22 @@ static void ten_hz_logging_loop()
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1889,14 +1888,25 @@ static void ten_hz_logging_loop()
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liuchao -
+    Copyright &copy;  2012-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1943,13 +1953,5 @@ static void ten_hz_logging_loop()
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

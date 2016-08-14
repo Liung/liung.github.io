@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>Liung - 飞控板</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1729,159 +1729,82 @@ init_mathjax();
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-06-APM-编译代码.html">APM-编译代码</a>
+        <a href="../blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">APM-使用NotePad++编辑代码</a>
       </h1>
-      <p class="meta"><time datetime="2014-09-06T14:03:34+08:00" pubdate>9月 06, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-16T13:54:19+08:00" pubdate>10月 16, 2014</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>下面这些页面的链接，将提供给你更多关于如何编译APM2.x和PX4的飞行器控制和地面站源码的信息。</p>
-<!-- PELICAN_END_SUMMARY -->
-
-<hr />
-<h3>APM:Plane,Copter,Rover:</h3>
-<p><strong>Windows用户：</strong></p>
-<ul>
-<li><a href="../blog/apm/2014-09-06-APM-Windows平台上用Arduino编译ArduPilot.html">Windows平台上用Arduino编译ArduPilot</a></li>
-<li><a href="../blog/apm/2014-09-07-APM-Windows平台上用Make方法编译Pixhawk和PX4.html">Windows平台上用Make方法编译Pixhawk ...</a></li></ul></!--></!--></div>
+  <div class="entry-content">
+NOtePad++是开发团队最常用的一款编辑器，可以在<a href="http://notepad-plus-plus.org/">这里</a>下载。
+</div>
   <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-06-APM-编译代码.html">Read On &crarr;</a>
+    <a rel="full-article" href="../blog/apm/2014-10-16-APM-使用NotePad++编辑代码.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">APM-增加新的MAVLink通讯协议消息</a>
+        <a href="../blog/apm/2014-10-15-APM-回放功能测试.html">APM-回放功能测试</a>
       </h1>
-      <p class="meta"><time datetime="2014-09-05T14:41:58+08:00" pubdate>9月 05, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-15T18:44:26+08:00" pubdate>10月 15, 2014</time></p>
 </header>
 
-  <div class="entry-content"><h3>综述</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
-地面站之间的数据和指令通信都是通过串行接口使用<a href="http://en.wikipedia.org/wiki/MAVLink">MAVLink协议</a>来传递的。本页面将提供关于添加新的MAVLink信息的一些高级建议。</p>
-<p>这些指令仅在Liunx上测试完成（通过Windows上虚拟机运行的Ubuntu）。关于设置虚拟机的方法在<a href="http://dev.ardupilot.com/wiki/code-overview-adding-a-new-mavlink-message/wiki/setting-up-sitl-on-windows/">SITL(软件层面仿真 ...</a></p></div>
+  <div class="entry-content">
+
+<p>回放功能是用来处理dataflash日志文件的一套程序，并通过最近的主代码展示一系列基于真实数据的模拟结果。它可以用来重现产生bug的准确情形，或在同样的条件下测试改变EKF参数的影响。回放功能仅仅运行于Liunx/Ubuntu平台，且仅适用来自于高速CPU诸如PX4/Pixhawk运行2014年5月之后的ArduCopter/ArduPlane/ArduRover（例如AC3.2-dev或更高版本）所产生的dataflash日志文件。
+</div>
   <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-05-APM-增加新的MAVLink通讯协议消息.html">Read On &crarr;</a>
+    <a rel="full-article" href="../blog/apm/2014-10-15-APM-回放功能测试.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">APM-规划新代码使之按一定频率运行</a>
+        <a href="../blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">APM-Linux上SITL仿真设置</a>
       </h1>
-      <p class="meta"><time datetime="2014-09-05T12:08:26+08:00" pubdate>9月 05, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-15T14:06:42+08:00" pubdate>10月 15, 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>本页面将向你介绍如何规划你的新代码块使之可以按需运行。</p>
-<hr />
-<h3>用代码调度器运行你的代码</h3>
-<p>在给定时间间隔内来运行你的代码的最灵活的方式就是使用调度器。这可以通过将你的函数添加到文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde">ArduCopter.pde</a>中的<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.pde#L788"><code>scheduler_tasks</code></a>数组来完成。需要表明的是 ...</p></div>
+  <div class="entry-content">
+SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</div>
   <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-05-APM-ArduCopter规划新代码使之按一定频率运行.html">Read On &crarr;</a>
+    <a rel="full-article" href="../blog/apm/2014-10-14-APM-Linux上SITL仿真设置.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">APM-添加新的飞行模式</a>
+        <a href="../blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">APM-Windows上SITL仿真设置</a>
       </h1>
-      <p class="meta"><time datetime="2014-09-05T11:01:10+08:00" pubdate>9月 05, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-14T13:56:44+08:00" pubdate>10月 14, 2014</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>这部分将涵盖一些怎样创建一个新的高级别的飞行模式的基本操作步骤（类似于自稳，悬停等），这些新模式处于“the onion”（洋葱头工程）中的高级别代码控制部分，如之前<a href="../blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">姿态控制页面 ...</a></p></!--></div>
+  <div class="entry-content">
+SITL（software in the loop）仿真可以让你在没有任何硬件的情况下运行ArduPlane，Copter或者Rover。它使用通用的C++编译器来完成autopilot的代码编译工作，从而可以让你从运行过程中不需要任何硬件就能完成代码的测试。</p>
+<p>本页面详细说明了如何在windows平台上设置SITL。文中使用的相关命令在装有<strong>VMware ver 5.0.2 build -1031769</strong> 和 <strong>Ubuntu 12.10</strong>的Windows8平台上测试通过。
+</div>
   <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-05-APM-ArduCopter添加新的飞行模式.html">Read On &crarr;</a>
+    <a rel="full-article" href="../blog/apm/2014-10-14-APM-Windows上SITL仿真设置.html">Read On &crarr;</a>
   </footer>
   		</article>
   		<article>
 <header>
       <h1 class="entry-title">
-        <a href="../blog/apm/2014-09-02-APM-添加新的参数.html">APM-添加新的参数</a>
+        <a href="../blog/apm/2014-10-14-APM-模拟仿真.html">APM-模拟仿真</a>
       </h1>
-      <p class="meta"><time datetime="2014-09-02T14:21:41+08:00" pubdate>9月 02, 2014</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。
-<!-- PELICAN_END_SUMMARY --></p>
-<h3>在主执行代码中添加参数</h3>
-<hr />
-<p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum ...</p></!--></div>
-  <footer>
-    <a rel="full-article" href="../blog/apm/2014-09-02-APM-添加新的参数.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">APM-ArduCopter姿态控制概览</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-31T21:53:09+08:00" pubdate>8月 31, 2014</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>在从版本AC3.1向AC3.2的过渡中，姿态控制逻辑运算作为“the onion”（洋葱头）工程的一部分进行了重构。下面来展示重构后的程序执行流程。
-<!-- PELICAN_END_SUMMARY --></p>
-<hr />
-<h3>手动飞行模式 ...</h3></!--></div>
-  <footer>
-    <a rel="full-article" href="../blog/apm/2014-08-31-APM-ArduCopter姿态控制概览.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../blog/apm/2014-08-30-APM-Arducopter代码预览.html">APM:Copter 代码预览</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-30T15:29:29+08:00" pubdate>8月 30, 2014</time></p>
+      <p class="meta"><time datetime="2014-10-14T13:52:49+08:00" pubdate>10月 14, 2014</time></p>
 </header>
 
   <div class="entry-content"><!-- PELICAN_BEGIN__SUMMARY -->
 
-<p><a href="https://github.com/diydrones/ardupilot"><strong>APM::Copter</strong></a>代码主要放在ArduCopter文件夹中，并且和<strong>ArduPlane</strong>和<strong>ArduRover</strong>使用同样的<a href="https://github.com/diydrones/ardupilot/tree/master/libraries">库文件</a>。
-<!-- PELICAN_END_SUMMARY --></p>
-<p>下面这张图展示了从飞行模式到电机输出相关的高级视图 ...</p></!--></div>
+<p>本页面描述了如何使用APM进行模拟仿真，它可以让我们安全的测试试验代码和一些设置。毕竟，撞毁模拟飞机可要比真实的飞机划算的多哦！</p>
+<p><strong>硬件循环仿真（HITL）:</strong>硬件仿真使用模拟器代替真实的飞行器和大气环境，该模拟器包含有高精度的飞行动力学模型和大气环境模型（模拟气流，突风等 ...</p></!--></div>
   <footer>
-    <a rel="full-article" href="../blog/apm/2014-08-30-APM-Arducopter代码预览.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-29T17:17:54+08:00" pubdate>8月 29, 2014</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>从现在开始，我打算利用我空闲的时间，针对APM官网上的开发流程进行翻译，翻译不求精准，但求能准确传达要表达的意思即可，非专业译者，水平有限，敬请谅解。并且，还计划展开一系列的专题blog ...</p></!--></div>
-  <footer>
-    <a rel="full-article" href="../blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../blog/apm/2014-08-29-APM-获取源码.html">APM-如何获取源码</a>
-      </h1>
-      <p class="meta"><time datetime="2014-08-29T15:05:30+08:00" pubdate>8月 29, 2014</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>整个APM工程的源码都采用<a href="http://git-scm.com/">git</a>（译者注：一款自由和开源的分布式版本控制系统）进行代码管理，并且托管在<a href="https://github.com/">github</a>网站上。</p>
-<p>目前APM的源码以开源的形式托管在<a href="https://github.com/diydrones/ardupilot">https ...</a></p></!--></div>
-  <footer>
-    <a rel="full-article" href="../blog/apm/2014-08-29-APM-获取源码.html">Read On &crarr;</a>
+    <a rel="full-article" href="../blog/apm/2014-10-14-APM-模拟仿真.html">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
+    <a class="prev" href="../tag/fei-kong-ban3.html">&larr; Older</a>
 
     <a class="next" href="../tag/fei-kong-ban.html">Newer &rarr;</a>
   <br />
@@ -1916,22 +1839,22 @@ init_mathjax();
     <ul id="recent_posts">
         <li><a href="../category/apm/index.html">APM</a></li>
         <li><a href="../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../category/others/index.html">others</a></li>
         <li><a href="../category/python/index.html">Python</a></li>
         <li><a href="../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../tag/mp.html">MP</a>,    <a href="../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../tag/github.html">GitHub</a>,    <a href="../tag/bo-ke.html">博客</a>,    <a href="../tag/pandas.html">pandas</a>,    <a href="../tag/fei-kong-ban.html">飞控板</a>,    <a href="../tag/ipython.html">ipython</a>,    <a href="../tag/mavlink.html">MAVLink</a>,    <a href="../tag/python.html">python</a>,    <a href="../tag/apm.html">APM</a>,    <a href="../tag/c.html">C++</a>,    <a href="../tag/qi-dong.html">气动</a>,    <a href="../tag/git.html">Git</a>,    <a href="../tag/numpy.html">Numpy</a>,    <a href="../tag/mission-planner.html">Mission Planner</a>,    <a href="../tag/ying-jian.html">硬件</a>,    <a href="../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../tag/mission-planner.html">Mission Planner</a>,    <a href="../tag/numpy.html">Numpy</a>,    <a href="../tag/github.html">GitHub</a>,    <a href="../tag/python.html">python</a>,    <a href="../tag/apm.html">APM</a>,    <a href="../tag/ying-jian.html">硬件</a>,    <a href="../tag/apmcopter.html">APM:Copter</a>,    <a href="../tag/qi-dong.html">气动</a>,    <a href="../tag/mp.html">MP</a>,    <a href="../tag/bo-ke.html">博客</a>,    <a href="../tag/pandas.html">pandas</a>,    <a href="../tag/mavlink.html">MAVLink</a>,    <a href="../tag/git.html">Git</a>,    <a href="../tag/fei-kong-ban.html">飞控板</a>,    <a href="../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../tag/c.html">C++</a>,    <a href="../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1944,14 +1867,25 @@ init_mathjax();
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2014  - Liuchao -
+    Copyright &copy;  2014  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -1995,13 +1929,5 @@ init_mathjax();
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

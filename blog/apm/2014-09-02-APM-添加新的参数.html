@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>APM-添加新的参数</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1732,10 +1732,10 @@ init_mathjax();
       <p class="meta"><time datetime="2014-09-02T14:21:41+08:00" pubdate>9月 02, 2014</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>我们既可以在主执行代码中添加新的参数，也可以在库中添加。
-<!-- PELICAN_END_SUMMARY --></p>
+</p>
 <h3>在主执行代码中添加参数</h3>
 <hr />
 <p><strong>Step #1</strong>：在文件<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h">Parameters.h</a>参数类中的枚举变量（enum）的合适位置，像下面代码块最后一行一样添加你自己的新的参数。你需要注意下面这些事情：</p>
@@ -1745,7 +1745,7 @@ init_mathjax();
 <li>不要再一个代码块的中间参加新的参数，那样容易造成现存参数对应的信息的改变。</li>
 <li>不要在参数旁边用“弃用（deprecated）”或“移除（remove）”做注解，这是因为一些使用者将此注释用作在eeprom上的旧的参数的默认注解，如果你添加的新参数也是这样注解，那么就让人就会看起来很奇怪和疑惑。</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="k">enum</span> {
+<div class="highlight"><pre><span class="k">enum</span> {
     // <span class="n">Misc</span>
     //
     <span class="n">k_param_log_bitmask</span> = <span class="mi">20</span>,
@@ -1777,7 +1777,7 @@ init_mathjax();
 
 <hr />
 <p><strong>Step #2</strong>：在枚举变量后面的参数类中声明这些变量。可使用的类型包括<code>AP_Int8</code>,<code>AP_Int16</code>,<code>AP_Float</code>,<code>AP_Int32</code>,<code>AP_Vector3</code>(目前还不支持<code>unsigned integer</code>无符号整型)。新的枚举变量的名称应该保持一致，只是去掉了前缀<code>k_param_</code>。</p>
-<div class="highlight"><pre><span></span>// 254,255: reserved
+<div class="highlight"><pre>// 254,255: reserved
 };
 
 AP_Int16        format_version;
@@ -1812,7 +1812,7 @@ AP_Int16        my_new_parameter;                  // my new parameter&#39;s des
 
 <hr />
 <p><strong>Step #3</strong>：在<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.pde">Parameters.pde</a>文件中向var_info表中添加变量的声明信息。</p>
-<div class="highlight"><pre><span></span>// @Param: MY_NEW_PARAMETER
+<div class="highlight"><pre>// @Param: MY_NEW_PARAMETER
 // @DisplayName: My New Parameter
 // @Description: A description of my new parameter goes here
 // @Range: -32768 32767
@@ -1824,9 +1824,9 @@ GSCALAR(my_new_parameter, &quot;MY_NEW_PARAMETER&quot;, MY_NEW_PARAMETER_DEFAULT
 <p>地面站（如Mission Planner）中将使用<code>@Param ~ @User</code>的注释信息向使用者说明用户所设置的变量的范围等。</p>
 <hr />
 <p><strong>Step #4</strong>:在<a href="https://github.com/diydrones/ardupilot/blob/master/ArduCopter/config.h">config.h</a>中添加你的新参数。</p>
-<div class="highlight"><pre><span></span><span class="cp">#ifndef MY_NEW_PARAMETER_DEFAULT</span>
- <span class="cp"># define MY_NEW_PARAMETER_DEFAULT      100     </span><span class="c1">// default value for my new parameter</span>
-<span class="cp">#endif</span>
+<div class="highlight"><pre>#ifndef MY_NEW_PARAMETER_DEFAULT
+ # define MY_NEW_PARAMETER_DEFAULT      100     // default value for my new parameter
+#endif
 </pre></div>
 
 
@@ -1835,7 +1835,7 @@ GSCALAR(my_new_parameter, &quot;MY_NEW_PARAMETER&quot;, MY_NEW_PARAMETER_DEFAULT
 <p>同样可以使用下列步骤向库中添加新的参数。以<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass">AP_Compass</a>库为例：</p>
 <hr />
 <p><strong>Step #1</strong>：首先在库代码的.h头文件添加新的变量(如<a href="https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass">Compass.h</a>)。可使用的类型包括<code>AP_Int8</code>,<code>AP_Int16</code>,<code>AP_Float</code>,<code>AP_Int32</code>,<code>AP_Vector3f</code>。然后添加你的参数的默认值（我们将在Step #2中使用）。</p>
-<div class="highlight"><pre><span></span><span class="c c-Singleline">#define MY_NEW_PARAM_DEFAULT         100    ///在此处声明变量和默认值</span>
+<div class="highlight"><pre><span class="c-Singleline">#define MY_NEW_PARAM_DEFAULT         100    ///在此处声明变量和默认值</span>
 
 <span class="k">class</span> <span class="n">Compass</span>
 {
@@ -1869,7 +1869,7 @@ GSCALAR(my_new_parameter, &quot;MY_NEW_PARAMETER&quot;, MY_NEW_PARAMETER_DEFAULT
 <li>自己添加的代码编号（下面的编号9）一定要比之前变量的大。</li>
 <li>参数的名称（如<code>MY_NEW_P</code>）包括对象自动添加的前缀要少于16个字符。比如罗盘对象的前缀为“<code>COMPASS_</code>”。</li>
 </ul>
-<div class="highlight"><pre><span></span>const AP_Param::GroupInfo Compass::var_info[] PROGMEM = {
+<div class="highlight"><pre>const AP_Param::GroupInfo Compass::var_info[] PROGMEM = {
     // index 0 was used for the old orientation matrix
 
     // @Param: OFS_X
@@ -1913,7 +1913,7 @@ GSCALAR(my_new_parameter, &quot;MY_NEW_PARAMETER&quot;, MY_NEW_PARAMETER_DEFAULT
     <footer>
 <p class="meta">
   <span class="byline author vcard">
-    Posted by <span class="fn">Liuchao</span>
+    Posted by <span class="fn">Liung</span>
   </span>
 <time datetime="2014-09-02T14:21:41+08:00" pubdate>9月 02, 2014</time>  <span class="categories">
     <a class="category" href="../../tag/apm.html">APM</a>
@@ -1922,9 +1922,8 @@ GSCALAR(my_new_parameter, &quot;MY_NEW_PARAMETER&quot;, MY_NEW_PARAMETER_DEFAULT
     <a class="category" href="../../tag/ying-jian.html">硬件</a>
   </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-02-APM-添加新的参数.html" data-via="" data-counturl="../../blog/apm/2014-09-02-APM-添加新的参数.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../../blog/apm/2014-09-02-APM-添加新的参数.html" data-via="Liung_" data-counturl="../../blog/apm/2014-09-02-APM-添加新的参数.html" >Tweet</a>
   <div class="g-plusone" data-size="medium"></div>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
 </div>    </footer>
   </article>
 
@@ -1963,22 +1962,22 @@ GSCALAR(my_new_parameter, &quot;MY_NEW_PARAMETER&quot;, MY_NEW_PARAMETER_DEFAULT
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -1991,14 +1990,25 @@ GSCALAR(my_new_parameter, &quot;MY_NEW_PARAMETER&quot;, MY_NEW_PARAMETER_DEFAULT
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - Liuchao -
+    Copyright &copy;  2012-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -2045,13 +2055,5 @@ GSCALAR(my_new_parameter, &quot;MY_NEW_PARAMETER&quot;, MY_NEW_PARAMETER_DEFAULT
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

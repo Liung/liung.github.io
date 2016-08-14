@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>Liung</title>
-  <meta name="author" content="Liuchao">
+  <meta name="author" content="Liung">
 
 
     
@@ -1705,7 +1705,7 @@ init_mathjax();
 <body>
   <header role="banner"><hgroup>
   <h1><a href="../../">Liung</a></h1>
-    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+    <h2>如溪水，如白云，如清晨，如薄雾......</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
@@ -1734,13 +1734,10 @@ init_mathjax();
       <p class="meta"><time datetime="2015-04-01T13:48:13+08:00" pubdate>4月 01, 2015</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
 <p>地面站软件Mission Planner的仿真界面的主要代码文件GCSViews下的Simulation.cs文件。本文详细对Simulation文件的代码内容进行分析。
-<!-- PELICAN_END_SUMMARY --></p>
-<p>文件Simulation.cs中包含了：</p>
-<p>Simulation类</p>
-<p>命名空间： MissionPlaner.GCSView ...</p></!--></div>
+</div>
   <footer>
     <a rel="full-article" href="../../blog/apm/2015-04-01-APM-MissionPlanner的仿真界面.html">Read On &crarr;</a>
   </footer>
@@ -1753,8 +1750,9 @@ init_mathjax();
       <p class="meta"><time datetime="2015-02-03T19:27:42+08:00" pubdate>2月 03, 2015</time></p>
 </header>
 
-  <div class="entry-content"><h3>如何开始使用Git进行APM源码操作</h3>
-<p>目前APM源代码在线托管在<a href="https://github.com/diydrones/ardupilot">https://github.com/diydrones/ardupilot</a>上。如果你需要了解更多关于forking/cloning该项目的一些细节 ...</p></div>
+  <div class="entry-content">
+这篇指南假定你已具有GitHub账户。如果使用的是Windows平台，本指南假设你已经下载并安装了<a href="https://windows.github.com/">GitHub的windows客户端</a>程序。如果你使用Mac OSX或者是Linux的任意一种发布版本，本指南假定你已经安装了git并能够使用终端进行目录切换和输入命令操作。
+</div>
   <footer>
     <a rel="full-article" href="../../blog/apm/2015-02-03-APM-使用Git和GitHub进行APM代码管理.html">Read On &crarr;</a>
   </footer>
@@ -1767,10 +1765,10 @@ init_mathjax();
       <p class="meta"><time datetime="2015-02-01T12:48:01+08:00" pubdate>2月 01, 2015</time></p>
 </header>
 
-  <div class="entry-content"><h3>你还需要：</h3>
-<ul>
-<li>mini USB传输线（APM需要） 或者 micro USB传输线（APM2需要）</li>
-<li><a href="http://firmware.diydrones.com/Tools/Arduino/">Windows</a>或 ...</li></ul></div>
+  <div class="entry-content">
+首先，下载并安装Arduino（按照上面给的链接）。如果之前从没有使用过Arduino，请参阅<a href="http://arduino.cc/en/Guide/HomePage">这些设置说明</a>来了解Arduino的基础操作。</p>
+<p>接下来，设置APM连接到电脑上需要的USB驱动器。绝大多数人都会使用常规的USB-A到miniB连接线（一端是常规USB口，另一端是mini USB）通过IMU模块连接APM，如果没有IMU模块，还可以选择使用FIDI传输。下图展示了如何使用这种传输线。
+</div>
   <footer>
     <a rel="full-article" href="../../blog/apm/2015-02-01-APM-加载代码到APM2.x.html">Read On &crarr;</a>
   </footer>
@@ -1783,9 +1781,8 @@ init_mathjax();
       <p class="meta"><time datetime="2015-01-29T17:45:52+08:00" pubdate>1月 29, 2015</time></p>
 </header>
 
-  <div class="entry-content"><h3>APM 2.0 命令集</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
-APM 2.0版本已经采用部分MAVLink消息协议。<a href="http://diydrones.com/group/arducopterusergroup/forum/topics/mavlink-tutorial-for-absolute-dummies-part-i?xg_source=activity">这里</a>有一份“傻瓜式指南 ...</!--></p></div>
+  <div class="entry-content">
+APM 2.0版本已经采用部分MAVLink消息协议。<a href="http://diydrones.com/group/arducopterusergroup/forum/topics/mavlink-tutorial-for-absolute-dummies-part-i?xg_source=activity">这里</a>有一份“傻瓜式指南”直接对MAVLink进行操作。</div>
   <footer>
     <a rel="full-article" href="../../blog/apm/2015-01-29-APM-mavlink_commands.html">Read On &crarr;</a>
   </footer>
@@ -1798,193 +1795,12 @@ APM 2.0版本已经采用部分MAVLink消息协议。<a href="http://diydrones.c
       <p class="meta"><time datetime="2015-01-29T17:45:52+08:00" pubdate>1月 29, 2015</time></p>
 </header>
 
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
+  <div class="entry-content">
 
-<p>本页面列出了所有用户可修改的MAVLink参数及这些参数的作用。用户可以使用任何兼容的地面站软件通过MAVLink参数窗口对这些参数进行修改，比如Mission Planner，APM Planner或者QGroundControl。<a href="http://diydrones.com/group/arducopterusergroup/forum/topics/mavlink-tutorial-for-absolute-dummies-part-i?xg_source=activity">这里</a>有一份“傻瓜式指南”直接对MAVLink进行操作 ...</p></!--></div>
+<p>本页面列出了所有用户可修改的MAVLink参数及这些参数的作用。用户可以使用任何兼容的地面站软件通过MAVLink参数窗口对这些参数进行修改，比如Mission Planner，APM Planner或者QGroundControl。<a href="http://diydrones.com/group/arducopterusergroup/forum/topics/mavlink-tutorial-for-absolute-dummies-part-i?xg_source=activity">这里</a>有一份“傻瓜式指南”直接对MAVLink进行操作。
+</div>
   <footer>
     <a rel="full-article" href="../../blog/apm/2015-01-29-APM-mavlink_parameters.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2015-01-29-APM-GPS_input_raw.html">APM-GPS原始输出</a>
-      </h1>
-      <p class="meta"><time datetime="2015-01-29T15:39:21+08:00" pubdate>1月 29, 2015</time></p>
-</header>
-
-  <div class="entry-content"><h3>原始GPS输出</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
-本页面用来说明GPS模块原始的输出形式。如果你在GPS的正常测试过程中遇到问题，那么这些命令可能有助于你进行调试。
-<!-- PELICAN_END_SUMMARY --></p>
-<p><em>大多数用户不推荐，仅用于GPS底层硬件调试</em></p>
-<p>如果你想要以ASCII格式查看GPS输出，在测试命令窗口将该行：</p>
-<div class="highlight"><pre><span></span>Serial.print ...</pre></div></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2015-01-29-APM-GPS_input_raw.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2015-01-29-APM-GPS-Guide.html">APM-GPS指南</a>
-      </h1>
-      <p class="meta"><time datetime="2015-01-29T14:36:02+08:00" pubdate>1月 29, 2015</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<!-- PELICAN_END_SUMMARY -->
-
-<h3>GPS指南</h3>
-<div class="highlight"><pre><span></span>//  *EXPLAINED*   
-// Diydrones is a Open source site and different ...</pre></div></!--></!--></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2015-01-29-APM-GPS-Guide.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2015-01-28-APM-Combo4.html">APM-Combo4</a>
-      </h1>
-      <p class="meta"><time datetime="2015-01-28T14:36:02+08:00" pubdate>1月 28, 2015</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<!-- PELICAN_END_SUMMARY -->
-
-<div class="highlight"><pre><span></span>//-------------------------------------
-#define GPS_PROTOCOL GPS_PROTOCOL_MTK
-//   *AVAILABLE OPTIONS*
-// GPS_PROTOCOL_NONENo GPS attached
-// GPS_PROTOCOL_IMU X-Plane ...</pre></div></!--></!--></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2015-01-28-APM-Combo4.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2015-01-28-APM-Combo3.html">APM-Combo3</a>
-      </h1>
-      <p class="meta"><time datetime="2015-01-28T14:35:01+08:00" pubdate>1月 28, 2015</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<!-- PELICAN_END_SUMMARY -->
-
-<div class="highlight"><pre><span></span>//-------------------------------------
-#define GPS_PROTOCOL GPS_PROTOCOL_MTK
-//   *AVAILABLE OPTIONS*
-// GPS_PROTOCOL_NONENo GPS attached
-// GPS_PROTOCOL_IMU X-Plane ...</pre></div></!--></!--></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2015-01-28-APM-Combo3.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2015-01-28-APM-Combo2.html">APM-Combo2</a>
-      </h1>
-      <p class="meta"><time datetime="2015-01-28T14:28:05+08:00" pubdate>1月 28, 2015</time></p>
-</header>
-
-  <div class="entry-content"><!-- PELICAN_BEGIN_SUMMARY -->
-
-<!-- PELICAN_END_SUMMARY -->
-
-<div class="highlight"><pre><span></span>//-------------------------------
-#define GPS_PROTOCOL GPS_PROTOCOL_MTK
-//   *AVAILABLE OPTIONS*
-// GPS_PROTOCOL_NONENo GPS attached
-// GPS_PROTOCOL_IMU X-Plane ...</pre></div></!--></!--></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2015-01-28-APM-Combo2.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">APM-使用Visual Studio编译Mission Planner</a>
-      </h1>
-      <p class="meta"><time datetime="2015-01-24T14:19:53+08:00" pubdate>1月 24, 2015</time></p>
-</header>
-
-  <div class="entry-content"><h3>简介</h3>
-<!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>Mission Planner（简称MP）是一款Windows平台使用（可通过mono实现Mac平台上的跨平台使用）的开源地面站软件，主要开发语言采用C#。该软件是目前使用最普遍的一款地面站软件，它不仅面向各种载具提供了完备地功能性设置 ...</p></!--></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2015-01-24-APM-使用Visual_Studio编译Mission_Planner.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2014-10-19-APM-I2C.html">APM-I2C</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-19T13:22:24+08:00" pubdate>10月 19, 2014</time></p>
-</header>
-
-  <div class="entry-content"><p><em>关于串行总线（$I^2C$），请阅读维基百科相关条目（<a href="http://zh.wikipedia.org/wiki/I%C2%B2C">$I^2C$</a>）</em></p>
-<h3>使用其他I2C通信传感器</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
-你可以使用任何你想使用的I2C传感器连接到I2C端口。I2C is ...</!--></p></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2014-10-19-APM-I2C.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">APM-采用Make方法编译APM2.x（Win，Mac，Linux）</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-17T12:55:14+08:00" pubdate>10月 17, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>概述</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
-对于开发者而言编译APM应用的最佳方式是使用带有分布式版本管理的Makefile系统，该系统是编译APM的标准方式。APM应用不再使用标准的Arduino IDE,因为APM编译需要的Arduino IDE基础库已经被排除在编译之外。</p>
-<p>对于不喜欢使用make方法的开发者，可以使用一个修改版的Arduino IDE来模拟通常的APM编译过程 ...</p></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2014-10-17-APM-采用Make方法编译APM2.x（Win，Mac，Linux）.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">APM-Windows7上的MAVProxy使用</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-16T13:54:19+08:00" pubdate>10月 16, 2014</time></p>
-</header>
-
-  <div class="entry-content"><h3>简介</h3>
-<p>本说明取自于Ben Dellar在DIY Drones上的一篇<a href="http://diydrones.com/profiles/blogs/step-by-step-guide-to-mavproxy-on-windows-7-live-forward-your-uav?xg_source=activity">优秀的指导手册</a></p>
-<!-- PELICAN_BEGIN_SUMMARY -->
-
-<p>MAVProxy是一款强大的地面站软件，它极大的扩充了GUI界面的地面站。比如Mission Planner，APM ...</p></!--></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2014-10-16-APM-Windows7上的MAVProxy使用.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="../../blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">APM-使用Atmel Studio 或者微软的Visual Studio编辑代码</a>
-      </h1>
-      <p class="meta"><time datetime="2014-10-16T13:54:19+08:00" pubdate>10月 16, 2014</time></p>
-</header>
-
-  <div class="entry-content"><p><img alt="1" src="http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/04/Atmel-Studio-+-Visual-Micro-300x238.jpg" /></p>
-<h3>简介</h3>
-<p><!-- PELICAN_BEGIN_SUMMARY -->
-对APM代码开发需要一款高鲁棒性的开发环境？请尝试使用Atmel Studio 6.2或者带有<a href="http://www.visualmicro.com/">Visual Micro</a>插件的微软Visual Studio吧 ...</!--></p></div>
-  <footer>
-    <a rel="full-article" href="../../blog/apm/2014-10-16-APM-使用Atmel_Studio或者微软的Visual_Studio编辑代码.html">Read On &crarr;</a>
   </footer>
   		</article>
 <div class="pagination">
@@ -2022,22 +1838,22 @@ APM 2.0版本已经采用部分MAVLink消息协议。<a href="http://diydrones.c
     <ul id="recent_posts">
         <li><a href="../../category/apm/index.html">APM</a></li>
         <li><a href="../../category/fei-xing-qi/index.html">飞行器</a></li>
-        <li><a href="../../category/others/index.html">others</a></li>
         <li><a href="../../category/python/index.html">Python</a></li>
         <li><a href="../../category/qi-dong/index.html">气动</a></li>
+        <li><a href="../../category/qi-ta/index.html">其它</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/ipython.html">ipython</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>  </section>
+    <a href="../../tag/mission-planner.html">Mission Planner</a>,    <a href="../../tag/numpy.html">Numpy</a>,    <a href="../../tag/github.html">GitHub</a>,    <a href="../../tag/python.html">python</a>,    <a href="../../tag/apm.html">APM</a>,    <a href="../../tag/ying-jian.html">硬件</a>,    <a href="../../tag/apmcopter.html">APM:Copter</a>,    <a href="../../tag/qi-dong.html">气动</a>,    <a href="../../tag/mp.html">MP</a>,    <a href="../../tag/bo-ke.html">博客</a>,    <a href="../../tag/pandas.html">pandas</a>,    <a href="../../tag/mavlink.html">MAVLink</a>,    <a href="../../tag/git.html">Git</a>,    <a href="../../tag/fei-kong-ban.html">飞控板</a>,    <a href="../../tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="../../tag/c.html">C++</a>,    <a href="../../tag/ipython.html">ipython</a>  </section>
 
 
     <section>
         <h1>Social</h1>
         <ul>
-            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="http://www.weibo.com/lclzx1988" target="_blank">新浪微博</a></li>
             <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
         </ul>
     </section>
@@ -2050,14 +1866,25 @@ APM 2.0版本已经采用部分MAVLink消息协议。<a href="http://diydrones.c
         </ul>
     </section>
 
+<section>
+    <p>Follow <a href="http://twitter.com/Liung_">@Liung_</a></p>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/117788376468366009129?rel=author">
+      <img src="//www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2014-2015  - Liuchao -
+    Copyright &copy;  2014-2015  - Liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
-  <span class="credit">一个执拗的完美主义者</a></span>
+  <span class="credit">一个爱折腾的实用主义者</a></span>
 </p></footer>
     <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -2101,13 +1928,5 @@ APM 2.0版本已经采用部分MAVLink消息协议。<a href="http://diydrones.c
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
     })();
   </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
