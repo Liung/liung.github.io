@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>APM-串口输出</title>
+  <meta name="author" content="liung">
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="http://liung.github.io/favicon.png" rel="icon">
+  <link href="http://liung.github.io/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="http://liung.github.io/theme/js/modernizr-2.0.js"></script>
+  <script src="http://liung.github.io/theme/js/ender.js"></script>
+  <script src="http://liung.github.io/theme/js/octopress.js" type="text/javascript"></script>
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="http://liung.github.io/">折返的Liung</a></h1>
+    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+
+<form action="//google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:liung.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+
+<ul class="main-navigation">
+    <li><a href="/archives.html">目  录</a></li>
+    <li><a href="http://liung.github.io">主  页</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">APM-串口输出</h1>
+      <p class="meta"><time datetime="2015-02-14T22:39:35+08:00" pubdate>Feb 14, 2015</time></p>
+</header>
+
+  <div class="entry-content"><p>这里给出了一些串口的输出内容中包含的数字和信息的解释说明。</p>
+<hr>
+<h3>简介</h3>
+<p>
+在数据流中经常会包含有大量的数据信息返回到本地PC机上。对于代码调试而言，即使是通过地面设备或本地PC图形界面获取到到这些信息的一些只言片语的解释说明，‘串口打印输出’也是非常有用的。下面将对两段简短的文本信息进行解释，同时包含了对一些标准字符串的值。
+</p>
+<hr>
+<h3>例 1</h3>
+<p>每一行以一个字母开始，剩余部分如你在串口输出数据中看到的格式一样，这里是来自APM alhpa 1版代码的结果。</p>
+<div class="highlight"><pre><span></span><span class="n">A</span><span class="o">:</span><span class="n">Init</span> <span class="n">ArduPilotMega</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">1</span> <span class="n">Alpha</span>
+<span class="n">B</span><span class="o">:</span><span class="n">min</span> <span class="o">/</span> <span class="n">max</span> <span class="n">from</span> <span class="n">eeprom</span>  <span class="mi">1190</span>        <span class="mi">1932</span>
+<span class="n">C</span><span class="o">:</span><span class="n">Offsets</span>   <span class="o">-</span><span class="mf">1.00</span>   <span class="mf">37.00</span>   <span class="mf">24.00</span>   <span class="mf">30.50</span>   <span class="mf">4.88</span>   <span class="mf">19.46</span>
+<span class="n">D</span><span class="o">:</span><span class="err">##</span><span class="n">STABILIZE</span>
+<span class="n">E</span><span class="o">:</span><span class="n">XXX</span> <span class="n">Startup</span><span class="o">:</span> <span class="n">AIR</span>
+<span class="n">F</span><span class="o">:!!</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mf">0.0000000000</span><span class="o">|-</span><span class="mi">32700</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">45</span><span class="o">|-</span><span class="mi">200</span>
+<span class="n">F</span><span class="o">:!!-</span><span class="mi">319940058</span><span class="o">|</span><span class="mi">1159932525</span><span class="o">|</span><span class="mi">22805</span><span class="o">|</span><span class="mi">20</span><span class="o">|</span><span class="mf">0.0000000000</span><span class="o">|-</span><span class="mi">9895</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">3561451</span><span class="o">|</span><span class="mi">45</span><span class="o">|-</span><span class="mi">23005</span>
+<span class="n">F</span><span class="o">:!!-</span><span class="mi">319940063</span><span class="o">|</span><span class="mi">1159932552</span><span class="o">|</span><span class="mi">37647</span><span class="o">|</span><span class="mi">10</span><span class="o">|</span><span class="mf">0.0000000000</span><span class="o">|</span><span class="mi">4947</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">3561451</span><span class="o">|</span><span class="mi">45</span><span class="o">|</span><span class="mi">27689</span>
+<span class="n">G</span><span class="o">:</span><span class="n">init</span> <span class="n">home</span>
+<span class="n">F</span><span class="o">:!!-</span><span class="mi">319940067</span><span class="o">|</span><span class="mi">1159932564</span><span class="o">|</span><span class="mi">35375</span><span class="o">|</span><span class="mi">19</span><span class="o">|</span><span class="mf">0.0000000000</span><span class="o">|-</span><span class="mi">2335</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">3561451</span><span class="o">|</span><span class="mi">45</span><span class="o">|</span><span class="mi">29961</span>
+<span class="n">F</span><span class="o">:!!-</span><span class="mi">319940065</span><span class="o">|</span><span class="mi">1159932570</span><span class="o">|</span><span class="mi">35467</span><span class="o">|</span><span class="mi">17</span><span class="o">|</span><span class="mf">0.0000000000</span><span class="o">|-</span><span class="mi">2243</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">3561451</span><span class="o">|</span><span class="mi">45</span><span class="o">|</span><span class="mi">29869</span>
+</pre></div>
+
+
+<hr>
+<h3>例 1 解释</h3>
+<div class="highlight"><pre><span></span><span class="nv">A</span>:程序开始执行，并给出版本号。
+
+<span class="nv">B</span>:?
+
+<span class="nv">C</span>:?
+
+<span class="nv">D</span>:控制模式<span class="ss">(</span>通过无线遥控器的通道拨扭开关位置改变代码预定义的飞行模式<span class="ss">)</span>
+
+<span class="nv">E</span>: 启动类型：地面启动和空中启动二选一。空中启动？ <span class="o">-</span> 如果想使用地面启动你需要在手动模式（<span class="nv">MANUAL</span>，拨到六通道）来启动<span class="nv">APM</span>。
+
+<span class="nv">F</span>: 处理器和传感器信息。 <span class="nv">Intended</span> <span class="k">for</span> <span class="nv">groundstation</span> <span class="nv">really</span>. 简要格式： <span class="ss">(</span>粘贴到你自己的日志中匹配数据长度相当有用<span class="ss">)</span>  当前经度；当前纬度；当前高度；地速；空速；相对家的高度；爬升率；航点距离；油门电流；高度误差；<span class="nv">current</span>.<span class="nv">lat</span><span class="c1">;current.lng;current.alt;grnd_speed;airspeed;alt_above_home;climb_rate;wp_distance;throttle_cruise;alt_err int(* 10**7) int(* 10**7) cm cm/s cm/s cm(m*100) cm/s cm %(target) cm These lines come from serial.print(ln) statements in print_position() procedure (which is in GCS-xxx.pde file). This is called EVERY time there is a new data packet from the GPS - so its fast - about 3Hz Longer format... !! current.latitude;current.longitude;current.altitude;grnd_speed;airspeed(zero if airspeed sensor not installed);current_altitude_now_above_home (current.alt-home.alt);climb_rate;wp_distance(distance to next wapoint);throttle_cruise(target%);alt_err(target-actual)</span>
+
+<span class="nv">G</span>: <span class="nv">Home</span> <span class="nv">point</span> <span class="nv">save</span> <span class="nv">successful</span> <span class="o">-</span> <span class="nv">the</span> <span class="nv">altitude</span> <span class="nv">and</span> <span class="nv">coordinates</span> <span class="nv">of</span> <span class="nv">your</span> <span class="nv">current</span> <span class="nv">location</span> <span class="nv">have</span> <span class="nv">been</span> <span class="nv">captured</span> <span class="nv">and</span> <span class="nv">stored</span>.
+</pre></div>
+
+
+<hr>
+<h3>例 2</h3>
+<div class="highlight"><pre><span></span><span class="nv">A</span>:<span class="nv">Init</span> <span class="nv">ArduPilotMega</span> <span class="mi">1</span>.<span class="mi">0</span>.<span class="mi">1</span> <span class="nv">Alpha</span>
+<span class="nv">B</span>:<span class="nv">min</span> <span class="o">/</span> <span class="nv">max</span> <span class="nv">from</span> <span class="nv">eeprom</span>  <span class="mi">1190</span>        <span class="mi">1932</span>
+<span class="nv">C</span>:<span class="nv">Offsets</span>   <span class="mi">0</span>.<span class="mi">05</span>   <span class="mi">29</span>.<span class="mi">99</span>   <span class="mi">25</span>.<span class="mi">00</span>   <span class="o">-</span><span class="mi">15</span>.<span class="mi">20</span>   <span class="mi">41</span>.<span class="mi">67</span>   <span class="mi">6</span>.<span class="mi">21</span>
+<span class="nv">D</span>:##<span class="nv">AUTO</span>
+<span class="nv">E</span>:<span class="nv">XXX</span> <span class="nv">Startup</span>: <span class="nv">Ground</span>
+<span class="nv">F</span>:<span class="nv">Commands</span> <span class="nv">in</span> <span class="nv">memory</span>
+<span class="nv">G</span>:<span class="nv">commands</span> <span class="nv">total</span>: <span class="mi">4</span>
+<span class="nv">I</span>:<span class="nv">Home</span>: 
+<span class="nv">J</span>:<span class="nv">command</span> #: <span class="mi">0</span> <span class="nv">id</span>: <span class="mi">0</span> <span class="nv">p1</span>: <span class="mi">0</span> <span class="nv">p2</span>: <span class="mi">19700</span> <span class="nv">p3</span>: <span class="o">-</span><span class="mi">319938514</span> <span class="nv">p4</span>: <span class="mi">1159930268</span>
+<span class="nv">K</span>:<span class="nv">Commands</span>:
+<span class="nv">L</span>:<span class="nv">command</span> #: <span class="mi">0</span> <span class="nv">id</span>: <span class="mi">64</span> <span class="nv">p1</span>: <span class="mi">5</span> <span class="nv">p2</span>: <span class="mi">19700</span> <span class="nv">p3</span>: <span class="o">-</span><span class="mi">319938514</span> <span class="nv">p4</span>: <span class="mi">1159930268</span>
+<span class="nv">M</span>:<span class="nv">command</span> #: <span class="mi">1</span> <span class="nv">id</span>: <span class="mi">16</span> <span class="nv">p1</span>: <span class="mi">0</span> <span class="nv">p2</span>: <span class="mi">5000</span> <span class="nv">p3</span>: <span class="o">-</span><span class="mi">31</span> <span class="nv">p4</span>: <span class="mi">115</span>
+<span class="nv">M</span>:<span class="nv">command</span> #: <span class="mi">2</span> <span class="nv">id</span>: <span class="mi">16</span> <span class="nv">p1</span>: <span class="mi">0</span> <span class="nv">p2</span>: <span class="mi">5000</span> <span class="nv">p3</span>: <span class="o">-</span><span class="mi">31</span> <span class="nv">p4</span>: <span class="mi">115</span>
+<span class="nv">M</span>:<span class="nv">command</span> #: <span class="mi">3</span> <span class="nv">id</span>: <span class="mi">16</span> <span class="nv">p1</span>: <span class="mi">0</span> <span class="nv">p2</span>: <span class="mi">5000</span> <span class="nv">p3</span>: <span class="o">-</span><span class="mi">31</span> <span class="nv">p4</span>: <span class="mi">115</span>
+<span class="nv">N</span>:<span class="nv">Demo</span> <span class="nv">Servos</span><span class="o">!</span>
+<span class="nv">N</span>:<span class="nv">Demo</span> <span class="nv">Servos</span><span class="o">!</span>
+<span class="nv">N</span>:<span class="nv">Demo</span> <span class="nv">Servos</span><span class="o">!</span>
+<span class="nv">O</span>:<span class="nv">Offsets</span>   <span class="mi">0</span>.<span class="mi">93</span>   <span class="mi">27</span>.<span class="mi">31</span>   <span class="mi">25</span>.<span class="mi">37</span>   <span class="o">-</span><span class="mi">15</span>.<span class="mi">82</span>   <span class="mi">38</span>.<span class="mi">15</span>   <span class="mi">6</span>.<span class="mi">67</span>
+<span class="nv">P</span>:<span class="nv">NO</span> <span class="nv">airspeed</span>
+<span class="nv">N</span>:<span class="nv">Demo</span> <span class="nv">Servos</span><span class="o">!</span>
+<span class="nv">N</span>:<span class="nv">Demo</span> <span class="nv">Servos</span><span class="o">!</span>
+<span class="nv">N</span>:<span class="nv">Demo</span> <span class="nv">Servos</span><span class="o">!</span>
+
+<span class="nv">Q</span>:<span class="nv">Waiting</span> <span class="k">for</span> <span class="nv">GPS</span>. <span class="nv">Y</span>:<span class="o">!!</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span>.<span class="mi">0000000000</span><span class="o">|-</span><span class="mi">19700</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">45</span><span class="o">|-</span><span class="mi">32636</span> <span class="nv">R</span>:<span class="nv">load</span> <span class="nv">WP</span> <span class="nv">S</span>:<span class="nv">PWP</span>: <span class="o">-</span><span class="mi">319931761</span>, <span class="mi">1159943725</span>, <span class="mi">166608</span> <span class="nv">T</span>:<span class="nv">CUR</span>: <span class="o">-</span><span class="mi">319931761</span>, <span class="mi">1159943725</span>, <span class="mi">166608</span> <span class="nv">U</span>:<span class="nv">NWP</span>:<span class="mi">1</span>, <span class="o">-</span><span class="mi">31</span>, <span class="mi">115</span>, <span class="mi">24700</span> <span class="nv">V</span>:<span class="nv">wp_distance</span> <span class="mi">3561464</span> <span class="nv">W</span>:??<span class="mi">1</span><span class="o">|-</span><span class="mi">319931761</span><span class="o">|</span><span class="mi">1159943725</span><span class="o">|</span><span class="mi">166608</span><span class="o">|-</span><span class="mi">31</span><span class="o">|</span><span class="mi">115</span><span class="o">|</span><span class="mi">24700</span><span class="o">|</span><span class="mi">3561464</span><span class="o">|</span><span class="mi">1547</span><span class="o">|</span><span class="mi">1509</span>
+
+<span class="nv">X</span>:<span class="nv">command</span> #: <span class="mi">1</span> <span class="nv">id</span>: <span class="mi">16</span> <span class="nv">p1</span>: <span class="mi">0</span> <span class="nv">p2</span>: <span class="mi">5000</span> <span class="nv">p3</span>: <span class="o">-</span><span class="mi">31</span> <span class="nv">p4</span>: <span class="mi">115</span> <span class="nv">Y</span>:<span class="o">!!-</span><span class="mi">319931761</span><span class="o">|</span><span class="mi">1159943725</span><span class="o">|</span><span class="mi">166608</span><span class="o">|</span><span class="mi">104</span><span class="o">|</span><span class="mi">0</span>.<span class="mi">0000000000</span><span class="o">|</span><span class="mi">15836</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">3561464</span><span class="o">|</span><span class="mi">45</span><span class="o">|-</span><span class="mi">10836</span> <span class="nv">Y</span>:<span class="o">!!-</span><span class="mi">319939156</span><span class="o">|</span><span class="mi">1159930300</span><span class="o">|</span><span class="mi">6686</span><span class="o">|</span><span class="mi">62</span><span class="o">|</span><span class="mi">0</span>.<span class="mi">0000000000</span><span class="o">|-</span><span class="mi">13014</span><span class="o">|</span><span class="mi">0</span><span class="o">|</span><span class="mi">3561464</span><span class="o">|</span><span class="mi">45</span><span class="o">|</span><span class="mi">18014</span>
+</pre></div>
+
+
+<hr>
+<h3>例 2 解释</h3>
+<div class="highlight"><pre><span></span><span class="nv">A</span>:<span class="nv">The</span> <span class="nv">program</span> <span class="nv">has</span> <span class="nv">begun</span>. <span class="nv">Software</span> <span class="nv">Version</span> <span class="nv">number</span> <span class="nv">given</span>. 
+<span class="nv">B</span>:?  
+<span class="nv">C</span>:?  
+<span class="nv">D</span>:<span class="nv">The</span> <span class="nv">control</span> <span class="nv">mode</span>. <span class="ss">(</span><span class="nv">Set</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nv">radio</span> <span class="nv">control</span> <span class="nv">channel</span> <span class="nv">switch</span> <span class="nv">position</span> <span class="nv">with</span> <span class="nv">interpretation</span> <span class="nv">by</span> <span class="nv">code</span><span class="ss">)</span> 
+<span class="nv">E</span>: <span class="nv">Startup</span> <span class="nv">type</span> : <span class="nv">Ground</span> <span class="nv">versus</span> <span class="nv">AIR</span> <span class="nv">are</span> <span class="nv">the</span> <span class="nv">alternates</span>. <span class="nv">GROUND</span> <span class="nv">means</span> <span class="nv">a</span> <span class="nv">normal</span> <span class="nv">startup</span>.
+<span class="nv">F</span> <span class="nv">and</span> <span class="nv">G</span>: <span class="nv">Commands</span> <span class="nv">retrieved</span> <span class="nv">from</span> <span class="nv">memory</span> <span class="o">-</span> <span class="nv">loaded</span> <span class="nv">previously</span> <span class="nv">into</span> <span class="nv">EEPROM</span> <span class="nv">i</span>.<span class="nv">e</span>. <span class="nv">using</span> <span class="nv">wapoint_writer</span>.<span class="nv">pde</span> <span class="nv">or</span> <span class="nv">similar</span>.
+<span class="nv">I</span> <span class="nv">and</span> <span class="nv">J</span>: <span class="nv">Home</span> <span class="nv">point</span> <span class="nv">inserted</span> <span class="nv">as</span> <span class="nv">command</span> <span class="sc">#0</span> <span class="ss">(</span>?<span class="ss">)</span>
+<span class="nv">K</span>: <span class="nv">saying</span> <span class="nv">the</span> <span class="nv">commands</span> <span class="nv">now</span> <span class="nv">loaded</span> <span class="nv">and</span> <span class="nv">active</span> <span class="nv">are</span>...
+<span class="nv">L</span> <span class="nv">and</span> <span class="nv">M</span>: <span class="nv">the</span> <span class="nv">commands</span>.
+<span class="nv">L</span>: <span class="nv">is</span> <span class="nv">home</span> <span class="nv">position</span> <span class="nv">as</span> <span class="nv">a</span> <span class="nv">command</span>. <span class="nv">Also</span> <span class="nv">the</span> <span class="nv">RTL</span> <span class="nv">target</span> <span class="nv">location</span>.
+
+<span class="nv">M</span>: <span class="nv">the</span> <span class="nv">commands</span> <span class="nv">you</span> <span class="nv">loaded</span> <span class="nv">previously</span>. <span class="nv">Format</span> <span class="o">-</span> <span class="nv">same</span> <span class="nv">as</span> <span class="nv">the</span> <span class="nv">waypoint</span> <span class="nv">file</span>. <span class="nv">Namely</span>, <span class="nv">command</span> # <span class="nv">num</span> <span class="nv">id</span> <span class="nb">param1</span> <span class="mi">2</span>: <span class="nv">alt</span> <span class="mi">3</span>: <span class="nv">lat</span> <span class="mi">4</span>: <span class="nv">long</span> <span class="nv">Note</span>: <span class="nv">all</span> <span class="nv">values</span> <span class="nv">in</span> <span class="nv">decimal</span> <span class="nv">int</span>, <span class="nv">so</span> <span class="nv">command</span> <span class="nv">is</span> <span class="nv">converted</span> <span class="nv">from</span> <span class="nv">hex</span> <span class="nv">to</span> <span class="nv">decimal</span> <span class="nv">e</span>.<span class="nv">g</span>. <span class="mi">0</span><span class="nv">x10</span> <span class="o">=</span> <span class="mi">16</span> <span class="ss">(</span>?<span class="ss">)</span> <span class="nv">N</span>:<span class="nv">Wiggle</span> <span class="nv">one</span> <span class="nv">servo</span> <span class="nv">a</span> <span class="nv">little</span>. <span class="nv">Indicates</span> <span class="nv">program</span> <span class="nv">started</span> <span class="nv">OR</span> <span class="nv">calibration</span> <span class="nv">taking</span> <span class="nv">place</span>. <span class="nv">O</span>: <span class="ss">(</span>?<span class="ss">)</span> <span class="nv">P</span>: <span class="nv">NO</span> <span class="nv">airspeed</span> <span class="nv">sensor</span> <span class="ss">(</span><span class="nv">hence</span> <span class="nv">we</span> <span class="nv">will</span> <span class="nv">use</span> <span class="nv">approximate</span> <span class="nv">info</span> <span class="nv">from</span> <span class="nv">GPS</span>?<span class="ss">)</span> <span class="nv">Q</span>: <span class="nv">Waiting</span> <span class="k">for</span> <span class="nv">start</span> <span class="nv">of</span> <span class="nv">GPS</span> <span class="nv">message</span> <span class="nv">stream</span> <span class="ss">(</span>?<span class="ss">)</span>. <span class="nv">R</span>: <span class="ss">(</span>?<span class="ss">)</span> <span class="nv">S</span>: <span class="nv">previous</span> <span class="nv">waypoint</span> <span class="ss">(</span><span class="nv">lat</span>, <span class="nv">lng</span>, <span class="nv">alt</span><span class="ss">)</span> <span class="nv">T</span>: <span class="nv">current</span> <span class="nv">waypoint</span> <span class="ss">(</span><span class="nv">lat</span>, <span class="nv">lng</span>, <span class="nv">alt</span><span class="ss">)</span> <span class="nv">U</span>: <span class="k">next</span> <span class="nv">waypoint</span> <span class="ss">(</span><span class="nv">lat</span>, <span class="nv">lng</span>, <span class="nv">alt</span><span class="ss">)</span> <span class="nv">V</span>: <span class="nv">distance</span> <span class="nv">from</span> <span class="nv">plane</span> <span class="nv">to</span> <span class="k">next</span> <span class="nv">waypoint</span> <span class="nv">from</span> <span class="nv">current</span> <span class="nv">position</span> <span class="ss">(</span><span class="nv">cm</span><span class="ss">(</span><span class="nv">m</span><span class="o">*</span><span class="mi">100</span><span class="ss">))</span> <span class="nv">W</span>: <span class="nv">new</span> <span class="nv">waypoint</span> <span class="ss">(</span>?? <span class="nv">line</span> <span class="nv">prefix</span><span class="ss">)</span> <span class="nv">wp_index</span>,<span class="nv">prev_WP</span>.<span class="nv">lat</span>,<span class="nv">prev_WP</span>.<span class="nv">lng</span>,<span class="nv">prev_WP</span>.<span class="nv">alt</span>,<span class="nv">next_WP</span>.<span class="nv">lat</span>,<span class="nv">next_WP</span>.<span class="nv">lng</span>,<span class="nv">next_WP</span>.<span class="nv">alt</span>, <span class="nv">wp_totalDistance</span>,<span class="nv">radio_trim</span>[<span class="nv">CH_ROLL</span>],<span class="nv">radio_trim</span>[<span class="nv">CH_PITCH</span>] <span class="nv">X</span>:<span class="nv">command</span> #: <span class="mi">1</span> <span class="nv">id</span>: <span class="mi">16</span> <span class="nv">p1</span>: <span class="mi">0</span> <span class="nv">p2</span>: <span class="mi">5000</span> <span class="nv">p3</span>: <span class="o">-</span><span class="mi">31</span> <span class="nv">p4</span>: <span class="mi">115</span>
+
+<span class="nv">Y</span>: <span class="nv">print</span> <span class="nv">statements</span> <span class="nv">coming</span> <span class="nv">from</span> <span class="nv">print_position</span><span class="ss">()</span><span class="nv">procedure</span> <span class="ss">(</span><span class="nv">in</span> <span class="nv">GCSxxx</span>.<span class="nv">pde</span> <span class="nv">file</span><span class="ss">)</span> <span class="nv">In</span> <span class="nv">short</span> <span class="nv">form</span>: <span class="ss">(</span><span class="nv">useful</span> <span class="nv">to</span> <span class="nv">paste</span> <span class="nv">into</span> <span class="nv">your</span> <span class="nv">logs</span> <span class="nv">to</span> <span class="nv">match</span> <span class="nv">value</span> <span class="nv">lengths</span><span class="ss">)</span> <span class="nv">current</span>.<span class="nv">lat</span><span class="c1">;current.lng;current.alt;grnd_speed;airspeed;alt_above_home;climb_rate;wp_distance;throttle_cruise;alt_err int(* 10**7) int(* 10**7) cm cm/s cm/s cm(m*100) cm/s cm % cm These lines come from serial.print(ln) statements in print_position() procedure (which is in GCS-xxx.pde file). This is called EVERY time there is a new data packet from the GPS - so its fast - about 3Hz Longer format... !! current.latitude;current.longitude;current.altitude;grnd_speed;airspeed(zero if airspeed sensor not installed);current_altitude_now_above_home (current.alt-home.alt);climb_rate;wp_distance(distance to next wapoint);throttle_cruise(target%);alt_err(target-actual)</span>
+</pre></div>
+
+
+<p>通过了解这些信息，你的调试速度可能变快，飞行时间更久。</p>
+<hr>
+<h4>链接</h4>
+<ol>
+<li><a href="http://dev.ardupilot.com/wiki/load-the-code-onto-apm2x/">APM官网原文链接</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
+</ol>
+<p><em>(over)</em></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">liung</span>
+  </span>
+<time datetime="2015-02-14T22:39:35+08:00" pubdate>Feb 14, 2015</time>  <span class="categories">
+    <a class="category" href="http://liung.github.io/tag/apm.html">APM</a>
+    <a class="category" href="http://liung.github.io/tag/serial.html">Serial</a>
+  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+</div>
+<aside class="sidebar">
+  <section>
+	  <img src="http://liung.github.io/images/author_photo.jpg" alt="Liung" width="300"/> 
+  </section>
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-04-01-APM-MissionPlanner的仿真界面.html">MissionPlanner-仿真界面分析</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/qi-dong/2015-03-24-由压力系数计算升力系数.html">升力系数的计算</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-02-15-APM-使用命令行界面.html">APM-使用命令行界面</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-02-14-APM-使用调试终端与APM交互.html">APM-使用调试终端与APM交互</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-02-14-APM-串口输出.html">APM-串口输出</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="http://liung.github.io/category/apm/index.html">APM</a></li>
+        <li><a href="http://liung.github.io/category/fei-xing-qi/index.html">飞行器</a></li>
+        <li><a href="http://liung.github.io/category/python/index.html">Python</a></li>
+        <li><a href="http://liung.github.io/category/qi-dong/index.html">气动</a></li>
+        <li><a href="http://liung.github.io/category/qi-ta/index.html">其它</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="http://liung.github.io/tag/apm.html">APM</a>,    <a href="http://liung.github.io/tag/mp.html">MP</a>,    <a href="http://liung.github.io/tag/qi-dong.html">气动</a>,    <a href="http://liung.github.io/tag/cli.html">CLI</a>,    <a href="http://liung.github.io/tag/terminal.html">Terminal</a>,    <a href="http://liung.github.io/tag/serial.html">Serial</a>,    <a href="http://liung.github.io/tag/git.html">Git</a>,    <a href="http://liung.github.io/tag/github.html">GitHub</a>,    <a href="http://liung.github.io/tag/mavlink.html">MAVLink</a>,    <a href="http://liung.github.io/tag/mission-planner.html">Mission Planner</a>,    <a href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>,    <a href="http://liung.github.io/tag/ying-jian.html">硬件</a>,    <a href="http://liung.github.io/tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="http://liung.github.io/tag/python.html">python</a>,    <a href="http://liung.github.io/tag/ipython.html">ipython</a>,    <a href="http://liung.github.io/tag/pandas.html">pandas</a>,    <a href="http://liung.github.io/tag/numpy.html">Numpy</a>,    <a href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>,    <a href="http://liung.github.io/tag/c.html">C++</a>,    <a href="http://liung.github.io/tag/bo-ke.html">博客</a>  </section>
+
+
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://google.com/" target="_blank">Google</a></li>
+            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+        </ul>
+    </section>
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2012-2015  - liung -
+  <!--
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+  -->
+  <span class="credit">一个执拗的完美主义者</a></span>
+</p></footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54228593-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54228593-1');
+    ga('send', 'pageview');
+</script>
+	<script type="text/javascript">
+	  var disqus_shortname = 'liunggithubio-aerodynamic';
+          var disqus_identifier = '/blog/apm/2015-02-14-APM-串口输出.html';
+          var disqus_url = 'http://liung.github.io/blog/apm/2015-02-14-APM-串口输出.html';
+          var disqus_title = 'APM-串口输出';
+	  (function() {
+	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	   })();
+	</script>
+</body>
+</html>

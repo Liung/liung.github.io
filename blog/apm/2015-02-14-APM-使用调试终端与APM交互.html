@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>APM-使用调试终端与APM交互</title>
+  <meta name="author" content="liung">
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="http://liung.github.io/favicon.png" rel="icon">
+  <link href="http://liung.github.io/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="http://liung.github.io/theme/js/modernizr-2.0.js"></script>
+  <script src="http://liung.github.io/theme/js/ender.js"></script>
+  <script src="http://liung.github.io/theme/js/octopress.js" type="text/javascript"></script>
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="http://liung.github.io/">折返的Liung</a></h1>
+    <h2>我如溪水，静静流淌在山涧~~我如白云，俯瞰此生今生~~</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+
+<form action="//google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:liung.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+
+<ul class="main-navigation">
+    <li><a href="/archives.html">目  录</a></li>
+    <li><a href="http://liung.github.io">主  页</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">APM-使用调试终端与APM交互</h1>
+      <p class="meta"><time datetime="2015-02-14T23:54:32+08:00" pubdate>Feb 14, 2015</time></p>
+</header>
+
+  <div class="entry-content"><h3>说明</h3>
+<p>
+地面站的调试终端协议是与APM通过简单的终端界面进行交互的适宜人类可读的文本的一种方式。通过地面站的终端界面，用户可以改变APM的一些运行参数状态，甚至是在实时飞行过程中，并且还能够读取到各种不同的飞行参数信息，使得更加了解APM实时运行的动作。</p>
+<p>调试终端工具主要用来探索与测试APM的特性；目前并不赞成作为用户终端界面使用。大部分的飞行状态参数都是根据源代码中执行的计算结果来返回的结构化的数据，并不是大多数不了解源码的人们根据直觉理解的一些数据。这可以成为了解APM工作方式的一个好的工具，但是目前所呈现的仅仅是一些粗糙的用户界面。当调试工具返回的数据出乎你的意外，请查阅一下产生这些响应数据的代码，你是否能够在脑海中勾勒中APM正在执行的内容。
+</p>
+<p>一个常见的问题是APM内部存在的参数值与人们理解的参数值有分歧。比如，纬度值存储的整数值等于角度值乘以一千万，但是相对于以一千万分之一度为单位，可能以十进制单位角度打印出来的数值更能符合人们常规的习惯。目前，调试终端当显示数值时混合了上述两种方法。最近大部分指令参数已经开发完成，并尽可能地采用了对用户更方便（友善）的数值显示方法。</p>
+<hr>
+<h3>设置</h3>
+<p>需要在你的APM调试终端遵循一下步骤：</p>
+<p>A. <a href="http://code.google.com/p/ardupilot-mega/wiki/Wireless">连接串口到需要的遥测端口</a></p>
+<p>B. 在APM_Config.h文件的末尾增加下面几行代码：</p>
+<div class="highlight"><pre><span></span><span class="o">//</span><span class="nv">Select</span> <span class="nv">Debug</span> <span class="nv">Terminal</span> <span class="nv">as</span> <span class="nv">the</span> <span class="nv">GCS</span> <span class="nv">to</span> <span class="nv">use</span>:
+#<span class="nv">define</span> <span class="nv">GCS_PROTOCOLGCS_PROTOCOL_DEBUGTERMINAL</span>
+
+<span class="o">//</span><span class="nv">Use</span> <span class="nv">the</span> <span class="nv">telemetry</span> <span class="nv">port</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">Debug</span> <span class="nv">Terminal</span> <span class="nv">interface</span>:
+<span class="o">//</span><span class="ss">(</span><span class="nv">selecting</span> <span class="mi">0</span> <span class="nv">here</span> <span class="nv">would</span> <span class="nv">cause</span> <span class="nv">the</span> <span class="nv">USB</span> <span class="nv">serial</span> <span class="nv">port</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">used</span> <span class="nv">instead</span><span class="ss">)</span>
+#<span class="nv">define</span> <span class="nv">GCS_PORT3</span>
+
+<span class="o">//</span><span class="nv">Set</span> <span class="nv">the</span> <span class="nv">baud</span> <span class="nv">rate</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">telemetry</span> <span class="nv">port</span> <span class="nv">to</span> <span class="nv">match</span> <span class="nv">your</span> <span class="nv">XBee</span> <span class="nv">setup</span>:
+#<span class="nv">define</span> <span class="nv">SERIAL3_BAUD115200</span>
+</pre></div>
+
+
+<hr>
+<h3>命令索引</h3>
+<p>默认模式下，预设的调试终端提供了帮助命令来方便管理参数语法。如果某个参数忘记了具体如何拼写，只要在终端键入你所能记住的部分然后在后面添加问号（即：你键入的部分指令+？）。键入问号后终端会向你显示一些可能的参数列表。例如，<code>status-?</code>将会出现下面的状态命令参数：</p>
+<p>所有的终端命令都是大小写和空白符敏感的。 Commands are terminated by a carriage return (so be sure to selectCarriage return rather than No line ending if using the Arduino serial monitor). 在下面的索引列表中，<code>&lt;N&gt;</code>代表非负整数；<code>&lt;X&gt;</code>代表数值型的值，可能是复数、小数或负数；竖线（<code>|</code>）表示“或者”；闭合的花括号（<code>{}</code>）表示可选参数集合，所以，<code>{A|B|C}</code>表示你必须选择A或者B或者C。方括号（<code>[]</code>）表示可选参数。对于下面没有详细说明的参数，命令语法会单独给出一个简单的关于该参数作用的说明。更多的信息可以通过阅读GCS_DebugTerminal.pde代码文件获取（在SVN仓库的<a href="http://code.google.com/p/ardupilot-mega/source/browse/ArduPilotMega/trunk/GCS_DebugTerminal.pde">这里</a>）。</p>
+<p><strong>show heartbeat</strong></p>
+<p>是否自动显示“heartbeat（心跳）”信息，报告APM的控制模式，特别当其放生改变时。默认显示。</p>
+<p><strong>show attitude</strong></p>
+<p>是否自动显示“attitude（姿态）”信息，其中内容包括：</p>
+<ul>
+<li>滚转、俯仰、偏航、油门的无线遥控（RC）信号</li>
+<li>APM重新计算得到的飞行器滚转、俯仰信号</li>
+<li>Navigation information including the target bearing, desired roll, and number of degrees loitered</li>
+<li>Orientation actuation including roll and pitch servo outputs</li>
+</ul>
+<p><strong>show location</strong></p>
+<p><strong>show severity <N></strong></p>
+<p><strong>hide {heartbeat|attitude|location}</strong></p>
+<p><strong>hide all</strong></p>
+<p><strong>echo <text></strong></p>
+<p><strong>groundstart</strong></p>
+<p><strong>inithome</strong></p>
+<p><strong>print altitude</strong></p>
+<p><strong>print attitude</strong></p>
+<p><strong>print commands</strong></p>
+<p><strong>print ctrlmode</strong></p>
+<p><strong>print curwaypts</strong></p>
+<p><strong>print flightmodes</strong></p>
+<p><strong>print kp {servoroll|servopitch|servorudder|navroll|navpitchasp|navpitchalt|throttlete|throttlealt}</strong></p>
+<p><strong>print ki {servoroll|servopitch|servorudder|navroll|navpitchasp|navpitchalt|throttlete|throttlealt}</strong></p>
+<p><strong>print kd {servoroll|servopitch|servorudder|navroll|navpitchasp|navpitchalt|throttlete|throttlealt}</strong></p>
+<p><strong>print kff {pitchcomp|ruddermix|pitchtothrottle}</strong></p>
+<p><strong>print location</strong></p>
+<p><strong>print navsettings</strong></p>
+<p><strong>print pressure</strong></p>
+<p><strong>print rlocation [home]</strong></p>
+<p><strong>print speed</strong></p>
+<p><strong>print tuning</strong></p>
+<p><strong>reset commands</strong></p>
+<p><strong>rtl</strong></p>
+<p><strong>set cmd <commandindex> <commandtype> <param1> {here|<alt> <lat> <lng>}</strong></p>
+<p><strong>set cmd <commandindex> <paramtype> <newvalue></strong></p>
+<p><strong>set cmdcount <N></strong></p>
+<p><strong>set cmdindex <N></strong></p>
+<p><strong>set cruise <X></strong></p>
+<p><strong>set holdalt <X></strong></p>
+<p><strong>set kp {servoroll|servopitch|servorudder|navroll|navpitchasp|navpitchalt|throttlete|throttlealt} <X></strong></p>
+<p><strong>set ki {servoroll|servopitch|servorudder|navroll|navpitchasp|navpitchalt|throttlete|throttlealt} <X></strong></p>
+<p><strong>set kd {servoroll|servopitch|servorudder|navroll|navpitchasp|navpitchalt|throttlete|throttlealt} <X></strong></p>
+<p><strong>set kff {pitchcomp|ruddermix|pitchtothrottle} <X></strong></p>
+<p><strong>set loiterradius <X></strong></p>
+<p><strong>set wpradius <X></strong></p>
+<p><strong>status control</strong></p>
+<p><strong>status gps</strong></p>
+<p><strong>status landing</strong></p>
+<p><strong>status loiter</strong></p>
+<p><strong>status navigation</strong></p>
+<p><strong>status navpitch</strong></p>
+<p><strong>status navroll</strong></p>
+<p><strong>status rc</strong></p>
+<p><strong>status rcinputch</strong></p>
+<p><strong>status rcin</strong></p>
+<p><strong>status rcout</strong></p>
+<p><strong>status rcpwm</strong></p>
+<p><strong>status rctrim</strong></p>
+<p><strong>status system</strong></p>
+<p><strong>status takeoff</strong></p>
+<p><strong>status telemetry</strong></p>
+<p><strong>status throttle</strong></p>
+<p><strong>status waypoints</strong></p>
+<hr>
+<h4>链接</h4>
+<ol>
+<li><a href="http://dev.ardupilot.com/wiki/load-the-code-onto-apm2x/">APM官网原文链接</a></li>
+<li><a href="http://liung.github.io/blog/apm/2014-08-29-APM-开发人员参考手册目录列表.html">APM开发人员参考手册目录列表</a></li>
+</ol>
+<p><em>(over)</em></p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">liung</span>
+  </span>
+<time datetime="2015-02-14T23:54:32+08:00" pubdate>Feb 14, 2015</time>  <span class="categories">
+    <a class="category" href="http://liung.github.io/tag/apm.html">APM</a>
+    <a class="category" href="http://liung.github.io/tag/terminal.html">Terminal</a>
+  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+  </section>
+</div>
+<aside class="sidebar">
+  <section>
+	  <img src="http://liung.github.io/images/author_photo.jpg" alt="Liung" width="300"/> 
+  </section>
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-04-01-APM-MissionPlanner的仿真界面.html">MissionPlanner-仿真界面分析</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/qi-dong/2015-03-24-由压力系数计算升力系数.html">升力系数的计算</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-02-15-APM-使用命令行界面.html">APM-使用命令行界面</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-02-14-APM-使用调试终端与APM交互.html">APM-使用调试终端与APM交互</a>
+      </li>
+      <li class="post">
+          <a href="http://liung.github.io/blog/apm/2015-02-14-APM-串口输出.html">APM-串口输出</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="http://liung.github.io/category/apm/index.html">APM</a></li>
+        <li><a href="http://liung.github.io/category/fei-xing-qi/index.html">飞行器</a></li>
+        <li><a href="http://liung.github.io/category/python/index.html">Python</a></li>
+        <li><a href="http://liung.github.io/category/qi-dong/index.html">气动</a></li>
+        <li><a href="http://liung.github.io/category/qi-ta/index.html">其它</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="http://liung.github.io/tag/apm.html">APM</a>,    <a href="http://liung.github.io/tag/mp.html">MP</a>,    <a href="http://liung.github.io/tag/qi-dong.html">气动</a>,    <a href="http://liung.github.io/tag/cli.html">CLI</a>,    <a href="http://liung.github.io/tag/terminal.html">Terminal</a>,    <a href="http://liung.github.io/tag/serial.html">Serial</a>,    <a href="http://liung.github.io/tag/git.html">Git</a>,    <a href="http://liung.github.io/tag/github.html">GitHub</a>,    <a href="http://liung.github.io/tag/mavlink.html">MAVLink</a>,    <a href="http://liung.github.io/tag/mission-planner.html">Mission Planner</a>,    <a href="http://liung.github.io/tag/fei-kong-ban.html">飞控板</a>,    <a href="http://liung.github.io/tag/ying-jian.html">硬件</a>,    <a href="http://liung.github.io/tag/qi-dong-ruan-jian.html">气动软件</a>,    <a href="http://liung.github.io/tag/python.html">python</a>,    <a href="http://liung.github.io/tag/ipython.html">ipython</a>,    <a href="http://liung.github.io/tag/pandas.html">pandas</a>,    <a href="http://liung.github.io/tag/numpy.html">Numpy</a>,    <a href="http://liung.github.io/tag/apmcopter.html">APM:Copter</a>,    <a href="http://liung.github.io/tag/c.html">C++</a>,    <a href="http://liung.github.io/tag/bo-ke.html">博客</a>  </section>
+
+
+    <section>
+        <h1>Social</h1>
+        <ul>
+            <li><a href="http://www.weibo.com" target="_blank">新浪微博</a></li>
+            <li><a href="https://github.com/Liung" target="_blank">Github</a></li>
+        </ul>
+    </section>
+    <section>
+        <h1>Blogroll</h1>
+        <ul>
+            <li><a href="http://google.com/" target="_blank">Google</a></li>
+            <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+            <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+        </ul>
+    </section>
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2012-2015  - liung -
+  <!--
+  <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
+  -->
+  <span class="credit">一个执拗的完美主义者</a></span>
+</p></footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-54228593-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-54228593-1');
+    ga('send', 'pageview');
+</script>
+	<script type="text/javascript">
+	  var disqus_shortname = 'liunggithubio-aerodynamic';
+          var disqus_identifier = '/blog/apm/2015-02-14-APM-使用调试终端与APM交互.html';
+          var disqus_url = 'http://liung.github.io/blog/apm/2015-02-14-APM-使用调试终端与APM交互.html';
+          var disqus_title = 'APM-使用调试终端与APM交互';
+	  (function() {
+	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	   })();
+	</script>
+</body>
+</html>

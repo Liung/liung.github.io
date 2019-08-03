@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>升力系数的计算</title>
+  <title>折返的Liung - Serial</title>
   <meta name="author" content="liung">
 
 
@@ -49,48 +49,31 @@
 </ul></nav>
   <div id="main">
     <div id="content">
-<div>
-  <article class="hentry" role="article">
+<div class="blog-index">
+  		<article>
 <header>
-      <h1 class="entry-title">升力系数的计算</h1>
-      <p class="meta"><time datetime="2015-03-24T22:41:01+08:00" pubdate>Mar 24, 2015</time></p>
+      <h1 class="entry-title">
+        <a href="http://liung.github.io/blog/apm/2015-02-14-APM-串口输出.html">APM-串口输出</a>
+      </h1>
+      <p class="meta"><time datetime="2015-02-14T22:39:35+08:00" pubdate>Feb 14, 2015</time></p>
 </header>
 
-  <div class="entry-content"><p>法向力N、轴向力A与升力L和阻力D的关系为：</p>
-<p>$$
-L &amp; = &amp; N cos \alpha - A sin \alpha 
-D &amp; = &amp; N sin \alpha + A cos \alpha<br>
-$$</p>
-<p>翼型上表面，有：</p>
-<p>$$
-dN'_u = - p_u cos \theta ds_u - \tau sin \theta ds_u 
-dA'_u = - p_u sin \theta ds_u + \tau cos \theta ds_u 
-$$</p>
-<p>下表面，有：</p>
-<p>$$
-dN'_l = - p_l cos \theta ds_l - \tau sin \theta ds_l 
-dA'_l = - p_l sin \theta ds_l + \tau cos \theta ds_l 
-$$</p>
-<p>对于单位展长翼型段的法向力和轴向力就可以表示为：</p>
-<p>$$</p>
-<p>$$</p></div>
-    <footer>
-<p class="meta">
-  <span class="byline author vcard">
-    Posted by <span class="fn">liung</span>
-  </span>
-<time datetime="2015-03-24T22:41:01+08:00" pubdate>Mar 24, 2015</time>  <span class="categories">
-    <a class="category" href="http://liung.github.io/tag/qi-dong.html">气动</a>
-  </span>
-</p><div class="sharing">
-</div>    </footer>
-  </article>
+  <div class="entry-content"><p>这里给出了一些串口的输出内容中包含的数字和信息的解释说明。</p>
+<hr>
+<h3>简介</h3>
+<p>
+在数据流中经常会包含有大量的数据信息返回到本地PC机上。对于代码调试而言，即使是通过地面设备或本地PC图形界面获取到到这些信息的一些只言片语的解释说明，‘串口打印输出’也是非常有用的。下面将对两段简短的文本信息进行解释，同时包含了对一些标准字符串的值。
+</p>
+<hr>
+<h3>例 …</h3></div>
+  <footer>
+    <a rel="full-article" href="http://liung.github.io/blog/apm/2015-02-14-APM-串口输出.html">Read On &crarr;</a>
+  </footer>
+  		</article>
+<div class="pagination">
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
-  </section>
-</div>
+  <br />
+</div></div>
 <aside class="sidebar">
   <section>
 	  <img src="http://liung.github.io/images/author_photo.jpg" alt="Liung" width="300"/> 
@@ -98,18 +81,6 @@ $$</p>
   <section>
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2015-04-01-APM-MissionPlanner的仿真界面.html">MissionPlanner-仿真界面分析</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/qi-dong/2015-03-24-由压力系数计算升力系数.html">升力系数的计算</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2015-02-15-APM-使用命令行界面.html">APM-使用命令行界面</a>
-      </li>
-      <li class="post">
-          <a href="http://liung.github.io/blog/apm/2015-02-14-APM-使用调试终端与APM交互.html">APM-使用调试终端与APM交互</a>
-      </li>
       <li class="post">
           <a href="http://liung.github.io/blog/apm/2015-02-14-APM-串口输出.html">APM-串口输出</a>
       </li>
@@ -152,7 +123,7 @@ $$</p>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2012-2015  - liung -
+    Copyright &copy;  2015  - liung -
   <!--
   <span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>
   -->
@@ -178,9 +149,6 @@ $$</p>
 </script>
 	<script type="text/javascript">
 	  var disqus_shortname = 'liunggithubio-aerodynamic';
-          var disqus_identifier = '/blog/qi-dong/2015-03-24-由压力系数计算升力系数.html';
-          var disqus_url = 'http://liung.github.io/blog/qi-dong/2015-03-24-由压力系数计算升力系数.html';
-          var disqus_title = '升力系数的计算';
 	  (function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	    dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
